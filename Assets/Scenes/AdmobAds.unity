@@ -2434,7 +2434,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1859338554}
   - component: {fileID: 1859338553}
-  - component: {fileID: 1859338555}
   m_Layer: 0
   m_Name: AdManager
   m_TagString: Untagged
@@ -2455,7 +2454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalCoinsTxt: {fileID: 0}
-  appId: ca-app-pub-3940256099942544~3347511713
+  appId: ca-app-pub-7191923771378224~6783351723
   img: {fileID: 660190640}
 --- !u!4 &1859338554
 Transform:
@@ -2472,18 +2471,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1106343257}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1859338555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1859338552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bba9810c325b2c40833fcb2c1ffb7e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1909073441
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,14 +9,14 @@ public class AddMobsAds : MonoBehaviour
 {
     public TextMeshProUGUI totalCoinsTxt;
 
-    public string appId = "ca-app-pub-1385093244148841~5602672977";// "ca-app-pub-3940256099942544~3347511713";
+    private string appId = "ca-app-pub-3940256099942544~3347511713";// "ca-app-pub-7191923771378224~6783351723"; 
 
 
 #if UNITY_ANDROID
-    string bannerId = "ca-app-pub-1385093244148841/2952458907";
-    string interId = "ca-app-pub-3940256099942544/1033173712";
-    string rewardedId = "ca-app-pub-3940256099942544/5224354917";
-    string nativeId = "ca-app-pub-3940256099942544/2247696110";
+    string bannerId = "ca-app-pub-3940256099942544/6300978111";  // "ca-app-pub-7191923771378224/9446040059"; 
+    string interId = "ca-app-pub-3940256099942544/1033173712"; //"ca-app-pub-7191923771378224/4353463651"; 
+    string rewardedId = "ca-app-pub-3940256099942544/5224354917"; // "ca-app-pub-7191923771378224/1567550036";
+    string nativeId = "ca-app-pub-3940256099942544/2247696110";//"ca-app-pub-7191923771378224/1727300312";
 
 #elif UNITY_IPHONE
     string bannerId = "ca-app-pub-3940256099942544/2934735716";
