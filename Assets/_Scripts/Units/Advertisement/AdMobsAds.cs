@@ -5,9 +5,12 @@ using UnityEngine.UI;
 
 
 
-public class AddMobsAds : MonoBehaviour
+public class AdMobsAds : MonoBehaviour
 {
+    
     public TextMeshProUGUI totalCoinsTxt;
+
+    
 
     private string appId = "ca-app-pub-3940256099942544~3347511713";// "ca-app-pub-7191923771378224~6783351723"; 
 
@@ -31,10 +34,71 @@ public class AddMobsAds : MonoBehaviour
     RewardedAd rewardedAd;
     NativeAd nativeAd;
 
+    // Static reference to the instance
+    private static AdMobsAds instance;
+
+    private GameObject errorScreenPrefab;
+    public GameObject canvasInstance;
+
+    // Public property to access the instance globally
+    public static AdMobsAds Instance
+    {
+        get
+        {
+            // Check if the instance is null (first time access or after scene change)
+            if (instance == null)
+            {
+                // Try to find an existing instance in the scene
+                instance = FindFirstObjectByType<AdMobsAds>();
+
+                // If no instance exists, create a new GameObject with AdManager attached
+                if (instance == null)
+                {
+                    GameObject singleton = new GameObject("AdManager");
+                    instance = singleton.AddComponent<AdMobsAds>();
+                    Debug
+                .LogWarning("222222222222222222222");
+                }
+            }
+            return instance;
+        }
+    }
+
+    // Optional: Add methods and properties for your AdManager functionality
+
+    private void Awake()
+    {
+        
+        // Ensure this instance persists between scene changes
+        DontDestroyOnLoad(gameObject);
+       
+
+        // Ensure only one instance of AdManager exists
+        if (instance == null)
+        {
+            Debug
+                .LogWarning("11111111111111");
+            instance = this;
+            Debug
+                .LogWarning("333333333333333");
+            errorScreenPrefab = Resources.Load<GameObject>("RewaredAddErrorCancas");
+            canvasInstance = Instantiate(errorScreenPrefab);
+            DontDestroyOnLoad(canvasInstance);
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject); // Destroy duplicate instances
+        }
+    }
+
 
     private void Start()
     {
-    /*    ShowCoins();*/
+        /*    ShowCoins();*/
+
+
+        
+
         MobileAds.RaiseAdEventsOnUnityMainThread = true;
         MobileAds.Initialize(initStatus => {
 
@@ -45,8 +109,11 @@ public class AddMobsAds : MonoBehaviour
 
     #region Banner
 
+
     public void LoadBannerAd()
     {
+        
+        //canvasinstance.setactive(true);
         //create a banner
         CreateBannerView();
 
@@ -64,6 +131,8 @@ public class AddMobsAds : MonoBehaviour
 
         print("Loading banner Ad !!");
         bannerView.LoadAd(adRequest);//show the banner on the screen
+
+        
     }
     void CreateBannerView()
     {
