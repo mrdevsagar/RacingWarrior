@@ -1,26 +1,38 @@
+//TEST_APP_ID = "ca-app-pub-3940256099942544~3347511713"
+
+//REAL_APP_ID
+//"ca-app-pub-7191923771378224~6783351723"
+
+//! BEFOR CHANGING TO REAL ID'S FOR ANDROID SET THE "GOOGLE MOBILE ADS APP ID" TO ABOVE REAL_APP_ID ()
+// LOCATION (Assets/ Google Mobile Ads/ Settings)
+
+#define IS_USE_REAL_AD_IDS
+
+
 using UnityEngine;
 using GoogleMobileAds.Api;
-using TMPro;
 using UnityEngine.UI;
-
 
 
 public class AdMobsAds : MonoBehaviour
 {
-    
-    public TextMeshProUGUI totalCoinsTxt;
-
-    
-
-    private string appId = "ca-app-pub-3940256099942544~3347511713";// "ca-app-pub-7191923771378224~6783351723"; 
-
 
 #if UNITY_ANDROID
-    string bannerId = "ca-app-pub-3940256099942544/6300978111";  // "ca-app-pub-7191923771378224/9446040059"; 
-    string interId = "ca-app-pub-3940256099942544/1033173712"; //"ca-app-pub-7191923771378224/4353463651"; 
-    string rewardedId = "ca-app-pub-3940256099942544/5224354917"; // "ca-app-pub-7191923771378224/1567550036";
-    string nativeId = "ca-app-pub-3940256099942544/2247696110";//"ca-app-pub-7191923771378224/1727300312";
 
+
+#if IS_USE_REAL_AD_IDS
+            //Real ID's 
+            string bannerId = "ca-app-pub-7191923771378224/9446040059";
+            string interId = "ca-app-pub-7191923771378224/4353463651";
+            string rewardedId = "ca-app-pub-7191923771378224/1567550036";
+            string nativeId = "ca-app-pub-7191923771378224/1727300312";
+    #else
+            //Test ID's
+            string bannerId = "ca-app-pub-3940256099942544/6300978111";
+            string interId = "ca-app-pub-3940256099942544/1033173712";
+            string rewardedId = "ca-app-pub-3940256099942544/5224354917";
+            string nativeId = "ca-app-pub-3940256099942544/2247696110";
+    #endif
 #elif UNITY_IPHONE
     string bannerId = "ca-app-pub-3940256099942544/2934735716";
     string interId = "ca-app-pub-3940256099942544/4411468910";
@@ -56,8 +68,7 @@ public class AdMobsAds : MonoBehaviour
                 {
                     GameObject singleton = new GameObject("AdManager");
                     instance = singleton.AddComponent<AdMobsAds>();
-                    Debug
-                .LogWarning("222222222222222222222");
+                    
                 }
             }
             return instance;
@@ -76,11 +87,7 @@ public class AdMobsAds : MonoBehaviour
         // Ensure only one instance of AdManager exists
         if (instance == null)
         {
-            Debug
-                .LogWarning("11111111111111");
             instance = this;
-            Debug
-                .LogWarning("333333333333333");
             errorScreenPrefab = Resources.Load<GameObject>("RewaredAddErrorCancas");
             canvasInstance = Instantiate(errorScreenPrefab);
             DontDestroyOnLoad(canvasInstance);
@@ -94,11 +101,6 @@ public class AdMobsAds : MonoBehaviour
 
     private void Start()
     {
-        /*    ShowCoins();*/
-
-
-        
-
         MobileAds.RaiseAdEventsOnUnityMainThread = true;
         MobileAds.Initialize(initStatus => {
 
@@ -194,6 +196,17 @@ public class AdMobsAds : MonoBehaviour
             bannerView = null;
         }
     }
+
+    public void HideBannerAd()
+    {
+        bannerView?.Hide();
+    }
+
+    public void ShowBannerAd()
+    {
+        bannerView?.Show();
+    }
+
     #endregion
 
     #region Interstitial
@@ -310,7 +323,6 @@ public class AdMobsAds : MonoBehaviour
             {
                 print("Give reward to player !!");
 
-/*                GrantCoins(100);*/
 
             });
         }
@@ -393,22 +405,5 @@ public class AdMobsAds : MonoBehaviour
     }
     #endregion
 
-
-    #region extra 
-
-   /* void GrantCoins(int coins)
-    {
-        int crrCoins = PlayerPrefs.GetInt("totalCoins");
-        crrCoins += coins;
-        PlayerPrefs.SetInt("totalCoins", crrCoins);
-
-        ShowCoins();
-    }
-    void ShowCoins()
-    {
-        totalCoinsTxt.text = PlayerPrefs.GetInt("totalCoins").ToString();
-    }*/
-
-    #endregion
 
 }

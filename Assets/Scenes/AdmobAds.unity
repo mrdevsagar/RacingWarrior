@@ -2890,6 +2890,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _loadBannerButton: {fileID: 10721642}
+  hideButton: {fileID: 1660051493}
+  ShowButton: {fileID: 1010003489}
 --- !u!1 &2035370056
 GameObject:
   m_ObjectHideFlags: 0

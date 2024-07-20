@@ -19,6 +19,5 @@ public class SwitchScrene : MonoBehaviour
     public void OnMouseDown()
     {
         SceneManager.LoadSceneAsync(scene);
-        Debug.Log("Screne Switch Button Enterd "+ scene);
     }
 }
