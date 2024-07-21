@@ -6,51 +6,66 @@
 //! BEFOR CHANGING TO REAL ID'S FOR ANDROID SET THE "GOOGLE MOBILE ADS APP ID" TO ABOVE REAL_APP_ID ()
 // LOCATION (Assets/ Google Mobile Ads/ Settings)
 
+
+
 #define IS_USE_REAL_AD_IDS
 
 
 using UnityEngine;
 using GoogleMobileAds.Api;
 using UnityEngine.UI;
+using System.Collections;
 
-
+/// <summary>
+///   AdMobsAds for managing AdMob ads with singleton instance.
+/// </summary>
 public class AdMobsAds : MonoBehaviour
 {
 
 #if UNITY_ANDROID
 
-
-#if IS_USE_REAL_AD_IDS
-            //Real ID's 
-            string bannerId = "ca-app-pub-7191923771378224/9446040059";
-            string interId = "ca-app-pub-7191923771378224/4353463651";
-            string rewardedId = "ca-app-pub-7191923771378224/1567550036";
-            string nativeId = "ca-app-pub-7191923771378224/1727300312";
+    #if IS_USE_REAL_AD_IDS
+        //Real ID's 
+        readonly string BANNER_ID = "ca-app-pub-7191923771378224/9446040059";
+        readonly string INTERSTIAL_ID = "ca-app-pub-7191923771378224/4353463651";
+        readonly string REWARDED_ID = "ca-app-pub-7191923771378224/1567550036";
+        readonly string NATIVE_ID = "ca-app-pub-7191923771378224/1727300312";
     #else
-            //Test ID's
-            string bannerId = "ca-app-pub-3940256099942544/6300978111";
-            string interId = "ca-app-pub-3940256099942544/1033173712";
-            string rewardedId = "ca-app-pub-3940256099942544/5224354917";
-            string nativeId = "ca-app-pub-3940256099942544/2247696110";
+        //Test ID's
+        readonly  string BANNER_ID = "ca-app-pub-3940256099942544/6300978111";
+        readonly  string INTERSTIAL_ID = "ca-app-pub-3940256099942544/1033173712";
+        readonly string REWARDED_ID = "ca-app-pub-3940256099942544/5224354917";
+        readonly   string NATIVE_ID = "ca-app-pub-3940256099942544/2247696110";
     #endif
+
 #elif UNITY_IPHONE
-    string bannerId = "ca-app-pub-3940256099942544/2934735716";
-    string interId = "ca-app-pub-3940256099942544/4411468910";
-    string rewardedId = "ca-app-pub-3940256099942544/1712485313";
-    string nativeId = "ca-app-pub-3940256099942544/3986624511";
+
+    string BANNER_ID = "ca-app-pub-3940256099942544/2934735716";
+    string INTERSTIAL_ID = "ca-app-pub-3940256099942544/4411468910";
+    string REWARDED_ID = "ca-app-pub-3940256099942544/1712485313";
+    string NATIVE_ID = "ca-app-pub-3940256099942544/3986624511";
 
 #endif
 
-    BannerView bannerView;
-    InterstitialAd interstitialAd;
-    RewardedAd rewardedAd;
-    NativeAd nativeAd;
+    BannerView _bannerView;
+    InterstitialAd _interstitialAd;
+    RewardedAd _rewardedAd;
+    NativeAd _nativeAd;
 
     // Static reference to the instance
-    private static AdMobsAds instance;
+    private static AdMobsAds _instance;
 
-    private GameObject errorScreenPrefab;
-    public GameObject canvasInstance;
+    private GameObject _videoErrorCanvasPrefab;
+    private GameObject _videoErrorCanvas;
+
+    public GameObject VideoErrorCanvas { get => _videoErrorCanvas;private set => _videoErrorCanvas = value; }
+
+    
+    public bool IsLoadingInterstitialAd { get; private set; }
+
+    public bool IsLoadingRewardedAd { get; private set; }
+
+    #region SingletonInstance Code
 
     // Public property to access the instance globally
     public static AdMobsAds Instance
@@ -58,41 +73,43 @@ public class AdMobsAds : MonoBehaviour
         get
         {
             // Check if the instance is null (first time access or after scene change)
-            if (instance == null)
+            if (_instance == null)
             {
                 // Try to find an existing instance in the scene
-                instance = FindFirstObjectByType<AdMobsAds>();
+                _instance = FindFirstObjectByType<AdMobsAds>();
 
                 // If no instance exists, create a new GameObject with AdManager attached
-                if (instance == null)
+                if (_instance == null)
                 {
                     GameObject singleton = new GameObject("AdManager");
-                    instance = singleton.AddComponent<AdMobsAds>();
+                    _instance = singleton.AddComponent<AdMobsAds>();
                     
                 }
             }
-            return instance;
+            return _instance;
         }
     }
+
+    
 
     // Optional: Add methods and properties for your AdManager functionality
 
     private void Awake()
     {
         
-        // Ensure this instance persists between scene changes
+        // Ensure this instance persists between scene changes  
         DontDestroyOnLoad(gameObject);
        
 
         // Ensure only one instance of AdManager exists
-        if (instance == null)
+        if (_instance == null)
         {
-            instance = this;
-            errorScreenPrefab = Resources.Load<GameObject>("RewaredAddErrorCancas");
-            canvasInstance = Instantiate(errorScreenPrefab);
-            DontDestroyOnLoad(canvasInstance);
+            _instance = this;
+            _videoErrorCanvasPrefab = Resources.Load<GameObject>("RewaredAddErrorCancas");
+            VideoErrorCanvas = Instantiate(_videoErrorCanvasPrefab);
+            DontDestroyOnLoad(VideoErrorCanvas);
         }
-        else if (instance != this)
+        else if (_instance != this)
         {
             Destroy(gameObject); // Destroy duplicate instances
         }
@@ -104,18 +121,19 @@ public class AdMobsAds : MonoBehaviour
         MobileAds.RaiseAdEventsOnUnityMainThread = true;
         MobileAds.Initialize(initStatus => {
 
-            print("Ads Initialised !!");
+            print("Ads Initialized !!");
 
         });
     }
+    #endregion
 
-    #region Banner
+    #region Banner Ads
 
-
+    /// <summary>
+    /// Loads a new banner ad every time.
+    /// </summary>
     public void LoadBannerAd()
     {
-        
-        //canvasinstance.setactive(true);
         //create a banner
         CreateBannerView();
 
@@ -123,88 +141,87 @@ public class AdMobsAds : MonoBehaviour
         ListenToBannerEvents();
 
         //load the banner
-        if (bannerView == null)
-        {
-            CreateBannerView();
-        }
-
         var adRequest = new AdRequest();
         adRequest.Keywords.Add("unity-admob-sample");
 
         print("Loading banner Ad !!");
-        bannerView.LoadAd(adRequest);//show the banner on the screen
+        _bannerView.LoadAd(adRequest);//show the banner on the screen
 
         
     }
     void CreateBannerView()
     {
-
-        if (bannerView != null)
+        if (_bannerView != null)
         {
             DestroyBannerAd();
         }
-        bannerView = new BannerView(bannerId, AdSize.Banner, AdPosition.Top);
+        _bannerView = new BannerView(BANNER_ID, AdSize.Banner, AdPosition.Top);
     }
     void ListenToBannerEvents()
     {
-        bannerView.OnBannerAdLoaded += () =>
+        _bannerView.OnBannerAdLoaded += () =>
         {
             Debug.Log("Banner view loaded an ad with response : "
-                + bannerView.GetResponseInfo());
+                + _bannerView.GetResponseInfo());
         };
         // Raised when an ad fails to load into the banner view.
-        bannerView.OnBannerAdLoadFailed += (LoadAdError error) =>
+        _bannerView.OnBannerAdLoadFailed += (LoadAdError error) =>
         {
             Debug.LogError("Banner view failed to load an ad with error : "
                 + error);
         };
         // Raised when the ad is estimated to have earned money.
-        bannerView.OnAdPaid += (AdValue adValue) =>
+        _bannerView.OnAdPaid += (AdValue adValue) =>
         {
             Debug.Log("Banner view paid {0} {1}." +
                 adValue.Value +
                 adValue.CurrencyCode);
         };
         // Raised when an impression is recorded for an ad.
-        bannerView.OnAdImpressionRecorded += () =>
+        _bannerView.OnAdImpressionRecorded += () =>
         {
             Debug.Log("Banner view recorded an impression.");
         };
         // Raised when a click is recorded for an ad.
-        bannerView.OnAdClicked += () =>
+        _bannerView.OnAdClicked += () =>
         {
             Debug.Log("Banner view was clicked.");
         };
         // Raised when an ad opened full screen content.
-        bannerView.OnAdFullScreenContentOpened += () =>
+        _bannerView.OnAdFullScreenContentOpened += () =>
         {
             Debug.Log("Banner view full screen content opened.");
         };
         // Raised when the ad closed full screen content.
-        bannerView.OnAdFullScreenContentClosed += () =>
+        _bannerView.OnAdFullScreenContentClosed += () =>
         {
             Debug.Log("Banner view full screen content closed.");
         };
     }
     public void DestroyBannerAd()
     {
-
-        if (bannerView != null)
+        if (_bannerView != null)
         {
             print("Destroying banner Ad");
-            bannerView.Destroy();
-            bannerView = null;
+            _bannerView.Destroy();
+            _bannerView = null;
         }
     }
 
+    /// <summary>
+    /// Hides the Existing banner add.
+    /// </summary>
     public void HideBannerAd()
     {
-        bannerView?.Hide();
+        _bannerView?.Hide();
     }
 
+    /// <summary>
+    /// Shows the Existing banner add.
+    /// </summary>
     public void ShowBannerAd()
     {
-        bannerView?.Show();
+        _bannerView?.Show();
     }
 
     #endregion
@@ -213,43 +230,46 @@ public class AdMobsAds : MonoBehaviour
 
     public void LoadInterstitialAd()
     {
-
-        if (interstitialAd != null)
+        IsLoadingInterstitialAd = true;
+        if (_interstitialAd != null)
         {
-            interstitialAd.Destroy();
-            interstitialAd = null;
+            _interstitialAd.Destroy();
+            _interstitialAd = null;
         }
         var adRequest = new AdRequest();
         adRequest.Keywords.Add("unity-admob-sample");
 
-        InterstitialAd.Load(interId, adRequest, (InterstitialAd ad, LoadAdError error) =>
+        InterstitialAd.Load(INTERSTIAL_ID, adRequest, (InterstitialAd ad, LoadAdError error) =>
         {
             if (error != null || ad == null)
             {
                 print("Interstitial ad failed to load" + error);
+                IsLoadingInterstitialAd = false;
                 return;
             }
 
             print("Interstitial ad loaded !!" + ad.GetResponseInfo());
 
-            interstitialAd = ad;
-            InterstitialEvent(interstitialAd);
+            _interstitialAd = ad;
+            InterstitialEvent(_interstitialAd);
+            ShowInterstitialAd();
         });
 
     }
     public void ShowInterstitialAd()
     {
 
-        if (interstitialAd != null && interstitialAd.CanShowAd())
+        if (_interstitialAd != null && _interstitialAd.CanShowAd())
         {
-            interstitialAd.Show();
+            _interstitialAd.Show();
+            IsLoadingInterstitialAd = false;
         }
         else
         {
-            print("Intersititial ad not ready!!");
+            print("Interstitial ad not ready!!");
         }
     }
-    public void InterstitialEvent(InterstitialAd ad)
+    private void InterstitialEvent(InterstitialAd ad)
     {
         // Raised when the ad is estimated to have earned money.
         ad.OnAdPaid += (AdValue adValue) =>
@@ -292,34 +312,37 @@ public class AdMobsAds : MonoBehaviour
 
     public void LoadRewardedAd()
     {
-
-        if (rewardedAd != null)
+        IsLoadingRewardedAd = true;
+        _videoErrorCanvas.SetActive(false);
+        if (_rewardedAd != null)
         {
-            rewardedAd.Destroy();
-            rewardedAd = null;
+            _rewardedAd.Destroy();
+            _rewardedAd = null;
         }
         var adRequest = new AdRequest();
         adRequest.Keywords.Add("unity-admob-sample");
 
-        RewardedAd.Load(rewardedId, adRequest, (RewardedAd ad, LoadAdError error) =>
+        RewardedAd.Load(REWARDED_ID, adRequest, (RewardedAd ad, LoadAdError error) =>
         {
             if (error != null || ad == null)
             {
+                _videoErrorCanvas.SetActive(true);
                 print("Rewarded failed to load" + error);
                 return;
             }
 
             print("Rewarded ad loaded !!");
-            rewardedAd = ad;
-            RewardedAdEvents(rewardedAd);
+            _rewardedAd = ad;
+            RewardedAdEvents(_rewardedAd);
+            ShowRewardedAd();
         });
     }
     public void ShowRewardedAd()
     {
-
-        if (rewardedAd != null && rewardedAd.CanShowAd())
+        IsLoadingRewardedAd = false;
+        if (_rewardedAd != null && _rewardedAd.CanShowAd())
         {
-            rewardedAd.Show((Reward reward) =>
+            _rewardedAd.Show((Reward reward) =>
             {
                 print("Give reward to player !!");
 
@@ -378,7 +401,7 @@ public class AdMobsAds : MonoBehaviour
     public void RequestNativeAd()
     {
 
-        AdLoader adLoader = new AdLoader.Builder(nativeId).ForNativeAd().Build();
+        AdLoader adLoader = new AdLoader.Builder(NATIVE_ID).ForNativeAd().Build();
 
         adLoader.OnNativeAdLoaded += this.HandleNativeAdLoaded;
         adLoader.OnAdFailedToLoad += this.HandleNativeAdFailedToLoad;
@@ -389,9 +412,9 @@ public class AdMobsAds : MonoBehaviour
     private void HandleNativeAdLoaded(object sender, NativeAdEventArgs e)
     {
         print("Native ad loaded");
-        this.nativeAd = e.nativeAd;
+        this._nativeAd = e.nativeAd;
 
-        Texture2D iconTexture = this.nativeAd.GetIconTexture();
+        Texture2D iconTexture = this._nativeAd.GetIconTexture();
         Sprite sprite = Sprite.Create(iconTexture, new Rect(0, 0, iconTexture.width, iconTexture.height), Vector2.one * .5f);
 
         img.sprite = sprite;
@@ -406,4 +429,26 @@ public class AdMobsAds : MonoBehaviour
     #endregion
 
 
+    public void PausseGame()
+    {
+
+    }
+
+    public void PlayGame()
+    {
+
+    }
+
+    public IEnumerable LoadAds()
+    {
+        return null;
+    }
+
+    public void CancelAllVideoAdsRequest()
+    {
+        _rewardedAd = null;
+        _interstitialAd = null;
+    }
+
+    
 }
