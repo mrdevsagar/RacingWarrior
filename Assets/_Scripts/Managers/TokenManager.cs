@@ -1,11 +1,15 @@
 using System;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class TokenManager : MonoBehaviour
 {
+    public bool IsLogging = false;
     // Singleton instance
     private static TokenManager _instance;
+
+    private const float ripitTokenIncrimentRate = 3f;
 
     // Public accessor for singleton instance
     public static TokenManager Instance
@@ -32,8 +36,8 @@ public class TokenManager : MonoBehaviour
     private const string LAST_UPDATE_TIME_KEY = "LastUpdateTime";
 
     private int _tokens = 0;
-    private int _tokenIncrementRate = 1; // Tokens per second
-    private float _tokenIncrementInterval = 1.0f; // Interval in seconds for token incrementation
+    private readonly int _tokenIncrementRate = 1; // Tokens per second
+    private readonly float _tokenIncrementInterval = 1.0f; // Interval in seconds for token incrementation
 
     // Event to notify UI about token count changes
     public UnityAction<int> OnTokensChanged;
@@ -55,7 +59,8 @@ public class TokenManager : MonoBehaviour
     private void Start()
     {
         LoadTokens();
-        InvokeRepeating("IncrementTokens", 1.0f, 1.0f); // Start incrementing tokens every second
+        CancelInvoke(nameof(IncrementTokens));
+        InvokeRepeating(nameof(IncrementTokens), ripitTokenIncrimentRate, ripitTokenIncrimentRate); // Start incrementing tokens every second
     }
 
     public void Instantiate()
@@ -65,6 +70,7 @@ public class TokenManager : MonoBehaviour
 
     private void IncrementTokens()
     {
+        Log("Incrementing Token Count", "TokenManager");
         if (Tokens < 1000)
         {
 
@@ -77,6 +83,9 @@ public class TokenManager : MonoBehaviour
 
             /*// Update last update time
             SaveLastUpdateTime();*/
+        } else
+        {
+            CancelInvoke(nameof(IncrementTokens));
         }
     }
 
@@ -90,13 +99,14 @@ public class TokenManager : MonoBehaviour
         int increments = (int)(elapsedTime.TotalSeconds / _tokenIncrementInterval);
         Tokens = PlayerPrefs.GetInt(TOKEN_KEY, 0);
         // Increment tokens based on elapsed time
-        Tokens += increments * _tokenIncrementRate;
-        if (Tokens > 1000)
-        {
-            Tokens = 1000;
+        if(Tokens < 1000) {
+            Tokens += increments * _tokenIncrementRate;
+            if (Tokens > 1000)
+            {
+                Tokens = 1000;
+            }
         }
-       
-        
+
         OnTokensChanged?.Invoke(Tokens);
     }
 
@@ -128,6 +138,12 @@ public class TokenManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
+    public void AddToken(int  tokens)
+    {
+        Tokens += tokens;
+        OnTokensChanged?.Invoke(Tokens);
+    }
+
     // Function to spend tokens
     public bool SpendTokens(int amount)
     {
@@ -136,11 +152,22 @@ public class TokenManager : MonoBehaviour
             Tokens -= amount;
             SaveTokens();
             OnTokensChanged?.Invoke(Tokens);
+            CancelInvoke(nameof(IncrementTokens));
+            InvokeRepeating(nameof(IncrementTokens), ripitTokenIncrimentRate, ripitTokenIncrimentRate);
             return true; // Tokens successfully spent
         }
         else
         {
             return false; // Insufficient tokens to spend
         }
+    }
+
+    public void Log(object message,string callsName)
+    {
+        if (IsLogging)
+        {
+            Debug.Log(message + " : " + callsName);
+        }
+        
     }
 }

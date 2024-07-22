@@ -17,7 +17,20 @@ public class AdvertisemetCanvas : MonoBehaviour
 
     [SerializeField] Button _spendTokenButton;
 
+    [SerializeField] Button _addCoin;
+    [SerializeField] Button _spendCoin;
+
+    [SerializeField] Button _addDiamond;
+    [SerializeField] Button _spendDiamond;
+
+    [SerializeField] Button _addTokens;
+
+
     [SerializeField] TextMeshProUGUI  tokensText;
+
+    [SerializeField] TextMeshProUGUI coinText;
+
+    [SerializeField] TextMeshProUGUI diamondText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -30,10 +43,25 @@ public class AdvertisemetCanvas : MonoBehaviour
         _shownRewardedAdButton.onClick.AddListener(ShowRewardedAd);
         _spendTokenButton.onClick.AddListener(SpendToken);
 
+        _addCoin.onClick.AddListener(AddCoins);
+        _spendCoin.onClick.AddListener(SpendCoins);
+
+        _addDiamond.onClick.AddListener(AddDiamonds);
+        _spendDiamond.onClick.AddListener(SpenDiamonds);
+
+        _addTokens.onClick.AddListener(AddTokens);
+
         // Subscribe to the OnTokensChanged event
         TokenManager.Instance.OnTokensChanged += UpdateTokensDisplay;
+
+        GameManager.Instance.OnCoinsChanged += UpdateCoinDisplay;
+
+        GameManager.Instance.OnDiamondsChanged += UpdateDiamondDisplay;
+
         // Initial update of tokens display
         UpdateTokensDisplay(TokenManager.Instance.Tokens);
+        UpdateCoinDisplay(GameManager.Instance.GetCoins());
+        UpdateDiamondDisplay(GameManager.Instance.GetDiamonds());
     }
 
     private void OnDestroy()
@@ -55,6 +83,22 @@ public class AdvertisemetCanvas : MonoBehaviour
         if (tokensText != null)
         {
             tokensText.text = $"Tokens: {tokens}"; // Update tokens display
+        }
+    }
+
+    private void UpdateCoinDisplay(int coin)
+    {
+        if (coinText != null)
+        {
+            coinText.text = $"Coins: {coin}"; // Update coin display
+        }
+    }
+
+    private void UpdateDiamondDisplay(int diamond)
+    {
+        if (diamondText != null)
+        {
+            diamondText.text = $"Diamonds: {diamond}"; // Update diamond display
         }
     }
 
@@ -93,10 +137,35 @@ public class AdvertisemetCanvas : MonoBehaviour
         AdMobsAds.Instance.LoadRewardedAd();
     }
 
+    private void AddTokens()
+    {
+        TokenManager.Instance.AddToken(100);
+    }
     private void SpendToken()
     {
         TokenManager.Instance.SpendTokens(50);
     }
+
+    private void AddCoins()
+    {
+        GameManager.Instance.AddCoins(100);
+    }
+
+    private void SpendCoins()
+    {
+        GameManager.Instance.SpendCoins(20);
+    }
+
+    private void AddDiamonds()
+    {
+        GameManager.Instance.AddDiamonds(100);
+    }
+
+    private void SpenDiamonds()
+    {
+        GameManager.Instance.SpendDiamonds(20);
+    }
+
 
 
 }
