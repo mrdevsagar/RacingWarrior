@@ -1,3 +1,4 @@
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +14,10 @@ public class AdvertisemetCanvas : MonoBehaviour
     [SerializeField] Button _showntertialButton;
 
     [SerializeField] Button _shownRewardedAdButton;
+
+    [SerializeField] Button _spendTokenButton;
+
+    [SerializeField] TextMeshProUGUI  tokensText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,14 +28,34 @@ public class AdvertisemetCanvas : MonoBehaviour
         _laodIntertialButton.onClick.AddListener(LoadIntertialAd);
         _showntertialButton.onClick.AddListener(ShowIntertialAd);
         _shownRewardedAdButton.onClick.AddListener(ShowRewardedAd);
+        _spendTokenButton.onClick.AddListener(SpendToken);
+
+        // Subscribe to the OnTokensChanged event
+        TokenManager.Instance.OnTokensChanged += UpdateTokensDisplay;
+        // Initial update of tokens display
+        UpdateTokensDisplay(TokenManager.Instance.Tokens);
+    }
+
+    private void OnDestroy()
+    {
+        /*// UnSubscribe from the OnTokensChanged event
+        TokenManager.Instance.OnTokensChanged -= UpdateTokensDisplay;*/
     }
 
     // Update is called once per frame
     void Update()
     {
         
-            _shownRewardedAdButton.gameObject.SetActive(!AdMobsAds.Instance.IsLoadingRewardedAd);
-        
+        _shownRewardedAdButton.gameObject.SetActive(!AdMobsAds.Instance.IsLoadingRewardedAd);
+
+    }
+
+    private void UpdateTokensDisplay(int tokens)
+    {
+        if (tokensText != null)
+        {
+            tokensText.text = $"Tokens: {tokens}"; // Update tokens display
+        }
     }
 
     private void hideUnhideBanner()
@@ -43,7 +68,7 @@ public class AdvertisemetCanvas : MonoBehaviour
         AdMobsAds.Instance.ShowBannerAd();
     }
 
-
+   
 
     private void LoadBanner()
     {
@@ -68,7 +93,11 @@ public class AdvertisemetCanvas : MonoBehaviour
         AdMobsAds.Instance.LoadRewardedAd();
     }
 
+    private void SpendToken()
+    {
+        TokenManager.Instance.SpendTokens(50);
+    }
 
-    
+
 }
 
