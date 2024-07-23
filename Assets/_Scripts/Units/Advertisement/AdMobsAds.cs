@@ -19,7 +19,7 @@ using System.Collections;
 /// <summary>
 ///   AdMobsAds for managing AdMob ads with singleton instance.
 /// </summary>
-public class AdMobsAds : MonoBehaviour
+public class AdMobsAds : Singleton<AdMobsAds>
 {
 
 #if UNITY_ANDROID
@@ -52,9 +52,7 @@ public class AdMobsAds : MonoBehaviour
     RewardedAd _rewardedAd;
     NativeAd _nativeAd;
 
-    // Static reference to the instance
-    private static AdMobsAds _instance;
-
+   
     private GameObject _videoErrorCanvasPrefab;
     private GameObject _videoErrorCanvas;
 
@@ -67,52 +65,15 @@ public class AdMobsAds : MonoBehaviour
 
     #region SingletonInstance Code
 
-    // Public property to access the instance globally
-    public static AdMobsAds Instance
+   
+
+    protected override void Awake()
     {
-        get
-        {
-            // Check if the instance is null (first time access or after scene change)
-            if (_instance == null)
-            {
-                // Try to find an existing instance in the scene
-                _instance = FindFirstObjectByType<AdMobsAds>();
-
-                // If no instance exists, create a new GameObject with AdManager attached
-                if (_instance == null)
-                {
-                    GameObject singleton = new GameObject("AdManager");
-                    _instance = singleton.AddComponent<AdMobsAds>();
-                    
-                }
-            }
-            return _instance;
-        }
-    }
-
-    
-
-    // Optional: Add methods and properties for your AdManager functionality
-
-    private void Awake()
-    {
-        
-        // Ensure this instance persists between scene changes  
-        DontDestroyOnLoad(gameObject);
-       
-
-        // Ensure only one instance of AdManager exists
-        if (_instance == null)
-        {
-            _instance = this;
-            _videoErrorCanvasPrefab = Resources.Load<GameObject>("RewaredAddErrorCancas");
-            VideoErrorCanvas = Instantiate(_videoErrorCanvasPrefab);
-            DontDestroyOnLoad(VideoErrorCanvas);
-        }
-        else if (_instance != this)
-        {
-            Destroy(gameObject); // Destroy duplicate instances
-        }
+        base.Awake();
+        _videoErrorCanvasPrefab = Resources.Load<GameObject>("RewaredAddErrorCancas");
+        VideoErrorCanvas = Instantiate(_videoErrorCanvasPrefab);
+        // Set the canvas as a child of the GameManager GameObject
+        VideoErrorCanvas.transform.SetParent(this.transform);
     }
 
 

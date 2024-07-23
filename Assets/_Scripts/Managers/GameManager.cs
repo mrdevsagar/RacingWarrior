@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
-    // Singleton instance
+    /*// Singleton instance
     private static GameManager _instance;
 
     // Public accessor for singleton instance
@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
             }
             return _instance;
         }
-    }
+    }*/
 
     // Game variables
     private int coins = 0;
@@ -32,7 +32,14 @@ public class GameManager : MonoBehaviour
     public UnityAction<int> OnCoinsChanged;
     public UnityAction<int> OnDiamondsChanged;
 
-    private void Awake()
+    protected override void Awake()
+    {
+        base.Awake();
+        // Your initialization code here
+
+        LoadGameData();
+    }
+    /*private void Awake()
     {
         // Singleton instance setup
         if (_instance == null)
@@ -47,7 +54,7 @@ public class GameManager : MonoBehaviour
 
         // Load saved values
         LoadGameData();
-    }
+    }*/
 
     // Getters for coins and diamonds
     public int GetCoins()

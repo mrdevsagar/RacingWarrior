@@ -3,32 +3,13 @@ using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class TokenManager : MonoBehaviour
+public class TokenManager : Singleton<TokenManager>
 {
     public bool IsLogging = false;
-    // Singleton instance
-    private static TokenManager _instance;
+ /*   // Singleton instance
+    private static TokenManager _instance;*/
 
     private const float ripitTokenIncrimentRate = 3f;
-
-    // Public accessor for singleton instance
-    public static TokenManager Instance
-    {
-        get
-        {
-            // If instance doesn't exist, find it in the scene or create a new one
-            if (_instance == null)
-            {
-                _instance = FindFirstObjectByType<TokenManager>();
-                if (_instance == null)
-                {
-                    GameObject singletonObject = new GameObject("TokenManager");
-                    _instance = singletonObject.AddComponent<TokenManager>();
-                }
-            }
-            return _instance;
-        }
-    }
 
     public int Tokens { get => _tokens;private set => _tokens = value; }
 
@@ -42,18 +23,11 @@ public class TokenManager : MonoBehaviour
     // Event to notify UI about token count changes
     public UnityAction<int> OnTokensChanged;
 
-    private void Awake()
+    protected override void Awake()
     {
-        // Ensure only one instance of the singleton exists
-        if (_instance == null)
-        {
-            _instance = this;
-            DontDestroyOnLoad(gameObject); // Preserve the GameObject when loading new scenes
-        }
-        else
-        {
-            Destroy(gameObject); // Destroy duplicate instances
-        }
+        base.Awake();
+        // Your initialization code here
+
     }
 
     private void Start()
