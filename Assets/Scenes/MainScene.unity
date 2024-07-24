@@ -430,7 +430,6 @@ GameObject:
   - component: {fileID: 104081521}
   - component: {fileID: 104081520}
   - component: {fileID: 104081519}
-  - component: {fileID: 104081518}
   m_Layer: 5
   m_Name: Button (7)
   m_TagString: Untagged
@@ -458,19 +457,6 @@ RectTransform:
   m_AnchoredPosition: {x: 195, y: -244}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &104081518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 104081516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9ebd8f75fc7c1c418bb81e80a77ac2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scene: AdmobAds
 --- !u!114 &104081519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -514,19 +500,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 104081520}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 104081518}
-        m_TargetAssemblyTypeName: SwitchScrene, Assembly-CSharp
-        m_MethodName: OnMouseDown
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &104081520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1400,6 +1374,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 441193203}
   m_CullTransparentMesh: 1
+--- !u!1 &443496632
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 443496633}
+  - component: {fileID: 443496634}
+  m_Layer: 0
+  m_Name: SceneMAnager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &443496633
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443496632}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1540180702}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &443496634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443496632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f66ae2bf98b4b8045a22592a53fa9564, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAGameView: 1
 --- !u!1 &472136962
 GameObject:
   m_ObjectHideFlags: 0
@@ -2421,6 +2440,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81d775a184593c449833f3a7e4658c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  switchScreenName: AdmobAds
+  isGameView: 0
   _loadBannerButton: {fileID: 1592055426}
   _hideButton: {fileID: 1331913813}
   _showButton: {fileID: 2110301568}
@@ -2433,6 +2454,7 @@ MonoBehaviour:
   _addDiamond: {fileID: 309383406}
   _spendDiamond: {fileID: 1870031477}
   _addTokens: {fileID: 1367929160}
+  _switchScreenButton: {fileID: 104081519}
   tokensText: {fileID: 1739569947}
   coinText: {fileID: 331843143}
   diamondText: {fileID: 1153018132}
@@ -2499,56 +2521,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1 &1265232760
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1265232762}
-  - component: {fileID: 1265232761}
-  m_Layer: 0
-  m_Name: AdManagerAi
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1265232761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1265232760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d51b9d51d595e84f9388e20f346840d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  adInterval: 5
-  isInGameView: 0
-  shouldShowAd: 0
-  adTimer: 0
-  matchCount: 0
-  matchesBeforeAd: 4
---- !u!4 &1265232762
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1265232760}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1158.1862, y: 272.99542, z: -0.8922171}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1273364253
 GameObject:
   m_ObjectHideFlags: 0
@@ -3441,7 +3413,8 @@ Transform:
   m_LocalPosition: {x: -11.140699, y: 2.47151, z: -0.0073011834}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 443496633}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1553230300
@@ -4866,7 +4839,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ad Test Screen
+  m_text: 'Main Scene
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5366,4 +5341,3 @@ SceneRoots:
   - {fileID: 835430226}
   - {fileID: 295266478}
   - {fileID: 1553230303}
-  - {fileID: 1265232762}

@@ -30,13 +30,13 @@ public class AdMobsAds : Singleton<AdMobsAds>
         readonly string INTERSTIAL_ID = "ca-app-pub-7191923771378224/4353463651";
         readonly string REWARDED_ID = "ca-app-pub-7191923771378224/1567550036";
         readonly string NATIVE_ID = "ca-app-pub-7191923771378224/1727300312";
-    #else
+#else
         //Test ID's
         readonly  string BANNER_ID = "ca-app-pub-3940256099942544/6300978111";
         readonly  string INTERSTIAL_ID = "ca-app-pub-3940256099942544/1033173712";
         readonly string REWARDED_ID = "ca-app-pub-3940256099942544/5224354917";
         readonly   string NATIVE_ID = "ca-app-pub-3940256099942544/2247696110";
-    #endif
+#endif
 
 #elif UNITY_IPHONE
 
@@ -47,6 +47,7 @@ public class AdMobsAds : Singleton<AdMobsAds>
 
 #endif
 
+    [SerializeField] bool isAdverisementEnabaled =  true;
     BannerView _bannerView;
     InterstitialAd _interstitialAd;
     RewardedAd _rewardedAd;
@@ -74,6 +75,7 @@ public class AdMobsAds : Singleton<AdMobsAds>
         VideoErrorCanvas = Instantiate(_videoErrorCanvasPrefab);
         // Set the canvas as a child of the GameManager GameObject
         VideoErrorCanvas.transform.SetParent(this.transform);
+
     }
 
 
@@ -95,6 +97,11 @@ public class AdMobsAds : Singleton<AdMobsAds>
     /// </summary>
     public void LoadBannerAd()
     {
+        ToastMessage.ShowToast("Load BannerAdd");
+        if (!isAdverisementEnabaled)
+        {
+            return;
+        }
         //create a banner
         CreateBannerView();
 
@@ -124,12 +131,17 @@ public class AdMobsAds : Singleton<AdMobsAds>
         {
             Debug.Log("Banner view loaded an ad with response : "
                 + _bannerView.GetResponseInfo());
+            if(!AdManagerAI.Instance.ShouldShowBannerAd)
+            {
+                HideBannerAd();
+            }
         };
         // Raised when an ad fails to load into the banner view.
         _bannerView.OnBannerAdLoadFailed += (LoadAdError error) =>
         {
             Debug.LogError("Banner view failed to load an ad with error : "
                 + error);
+            ToastMessage.ShowToast(error.GetMessage());
         };
         // Raised when the ad is estimated to have earned money.
         _bannerView.OnAdPaid += (AdValue adValue) =>
@@ -182,7 +194,13 @@ public class AdMobsAds : Singleton<AdMobsAds>
     /// </summary>
     public void ShowBannerAd()
     {
-        _bannerView?.Show();
+       
+        if(_bannerView == null) {
+            LoadBannerAd();
+        } else
+        {
+            _bannerView?.Show();
+        }
     }
 
     #endregion
@@ -191,6 +209,11 @@ public class AdMobsAds : Singleton<AdMobsAds>
 
     public void LoadInterstitialAd()
     {
+        ToastMessage.ShowToast("Started Loading interstitial Add");
+        if (!isAdverisementEnabaled)
+        {
+            return;
+        }
         IsLoadingInterstitialAd = true;
         if (_interstitialAd != null)
         {
@@ -213,13 +236,33 @@ public class AdMobsAds : Singleton<AdMobsAds>
 
             _interstitialAd = ad;
             InterstitialEvent(_interstitialAd);
-            ShowInterstitialAd();
+            if(!AdManagerAI.Instance.IsInGameView)
+            {
+                ShowInterstitialAd();
+            } else
+            {
+                AdManagerAI.Instance.ShouldShowInterstitialAd = true;
+            }
         });
+        
+    }
 
+    public void ShowOrLoadInterstitialAd()
+    {
+        if (_interstitialAd != null && _interstitialAd.CanShowAd())
+        {
+            ShowInterstitialAd();
+        } else
+        {
+            LoadInterstitialAd();
+        }
     }
     public void ShowInterstitialAd()
     {
-
+        if (!isAdverisementEnabaled)
+        {
+            return;
+        }
         if (_interstitialAd != null && _interstitialAd.CanShowAd())
         {
             _interstitialAd.Show();
@@ -359,6 +402,7 @@ public class AdMobsAds : Singleton<AdMobsAds>
 
     public Image img;
 
+    [System.Obsolete]
     public void RequestNativeAd()
     {
 
@@ -382,6 +426,7 @@ public class AdMobsAds : Singleton<AdMobsAds>
 
     }
 
+    [System.Obsolete]
     private void HandleNativeAdFailedToLoad(object sender, AdFailedToLoadEventArgs e)
     {
         print("Native ad failed to load" + e.ToString());

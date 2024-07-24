@@ -1,32 +1,14 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
-    /*// Singleton instance
-    private static GameManager _instance;
-
-    // Public accessor for singleton instance
-    public static GameManager Instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                _instance = FindFirstObjectByType<GameManager>();
-                if (_instance == null)
-                {
-                    GameObject singletonObject = new GameObject("GameManager");
-                    _instance = singletonObject.AddComponent<GameManager>();
-                }
-            }
-            return _instance;
-        }
-    }*/
 
     // Game variables
     private int coins = 0;
     private int diamonds = 0;
+    
 
     // Events for UI or other systems to subscribe to changes
     public UnityAction<int> OnCoinsChanged;
@@ -39,23 +21,8 @@ public class GameManager : Singleton<GameManager>
 
         LoadGameData();
     }
-    /*private void Awake()
-    {
-        // Singleton instance setup
-        if (_instance == null)
-        {
-            _instance = this;
-            DontDestroyOnLoad(gameObject); // Preserve the GameObject when loading new scenes
-        }
-        else
-        {
-            Destroy(gameObject); // Destroy duplicate instances
-        }
 
-        // Load saved values
-        LoadGameData();
-    }*/
-
+    #region CoinAndDiamonds
     // Getters for coins and diamonds
     public int GetCoins()
     {
@@ -125,5 +92,19 @@ public class GameManager : Singleton<GameManager>
     {
         coins = PlayerPrefs.GetInt("Coins", 0);
         diamonds = PlayerPrefs.GetInt("Diamonds", 0);
+    }
+    #endregion
+
+
+    public void SwitchScene(string sceneName,bool isGameView)
+    {
+        SceneManager.LoadSceneAsync(sceneName);
+        /*if(isGameView)
+        {
+            AdManagerAI.Instance.EnterGameView();
+        } else
+        {
+            AdManagerAI.Instance.ExitGameView();
+        }*/
     }
 }

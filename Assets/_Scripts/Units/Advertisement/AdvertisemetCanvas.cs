@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class AdvertisemetCanvas : MonoBehaviour
 {
+    [SerializeField] string switchScreenName;
+    [SerializeField] bool isGameView;
+
     [SerializeField] Button _loadBannerButton;
     [SerializeField] Button _hideButton;
     [SerializeField] Button _showButton;
@@ -25,6 +28,7 @@ public class AdvertisemetCanvas : MonoBehaviour
 
     [SerializeField] Button _addTokens;
 
+    [SerializeField] Button _switchScreenButton;
 
     [SerializeField] TextMeshProUGUI  tokensText;
 
@@ -50,6 +54,9 @@ public class AdvertisemetCanvas : MonoBehaviour
         _spendDiamond.onClick.AddListener(SpenDiamonds);
 
         _addTokens.onClick.AddListener(AddTokens);
+
+        _switchScreenButton.onClick.AddListener(SwitchScene);
+
 
         // Subscribe to the OnTokensChanged event
         TokenManager.Instance.OnTokensChanged += UpdateTokensDisplay;
@@ -168,7 +175,10 @@ public class AdvertisemetCanvas : MonoBehaviour
         AdManagerAI.Instance.ExitGameView();
     }
 
-
+    public void SwitchScene()
+    {
+        GameManager.Instance.SwitchScene(switchScreenName,isGameView);
+    }
 
 }
 

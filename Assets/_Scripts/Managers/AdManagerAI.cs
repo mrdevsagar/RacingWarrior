@@ -5,13 +5,18 @@ public class AdManagerAI
 
     : Singleton<AdManagerAI>
 {
- 
-    public float adInterval = 60f * 3f; // Time interval to show ads in seconds
-    public bool isInGameView = false;
-    public bool shouldShowAd = false;
+    public bool IsInGameView = false;
+
+    private  bool _shouldShowBannerAd = false;
+
+    public float adInterval = 5 * 60f; // Time interval to show ads in seconds
+    
+    public bool ShouldShowInterstitialAd = false;
     public float adTimer;
     public int matchCount = 0;
     public int matchesBeforeAd = 4; // Number of matches before showing an ad
+
+    public bool ShouldShowBannerAd { get => _shouldShowBannerAd; private set =>  _shouldShowBannerAd = value; }
 
     protected override void Awake()
     {
@@ -26,7 +31,7 @@ public class AdManagerAI
 
     private void Update()
     {
-        if (isInGameView)
+        if (IsInGameView)
         {
             // If in-game, decrement the ad timer but do not reset it
             adTimer -= Time.deltaTime;
@@ -34,7 +39,7 @@ public class AdManagerAI
             if (adTimer <= 0)
             {
                 // Set the flag to show ad after exiting game view
-                shouldShowAd = true;
+                ShouldShowInterstitialAd = true;
             }
         }
         else
@@ -42,43 +47,62 @@ public class AdManagerAI
             // If not in-game, continue decrementing the ad timer
             adTimer -= Time.deltaTime;
 
-            if (adTimer <= 0 && !shouldShowAd)
+            if (adTimer <= 0 && !ShouldShowInterstitialAd)
             {
-                ShowVideoAd();
+                ShowInterstitialVideoAd();
                 ResetAdTimerAndMatchCount();
             }
 
             // Check if the player has played enough matches within the ad interval
-            if (matchCount >= matchesBeforeAd && !shouldShowAd)
+            if (matchCount >= matchesBeforeAd && !ShouldShowInterstitialAd)
             {
-                ShowVideoAd();
+                ShowInterstitialVideoAd();
                 ResetAdTimerAndMatchCount();
             }
         }
     }
 
+
     public void EnterGameView()
     {
-        isInGameView = true;
+        IsInGameView = true;
         matchCount++; // Increase the match count when entering game view
         // Additional logic when entering game view
+        HideBannerAd();
     }
 
+    #region Banner Ad AI
+    public void ShowBannerAd()
+    {
+        ShouldShowBannerAd = true;
+        AdMobsAds.Instance.ShowBannerAd();
+    }
+
+    public void HideBannerAd()
+    {
+        ShouldShowBannerAd = false;
+        AdMobsAds.Instance.HideBannerAd();
+    }
+
+    #endregion
+
+    #region InterStial Ad AI
 
     public void ExitGameView()
     {
-        isInGameView = false;
+        IsInGameView = false;
 
-        if (shouldShowAd)
+        if (ShouldShowInterstitialAd)
         {
-            ShowVideoAd();
-            shouldShowAd = false;
+            ShowInterstitialVideoAd();
+            ShouldShowInterstitialAd = false;
             ResetAdTimerAndMatchCount();
         }
     }
 
-    private void ShowVideoAd()
+    private void ShowInterstitialVideoAd()
     {
+        AdMobsAds.Instance.ShowOrLoadInterstitialAd();
         Debug.Log("Showing video ad...");
         // Replace with actual ad showing logic
         // AdProvider.ShowVideoAd();
@@ -89,4 +113,9 @@ public class AdManagerAI
         adTimer = adInterval; // Reset the ad timer
         matchCount = 0; // Reset the match count
     }
+
+    #endregion
+
+
+
 }
