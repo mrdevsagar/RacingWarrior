@@ -96,15 +96,8 @@ public class GameManager : Singleton<GameManager>
     #endregion
 
 
-    public void SwitchScene(string sceneName,bool isGameView)
+    public void SwitchScene(string sceneName)
     {
         SceneManager.LoadSceneAsync(sceneName);
-        /*if(isGameView)
-        {
-            AdManagerAI.Instance.EnterGameView();
-        } else
-        {
-            AdManagerAI.Instance.ExitGameView();
-        }*/
     }
 }

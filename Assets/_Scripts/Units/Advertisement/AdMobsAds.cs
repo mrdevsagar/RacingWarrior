@@ -14,7 +14,7 @@
 using UnityEngine;
 using GoogleMobileAds.Api;
 using UnityEngine.UI;
-using System.Collections;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 ///   AdMobsAds for managing AdMob ads with singleton instance.
@@ -63,9 +63,13 @@ public class AdMobsAds : Singleton<AdMobsAds>
     
     public bool IsLoadingInterstitialAd { get; private set; }
 
+    
+    public float interstitialAdTimer;
+    private float interstitialAdInterval = 20f;
     public bool IsLoadingRewardedAd { get; private set; }
 
     private bool _isBannerLoaded = false;
+
 
 
     #region SingletonInstance Code
@@ -91,7 +95,15 @@ public class AdMobsAds : Singleton<AdMobsAds>
             print("Ads Initialized !!");
 
         });
+        LoadInterstitialAd();
+        interstitialAdTimer = interstitialAdInterval; 
     }
+
+    private void Update()
+    {
+        interstitialAdTimer -= Time.deltaTime;
+    }
+
     #endregion
 
     #region Banner Ads
@@ -213,13 +225,16 @@ public class AdMobsAds : Singleton<AdMobsAds>
 
     #region Interstitial
 
-    private void LoadInterstitialAd()
+    public void LoadInterstitialAd()
     {
+        // My Implementation start
         if (!isAdverisementEnabaled)
         {
             return;
         }
         IsLoadingInterstitialAd = true;
+        // My Implementation end
+
         if (_interstitialAd != null)
         {
             _interstitialAd.Destroy();
@@ -241,28 +256,11 @@ public class AdMobsAds : Singleton<AdMobsAds>
 
             _interstitialAd = ad;
             InterstitialEvent(_interstitialAd);
-            if(!AdManagerAI.Instance.IsInGameView)
-            {
-                ShowInterstitialAd();
-            } else
-            {
-                AdManagerAI.Instance.ShouldShowInterstitialAd = true;
-            }
         });
         
     }
 
-    public void ShowOrLoadInterstitialAd()
-    {
-        if (_interstitialAd != null && _interstitialAd.CanShowAd())
-        {
-            ShowInterstitialAd();
-        } else
-        {
-            LoadInterstitialAd();
-        }
-    }
-    private void ShowInterstitialAd()
+    public void ShowInterstitialAd()
     {
         if (!isAdverisementEnabaled)
         {
@@ -278,11 +276,124 @@ public class AdMobsAds : Singleton<AdMobsAds>
             print("Interstitial ad not ready!!");
         }
     }
+
+    public void SwitchSceneByShowingAd(string screenName)
+    {
+        ToastMessage.ShowToast("interstitialAdTimer" + interstitialAdTimer);
+        if (interstitialAdTimer <= 0)
+        {
+           
+            if (_interstitialAd != null && _interstitialAd.CanShowAd())
+            {
+                Debug.Log("called................................................."+ screenName);
+                _interstitialAd.Show();
+                IsLoadingInterstitialAd = false;
+      
+                // Raised when the ad is estimated to have earned money.
+                _interstitialAd.OnAdPaid += (AdValue adValue) =>
+                {
+                    ResetInterstitialAdRepitTimer();
+                };
+                _interstitialAd.OnAdFullScreenContentClosed += () =>
+                {
+                    Debug.Log("Interstitial ad full screen content closed.");
+                    SwitchScene(screenName);
+                    LoadInterstitialAd();
+                    ResetInterstitialAdRepitTimer();
+
+                };
+                // Raised when the ad failed to open full screen content.
+                _interstitialAd.OnAdFullScreenContentFailed += (AdError error) =>
+                {
+                    SwitchScene(screenName);
+                    Debug.LogError("Interstitial ad failed to open full screen content " +
+                                   "with error : " + error);
+                };
+            }
+            else
+            {
+                // My Implementation start
+                if (!isAdverisementEnabaled)
+                {
+                    return;
+                }
+                IsLoadingInterstitialAd = true;
+                // My Implementation end
+
+                if (_interstitialAd != null)
+                {
+                    _interstitialAd.Destroy();
+                    _interstitialAd = null;
+                }
+                var adRequest = new AdRequest();
+                adRequest.Keywords.Add("unity-admob-sample");
+
+                InterstitialAd.Load(INTERSTIAL_ID, adRequest, (InterstitialAd ad, LoadAdError error) =>
+                {
+                    if (error != null || ad == null)
+                    {
+                        print("Interstitial ad failed to load" + error);
+                        IsLoadingInterstitialAd = false;
+                        SwitchScene(screenName);
+                        return;
+                    }
+
+                    print("Interstitial ad loaded !!" + ad.GetResponseInfo());
+
+                    _interstitialAd = ad;
+
+                    if (_interstitialAd != null && _interstitialAd.CanShowAd())
+                    {
+                        Debug.Log("called................................................." + screenName);
+                        _interstitialAd.Show();
+                        IsLoadingInterstitialAd = false;
+
+                        // Raised when the ad is estimated to have earned money.
+                        _interstitialAd.OnAdPaid += (AdValue adValue) =>
+                        {
+                            ResetInterstitialAdRepitTimer();
+                        };
+                        _interstitialAd.OnAdFullScreenContentClosed += () =>
+                        {
+                            Debug.Log("Interstitial ad full screen content closed.");
+                            SwitchScene(screenName);
+                            LoadInterstitialAd();
+                            ResetInterstitialAdRepitTimer();
+
+                        };
+                        // Raised when the ad failed to open full screen content.
+                        _interstitialAd.OnAdFullScreenContentFailed += (AdError error) =>
+                        {
+                            SwitchScene(screenName);
+                            Debug.LogError("Interstitial ad failed to open full screen content " +
+                                           "with error : " + error);
+                        };
+                    }
+                    else
+                    {
+                        SwitchScene(screenName);
+                    }
+                });
+            }
+        }
+        else
+        {
+            SwitchScene(screenName);
+        }
+       
+    }
+
+    private void SwitchScene(string screenName)
+    {
+        SceneManager.LoadSceneAsync(screenName);
+    }
+
     private void InterstitialEvent(InterstitialAd ad)
     {
         // Raised when the ad is estimated to have earned money.
         ad.OnAdPaid += (AdValue adValue) =>
         {
+            ResetInterstitialAdRepitTimer();
             Debug.Log("Interstitial ad paid {0} {1}." +
                 adValue.Value +
                 adValue.CurrencyCode);
@@ -306,6 +417,7 @@ public class AdMobsAds : Singleton<AdMobsAds>
         ad.OnAdFullScreenContentClosed += () =>
         {
             Debug.Log("Interstitial ad full screen content closed.");
+            LoadInterstitialAd();
         };
         // Raised when the ad failed to open full screen content.
         ad.OnAdFullScreenContentFailed += (AdError error) =>
@@ -315,6 +427,10 @@ public class AdMobsAds : Singleton<AdMobsAds>
         };
     }
 
+    private void ResetInterstitialAdRepitTimer()
+    {
+        interstitialAdTimer = interstitialAdInterval;
+    }
     #endregion
 
     #region Rewarded

@@ -83,6 +83,8 @@ public class AdvertisemetCanvas : MonoBehaviour
         
         _shownRewardedAdButton.gameObject.SetActive(!AdMobsAds.Instance.IsLoadingRewardedAd);
 
+     /*   _switchScreenButton.gameObject.SetActive(!AdMobsAds.Instance.IsLoadingInterstitialAd);*/
+
     }
 
     private void UpdateTokensDisplay(int tokens)
@@ -131,12 +133,12 @@ public class AdvertisemetCanvas : MonoBehaviour
 
     private void LoadIntertialAd()
     {
-        AdMobsAds.Instance.ShowOrLoadInterstitialAd();
+        AdMobsAds.Instance.LoadInterstitialAd();
     }
 
     private void ShowIntertialAd()
     {
-        AdMobsAds.Instance.ShowOrLoadInterstitialAd();
+        AdMobsAds.Instance.ShowInterstitialAd();
     }
 
     private void ShowRewardedAd()
@@ -175,9 +177,9 @@ public class AdvertisemetCanvas : MonoBehaviour
         AdManagerAI.Instance.ExitGameView();
     }
 
-    public void SwitchScene()
+    public  void SwitchScene()
     {
-        GameManager.Instance.SwitchScene(switchScreenName,isGameView);
+        AdMobsAds.Instance.SwitchSceneByShowingAd(switchScreenName);
     }
 
 }
