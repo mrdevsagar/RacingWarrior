@@ -59,14 +59,18 @@ public class AdMobsAds : Singleton<AdMobsAds>
 
     public GameObject VideoErrorCanvas { get => _videoErrorCanvas;private set => _videoErrorCanvas = value; }
 
+
     
     public bool IsLoadingInterstitialAd { get; private set; }
 
     public bool IsLoadingRewardedAd { get; private set; }
 
+    private bool _isBannerLoaded = false;
+
+
     #region SingletonInstance Code
 
-   
+
 
     protected override void Awake()
     {
@@ -95,9 +99,9 @@ public class AdMobsAds : Singleton<AdMobsAds>
     /// <summary>
     /// Loads a new banner ad every time.
     /// </summary>
-    public void LoadBannerAd()
+    private void LoadBannerAd()
     {
-        ToastMessage.ShowToast("Load BannerAdd");
+        _isBannerLoaded = false;
         if (!isAdverisementEnabaled)
         {
             return;
@@ -129,6 +133,7 @@ public class AdMobsAds : Singleton<AdMobsAds>
     {
         _bannerView.OnBannerAdLoaded += () =>
         {
+            _isBannerLoaded = true;
             Debug.Log("Banner view loaded an ad with response : "
                 + _bannerView.GetResponseInfo());
             if(!AdManagerAI.Instance.ShouldShowBannerAd)
@@ -139,9 +144,10 @@ public class AdMobsAds : Singleton<AdMobsAds>
         // Raised when an ad fails to load into the banner view.
         _bannerView.OnBannerAdLoadFailed += (LoadAdError error) =>
         {
+            _isBannerLoaded = false;
             Debug.LogError("Banner view failed to load an ad with error : "
                 + error);
-            ToastMessage.ShowToast(error.GetMessage());
+          
         };
         // Raised when the ad is estimated to have earned money.
         _bannerView.OnAdPaid += (AdValue adValue) =>
@@ -171,7 +177,7 @@ public class AdMobsAds : Singleton<AdMobsAds>
             Debug.Log("Banner view full screen content closed.");
         };
     }
-    public void DestroyBannerAd()
+    private void DestroyBannerAd()
     {
         if (_bannerView != null)
         {
@@ -194,8 +200,8 @@ public class AdMobsAds : Singleton<AdMobsAds>
     /// </summary>
     public void ShowBannerAd()
     {
-       
-        if(_bannerView == null) {
+      
+        if(!_isBannerLoaded) {
             LoadBannerAd();
         } else
         {
@@ -207,9 +213,8 @@ public class AdMobsAds : Singleton<AdMobsAds>
 
     #region Interstitial
 
-    public void LoadInterstitialAd()
+    private void LoadInterstitialAd()
     {
-        ToastMessage.ShowToast("Started Loading interstitial Add");
         if (!isAdverisementEnabaled)
         {
             return;
@@ -257,7 +262,7 @@ public class AdMobsAds : Singleton<AdMobsAds>
             LoadInterstitialAd();
         }
     }
-    public void ShowInterstitialAd()
+    private void ShowInterstitialAd()
     {
         if (!isAdverisementEnabaled)
         {
@@ -314,10 +319,10 @@ public class AdMobsAds : Singleton<AdMobsAds>
 
     #region Rewarded
 
-    public void LoadRewardedAd()
+    private void LoadRewardedAd()
     {
         IsLoadingRewardedAd = true;
-        _videoErrorCanvas.SetActive(false);
+       /* _videoErrorCanvas.SetActive(false);*/
         if (_rewardedAd != null)
         {
             _rewardedAd.Destroy();
@@ -328,9 +333,10 @@ public class AdMobsAds : Singleton<AdMobsAds>
 
         RewardedAd.Load(REWARDED_ID, adRequest, (RewardedAd ad, LoadAdError error) =>
         {
+            IsLoadingRewardedAd = false;
             if (error != null || ad == null)
             {
-                _videoErrorCanvas.SetActive(true);
+                /*_videoErrorCanvas.SetActive(true);*/
                 print("Rewarded failed to load" + error);
                 return;
             }
@@ -338,12 +344,16 @@ public class AdMobsAds : Singleton<AdMobsAds>
             print("Rewarded ad loaded !!");
             _rewardedAd = ad;
             RewardedAdEvents(_rewardedAd);
-            ShowRewardedAd();
+            ToastMessage.ShowToast($"Loaded Rewarded Ad {AdManagerAI.Instance.IsRewardedAdCanceled}");
+            if(!AdManagerAI.Instance.IsRewardedAdCanceled)
+            {
+                ShowRewardedAd();
+            }
+            
         });
     }
-    public void ShowRewardedAd()
+    private void ShowRewardedAd()
     {
-        IsLoadingRewardedAd = false;
         if (_rewardedAd != null && _rewardedAd.CanShowAd())
         {
             _rewardedAd.Show((Reward reward) =>
@@ -358,6 +368,17 @@ public class AdMobsAds : Singleton<AdMobsAds>
             print("Rewarded ad not ready");
         }
     }
+
+    public void ShowOrLoadRewardedAd()
+    {
+        if (_rewardedAd != null && _rewardedAd.CanShowAd())
+        {
+            ShowRewardedAd();
+        } else
+        {
+            LoadRewardedAd();
+        }
+    }    
     public void RewardedAdEvents(RewardedAd ad)
     {
         // Raised when the ad is estimated to have earned money.
@@ -434,27 +455,6 @@ public class AdMobsAds : Singleton<AdMobsAds>
     }
     #endregion
 
-
-    public void PausseGame()
-    {
-
-    }
-
-    public void PlayGame()
-    {
-
-    }
-
-    public IEnumerable LoadAds()
-    {
-        return null;
-    }
-
-    public void CancelAllVideoAdsRequest()
-    {
-        _rewardedAd = null;
-        _interstitialAd = null;
-    }
 
     
 }

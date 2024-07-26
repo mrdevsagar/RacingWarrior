@@ -9,7 +9,7 @@ public class AdManagerAI
 
     private  bool _shouldShowBannerAd = false;
 
-    public float adInterval = 5 * 60f; // Time interval to show ads in seconds
+    public float adInterval = 3 * 60f; // Time interval to show ads in seconds
     
     public bool ShouldShowInterstitialAd = false;
     public float adTimer;
@@ -17,6 +17,10 @@ public class AdManagerAI
     public int matchesBeforeAd = 4; // Number of matches before showing an ad
 
     public bool ShouldShowBannerAd { get => _shouldShowBannerAd; private set =>  _shouldShowBannerAd = value; }
+
+
+    public bool IsRewardedAdCanceled { get;private set; }
+
 
     protected override void Awake()
     {
@@ -69,6 +73,7 @@ public class AdManagerAI
         matchCount++; // Increase the match count when entering game view
         // Additional logic when entering game view
         HideBannerAd();
+        CancelShowingRewardedAd();
     }
 
     #region Banner Ad AI
@@ -116,6 +121,18 @@ public class AdManagerAI
 
     #endregion
 
+    #region Rewarded Ad AI
+    public void LoadAndOrShowRewardedVideoAd()
+    {
+        IsRewardedAdCanceled = false;
+        AdMobsAds.Instance.ShowOrLoadRewardedAd();
+    }
 
+    public void CancelShowingRewardedAd()
+    {
+        IsRewardedAdCanceled = true;
+    }
+
+    #endregion
 
 }

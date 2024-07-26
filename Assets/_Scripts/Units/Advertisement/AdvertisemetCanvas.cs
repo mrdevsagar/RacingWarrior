@@ -111,37 +111,37 @@ public class AdvertisemetCanvas : MonoBehaviour
 
     private void hideUnhideBanner()
     {
-        AdMobsAds.Instance.HideBannerAd();
+        AdManagerAI.Instance.HideBannerAd();
     }
 
     private void ShowBanner()
     {
-        AdMobsAds.Instance.ShowBannerAd();
+        AdManagerAI.Instance.ShowBannerAd();
     }
 
    
 
     private void LoadBanner()
     {
-       
-        AdMobsAds.Instance.LoadBannerAd();
+
+        AdManagerAI.Instance.ShowBannerAd();
 
 
     }
 
     private void LoadIntertialAd()
     {
-        AdMobsAds.Instance.LoadInterstitialAd();
+        AdMobsAds.Instance.ShowOrLoadInterstitialAd();
     }
 
     private void ShowIntertialAd()
     {
-        AdMobsAds.Instance.ShowInterstitialAd();
+        AdMobsAds.Instance.ShowOrLoadInterstitialAd();
     }
 
     private void ShowRewardedAd()
     {
-        AdMobsAds.Instance.LoadRewardedAd();
+        AdManagerAI.Instance.LoadAndOrShowRewardedVideoAd();
     }
 
     private void AddTokens()

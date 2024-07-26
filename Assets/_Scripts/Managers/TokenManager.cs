@@ -37,10 +37,6 @@ public class TokenManager : Singleton<TokenManager>
         InvokeRepeating(nameof(IncrementTokens), ripitTokenIncrimentRate, ripitTokenIncrimentRate); // Start incrementing tokens every second
     }
 
-    public void Instantiate()
-    {
-
-    }
 
     private void IncrementTokens()
     {
