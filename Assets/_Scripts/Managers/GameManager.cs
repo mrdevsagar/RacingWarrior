@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
+public enum Collectible {COIN,DIAMOND,TOKEN}
+
 public class GameManager : Singleton<GameManager>
 {
 
@@ -13,6 +15,8 @@ public class GameManager : Singleton<GameManager>
     // Events for UI or other systems to subscribe to changes
     public UnityAction<int> OnCoinsChanged;
     public UnityAction<int> OnDiamondsChanged;
+
+
 
     protected override void Awake()
     {

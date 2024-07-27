@@ -1419,6 +1419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAGameView: 1
+  showBannerOnScreenLoad: 0
 --- !u!1 &472136962
 GameObject:
   m_ObjectHideFlags: 0

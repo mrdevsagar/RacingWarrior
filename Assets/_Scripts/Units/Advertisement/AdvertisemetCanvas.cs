@@ -143,7 +143,7 @@ public class AdvertisemetCanvas : MonoBehaviour
 
     private void ShowRewardedAd()
     {
-        AdManagerAI.Instance.LoadAndOrShowRewardedVideoAd();
+        AdManagerAI.Instance.LoadAndOrShowRewardedVideoAd("Congratulation","You have received",10,Collectible.COIN);
     }
 
     private void AddTokens()

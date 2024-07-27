@@ -44,16 +44,11 @@ public class AdManagerAI
 
     #endregion
 
-    #region InterStial Ad AI
-
-
-    #endregion
-
     #region Rewarded Ad AI
-    public void LoadAndOrShowRewardedVideoAd()
+    public void LoadAndOrShowRewardedVideoAd(string title,string subTitle,int count, Collectible collectibleType)
     {
         IsRewardedAdCanceled = false;
-        AdMobsAds.Instance.ShowOrLoadRewardedAd();
+        AdMobsAds.Instance.ShowOrLoadRewardedAd(title, subTitle, count, collectibleType);
     }
 
     public void CancelShowingRewardedAd()
