@@ -168,10 +168,18 @@ extern void U3CCallFunctionAfterDelayU3Ed__6_MoveNext_mAC9A4F646CE8D4751F6453CDA
 extern void U3CCallFunctionAfterDelayU3Ed__6_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m9E5CED4B248F30EE9165312D812D286855AAF70E (void);
 extern void U3CCallFunctionAfterDelayU3Ed__6_System_Collections_IEnumerator_Reset_m6E354EE48F6D6C5B44AC0D9C43F31EAE44AFB10A (void);
 extern void U3CCallFunctionAfterDelayU3Ed__6_System_Collections_IEnumerator_get_Current_m412781041EEA94F6C2AEB27DE3D7B9C33B6ACA15 (void);
-extern void SwitchScrene_Start_m9CCE339FDF56C6FEE3D3AC9DF4C958E5588E8F3F (void);
-extern void SwitchScrene_Update_m63BDAE1138A41B42B16280F5847E2862FD7F7880 (void);
-extern void SwitchScrene_OnMouseDown_mF35B37DF9588BE06662C708FE14CDD794F8876EF (void);
-extern void SwitchScrene__ctor_m279E3496B84A5776DEFDDAC1684B1BC326E3F69B (void);
+extern void MyLoadSceneAsync_Awake_m4CA2D847113A0D57D8421EADFA9902897CBDA5B3 (void);
+extern void MyLoadSceneAsync_Load_mF3C5918151B42461346D978F40CDE442FD0098D1 (void);
+extern void MyLoadSceneAsync_HideLoadingScreen_mBDF64BF57DA47BFC1018B7BC201DE978E56F736A (void);
+extern void MyLoadSceneAsync_ShowLoadingScreen_mD9FA6CA1009B3C4330A8A0F363FEAE425C7069B1 (void);
+extern void MyLoadSceneAsync_LoadYourScene_mDFFBF75229F9EA173787160DD29F353A2DBD0416 (void);
+extern void MyLoadSceneAsync__ctor_m5C1F8ED886E41F46C51731AF927CB48CA248D03C (void);
+extern void U3CLoadYourSceneU3Ed__6__ctor_m2D05C73F8BE787EA0640AE516DBF198948FE147F (void);
+extern void U3CLoadYourSceneU3Ed__6_System_IDisposable_Dispose_m99F5A53D7F102DAACE71C94703C00ADF42A3E0A7 (void);
+extern void U3CLoadYourSceneU3Ed__6_MoveNext_mDCC2D42BED5F4E1C6A7AEB181751DC9F6416A3CC (void);
+extern void U3CLoadYourSceneU3Ed__6_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m0AFBC2E72AADB7916CB5C6F18E089053264B0F30 (void);
+extern void U3CLoadYourSceneU3Ed__6_System_Collections_IEnumerator_Reset_m2C292F43F345ECFCD93188C6DE8CBBB6A74B9427 (void);
+extern void U3CLoadYourSceneU3Ed__6_System_Collections_IEnumerator_get_Current_mB6208FFE11FD6219B4F39E698D73F8D985F0002F (void);
 extern void ToastMessage_ShowToast_m6D030DBA2D975FFEEB7FF3109886CB3A5DCC2BA8 (void);
 extern void ToastMessage__ctor_mFF010929C684726FCC4026F51CBE2AE520788A12 (void);
 extern void U3CU3Ec__DisplayClass0_0__ctor_mEA3E8F343782692E9AA9C9AE92306A2F8FBDAD08 (void);
@@ -428,7 +436,7 @@ extern void U3CWarpTextU3Ed__8_MoveNext_mCE7A826C5E4854C2C509C77BD18F5A9B6D691B0
 extern void U3CWarpTextU3Ed__8_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mD80368E9B7E259311C03E406B75161ED6F7618E3 (void);
 extern void U3CWarpTextU3Ed__8_System_Collections_IEnumerator_Reset_m07746C332D2D8CE5DEA59873C26F2FAD4B369B42 (void);
 extern void U3CWarpTextU3Ed__8_System_Collections_IEnumerator_get_Current_m71D7F84D9DEF63BEC6B44866515DDCF35B142A19 (void);
-static Il2CppMethodPointer s_methodPointers[425] = 
+static Il2CppMethodPointer s_methodPointers[433] = 
 {
 	ChatController_OnEnable_m025CE203564D82A1CDCE5E5719DB07E29811D0B7,
 	ChatController_OnDisable_mD49D03719CAEBB3F59F24A7FA8F4FD30C8B54E46,
@@ -591,14 +599,22 @@ static Il2CppMethodPointer s_methodPointers[425] =
 	U3CCallFunctionAfterDelayU3Ed__6_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m9E5CED4B248F30EE9165312D812D286855AAF70E,
 	U3CCallFunctionAfterDelayU3Ed__6_System_Collections_IEnumerator_Reset_m6E354EE48F6D6C5B44AC0D9C43F31EAE44AFB10A,
 	U3CCallFunctionAfterDelayU3Ed__6_System_Collections_IEnumerator_get_Current_m412781041EEA94F6C2AEB27DE3D7B9C33B6ACA15,
+	MyLoadSceneAsync_Awake_m4CA2D847113A0D57D8421EADFA9902897CBDA5B3,
+	MyLoadSceneAsync_Load_mF3C5918151B42461346D978F40CDE442FD0098D1,
+	MyLoadSceneAsync_HideLoadingScreen_mBDF64BF57DA47BFC1018B7BC201DE978E56F736A,
+	MyLoadSceneAsync_ShowLoadingScreen_mD9FA6CA1009B3C4330A8A0F363FEAE425C7069B1,
+	MyLoadSceneAsync_LoadYourScene_mDFFBF75229F9EA173787160DD29F353A2DBD0416,
+	MyLoadSceneAsync__ctor_m5C1F8ED886E41F46C51731AF927CB48CA248D03C,
+	U3CLoadYourSceneU3Ed__6__ctor_m2D05C73F8BE787EA0640AE516DBF198948FE147F,
+	U3CLoadYourSceneU3Ed__6_System_IDisposable_Dispose_m99F5A53D7F102DAACE71C94703C00ADF42A3E0A7,
+	U3CLoadYourSceneU3Ed__6_MoveNext_mDCC2D42BED5F4E1C6A7AEB181751DC9F6416A3CC,
+	U3CLoadYourSceneU3Ed__6_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m0AFBC2E72AADB7916CB5C6F18E089053264B0F30,
+	U3CLoadYourSceneU3Ed__6_System_Collections_IEnumerator_Reset_m2C292F43F345ECFCD93188C6DE8CBBB6A74B9427,
+	U3CLoadYourSceneU3Ed__6_System_Collections_IEnumerator_get_Current_mB6208FFE11FD6219B4F39E698D73F8D985F0002F,
 	NULL,
 	NULL,
 	NULL,
 	NULL,
-	SwitchScrene_Start_m9CCE339FDF56C6FEE3D3AC9DF4C958E5588E8F3F,
-	SwitchScrene_Update_m63BDAE1138A41B42B16280F5847E2862FD7F7880,
-	SwitchScrene_OnMouseDown_mF35B37DF9588BE06662C708FE14CDD794F8876EF,
-	SwitchScrene__ctor_m279E3496B84A5776DEFDDAC1684B1BC326E3F69B,
 	ToastMessage_ShowToast_m6D030DBA2D975FFEEB7FF3109886CB3A5DCC2BA8,
 	ToastMessage__ctor_mFF010929C684726FCC4026F51CBE2AE520788A12,
 	U3CU3Ec__DisplayClass0_0__ctor_mEA3E8F343782692E9AA9C9AE92306A2F8FBDAD08,
@@ -856,7 +872,7 @@ static Il2CppMethodPointer s_methodPointers[425] =
 	U3CWarpTextU3Ed__8_System_Collections_IEnumerator_Reset_m07746C332D2D8CE5DEA59873C26F2FAD4B369B42,
 	U3CWarpTextU3Ed__8_System_Collections_IEnumerator_get_Current_m71D7F84D9DEF63BEC6B44866515DDCF35B142A19,
 };
-static const int32_t s_InvokerIndices[425] = 
+static const int32_t s_InvokerIndices[433] = 
 {
 	8127,
 	8127,
@@ -1019,14 +1035,22 @@ static const int32_t s_InvokerIndices[425] =
 	7991,
 	8127,
 	7991,
+	8127,
+	6358,
+	8127,
+	8127,
+	5438,
+	8127,
+	6310,
+	8127,
+	7851,
+	7991,
+	8127,
+	7991,
 	-1,
 	-1,
 	-1,
 	-1,
-	8127,
-	8127,
-	8127,
-	8127,
 	11569,
 	8127,
 	8127,
@@ -1286,7 +1310,7 @@ static const int32_t s_InvokerIndices[425] =
 };
 static const Il2CppTokenRangePair s_rgctxIndices[1] = 
 {
-	{ 0x02000018, { 0, 6 } },
+	{ 0x0200001A, { 0, 6 } },
 };
 extern const uint32_t g_rgctx_Singleton_1_tEB10BC7581192E8DC4004CC6A80E88A3E42C3444;
 extern const uint32_t g_rgctx_T_t2337B8A22C295A41D129CA0B4B104663AAC37B94;
@@ -1307,7 +1331,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	425,
+	433,
 	s_methodPointers,
 	0,
 	NULL,

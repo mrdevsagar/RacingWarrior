@@ -22,6 +22,7 @@ using UnityEngine.SceneManagement;
 public class AdMobsAds : Singleton<AdMobsAds>
 {
 
+    // Condition for switching Admob test with real id.
 #if UNITY_ANDROID
 
     #if IS_USE_REAL_AD_IDS
@@ -65,7 +66,7 @@ public class AdMobsAds : Singleton<AdMobsAds>
 
     
     public float interstitialAdTimer;
-    private float interstitialAdInterval = 20f;
+    private float interstitialAdInterval = 25f; //minutes to show ads 
     public bool IsLoadingRewardedAd { get; private set; }
 
     private bool _isBannerLoaded = false;
@@ -279,6 +280,7 @@ public class AdMobsAds : Singleton<AdMobsAds>
 
     public void SwitchSceneByShowingAd(string screenName)
     {
+        MyLoadSceneAsync.Instance.ShowLoadingScreen();
         if (string.IsNullOrEmpty(screenName))
         {
             Debug.LogError("Screen name is null or empty!");
@@ -369,7 +371,9 @@ public class AdMobsAds : Singleton<AdMobsAds>
 
     private void SwitchScene(string screenName)
     {
-        SceneManager.LoadSceneAsync(screenName);
+        /*SceneManager.LoadSceneAsync(screenName);*/
+       /* MyLoadSceneAsync.Instance.ShowLoadingScreen();*/
+        MyLoadSceneAsync.Instance.Load(screenName);
     }
 
     private void InterstitialEvent(InterstitialAd ad)

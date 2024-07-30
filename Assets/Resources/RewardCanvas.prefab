@@ -359,6 +359,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ad0583f3f51b284884d6bf75b0085ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameObject: {fileID: 5762209652963224445}
+  myGameObject: {fileID: 5762209652963224445}
   tokensText: {fileID: 4067928238482918695}
   delayInSeconds: 5
