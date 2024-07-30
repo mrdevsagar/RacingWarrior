@@ -167,14 +167,12 @@ public class AdvertisemetCanvas : MonoBehaviour
 
     private void AddDiamonds()
     {
-        /*GameManager.Instance.AddDiamonds(100);*/
-        AdManagerAI.Instance.EnterGameView();
+        GameManager.Instance.AddDiamonds(100);
     }
 
     private void SpenDiamonds()
     {
-        /* GameManager.Instance.SpendDiamonds(20);*/
-        AdManagerAI.Instance.ExitGameView();
+        GameManager.Instance.SpendDiamonds(20);
     }
 
     public  void SwitchScene()

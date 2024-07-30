@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class RewardCanvas : MonoBehaviour
 {
-    public GameObject gameObject;
+    [SerializeField]
+    private GameObject myGameObject;
     [SerializeField] TextMeshProUGUI tokensText;
 
     public float delayInSeconds = 5f;
@@ -17,7 +18,7 @@ public class RewardCanvas : MonoBehaviour
 
     public void ShowCanvas(string title)
     {
-        gameObject.SetActive(true);
+        myGameObject.SetActive(true);
         StartCoroutine(CallFunctionAfterDelay());
         if(tokensText != null) {
             tokensText.text = title;
@@ -28,7 +29,7 @@ public class RewardCanvas : MonoBehaviour
 
     public void HideCanvas()
     {
-        gameObject.SetActive(false);
+        myGameObject.SetActive(false);
     }
 
     private IEnumerator CallFunctionAfterDelay()
