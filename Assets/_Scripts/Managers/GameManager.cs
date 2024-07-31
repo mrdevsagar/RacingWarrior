@@ -104,4 +104,16 @@ public class GameManager : Singleton<GameManager>
     {
         SceneManager.LoadSceneAsync(sceneName);
     }
+
+    public void PauseGame(bool shoudPauseGame)
+    {
+        if (shoudPauseGame)
+        {
+            Time.timeScale = 0; // Pause the game
+        }
+        else
+        {
+            Time.timeScale = 1; // Play the game
+        }
+    }
 }

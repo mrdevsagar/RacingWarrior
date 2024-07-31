@@ -46,7 +46,25 @@ extern void GameManager_SpendDiamonds_m17449A95E7DB0664CF935A033FD52BB227BF480F 
 extern void GameManager_SaveGameData_m6242CBCF64DB2454209D1F961E97C81C5CBB1998 (void);
 extern void GameManager_LoadGameData_m283C0E316595A365BCC5F34A7B515E2F009B6811 (void);
 extern void GameManager_SwitchScene_mBC9EE17835AC16F5DDE0D5987DFFB660CCA47729 (void);
+extern void GameManager_PauseGame_mD6BE67FF8F611D52B6FB558403BA8689428CA8F0 (void);
 extern void GameManager__ctor_mF453CED520617BFB65C52405A964E06CF17DB368 (void);
+extern void LevelManager_get_IsGameEnded_m4DDC667DDD3CAFB0DAD1522C5253CF05544F8941 (void);
+extern void LevelManager_set_IsGameEnded_m485E246C812F942ED2F514F536D2FBC47D9D1CEA (void);
+extern void LevelManager_get_IsPlayerWon_m2C1C862739BFE9D72301BC55B8FACFADB0641A1E (void);
+extern void LevelManager_set_IsPlayerWon_m8EF187A537CCED6AD5A803227D95199CDEE19DD6 (void);
+extern void LevelManager_get_IsGamePaused_mAB62EB1A33B8B6C297066AB81E3E37BFC1E65F6C (void);
+extern void LevelManager_set_IsGamePaused_m6A70E22A9BDD9D0FCA47A3276E378680140877D9 (void);
+extern void LevelManager_Start_mA7A45D9D0CBA8784B87F70B204C19A2AAC234D42 (void);
+extern void LevelManager_OnButtonClick_mBC2ED7FE92B41127FC3F85D62B16141AD3067E44 (void);
+extern void LevelManager_OnDestroy_m05017BBD41AC4B303006A792E6912785BAE1524B (void);
+extern void LevelManager_OnEnable_m2822B28E1CACDD507598DA89171E862B85C3E9CB (void);
+extern void LevelManager_OnDisable_m91E921A2C26A738EE99B3F3DE525590136EBB55C (void);
+extern void LevelManager_OnFocusChanged_m79CCEB9327840D47E40F5DFD5CD4BD1831A64192 (void);
+extern void LevelManager_ResumeGame_mD01606AA823E8505D1535C2F8D054F76B72C4561 (void);
+extern void LevelManager_ShowPauseScreen_mDFA44CC090B1F585EF75CF8ED58E1CAE6F3EEB7B (void);
+extern void LevelManager_HidePauseScreen_m2497ACADA5CD0E410E0A3841C60D88900C69A502 (void);
+extern void LevelManager_ShowResultScreen_m513BED1C7C80324B74ED0199FEE466ADCCDC2EF2 (void);
+extern void LevelManager__ctor_m97F35AC08C296B73BD7D85FFB593A7BEA61B3F92 (void);
 extern void MySceneManager_Start_m1ECCA3521F8D7A299D4AFDB66D4E911A689C4FC2 (void);
 extern void MySceneManager__ctor_m64687DFA0FF4B36EAB0C48CD693813E3A690615E (void);
 extern void TokenManager_get_Tokens_m4FB32B9F6B3DC2E85D1CD8C63E5F7B0F26570327 (void);
@@ -455,7 +473,7 @@ extern void U3CWarpTextU3Ed__8_MoveNext_mCE7A826C5E4854C2C509C77BD18F5A9B6D691B0
 extern void U3CWarpTextU3Ed__8_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mD80368E9B7E259311C03E406B75161ED6F7618E3 (void);
 extern void U3CWarpTextU3Ed__8_System_Collections_IEnumerator_Reset_m07746C332D2D8CE5DEA59873C26F2FAD4B369B42 (void);
 extern void U3CWarpTextU3Ed__8_System_Collections_IEnumerator_get_Current_m71D7F84D9DEF63BEC6B44866515DDCF35B142A19 (void);
-static Il2CppMethodPointer s_methodPointers[452] = 
+static Il2CppMethodPointer s_methodPointers[473] = 
 {
 	ChatController_OnEnable_m025CE203564D82A1CDCE5E5719DB07E29811D0B7,
 	ChatController_OnDisable_mD49D03719CAEBB3F59F24A7FA8F4FD30C8B54E46,
@@ -496,7 +514,25 @@ static Il2CppMethodPointer s_methodPointers[452] =
 	GameManager_SaveGameData_m6242CBCF64DB2454209D1F961E97C81C5CBB1998,
 	GameManager_LoadGameData_m283C0E316595A365BCC5F34A7B515E2F009B6811,
 	GameManager_SwitchScene_mBC9EE17835AC16F5DDE0D5987DFFB660CCA47729,
+	GameManager_PauseGame_mD6BE67FF8F611D52B6FB558403BA8689428CA8F0,
 	GameManager__ctor_mF453CED520617BFB65C52405A964E06CF17DB368,
+	LevelManager_get_IsGameEnded_m4DDC667DDD3CAFB0DAD1522C5253CF05544F8941,
+	LevelManager_set_IsGameEnded_m485E246C812F942ED2F514F536D2FBC47D9D1CEA,
+	LevelManager_get_IsPlayerWon_m2C1C862739BFE9D72301BC55B8FACFADB0641A1E,
+	LevelManager_set_IsPlayerWon_m8EF187A537CCED6AD5A803227D95199CDEE19DD6,
+	LevelManager_get_IsGamePaused_mAB62EB1A33B8B6C297066AB81E3E37BFC1E65F6C,
+	LevelManager_set_IsGamePaused_m6A70E22A9BDD9D0FCA47A3276E378680140877D9,
+	LevelManager_Start_mA7A45D9D0CBA8784B87F70B204C19A2AAC234D42,
+	LevelManager_OnButtonClick_mBC2ED7FE92B41127FC3F85D62B16141AD3067E44,
+	LevelManager_OnDestroy_m05017BBD41AC4B303006A792E6912785BAE1524B,
+	LevelManager_OnEnable_m2822B28E1CACDD507598DA89171E862B85C3E9CB,
+	LevelManager_OnDisable_m91E921A2C26A738EE99B3F3DE525590136EBB55C,
+	LevelManager_OnFocusChanged_m79CCEB9327840D47E40F5DFD5CD4BD1831A64192,
+	LevelManager_ResumeGame_mD01606AA823E8505D1535C2F8D054F76B72C4561,
+	LevelManager_ShowPauseScreen_mDFA44CC090B1F585EF75CF8ED58E1CAE6F3EEB7B,
+	LevelManager_HidePauseScreen_m2497ACADA5CD0E410E0A3841C60D88900C69A502,
+	LevelManager_ShowResultScreen_m513BED1C7C80324B74ED0199FEE466ADCCDC2EF2,
+	LevelManager__ctor_m97F35AC08C296B73BD7D85FFB593A7BEA61B3F92,
 	MySceneManager_Start_m1ECCA3521F8D7A299D4AFDB66D4E911A689C4FC2,
 	MySceneManager__ctor_m64687DFA0FF4B36EAB0C48CD693813E3A690615E,
 	TokenManager_get_Tokens_m4FB32B9F6B3DC2E85D1CD8C63E5F7B0F26570327,
@@ -645,6 +681,9 @@ static Il2CppMethodPointer s_methodPointers[452] =
 	SceneField_get_SceneName_m58194BAFBBD213AB3E3332C4E6712A7C81D42B60,
 	SceneField_op_Implicit_m386DC45788A8CAECB655DAF7AB87917D3238DC13,
 	SceneField__ctor_m66E886707A60994EF508180BC423AC0846BEA7F0,
+	NULL,
+	NULL,
+	NULL,
 	NULL,
 	NULL,
 	NULL,
@@ -910,7 +949,7 @@ static Il2CppMethodPointer s_methodPointers[452] =
 	U3CWarpTextU3Ed__8_System_Collections_IEnumerator_Reset_m07746C332D2D8CE5DEA59873C26F2FAD4B369B42,
 	U3CWarpTextU3Ed__8_System_Collections_IEnumerator_get_Current_m71D7F84D9DEF63BEC6B44866515DDCF35B142A19,
 };
-static const int32_t s_InvokerIndices[452] = 
+static const int32_t s_InvokerIndices[473] = 
 {
 	8127,
 	8127,
@@ -951,6 +990,24 @@ static const int32_t s_InvokerIndices[452] =
 	8127,
 	8127,
 	6358,
+	6219,
+	8127,
+	7851,
+	6219,
+	7851,
+	6219,
+	7851,
+	6219,
+	8127,
+	8127,
+	8127,
+	8127,
+	8127,
+	6219,
+	8127,
+	8127,
+	8127,
+	8127,
 	8127,
 	8127,
 	8127,
@@ -1100,6 +1157,9 @@ static const int32_t s_InvokerIndices[452] =
 	7991,
 	11348,
 	8127,
+	-1,
+	-1,
+	-1,
 	-1,
 	-1,
 	-1,
@@ -1365,9 +1425,10 @@ static const int32_t s_InvokerIndices[452] =
 	8127,
 	7991,
 };
-static const Il2CppTokenRangePair s_rgctxIndices[1] = 
+static const Il2CppTokenRangePair s_rgctxIndices[2] = 
 {
-	{ 0x0200001D, { 0, 6 } },
+	{ 0x0200001E, { 0, 6 } },
+	{ 0x0200001F, { 6, 4 } },
 };
 extern const uint32_t g_rgctx_Singleton_1_tEB10BC7581192E8DC4004CC6A80E88A3E42C3444;
 extern const uint32_t g_rgctx_T_t2337B8A22C295A41D129CA0B4B104663AAC37B94;
@@ -1375,7 +1436,11 @@ extern const uint32_t g_rgctx_Singleton_1_tEB10BC7581192E8DC4004CC6A80E88A3E42C3
 extern const uint32_t g_rgctx_Object_FindFirstObjectByType_TisT_t2337B8A22C295A41D129CA0B4B104663AAC37B94_mE6627B127FDE024A38BB8F800343F231BD5B46B9;
 extern const uint32_t g_rgctx_T_t2337B8A22C295A41D129CA0B4B104663AAC37B94;
 extern const uint32_t g_rgctx_GameObject_AddComponent_TisT_t2337B8A22C295A41D129CA0B4B104663AAC37B94_m0CD12805FA8F016127C31F69C4C48F3599754DD7;
-static const Il2CppRGCTXDefinition s_rgctxValues[6] = 
+extern const uint32_t g_rgctx_SingletonLocal_1_t41DA5DB193C5A890D664F3D73BA8C67FE3C28601;
+extern const uint32_t g_rgctx_T_t7EE3DC62C0FCD078ECF642CF438F6F628F2C255D;
+extern const uint32_t g_rgctx_SingletonLocal_1_t41DA5DB193C5A890D664F3D73BA8C67FE3C28601;
+extern const uint32_t g_rgctx_Object_FindFirstObjectByType_TisT_t7EE3DC62C0FCD078ECF642CF438F6F628F2C255D_mBCF1CDEECF57F6F1018E2A460CEB7D17BDCEF8D8;
+static const Il2CppRGCTXDefinition s_rgctxValues[10] = 
 {
 	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_Singleton_1_tEB10BC7581192E8DC4004CC6A80E88A3E42C3444 },
 	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_T_t2337B8A22C295A41D129CA0B4B104663AAC37B94 },
@@ -1383,21 +1448,25 @@ static const Il2CppRGCTXDefinition s_rgctxValues[6] =
 	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_Object_FindFirstObjectByType_TisT_t2337B8A22C295A41D129CA0B4B104663AAC37B94_mE6627B127FDE024A38BB8F800343F231BD5B46B9 },
 	{ (Il2CppRGCTXDataType)1, (const void *)&g_rgctx_T_t2337B8A22C295A41D129CA0B4B104663AAC37B94 },
 	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_GameObject_AddComponent_TisT_t2337B8A22C295A41D129CA0B4B104663AAC37B94_m0CD12805FA8F016127C31F69C4C48F3599754DD7 },
+	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_SingletonLocal_1_t41DA5DB193C5A890D664F3D73BA8C67FE3C28601 },
+	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_T_t7EE3DC62C0FCD078ECF642CF438F6F628F2C255D },
+	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_SingletonLocal_1_t41DA5DB193C5A890D664F3D73BA8C67FE3C28601 },
+	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_Object_FindFirstObjectByType_TisT_t7EE3DC62C0FCD078ECF642CF438F6F628F2C255D_mBCF1CDEECF57F6F1018E2A460CEB7D17BDCEF8D8 },
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	452,
+	473,
 	s_methodPointers,
 	0,
 	NULL,
 	s_InvokerIndices,
 	0,
 	NULL,
-	1,
+	2,
 	s_rgctxIndices,
-	6,
+	10,
 	s_rgctxValues,
 	NULL,
 	NULL,

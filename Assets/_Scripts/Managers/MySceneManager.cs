@@ -13,7 +13,9 @@ public class MySceneManager : MonoBehaviour
     {
         GameManager.Instance.Instantiate();
         AdManagerAI.Instance.Instantiate();
-        TokenManager.Instance.Instantiate();    
+        TokenManager.Instance.Instantiate();
+
+        GameManager.Instance.PauseGame(false);
 
         if (isAGameView)
         {
