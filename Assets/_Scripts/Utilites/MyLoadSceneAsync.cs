@@ -15,12 +15,18 @@ public class MyLoadSceneAsync : Singleton<MyLoadSceneAsync>
 
         loaderPrefab = Resources.Load<GameObject>("RewardCanvas");
         loadCanvas = Instantiate(loaderPrefab) as GameObject;
+        loadCanvas.SetActive(false);
         loadCanvas.transform.parent = gameObject.transform;
     }
 
 
     public void Load(string sceneName)
     {
+        if (string.IsNullOrEmpty(sceneName))
+        {
+            Debug.LogError("Sooraj: Scene name should not be empty");
+            return;
+        }
         ShowLoadingScreen();
         StartCoroutine(LoadYourScene(sceneName));
     }
@@ -40,6 +46,13 @@ public class MyLoadSceneAsync : Singleton<MyLoadSceneAsync>
     private IEnumerator LoadYourScene(string sceneName)
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+
+        if(asyncLoad == null)
+        {
+            Debug.Log("exited");
+            HideLoadingScreen();
+            yield  break;
+        }
 
         asyncLoad.allowSceneActivation = false;
         // While the scene is loading, you can perform other operations

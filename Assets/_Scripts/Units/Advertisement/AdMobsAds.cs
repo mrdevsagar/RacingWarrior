@@ -14,7 +14,7 @@
 using UnityEngine;
 using GoogleMobileAds.Api;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+using System;
 
 /// <summary>
 ///   AdMobsAds for managing AdMob ads with singleton instance.
@@ -85,19 +85,29 @@ public class AdMobsAds : Singleton<AdMobsAds>
         // Set the canvas as a child of the GameManager GameObject
         VideoErrorCanvas.transform.SetParent(this.transform);
 
+        try
+        {
+            MobileAds.RaiseAdEventsOnUnityMainThread = true;
+            MobileAds.Initialize(initStatus => {
+
+                print("Ads Initialized !!");
+
+            });
+            LoadInterstitialAd();
+            interstitialAdTimer = interstitialAdInterval;
+        }
+        catch (Exception ex)
+        {
+            ToastMessage.ShowToast(ex.Message.ToString());
+            Debug.LogError("An error occurred during AdMob initialization: " + ex.Message);
+        }
+
     }
 
 
     private void Start()
     {
-        MobileAds.RaiseAdEventsOnUnityMainThread = true;
-        MobileAds.Initialize(initStatus => {
-
-            print("Ads Initialized !!");
-
-        });
-        LoadInterstitialAd();
-        interstitialAdTimer = interstitialAdInterval; 
+        
     }
 
     private void Update()
@@ -233,12 +243,13 @@ public class AdMobsAds : Singleton<AdMobsAds>
         {
             return;
         }
+
         IsLoadingInterstitialAd = true;
         // My Implementation end
 
         if (_interstitialAd != null)
         {
-            _interstitialAd.Destroy();
+            _interstitialAd?.Destroy();
             _interstitialAd = null;
         }
         var adRequest = new AdRequest();
@@ -269,7 +280,7 @@ public class AdMobsAds : Singleton<AdMobsAds>
         }
         if (_interstitialAd != null && _interstitialAd.CanShowAd())
         {
-            _interstitialAd.Show();
+            _interstitialAd?.Show();
             IsLoadingInterstitialAd = false;
         }
         else
@@ -311,7 +322,7 @@ public class AdMobsAds : Singleton<AdMobsAds>
     private void ShowInterstitialAdScreenChange(string screenName)
     {
         Debug.Log("Ad available, showing ad for screen: " + screenName);
-        _interstitialAd.Show();
+        _interstitialAd?.Show();
         IsLoadingInterstitialAd = false;
 
         _interstitialAd.OnAdPaid += (AdValue adValue) =>
@@ -338,7 +349,7 @@ public class AdMobsAds : Singleton<AdMobsAds>
     {
         if (_interstitialAd != null)
         {
-            _interstitialAd.Destroy();
+            _interstitialAd?.Destroy();
             _interstitialAd = null;
         }
 

@@ -14,6 +14,7 @@ public class MySceneManager : MonoBehaviour
         GameManager.Instance.Instantiate();
         AdManagerAI.Instance.Instantiate();
         TokenManager.Instance.Instantiate();
+        MyLoadSceneAsync.Instance.Instantiate();
 
         GameManager.Instance.PauseGame(false);
 

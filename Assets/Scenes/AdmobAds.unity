@@ -4446,7 +4446,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Switch Screne
+  m_text: 'Main Screne
 
 '
   m_isRightToLeft: 0

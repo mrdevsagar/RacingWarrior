@@ -18,6 +18,38 @@
     },
     {
       "Type": 0,
+      "Text": "[Unity.TextMeshPro] - System.Void TMPro.TextMeshPro::GenerateTextMesh() - High Variable Count of 215"
+    },
+    {
+      "Type": 0,
+      "Text": "[Unity.TextMeshPro] - System.Void TMPro.TextMeshPro::GenerateTextMesh() - High Instruction Count of 9658"
+    },
+    {
+      "Type": 0,
+      "Text": "[Unity.TextMeshPro] - System.Void TMPro.TextMeshPro::GenerateTextMesh() - High CodeSize of 29665"
+    },
+    {
+      "Type": 0,
+      "Text": "[Unity.TextMeshPro] - System.Void TMPro.TextMeshProUGUI::GenerateTextMesh() - High Variable Count of 220"
+    },
+    {
+      "Type": 0,
+      "Text": "[Unity.TextMeshPro] - System.Void TMPro.TextMeshProUGUI::GenerateTextMesh() - High Instruction Count of 9749"
+    },
+    {
+      "Type": 0,
+      "Text": "[Unity.TextMeshPro] - System.Void TMPro.TextMeshProUGUI::GenerateTextMesh() - High CodeSize of 29944"
+    },
+    {
+      "Type": 0,
+      "Text": "[Unity.TextMeshPro] - System.Void TMPro.TMP_TextParsingUtilities::.cctor() - High Instruction Count of 10579"
+    },
+    {
+      "Type": 0,
+      "Text": "[Unity.TextMeshPro] - System.Void TMPro.TMP_TextParsingUtilities::.cctor() - High CodeSize of 31711"
+    },
+    {
+      "Type": 0,
       "Text": "[UnityEngine.TextCoreTextEngineModule] - System.Boolean UnityEngine.TextCore.Text.TextGenerator::ValidateHtmlTag(UnityEngine.TextCore.Text.TextProcessingElement[],System.Int32,System.Int32\u0026,UnityEngine.TextCore.Text.TextGenerationSettings,UnityEngine.TextCore.Text.TextInfo,System.Boolean\u0026) - High Variable Count of 242"
     },
     {
@@ -51,38 +83,6 @@
     {
       "Type": 0,
       "Text": "[UnityEngine.TextCoreTextEngineModule] - System.Void UnityEngine.TextCore.Text.TextGeneratorUtilities::.cctor() - High CodeSize of 31741"
-    },
-    {
-      "Type": 0,
-      "Text": "[Unity.TextMeshPro] - System.Void TMPro.TextMeshPro::GenerateTextMesh() - High Variable Count of 215"
-    },
-    {
-      "Type": 0,
-      "Text": "[Unity.TextMeshPro] - System.Void TMPro.TextMeshPro::GenerateTextMesh() - High Instruction Count of 9658"
-    },
-    {
-      "Type": 0,
-      "Text": "[Unity.TextMeshPro] - System.Void TMPro.TextMeshPro::GenerateTextMesh() - High CodeSize of 29665"
-    },
-    {
-      "Type": 0,
-      "Text": "[Unity.TextMeshPro] - System.Void TMPro.TextMeshProUGUI::GenerateTextMesh() - High Variable Count of 220"
-    },
-    {
-      "Type": 0,
-      "Text": "[Unity.TextMeshPro] - System.Void TMPro.TextMeshProUGUI::GenerateTextMesh() - High Instruction Count of 9749"
-    },
-    {
-      "Type": 0,
-      "Text": "[Unity.TextMeshPro] - System.Void TMPro.TextMeshProUGUI::GenerateTextMesh() - High CodeSize of 29944"
-    },
-    {
-      "Type": 0,
-      "Text": "[Unity.TextMeshPro] - System.Void TMPro.TMP_TextParsingUtilities::.cctor() - High Instruction Count of 10579"
-    },
-    {
-      "Type": 0,
-      "Text": "[Unity.TextMeshPro] - System.Void TMPro.TMP_TextParsingUtilities::.cctor() - High CodeSize of 31711"
     },
     {
       "Type": 0,

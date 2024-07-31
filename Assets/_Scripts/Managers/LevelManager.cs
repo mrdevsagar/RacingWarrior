@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 public class LevelManager : SingletonLocal<LevelManager>
@@ -7,9 +8,14 @@ public class LevelManager : SingletonLocal<LevelManager>
     /// </summary>
     [SerializeField]
     private bool _isAutoPauseEnabled = false;
-    public bool IsGameEnded { get; set; }
+
+    [SerializeField]
+    private bool _isGameEnded = false;
+
+
     public bool IsPlayerWon { get ; set; }
     public bool IsGamePaused { get; set; }
+    public bool IsGameEnded { get => _isGameEnded; set => _isGameEnded = value; }
 
     public GameObject pauseScreen; // Reference to the pause screen UI
 
@@ -32,6 +38,9 @@ public class LevelManager : SingletonLocal<LevelManager>
         if(!IsGameEnded)
         {
             ShowPauseScreen();
+        } else
+        {
+            ShowResultScreen();
         }
     }
 
@@ -87,6 +96,10 @@ public class LevelManager : SingletonLocal<LevelManager>
             GameManager.Instance.PauseGame(false);
         }
     }
+    public void ToggleIsGameEnded()
+    {
+        IsGameEnded = !IsGameEnded;
+    }
 
     private void ShowPauseScreen()
     {
@@ -117,4 +130,5 @@ public class LevelManager : SingletonLocal<LevelManager>
             }
         }
     }
+    
 }
