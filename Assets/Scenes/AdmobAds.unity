@@ -5338,7 +5338,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81d775a184593c449833f3a7e4658c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  switchScreenName: _1_MainScene
+  switchScreenName:
+    m_SceneAsset: {fileID: 102900000, guid: 3fc8acdd13e6c734bafef6554d6fdbcd, type: 3}
+    m_SceneName: _1_MainScene
   isGameView: 1
   _loadBannerButton: {fileID: 10721642}
   _hideButton: {fileID: 1660051493}

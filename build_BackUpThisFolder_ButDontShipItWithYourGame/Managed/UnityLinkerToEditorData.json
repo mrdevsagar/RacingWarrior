@@ -42,7 +42,8 @@
             "scenes": [
               "Assets/Scenes/_0_SplashScene.unity",
               "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity"
+              "Assets/Scenes/AdmobAds.unity",
+              "Assets/Scenes/Levels/_1_Level.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -58,7 +59,8 @@
             "scenes": [
               "Assets/Scenes/_0_SplashScene.unity",
               "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity"
+              "Assets/Scenes/AdmobAds.unity",
+              "Assets/Scenes/Levels/_1_Level.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -103,7 +105,8 @@
             "scenes": [
               "Assets/Scenes/_0_SplashScene.unity",
               "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity"
+              "Assets/Scenes/AdmobAds.unity",
+              "Assets/Scenes/Levels/_1_Level.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -146,7 +149,8 @@
             "scenes": [
               "Assets/Scenes/_0_SplashScene.unity",
               "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity"
+              "Assets/Scenes/AdmobAds.unity",
+              "Assets/Scenes/Levels/_1_Level.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -162,7 +166,8 @@
             "scenes": [
               "Assets/Scenes/_0_SplashScene.unity",
               "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity"
+              "Assets/Scenes/AdmobAds.unity",
+              "Assets/Scenes/Levels/_1_Level.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -190,7 +195,8 @@
             "scenes": [
               "Assets/Scenes/_0_SplashScene.unity",
               "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity"
+              "Assets/Scenes/AdmobAds.unity",
+              "Assets/Scenes/Levels/_1_Level.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -218,7 +224,8 @@
             "scenes": [
               "Assets/Scenes/_0_SplashScene.unity",
               "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity"
+              "Assets/Scenes/AdmobAds.unity",
+              "Assets/Scenes/Levels/_1_Level.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -234,7 +241,8 @@
             "scenes": [
               "Assets/Scenes/_0_SplashScene.unity",
               "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity"
+              "Assets/Scenes/AdmobAds.unity",
+              "Assets/Scenes/Levels/_1_Level.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -262,7 +270,8 @@
             "scenes": [
               "Assets/Scenes/_0_SplashScene.unity",
               "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity"
+              "Assets/Scenes/AdmobAds.unity",
+              "Assets/Scenes/Levels/_1_Level.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -278,7 +287,8 @@
             "scenes": [
               "Assets/Scenes/_0_SplashScene.unity",
               "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity"
+              "Assets/Scenes/AdmobAds.unity",
+              "Assets/Scenes/Levels/_1_Level.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -288,7 +298,8 @@
             "scenes": [
               "Assets/Scenes/_0_SplashScene.unity",
               "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity"
+              "Assets/Scenes/AdmobAds.unity",
+              "Assets/Scenes/Levels/_1_Level.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -322,7 +333,8 @@
             "scenes": [
               "Assets/Scenes/_0_SplashScene.unity",
               "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity"
+              "Assets/Scenes/AdmobAds.unity",
+              "Assets/Scenes/Levels/_1_Level.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -338,7 +350,8 @@
             "scenes": [
               "Assets/Scenes/_0_SplashScene.unity",
               "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity"
+              "Assets/Scenes/AdmobAds.unity",
+              "Assets/Scenes/Levels/_1_Level.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -352,7 +365,8 @@
           {
             "name": "Renderer",
             "scenes": [
-              "Assets/Scenes/AdmobAds.unity"
+              "Assets/Scenes/AdmobAds.unity",
+              "Assets/Scenes/Levels/_1_Level.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -374,7 +388,8 @@
             "scenes": [
               "Assets/Scenes/_0_SplashScene.unity",
               "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity"
+              "Assets/Scenes/AdmobAds.unity",
+              "Assets/Scenes/Levels/_1_Level.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -396,7 +411,8 @@
             "scenes": [
               "Assets/Scenes/_0_SplashScene.unity",
               "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity"
+              "Assets/Scenes/AdmobAds.unity",
+              "Assets/Scenes/Levels/_1_Level.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -410,7 +426,8 @@
           {
             "name": "SpriteRenderer",
             "scenes": [
-              "Assets/Scenes/AdmobAds.unity"
+              "Assets/Scenes/AdmobAds.unity",
+              "Assets/Scenes/Levels/_1_Level.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1067,7 +1084,8 @@
             "scenes": [
               "Assets/Scenes/_0_SplashScene.unity",
               "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity"
+              "Assets/Scenes/AdmobAds.unity",
+              "Assets/Scenes/Levels/_1_Level.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1118,7 +1136,8 @@
             "scenes": [
               "Assets/Scenes/_0_SplashScene.unity",
               "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity"
+              "Assets/Scenes/AdmobAds.unity",
+              "Assets/Scenes/Levels/_1_Level.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1134,7 +1153,8 @@
             "scenes": [
               "Assets/Scenes/_0_SplashScene.unity",
               "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity"
+              "Assets/Scenes/AdmobAds.unity",
+              "Assets/Scenes/Levels/_1_Level.unity"
             ],
             "dependencyType": 0,
             "icon": null

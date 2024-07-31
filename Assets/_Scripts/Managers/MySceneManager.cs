@@ -23,15 +23,16 @@ public class MySceneManager : MonoBehaviour
             AdManagerAI.Instance.ExitGameView();
         }
 
-        /*if (showBannerOnScreenLoad)
+        if (showBannerOnScreenLoad)
         {
             Debug.Log("isAGameView" + showBannerOnScreenLoad);
             AdManagerAI.Instance.ShowBannerAd();
-        } else
+        }
+        else
         {
             AdManagerAI.Instance.HideBannerAd();
-        }*/
-        
+        }
+
     }
 
     

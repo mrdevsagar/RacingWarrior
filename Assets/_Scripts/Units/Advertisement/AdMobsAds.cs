@@ -7,8 +7,8 @@
 // LOCATION (Assets/ Google Mobile Ads/ Settings)
 
 
-
-#define IS_USE_REAL_AD_IDS
+/*
+#define IS_USE_REAL_AD_IDS*/
 
 
 using UnityEngine;
