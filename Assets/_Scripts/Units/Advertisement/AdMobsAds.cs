@@ -7,8 +7,8 @@
 // LOCATION (Assets/ Google Mobile Ads/ Settings)
 
 
-/*
-#define IS_USE_REAL_AD_IDS*/
+
+#define IS_USE_REAL_AD_IDS
 
 
 using UnityEngine;
@@ -66,7 +66,7 @@ public class AdMobsAds : Singleton<AdMobsAds>
 
     
     public float interstitialAdTimer;
-    private float interstitialAdInterval = 25f; //minutes to show ads 
+    private readonly float interstitialAdInterval = 2f * 60f; //minutes to show ads 
     public bool IsLoadingRewardedAd { get; private set; }
 
     private bool _isBannerLoaded = false;
@@ -99,7 +99,7 @@ public class AdMobsAds : Singleton<AdMobsAds>
         catch (Exception ex)
         {
             ToastMessage.ShowToast(ex.Message.ToString());
-            Debug.LogError("An error occurred during AdMob initialization: " + ex.Message);
+            Debug.LogError("sooraj: An error occurred during AdMob initialization: " + ex.Message);
         }
 
     }
@@ -124,25 +124,35 @@ public class AdMobsAds : Singleton<AdMobsAds>
     /// </summary>
     private void LoadBannerAd()
     {
-        _isBannerLoaded = false;
-        if (!isAdverisementEnabaled)
+        try
         {
-            return;
+
+
+            _isBannerLoaded = false;
+            if (!isAdverisementEnabaled)
+            {
+                return;
+            }
+            //create a banner
+            CreateBannerView();
+
+            //listen to banner events
+            ListenToBannerEvents();
+
+            //load the banner
+            var adRequest = new AdRequest();
+            adRequest.Keywords.Add("unity-admob-sample");
+
+            print("Loading banner Ad !!");
+            _bannerView.LoadAd(adRequest);//show the banner on the screen
+
         }
-        //create a banner
-        CreateBannerView();
+        catch(Exception ex)
+        {
+            ToastMessage.ShowToast("loading banner ads failed");
+            Debug.LogError("sooraj: An error occurred during loading banner ad" + ex.Message);
+        }
 
-        //listen to banner events
-        ListenToBannerEvents();
-
-        //load the banner
-        var adRequest = new AdRequest();
-        adRequest.Keywords.Add("unity-admob-sample");
-
-        print("Loading banner Ad !!");
-        _bannerView.LoadAd(adRequest);//show the banner on the screen
-
-        
     }
     void CreateBannerView()
     {
@@ -223,12 +233,23 @@ public class AdMobsAds : Singleton<AdMobsAds>
     /// </summary>
     public void ShowBannerAd()
     {
-      
-        if(!_isBannerLoaded) {
-            LoadBannerAd();
-        } else
+        try
         {
-            _bannerView?.Show();
+
+
+            if (!_isBannerLoaded)
+            {
+                LoadBannerAd();
+            }
+            else
+            {
+                _bannerView?.Show();
+            }
+        }
+        catch (Exception ex)
+        {
+            ToastMessage.ShowToast("showing banner ads failed");
+            Debug.LogError("sooraj: An error occurred during showing banner ad" + ex.Message);
         }
     }
 
@@ -238,6 +259,7 @@ public class AdMobsAds : Singleton<AdMobsAds>
 
     public void LoadInterstitialAd()
     {
+        try{ 
         // My Implementation start
         if (!isAdverisementEnabaled)
         {
@@ -269,11 +291,19 @@ public class AdMobsAds : Singleton<AdMobsAds>
             _interstitialAd = ad;
             InterstitialEvent(_interstitialAd);
         });
-        
+        }
+        catch (Exception ex)
+        {
+            ToastMessage.ShowToast("loading interstitial ads failed");
+            Debug.LogError("sooraj: An error occurred during showing banner ad" + ex.Message);
+        }
+
     }
 
     public void ShowInterstitialAd()
     {
+        try
+        { 
         if (!isAdverisementEnabaled)
         {
             return;
@@ -287,33 +317,48 @@ public class AdMobsAds : Singleton<AdMobsAds>
         {
             print("Interstitial ad not ready!!");
         }
+        }
+        catch (Exception ex)
+        {
+            ToastMessage.ShowToast("ShowInterstitialAds failed");
+            Debug.LogError("sooraj: An error occurred during ShowInterstitialAd" + ex.Message);
+        }
     }
 
     public void SwitchSceneByShowingAd(string screenName)
     {
-        MyLoadSceneAsync.Instance.ShowLoadingScreen();
-        if (string.IsNullOrEmpty(screenName))
+        try
         {
-            Debug.LogError("Screen name is null or empty!");
-            return;
+            MyLoadSceneAsync.Instance.ShowLoadingScreen();
+            if (string.IsNullOrEmpty(screenName))
+            {
+                Debug.LogError("Screen name is null or empty!");
+                return;
+            }
+
+            ToastMessage.ShowToast("interstitialAdTimer: " + interstitialAdTimer);
+
+            if (interstitialAdTimer > 0 || !isAdverisementEnabaled)
+            {
+                SwitchScene(screenName);
+                return;
+            }
+
+            if (_interstitialAd != null && _interstitialAd.CanShowAd())
+            {
+                ShowInterstitialAdScreenChange(screenName);
+            }
+            else
+            {
+                IsLoadingInterstitialAd = true;
+                LoadAndShowInterstitialAd(screenName);
+            }
         }
-
-        ToastMessage.ShowToast("interstitialAdTimer: " + interstitialAdTimer);
-
-        if (interstitialAdTimer > 0 || !isAdverisementEnabaled)
+        catch (Exception ex)
         {
+            ToastMessage.ShowToast("SwitchSceneByShowingAd failed");
+            Debug.LogError("sooraj: An error occurred during SwitchSceneByShowingAd" + ex.Message);
             SwitchScene(screenName);
-            return;
-        }
-
-        if (_interstitialAd != null && _interstitialAd.CanShowAd())
-        {
-            ShowInterstitialAdScreenChange(screenName);
-        }
-        else
-        {
-            IsLoadingInterstitialAd = true;
-            LoadAndShowInterstitialAd(screenName);
         }
     }
 

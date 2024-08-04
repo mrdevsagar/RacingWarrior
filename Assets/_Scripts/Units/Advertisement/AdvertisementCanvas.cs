@@ -143,7 +143,7 @@ public class AdvertisementCanvas
 
     private void ShowRewardedAd()
     {
-        AdManagerAI.Instance.LoadAndOrShowRewardedVideoAd("Congratulation","You have received",10,Collectible.COIN);
+        AdManagerAI.Instance.LoadAndOrShowRewardedVideoAd("Congratulation you got some reward","You have received",10,Collectible.COIN);
     }
 
     private void AddTokens()

@@ -9,7 +9,7 @@ public class RewardCanvas : MonoBehaviour
     private GameObject myGameObject;
     [SerializeField] TextMeshProUGUI tokensText;
 
-    public float delayInSeconds = 5f;
+    public float delayInSeconds = 3f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
