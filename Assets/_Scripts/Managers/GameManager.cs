@@ -94,7 +94,7 @@ public class GameManager : Singleton<GameManager>
     // Method to load game data
     private void LoadGameData()
     {
-        coins = PlayerPrefs.GetInt("Coins", 0);
+        coins = PlayerPrefs.GetInt("Coins", 10000);
         diamonds = PlayerPrefs.GetInt("Diamonds", 0);
     }
     #endregion

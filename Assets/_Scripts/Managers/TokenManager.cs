@@ -67,7 +67,7 @@ public class TokenManager : Singleton<TokenManager>
 
         // Calculate number of increments since last update
         int increments = (int)(elapsedTime.TotalSeconds / _tokenIncrementInterval);
-        Tokens = PlayerPrefs.GetInt(TOKEN_KEY, 0);
+        Tokens = PlayerPrefs.GetInt(TOKEN_KEY, 1000);
         // Increment tokens based on elapsed time
         if(Tokens < 1000) {
             Tokens += increments * _tokenIncrementRate;

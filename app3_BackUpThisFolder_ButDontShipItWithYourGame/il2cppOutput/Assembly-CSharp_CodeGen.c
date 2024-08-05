@@ -179,6 +179,12 @@ extern void AdvertisementCanvas_AddDiamonds_m4EAC36E85F0D716DDECB7D080DE865799D5
 extern void AdvertisementCanvas_SpenDiamonds_m9ACF5EA798BA667EBC71FFE3F447AA6B4065A140 (void);
 extern void AdvertisementCanvas_SwitchScene_mC573F7C03F13F8FB1E09C4255D906477472DC990 (void);
 extern void AdvertisementCanvas__ctor_m995D855758DBBC578DC61BD05440183B5B6B5FFB (void);
+extern void DCTCanvas_Start_mCE0607B4368CF1C6C8B618C6CB510D591875130E (void);
+extern void DCTCanvas_Update_m6E5278E08BB74E9E3AAA8E3E88AD5439623D841B (void);
+extern void DCTCanvas_UpdateDiamondDisplay_m0C6635615D5DCC9B35EB1C743C0D8C34EEB4A73F (void);
+extern void DCTCanvas_UpdateCoinDisplay_m320C96578C6B47F99CE5E2E33308EB596CD1F212 (void);
+extern void DCTCanvas_UpdateTokensDisplay_mEA998807DA776924E5DA2023BEF7E07D099F8158 (void);
+extern void DCTCanvas__ctor_m143B375532E5F825F5E2B38FAEF0D58B981159BD (void);
 extern void RewardCanvas_Start_mC418DC469D829D623F1BB38F02AD9254862C00D1 (void);
 extern void RewardCanvas_ShowCanvas_m2938E5DF3B021BB8D6659C0FD261BF1585BBAC8A (void);
 extern void RewardCanvas_HideCanvas_m73FBF58CFE0D51C99ADF67415FA55CD089777DBD (void);
@@ -477,7 +483,7 @@ extern void U3CWarpTextU3Ed__8_MoveNext_mCE7A826C5E4854C2C509C77BD18F5A9B6D691B0
 extern void U3CWarpTextU3Ed__8_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mD80368E9B7E259311C03E406B75161ED6F7618E3 (void);
 extern void U3CWarpTextU3Ed__8_System_Collections_IEnumerator_Reset_m07746C332D2D8CE5DEA59873C26F2FAD4B369B42 (void);
 extern void U3CWarpTextU3Ed__8_System_Collections_IEnumerator_get_Current_m71D7F84D9DEF63BEC6B44866515DDCF35B142A19 (void);
-static Il2CppMethodPointer s_methodPointers[477] = 
+static Il2CppMethodPointer s_methodPointers[483] = 
 {
 	ChatController_OnEnable_m025CE203564D82A1CDCE5E5719DB07E29811D0B7,
 	ChatController_OnDisable_mD49D03719CAEBB3F59F24A7FA8F4FD30C8B54E46,
@@ -651,6 +657,12 @@ static Il2CppMethodPointer s_methodPointers[477] =
 	AdvertisementCanvas_SpenDiamonds_m9ACF5EA798BA667EBC71FFE3F447AA6B4065A140,
 	AdvertisementCanvas_SwitchScene_mC573F7C03F13F8FB1E09C4255D906477472DC990,
 	AdvertisementCanvas__ctor_m995D855758DBBC578DC61BD05440183B5B6B5FFB,
+	DCTCanvas_Start_mCE0607B4368CF1C6C8B618C6CB510D591875130E,
+	DCTCanvas_Update_m6E5278E08BB74E9E3AAA8E3E88AD5439623D841B,
+	DCTCanvas_UpdateDiamondDisplay_m0C6635615D5DCC9B35EB1C743C0D8C34EEB4A73F,
+	DCTCanvas_UpdateCoinDisplay_m320C96578C6B47F99CE5E2E33308EB596CD1F212,
+	DCTCanvas_UpdateTokensDisplay_mEA998807DA776924E5DA2023BEF7E07D099F8158,
+	DCTCanvas__ctor_m143B375532E5F825F5E2B38FAEF0D58B981159BD,
 	RewardCanvas_Start_mC418DC469D829D623F1BB38F02AD9254862C00D1,
 	RewardCanvas_ShowCanvas_m2938E5DF3B021BB8D6659C0FD261BF1585BBAC8A,
 	RewardCanvas_HideCanvas_m73FBF58CFE0D51C99ADF67415FA55CD089777DBD,
@@ -957,7 +969,7 @@ static Il2CppMethodPointer s_methodPointers[477] =
 	U3CWarpTextU3Ed__8_System_Collections_IEnumerator_Reset_m07746C332D2D8CE5DEA59873C26F2FAD4B369B42,
 	U3CWarpTextU3Ed__8_System_Collections_IEnumerator_get_Current_m71D7F84D9DEF63BEC6B44866515DDCF35B142A19,
 };
-static const int32_t s_InvokerIndices[477] = 
+static const int32_t s_InvokerIndices[483] = 
 {
 	8127,
 	8127,
@@ -1130,6 +1142,12 @@ static const int32_t s_InvokerIndices[477] =
 	8127,
 	8127,
 	8127,
+	8127,
+	8127,
+	8127,
+	6310,
+	6310,
+	6310,
 	8127,
 	8127,
 	6358,
@@ -1439,8 +1457,8 @@ static const int32_t s_InvokerIndices[477] =
 };
 static const Il2CppTokenRangePair s_rgctxIndices[2] = 
 {
-	{ 0x0200001F, { 0, 6 } },
-	{ 0x02000020, { 6, 4 } },
+	{ 0x02000020, { 0, 6 } },
+	{ 0x02000021, { 6, 4 } },
 };
 extern const uint32_t g_rgctx_Singleton_1_tEB10BC7581192E8DC4004CC6A80E88A3E42C3444;
 extern const uint32_t g_rgctx_T_t2337B8A22C295A41D129CA0B4B104663AAC37B94;
@@ -1469,7 +1487,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	477,
+	483,
 	s_methodPointers,
 	0,
 	NULL,
