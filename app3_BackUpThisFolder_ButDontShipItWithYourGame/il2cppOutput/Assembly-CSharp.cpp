@@ -5237,6 +5237,11 @@ inline void Action_1__ctor_mA8C3AC97D1F076EA5D1D0C10CEE6BD3E94711501 (Action_1_t
 }
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Application_add_focusChanged_m8C984ECC5D23BE2E395EEAEE58D028F2B95A7E85 (Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* ___0_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Application_remove_focusChanged_m1348AD63AFFB9F50347A09DDE75F91B5A6710624 (Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C* ___0_value, const RuntimeMethod* method) ;
+inline MyLoadSceneAsync_tCCE388EF3D6C852A4C5B0FE5FB697446321216A1* Singleton_1_get_Instance_m6D8B098B46BF54813BCA00C0D79F5F1C39B13E5E (const RuntimeMethod* method)
+{
+	return ((  MyLoadSceneAsync_tCCE388EF3D6C852A4C5B0FE5FB697446321216A1* (*) (const RuntimeMethod*))Singleton_1_get_Instance_mA9E44B4C4951B6DC9272B74375A0AA8C1B9932A0_gshared)(method);
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MyLoadSceneAsync_HideLoadingScreen_mBDF64BF57DA47BFC1018B7BC201DE978E56F736A (MyLoadSceneAsync_tCCE388EF3D6C852A4C5B0FE5FB697446321216A1* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelManager_HidePauseScreen_m2497ACADA5CD0E410E0A3841C60D88900C69A502 (LevelManager_t8405886BBC5A0ACBB1CC210E25D5DA1C72D16530* __this, const RuntimeMethod* method) ;
 inline GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6* Singleton_1_get_Instance_m060D1CEFD55FBAA504AEB5D7B2AC01AD3E3F3B47 (const RuntimeMethod* method)
 {
@@ -5268,10 +5273,6 @@ inline TokenManager_t97D5231DC2CCB35DDB1090260B934338CE215009* Singleton_1_get_I
 inline void Singleton_1_Instantiate_m32B5163D23466E33B931F6500E62AE16213B6E4D (Singleton_1_tF4E3914D5F7ED6EFC81A193506ABF891C61FE1A8* __this, const RuntimeMethod* method)
 {
 	((  void (*) (Singleton_1_tF4E3914D5F7ED6EFC81A193506ABF891C61FE1A8*, const RuntimeMethod*))Singleton_1_Instantiate_mC06DB485F002AC7CDAA27BD9D4A0BA44C3C3B06B_gshared)(__this, method);
-}
-inline MyLoadSceneAsync_tCCE388EF3D6C852A4C5B0FE5FB697446321216A1* Singleton_1_get_Instance_m6D8B098B46BF54813BCA00C0D79F5F1C39B13E5E (const RuntimeMethod* method)
-{
-	return ((  MyLoadSceneAsync_tCCE388EF3D6C852A4C5B0FE5FB697446321216A1* (*) (const RuntimeMethod*))Singleton_1_get_Instance_mA9E44B4C4951B6DC9272B74375A0AA8C1B9932A0_gshared)(method);
 }
 inline void Singleton_1_Instantiate_mF11387EFBDEB0F09F0564E160282AE98CBE0A8E2 (Singleton_1_tE0F407964CA01A950F43D3E298B033647172570F* __this, const RuntimeMethod* method)
 {
@@ -5544,7 +5545,6 @@ inline void Singleton_1__ctor_m79C6461DEAE8942A1DE41FA71B824D9B11A98E9B (Singlet
 {
 	((  void (*) (Singleton_1_tE0F407964CA01A950F43D3E298B033647172570F*, const RuntimeMethod*))Singleton_1__ctor_mD821C051D84F31B82CD3EC80D5174ADD3F038B14_gshared)(__this, method);
 }
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MyLoadSceneAsync_HideLoadingScreen_mBDF64BF57DA47BFC1018B7BC201DE978E56F736A (MyLoadSceneAsync_tCCE388EF3D6C852A4C5B0FE5FB697446321216A1* __this, const RuntimeMethod* method) ;
 inline Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* Component_GetComponent_TisButton_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098_mFF8BA4CA5D7158D1D6249559A3289E7A6DF0A2BB (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, const RuntimeMethod* method)
 {
 	return ((  Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* (*) (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3*, const RuntimeMethod*))Component_GetComponent_TisRuntimeObject_m7181F81CAEC2CF53F5D2BC79B7425C16E1F80D33_gshared)(__this, method);
@@ -7003,6 +7003,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelManager_OnDisable_m91E921A2C26A738E
 }
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelManager_OnFocusChanged_m79CCEB9327840D47E40F5DFD5CD4BD1831A64192 (LevelManager_t8405886BBC5A0ACBB1CC210E25D5DA1C72D16530* __this, bool ___0_hasFocus, const RuntimeMethod* method) 
 {
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Singleton_1_get_Instance_m6D8B098B46BF54813BCA00C0D79F5F1C39B13E5E_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
 	{
 		bool L_0 = __this->____isAutoPauseEnabled;
 		if (L_0)
@@ -7043,18 +7049,22 @@ IL_001b:
 
 IL_0022:
 	{
-		bool L_3;
-		L_3 = LevelManager_get_IsGameEnded_m4DDC667DDD3CAFB0DAD1522C5253CF05544F8941_inline(__this, NULL);
-		if (!L_3)
+		MyLoadSceneAsync_tCCE388EF3D6C852A4C5B0FE5FB697446321216A1* L_3;
+		L_3 = Singleton_1_get_Instance_m6D8B098B46BF54813BCA00C0D79F5F1C39B13E5E(Singleton_1_get_Instance_m6D8B098B46BF54813BCA00C0D79F5F1C39B13E5E_RuntimeMethod_var);
+		NullCheck(L_3);
+		MyLoadSceneAsync_HideLoadingScreen_mBDF64BF57DA47BFC1018B7BC201DE978E56F736A(L_3, NULL);
+		bool L_4;
+		L_4 = LevelManager_get_IsGameEnded_m4DDC667DDD3CAFB0DAD1522C5253CF05544F8941_inline(__this, NULL);
+		if (!L_4)
 		{
-			goto IL_0030;
+			goto IL_003a;
 		}
 	}
 	{
 		LevelManager_ShowResultScreen_m513BED1C7C80324B74ED0199FEE466ADCCDC2EF2(__this, NULL);
 	}
 
-IL_0030:
+IL_003a:
 	{
 		return;
 	}
@@ -13090,20 +13100,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SwitchSceneAsyncButton_OnButtonClick_m18
 	if (!s_Il2CppMethodInitialized)
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Singleton_1_get_Instance_m6D8B098B46BF54813BCA00C0D79F5F1C39B13E5E_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Singleton_1_get_Instance_m3243CA17A9997457F2CB4DEA4E3DE807EA037CDE_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral80B6404DA4E7EB3E71B6FDC83D950B8A25B749E9);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteral80B6404DA4E7EB3E71B6FDC83D950B8A25B749E9, NULL);
-		MyLoadSceneAsync_tCCE388EF3D6C852A4C5B0FE5FB697446321216A1* L_0;
-		L_0 = Singleton_1_get_Instance_m6D8B098B46BF54813BCA00C0D79F5F1C39B13E5E(Singleton_1_get_Instance_m6D8B098B46BF54813BCA00C0D79F5F1C39B13E5E_RuntimeMethod_var);
+		AdMobsAds_tB32B3D127020FD05323C251EFFB30EF0A0659344* L_0;
+		L_0 = Singleton_1_get_Instance_m3243CA17A9997457F2CB4DEA4E3DE807EA037CDE(Singleton_1_get_Instance_m3243CA17A9997457F2CB4DEA4E3DE807EA037CDE_RuntimeMethod_var);
 		SceneField_t046B68D16B9E0FB2945EA5F9F1462FEC3B548C7E* L_1 = __this->___sceneName;
 		String_t* L_2;
 		L_2 = SceneField_op_Implicit_m386DC45788A8CAECB655DAF7AB87917D3238DC13(L_1, NULL);
 		NullCheck(L_0);
-		MyLoadSceneAsync_Load_mF3C5918151B42461346D978F40CDE442FD0098D1(L_0, L_2, NULL);
+		AdMobsAds_SwitchSceneByShowingAd_mA566624B721AC21996694AEB591A01885B37D204(L_0, L_2, NULL);
 		return;
 	}
 }

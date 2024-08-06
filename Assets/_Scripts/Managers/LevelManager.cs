@@ -81,7 +81,8 @@ public class LevelManager : SingletonLocal<LevelManager>
         }
         else
         {
-            if(IsGameEnded)
+            MyLoadSceneAsync.Instance.HideLoadingScreen();
+            if (IsGameEnded)
             {
                 ShowResultScreen();
             }

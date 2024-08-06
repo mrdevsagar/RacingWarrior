@@ -22,7 +22,7 @@ public class SwitchSceneAsyncButton : MonoBehaviour
     public void OnButtonClick()
     {
         Debug.Log("hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
-        MyLoadSceneAsync.Instance.Load(sceneName);
+        AdMobsAds.Instance.SwitchSceneByShowingAd(sceneName);
     }
 
     void OnDestroy()
