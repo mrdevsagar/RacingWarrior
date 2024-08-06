@@ -13,7 +13,7 @@ public class MyLoadSceneAsync : Singleton<MyLoadSceneAsync>
     {
         base.Awake();
 
-        loaderPrefab = Resources.Load<GameObject>("RewardCanvas");
+        loaderPrefab = Resources.Load<GameObject>("LoadingCanvas");
         loadCanvas = Instantiate(loaderPrefab) as GameObject;
         loadCanvas.SetActive(false);
         loadCanvas.transform.parent = gameObject.transform;
@@ -39,7 +39,6 @@ public class MyLoadSceneAsync : Singleton<MyLoadSceneAsync>
 
     public void ShowLoadingScreen()
     {
-        loadCanvas.GetComponent<RewardCanvas>().ShowCanvas("Loading");
         loadCanvas.SetActive(true);
     }
 
@@ -67,6 +66,8 @@ public class MyLoadSceneAsync : Singleton<MyLoadSceneAsync>
             }
             yield return null;
         }
+
+        yield return new WaitForSeconds(2f);
         HideLoadingScreen();
     }
 }

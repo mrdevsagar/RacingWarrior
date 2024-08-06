@@ -1,14 +1,21 @@
 using UnityEngine;
 using TMPro;
+using NUnit.Framework;
+using System.Collections.Generic;
+using UnityEditor;
 
 public class DCTCanvas : MonoBehaviour
 {
 
-    [SerializeField] TextMeshProUGUI diamondText;
+    [SerializeField] TextMeshProUGUI _diamondText;
 
-    [SerializeField] TextMeshProUGUI coinText;
+    [SerializeField] TextMeshProUGUI _coinText;
 
-    [SerializeField] TextMeshProUGUI tokensText;
+    [SerializeField] TextMeshProUGUI _tokensText;
+
+    [SerializeField] List<GameObject> _addIcons;
+
+    [SerializeField] GameObject _panelDCT;
 
     void Start()
     {
@@ -35,25 +42,70 @@ public class DCTCanvas : MonoBehaviour
 
     private void UpdateDiamondDisplay(int diamond)
     {
-        if (diamondText != null)
+        if (_diamondText != null)
         {
-            diamondText.text = diamond.ToString(); // Update diamond display
+            _diamondText.text = diamond.ToString(); // Update diamond display
         }
     }
     private void UpdateCoinDisplay(int coin)
     {
-        if (coinText != null)
+        if (_coinText != null)
         {
-            coinText.text = coin.ToString(); // Update coin display
+            _coinText.text = coin.ToString(); // Update coin display
         }
     }
 
     private void UpdateTokensDisplay(int tokens)
     {
-        if (tokensText != null)
+        if (_tokensText != null)
         {
-            tokensText.text = tokens.ToString(); // Update tokens display
+            _tokensText.text = tokens.ToString(); // Update tokens display
         }
     }
+
+    public void AddDiamond()
+    {
+        ShowDCTCanvas();
+    }
+
+    public void AddCoin()
+    {
+        ShowDCTCanvas();
+    }
+
+    public void AddToken()
+    {
+        ShowDCTCanvas();
+    }
+
+    private void ShowDCTCanvas()
+    {
+        _panelDCT.SetActive(true);
+        DisableAddIcon();
+    }
+
+    public void CloseDCTCanvas()
+    {
+        _panelDCT.SetActive(false);
+        EnableAddIcon();
+    }
+
+    private void DisableAddIcon()
+    {
+        foreach (var obj in _addIcons)
+        {
+            obj.SetActive(false);
+        }
+    }
+
+    private void EnableAddIcon()
+    {
+        foreach (var obj in _addIcons)
+        {
+            obj.SetActive(true);
+        }
+    }
+
+
 
 }
