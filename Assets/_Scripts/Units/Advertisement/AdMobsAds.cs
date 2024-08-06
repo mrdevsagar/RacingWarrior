@@ -8,7 +8,7 @@
 
 
 
-#define IS_USE_REAL_AD_IDS
+//#define IS_USE_REAL_AD_IDS
 
 
 using UnityEngine;
@@ -335,8 +335,6 @@ public class AdMobsAds : Singleton<AdMobsAds>
                 Debug.LogError("Screen name is null or empty!");
                 return;
             }
-
-            ToastMessage.ShowToast("interstitialAdTimer: " + interstitialAdTimer);
 
             if (interstitialAdTimer > 0 || !isAdverisementEnabaled)
             {
