@@ -15,7 +15,6 @@ public class OutsideClickHandler : MonoBehaviour
 
     public void OnPointerClick(BaseEventData data)
     {
-        Debug.Log("............................................");
         PointerEventData pointerData = data as PointerEventData;
 
         if (pointerData != null && menuPanel != null && !RectTransformUtility.RectangleContainsScreenPoint(menuPanel.GetComponent<RectTransform>(), pointerData.position, null))

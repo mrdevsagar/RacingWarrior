@@ -3,6 +3,8 @@ using TMPro;
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEngine.UI;
+using System.Collections;
 
 public class DCTCanvas : MonoBehaviour
 {
@@ -17,6 +19,16 @@ public class DCTCanvas : MonoBehaviour
 
     [SerializeField] GameObject _panelDCT;
 
+    [SerializeField] private CanvasGroup _panelDCTCanvasGroup;
+
+    public ScrollRect scrollRect; // Assign the ScrollRect component
+    public float targetHorizontalPosition = 1.0f; // Target vertical position (0 = bottom, 1 = top)
+    public float scrollDuration = 0.5f; // Duration of the scroll animation
+
+    private bool isScrolling = false;
+
+    // Call this method on button click
+   
     void Start()
     {
         // Subscribe to the events
@@ -66,27 +78,36 @@ public class DCTCanvas : MonoBehaviour
     public void AddDiamond()
     {
         ShowDCTCanvas();
+       /* ScrollToPosition(0.0f);*/
+        ScrollToPosition(0f);
     }
 
     public void AddCoin()
     {
         ShowDCTCanvas();
+        /*ScrollToPosition(1 / 3f);*/
+        ScrollToPosition(0.58f);
     }
 
     public void AddToken()
     {
         ShowDCTCanvas();
+        /* ScrollToPosition(1 / 3f * 2f);*/
+        ScrollToPosition(1f);
+
     }
 
     private void ShowDCTCanvas()
     {
-        _panelDCT.SetActive(true);
+        _panelDCTCanvasGroup.alpha = 1;
+        _panelDCTCanvasGroup.blocksRaycasts = true;
         DisableAddIcon();
     }
 
     public void CloseDCTCanvas()
     {
-        _panelDCT.SetActive(false);
+        _panelDCTCanvasGroup.alpha = 0;
+        _panelDCTCanvasGroup.blocksRaycasts = false;
         EnableAddIcon();
     }
 
@@ -106,6 +127,30 @@ public class DCTCanvas : MonoBehaviour
         }
     }
 
+    public void ScrollToPosition(float position)
+    {
+        targetHorizontalPosition = position;
+        if (!isScrolling)
+        {
+            StartCoroutine(ScrollCoroutine(targetHorizontalPosition));
+        }
+    }
 
+    private IEnumerator ScrollCoroutine(float targetPosition)
+    {
+        isScrolling = true;
+        float startVerticalPosition = scrollRect.horizontalNormalizedPosition;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < scrollDuration)
+        {
+            scrollRect.horizontalNormalizedPosition = Mathf.Lerp(startVerticalPosition, targetPosition, elapsedTime / scrollDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        scrollRect.horizontalNormalizedPosition = targetPosition;
+        isScrolling = false;
+    }
 
 }

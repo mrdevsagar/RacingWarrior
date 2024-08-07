@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -32,6 +33,13 @@ public class MenuController : MonoBehaviour
 
     public void CloseMenu()
     {
+        StartCoroutine(ICloaseMenue());
+    }
+
+    private IEnumerator ICloaseMenue()
+    {
+        yield return new WaitForSeconds(0.2f);
         menuPanel.SetActive(false);
     }
+
 }
