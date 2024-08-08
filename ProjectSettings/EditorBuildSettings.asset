@@ -6,16 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/_0_SplashScene.unity
+    path: Assets/App/Scenes/_0_SplashScene.unity
     guid: 30e70eff7dc32c14fbb3c4c872abaf38
   - enabled: 1
-    path: Assets/Scenes/AdmobAds.unity
+    path: Assets/App/Scenes/AdmobAds.unity
     guid: 737a57035ea7a3148b9ec6684e57a240
   - enabled: 1
-    path: Assets/Scenes/_1_MainScene.unity
+    path: Assets/App/Scenes/_1_MainScene.unity
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
   - enabled: 1
-    path: Assets/Scenes/Levels/_1_Level.unity
+    path: Assets/App/Scenes/Levels/_1_Level.unity
     guid: 6a68386b0c00cf74d93276a653e15216
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 389638c7d0f560044905f96786896f41, type: 2}
