@@ -86,7 +86,7 @@ public class DCTCanvas : MonoBehaviour
     {
         ShowDCTCanvas();
         /*ScrollToPosition(1 / 3f);*/
-        ScrollToPosition(0.58f);
+        ScrollToPosition(0.49f);
     }
 
     public void AddToken()

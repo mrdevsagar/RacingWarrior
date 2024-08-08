@@ -15,6 +15,7 @@ using UnityEngine;
 using GoogleMobileAds.Api;
 using UnityEngine.UI;
 using System;
+using System.Collections;
 
 /// <summary>
 ///   AdMobsAds for managing AdMob ads with singleton instance.
@@ -68,10 +69,17 @@ public class AdMobsAds : Singleton<AdMobsAds>
     public float interstitialAdTimer;
     private readonly float interstitialAdInterval = 2f * 60f; //minutes to show ads 
     public bool IsLoadingRewardedAd { get; private set; }
+    
 
     private bool _isBannerLoaded = false;
 
+    private float cooldownTime = 30f;
 
+    private float countDownValue = 0f;
+
+    public float CountDownValue { get => countDownValue;private set => countDownValue = value; }
+
+    private bool isCooldown = false;
 
     #region SingletonInstance Code
 
@@ -491,9 +499,10 @@ public class AdMobsAds : Singleton<AdMobsAds>
 
         RewardedAd.Load(REWARDED_ID, adRequest, (RewardedAd ad, LoadAdError error) =>
         {
-            IsLoadingRewardedAd = false;
+            
             if (error != null || ad == null)
             {
+                IsLoadingRewardedAd = false;
                 /*_videoErrorCanvas.SetActive(true);*/
                 print("Rewarded failed to load" + error);
                 return;
@@ -506,6 +515,9 @@ public class AdMobsAds : Singleton<AdMobsAds>
             if(!AdManagerAI.Instance.IsRewardedAdCanceled)
             {
                 ShowRewardedAd(title, subTitle, count, collectibleType);
+            } else
+            {
+                IsLoadingRewardedAd = false;
             }
             
         });
@@ -522,13 +534,36 @@ public class AdMobsAds : Singleton<AdMobsAds>
                 GameObject prefab = Resources.Load<GameObject>("RewardCanvas");
                 GameObject myItem = Instantiate(prefab) as GameObject;
                 myItem.GetComponent<RewardCanvas>().ShowCanvas(title);
+
+                RewardedAdShowed();
+
+                switch (collectibleType)
+                { 
+                    case Collectible.COIN:
+                        GameManager.Instance.AddCoins(count);
+                        break;
+
+                    case Collectible.DIAMOND: 
+                        GameManager.Instance.AddDiamonds(count);
+                        break;
+
+                    case Collectible.TOKEN:
+                        TokenManager.Instance.AddToken(count);
+                        break;
+
+                    default:
+                        break;
+                }
+
                 Debug.Log(".........................................................................................................."+ title);
+                IsLoadingRewardedAd = false;
             });
             
         }
         else
         {
             print("Rewarded ad not ready");
+            IsLoadingRewardedAd = false;
         }
     }
 
@@ -541,7 +576,42 @@ public class AdMobsAds : Singleton<AdMobsAds>
         {
             LoadRewardedAd(title, subTitle, count, collectibleType);
         }
-    }    
+    }
+
+    private void RewardedAdShowed()
+    {
+        if (isCooldown)
+        {
+            Debug.Log("Rewarded ad is on cooldown.");
+            return;
+        }
+
+        // Show your rewarded ad here
+        // (replace the following line with your ad showing logic)
+        Debug.Log("Showing rewarded ad...");
+
+        // After the ad is shown, start the cooldown
+        StartCoroutine(StartCooldown());
+    }
+
+    private IEnumerator StartCooldown()
+    {
+        isCooldown = true;
+        
+
+        float currentTime = cooldownTime;
+
+        while (currentTime > 0)
+        {
+            CountDownValue =  currentTime;
+            Debug.Log(CountDownValue);
+            yield return new WaitForSeconds(1f);
+            currentTime--;
+        }
+
+        CountDownValue = 0;
+        isCooldown = false;
+    }
     public void RewardedAdEvents(RewardedAd ad, string title, string subTitle, int count, Collectible collectibleType)
     {
         
