@@ -1,10 +1,11 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.EventSystems;
+using System;
 
 public class DCTBuyPanelController : MonoBehaviour
 {
-    [SerializeField] BuyCard crate;
+  
     [SerializeField] BuyCard diamondReward;
     [SerializeField] BuyCard coinReward;
     [SerializeField] BuyCard cashReward;
@@ -47,20 +48,79 @@ public class DCTBuyPanelController : MonoBehaviour
         }
     }
 
-    public void RequestAddForDiamond()
+    public void RequestAdForDiamond()
     {
-       RequestRewardedAd("Congresses", "You Got A Diamond.", 1, Collectible.DIAMOND);
+       RequestRewardedAd("Congresses", "You Got 2 Diamonds.", 2, Collectible.DIAMOND);
     }
 
-    public void RequestAddForCoin()
+    public void RequestAdForCoin()
     {
-        RequestRewardedAd("Congresses", "You Got 2000 coins", 2000, Collectible.COIN);
+        RequestRewardedAd("Congresses", "You Got 10000 coins", 10000, Collectible.COIN);
     }
-    public void RequestAddForToken()
+    public void RequestAdForToken()
     {
-        RequestRewardedAd("Congresses", "You Got 50 Tokens", 50, Collectible.TOKEN);
+        RequestRewardedAd("Congresses", "You Got 100 Tokens", 100, Collectible.TOKEN);
     }
-    
+
+
+    public void SpendForCoin()
+    {
+        if(GameManager.Instance.SpendDiamonds(3))
+        {
+            AdMobsAds.Instance.ShowRewardPanel("Coins", "You Got 10,000 coins", 10000, Collectible.COIN);
+            GameManager.Instance.AddCoins(10000);
+        } else
+        {
+            NotEnoughDiamond();
+        }
+        
+    }
+    public void SpendForToken()
+    {
+        //50 tokens
+        if (GameManager.Instance.SpendDiamonds(1))
+        {
+            TokenManager.Instance.AddToken(50);
+            AdMobsAds.Instance.ShowRewardPanel("Tokens", "You Got 50 Tokens", 50, Collectible.TOKEN);
+        }
+        else
+        {
+            NotEnoughDiamond();
+        }
+    }
+
+
+    public void SpendForCoin2()
+    {
+        if (GameManager.Instance.SpendDiamonds(5))
+        {
+            AdMobsAds.Instance.ShowRewardPanel("Coins", "You Got 25,000 coins", 25000, Collectible.COIN);
+            GameManager.Instance.AddCoins(25000);
+        }
+        else
+        {
+            NotEnoughDiamond();
+        }
+    }
+    public void SpendForToken2()
+    {
+        if (GameManager.Instance.SpendDiamonds(3))
+        {
+            //200 tokens
+            AdMobsAds.Instance.ShowRewardPanel("Tokens", "You Got 200 Tokens", 200, Collectible.TOKEN);
+            TokenManager.Instance.AddToken(200);
+        }
+        else
+        {
+            NotEnoughDiamond();
+        }
+    }
+
+    private void NotEnoughDiamond()
+    {
+        AdMobsAds.Instance.ShowRewardPanel("Warning", "Not Enough Diamond", 0, Collectible.NO_DIAMOND);
+    }
+
 
     private void RequestRewardedAd(string title, string subTitle, int count, Collectible collectibleType)
     {
@@ -82,4 +142,27 @@ public class DCTBuyPanelController : MonoBehaviour
             AdManagerAI.Instance.CancelShowingRewardedAd();
         }
     }
+
+  /*  public void ShowRewardPanel(string title, string subTitle, int count, Collectible collectibleType)
+    {
+        var rewardCanvas = FindFirstObjectByType<RewardCanvas>();
+        GameObject myItem = null;
+        if (rewardCanvas != null)
+        {
+            myItem = rewardCanvas.gameObject;
+        } 
+        if (myItem == null)
+        {
+
+            GameObject prefab = Resources.Load<GameObject>("RewardCanvas");
+            myItem = Instantiate(prefab) as GameObject;
+        }
+        
+        if(myItem != null)
+        {
+            myItem.GetComponent<RewardCanvas>().ShowCanvas(title, subTitle, count, collectibleType);
+        }
+    }
+*/
+  
 }

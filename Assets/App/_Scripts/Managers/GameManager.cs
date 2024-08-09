@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-public enum Collectible {COIN,DIAMOND,TOKEN}
+public enum Collectible {COIN,DIAMOND,TOKEN,NO_DIAMOND}
 
 public class GameManager : Singleton<GameManager>
 {
@@ -94,7 +94,7 @@ public class GameManager : Singleton<GameManager>
     // Method to load game data
     private void LoadGameData()
     {
-        coins = PlayerPrefs.GetInt("Coins", 10000);
+        coins = PlayerPrefs.GetInt("Coins", 1000);
         diamonds = PlayerPrefs.GetInt("Diamonds", 0);
     }
     #endregion

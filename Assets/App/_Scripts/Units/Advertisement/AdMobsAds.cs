@@ -16,6 +16,7 @@ using GoogleMobileAds.Api;
 using UnityEngine.UI;
 using System;
 using System.Collections;
+using Unity.Mathematics;
 
 /// <summary>
 ///   AdMobsAds for managing AdMob ads with singleton instance.
@@ -112,10 +113,10 @@ public class AdMobsAds : Singleton<AdMobsAds>
 
     }
 
-
+    #endregion
     private void Start()
     {
-        
+        CheckCooldown();
     }
 
     private void Update()
@@ -123,7 +124,7 @@ public class AdMobsAds : Singleton<AdMobsAds>
         interstitialAdTimer -= Time.deltaTime;
     }
 
-    #endregion
+    
 
     #region Banner Ads
 
@@ -168,7 +169,7 @@ public class AdMobsAds : Singleton<AdMobsAds>
         {
             DestroyBannerAd();
         }
-        _bannerView = new BannerView(BANNER_ID, AdSize.Banner, AdPosition.Top);
+        _bannerView = new BannerView(BANNER_ID, AdSize.Banner, AdPosition.TopLeft);
     }
     void ListenToBannerEvents()
     {
@@ -530,11 +531,11 @@ public class AdMobsAds : Singleton<AdMobsAds>
             {
                 print("Give reward to player !!");
                 RewardedAdEvents(_rewardedAd, title, subTitle, count, collectibleType);
-
+/*
                 GameObject prefab = Resources.Load<GameObject>("RewardCanvas");
                 GameObject myItem = Instantiate(prefab) as GameObject;
-                myItem.GetComponent<RewardCanvas>().ShowCanvas(title);
-
+                myItem.GetComponent<RewardCanvas>().ShowCanvas(title,subTitle,count,collectibleType);*/
+                ShowRewardPanel(title, subTitle, count, collectibleType);
                 RewardedAdShowed();
 
                 switch (collectibleType)
@@ -567,6 +568,27 @@ public class AdMobsAds : Singleton<AdMobsAds>
         }
     }
 
+    public void ShowRewardPanel(string title, string subTitle, int count, Collectible collectibleType)
+    {
+        var rewardCanvas = FindFirstObjectByType<RewardCanvas>();
+        GameObject myItem = null;
+        if (rewardCanvas != null)
+        {
+            myItem = rewardCanvas.gameObject;
+        }
+        if (myItem == null)
+        {
+
+            GameObject prefab = Resources.Load<GameObject>("RewardCanvas");
+            myItem = Instantiate(prefab) as GameObject;
+        }
+
+        if (myItem != null)
+        {
+            myItem.GetComponent<RewardCanvas>().ShowCanvas(title, subTitle, count, collectibleType);
+        }
+    }
+
     public void ShowOrLoadRewardedAd(string title, string subTitle, int count, Collectible collectibleType)
     {
         if (_rewardedAd != null && _rewardedAd.CanShowAd())
@@ -578,7 +600,7 @@ public class AdMobsAds : Singleton<AdMobsAds>
         }
     }
 
-    private void RewardedAdShowed()
+    /*private void RewardedAdShowed()
     {
         if (isCooldown)
         {
@@ -592,26 +614,82 @@ public class AdMobsAds : Singleton<AdMobsAds>
 
         // After the ad is shown, start the cooldown
         StartCoroutine(StartCooldown());
+    }*/
+
+    public void RewardedAdShowed()
+    {
+        if (isCooldown)
+        {
+            Debug.Log("Rewarded ad is on cooldown.");
+            return;
+        }
+
+        // Show your rewarded ad here
+        // (replace the following line with your ad showing logic)
+        Debug.Log("Showing rewarded ad...");
+
+        // Save the time when the ad was shown
+        PlayerPrefs.SetString("LastAdShownTime", DateTime.Now.ToString());
+        PlayerPrefs.Save();
+
+        // Start the cooldown
+        StartCoroutine(StartCooldown(cooldownTime));
     }
 
-    private IEnumerator StartCooldown()
+    /* private IEnumerator StartCooldown()
+     {
+         isCooldown = true;
+
+
+         float currentTime = cooldownTime;
+
+         while (currentTime > 0)
+         {
+             CountDownValue =  currentTime;
+             Debug.Log(CountDownValue);
+             yield return new WaitForSeconds(1f);
+             currentTime--;
+         }
+
+         CountDownValue = 0;
+         isCooldown = false;
+     }*/
+
+    private IEnumerator StartCooldown(float time)
     {
         isCooldown = true;
-        
+        /*countdownText.gameObject.SetActive(true);*/
 
-        float currentTime = cooldownTime;
+        float currentTime = time;
 
         while (currentTime > 0)
         {
-            CountDownValue =  currentTime;
-            Debug.Log(CountDownValue);
+            CountDownValue = math.round(currentTime);
+            /*countdownText.text = "Next ad in: " + currentTime.ToString("F0") + "s";*/
             yield return new WaitForSeconds(1f);
             currentTime--;
         }
 
         CountDownValue = 0;
+        /*countdownText.gameObject.SetActive(false);*/
         isCooldown = false;
     }
+
+    private void CheckCooldown()
+    {
+        if (PlayerPrefs.HasKey("LastAdShownTime"))
+        {
+            DateTime lastAdShownTime = DateTime.Parse(PlayerPrefs.GetString("LastAdShownTime"));
+            TimeSpan timeSinceLastAd = DateTime.Now - lastAdShownTime;
+
+            if (timeSinceLastAd.TotalSeconds < cooldownTime)
+            {
+                float remainingTime = cooldownTime - (float)timeSinceLastAd.TotalSeconds;
+                StartCoroutine(StartCooldown(remainingTime));
+            }
+        }
+    }
+
     public void RewardedAdEvents(RewardedAd ad, string title, string subTitle, int count, Collectible collectibleType)
     {
         

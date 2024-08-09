@@ -1212,7 +1212,8 @@
           {
             "name": "CanvasGroup",
             "scenes": [
-              "Assets/App/Scenes/_1_MainScene.unity"
+              "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/AdmobAds.unity"
             ],
             "dependencyType": 0,
             "icon": null

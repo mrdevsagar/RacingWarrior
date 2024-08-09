@@ -27,6 +27,8 @@ public class DCTCanvas : MonoBehaviour
 
     private bool isScrolling = false;
 
+    public float aaa = 0f;
+
     // Call this method on button click
    
     void Start()
@@ -78,21 +80,18 @@ public class DCTCanvas : MonoBehaviour
     public void AddDiamond()
     {
         ShowDCTCanvas();
-       /* ScrollToPosition(0.0f);*/
         ScrollToPosition(0f);
     }
 
     public void AddCoin()
     {
         ShowDCTCanvas();
-        /*ScrollToPosition(1 / 3f);*/
-        ScrollToPosition(0.49f);
+        ScrollToPosition(0.3f);
     }
 
     public void AddToken()
     {
         ShowDCTCanvas();
-        /* ScrollToPosition(1 / 3f * 2f);*/
         ScrollToPosition(1f);
 
     }
