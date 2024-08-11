@@ -7,10 +7,13 @@
 
 
 
-extern void InputHandler_Awake_m2AE59413AE854EFF4970DEE57EDBC7E1D6E23C30 (void);
-extern void InputHandler_OnClick_m52C6B9AD8A37D9893C563A2AA2C47E1BB296E547 (void);
-extern void InputHandler_Click_m5A733947FBFB458C52DC0A5795B2DADBE706EFD4 (void);
-extern void InputHandler__ctor_m6F970BFB5070CD4229F65C8544F51C4B5994654B (void);
+extern void TouchManager_Awake_mF16F8C69C865C03D41E2D065503B44804BB80EBD (void);
+extern void TouchManager_Start_m088CE1AB8AC888BE8E70A91A12E039904CBF8328 (void);
+extern void TouchManager_OnEnable_m5EE56964F2DC71DC2BA1A053FE34BACFA5112468 (void);
+extern void TouchManager_OnDisable_m9806BEDB2E714033C7A8A3D43E683FE8FC231C08 (void);
+extern void TouchManager_TouchPressed_m4612FDC1920E757CEF70FACD62986D0FCE1DA925 (void);
+extern void TouchManager_PressedPostion_mCF35EE5151B640BB9C3A7800855F618DCE917FAF (void);
+extern void TouchManager__ctor_m0EAB0489A0B81847F07F4C25B6AD78A22E96AE7D (void);
 extern void ObjectPressHandler_OnEnable_m2451CB09D49E82162969D25774562BACCF44E6F3 (void);
 extern void ObjectPressHandler_OnDisable_mEFE67A551ECE4BA4EF0EED349C4E4C9AEFD609AF (void);
 extern void ObjectPressHandler_OnPointerPerformed_m0E9D1B1BD8F156469202A9F26033CAECF64D5B88 (void);
@@ -84,6 +87,13 @@ extern void U3CLoadMainSceneAsyncU3Ed__5_MoveNext_m1A28009B38D88A15027A998719B5A
 extern void U3CLoadMainSceneAsyncU3Ed__5_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m3DAF3BE13ABFD479DFF88F7FC12F8DA669D2639D (void);
 extern void U3CLoadMainSceneAsyncU3Ed__5_System_Collections_IEnumerator_Reset_m3EDBDB9471B78AD24C6EB916359857F99E0DC699 (void);
 extern void U3CLoadMainSceneAsyncU3Ed__5_System_Collections_IEnumerator_get_Current_m738442CF94C17E62FBBB135CBC3159895DAF6EA8 (void);
+extern void SwipeMenu_Awake_mF0E2094D5937EF9C6E989745BE62021466D46B03 (void);
+extern void SwipeMenu_Start_mF49B3B2AF9955E8429EFABBC7F8C7A4C9D73ABE5 (void);
+extern void SwipeMenu_OnEnable_m3AA9F4D0D440BA079951BC29F6D215C074DE13D7 (void);
+extern void SwipeMenu_OnDisable_m6D017D2E40060A504CEC5EB713441692EFEDABF1 (void);
+extern void SwipeMenu_Update_mAE33874564EBE84862BA97BE8AEBDCD1D5007A9A (void);
+extern void SwipeMenu_TouchPressed_m67A17A597B27CB2E9F99FF52AD13F696DBB492D7 (void);
+extern void SwipeMenu__ctor_mF71FD4B4351FB13F62DE12BC7C9C7F164D7B8DD2 (void);
 extern void MainSceneCanvas_ShowSettingsPanel_m6C7C94155AD1C55D10A3C338407440FBC311013F (void);
 extern void MainSceneCanvas_HideSettingsPanel_m93910B295972B42A1D14342BA4748BE30EFA47BC (void);
 extern void MainSceneCanvas_ShowAboutUssPanel_mBE7C92DB54FF2CEAA935D9D2D21C308E79FDF738 (void);
@@ -608,12 +618,15 @@ extern void U3CWarpTextU3Ed__8_MoveNext_mCE7A826C5E4854C2C509C77BD18F5A9B6D691B0
 extern void U3CWarpTextU3Ed__8_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mD80368E9B7E259311C03E406B75161ED6F7618E3 (void);
 extern void U3CWarpTextU3Ed__8_System_Collections_IEnumerator_Reset_m07746C332D2D8CE5DEA59873C26F2FAD4B369B42 (void);
 extern void U3CWarpTextU3Ed__8_System_Collections_IEnumerator_get_Current_m71D7F84D9DEF63BEC6B44866515DDCF35B142A19 (void);
-static Il2CppMethodPointer s_methodPointers[608] = 
+static Il2CppMethodPointer s_methodPointers[618] = 
 {
-	InputHandler_Awake_m2AE59413AE854EFF4970DEE57EDBC7E1D6E23C30,
-	InputHandler_OnClick_m52C6B9AD8A37D9893C563A2AA2C47E1BB296E547,
-	InputHandler_Click_m5A733947FBFB458C52DC0A5795B2DADBE706EFD4,
-	InputHandler__ctor_m6F970BFB5070CD4229F65C8544F51C4B5994654B,
+	TouchManager_Awake_mF16F8C69C865C03D41E2D065503B44804BB80EBD,
+	TouchManager_Start_m088CE1AB8AC888BE8E70A91A12E039904CBF8328,
+	TouchManager_OnEnable_m5EE56964F2DC71DC2BA1A053FE34BACFA5112468,
+	TouchManager_OnDisable_m9806BEDB2E714033C7A8A3D43E683FE8FC231C08,
+	TouchManager_TouchPressed_m4612FDC1920E757CEF70FACD62986D0FCE1DA925,
+	TouchManager_PressedPostion_mCF35EE5151B640BB9C3A7800855F618DCE917FAF,
+	TouchManager__ctor_m0EAB0489A0B81847F07F4C25B6AD78A22E96AE7D,
 	ObjectPressHandler_OnEnable_m2451CB09D49E82162969D25774562BACCF44E6F3,
 	ObjectPressHandler_OnDisable_mEFE67A551ECE4BA4EF0EED349C4E4C9AEFD609AF,
 	ObjectPressHandler_OnPointerPerformed_m0E9D1B1BD8F156469202A9F26033CAECF64D5B88,
@@ -687,6 +700,13 @@ static Il2CppMethodPointer s_methodPointers[608] =
 	U3CLoadMainSceneAsyncU3Ed__5_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m3DAF3BE13ABFD479DFF88F7FC12F8DA669D2639D,
 	U3CLoadMainSceneAsyncU3Ed__5_System_Collections_IEnumerator_Reset_m3EDBDB9471B78AD24C6EB916359857F99E0DC699,
 	U3CLoadMainSceneAsyncU3Ed__5_System_Collections_IEnumerator_get_Current_m738442CF94C17E62FBBB135CBC3159895DAF6EA8,
+	SwipeMenu_Awake_mF0E2094D5937EF9C6E989745BE62021466D46B03,
+	SwipeMenu_Start_mF49B3B2AF9955E8429EFABBC7F8C7A4C9D73ABE5,
+	SwipeMenu_OnEnable_m3AA9F4D0D440BA079951BC29F6D215C074DE13D7,
+	SwipeMenu_OnDisable_m6D017D2E40060A504CEC5EB713441692EFEDABF1,
+	SwipeMenu_Update_mAE33874564EBE84862BA97BE8AEBDCD1D5007A9A,
+	SwipeMenu_TouchPressed_m67A17A597B27CB2E9F99FF52AD13F696DBB492D7,
+	SwipeMenu__ctor_mF71FD4B4351FB13F62DE12BC7C9C7F164D7B8DD2,
 	MainSceneCanvas_ShowSettingsPanel_m6C7C94155AD1C55D10A3C338407440FBC311013F,
 	MainSceneCanvas_HideSettingsPanel_m93910B295972B42A1D14342BA4748BE30EFA47BC,
 	MainSceneCanvas_ShowAboutUssPanel_mBE7C92DB54FF2CEAA935D9D2D21C308E79FDF738,
@@ -1219,11 +1239,14 @@ static Il2CppMethodPointer s_methodPointers[608] =
 	U3CWarpTextU3Ed__8_System_Collections_IEnumerator_Reset_m07746C332D2D8CE5DEA59873C26F2FAD4B369B42,
 	U3CWarpTextU3Ed__8_System_Collections_IEnumerator_get_Current_m71D7F84D9DEF63BEC6B44866515DDCF35B142A19,
 };
-static const int32_t s_InvokerIndices[608] = 
+static const int32_t s_InvokerIndices[618] = 
 {
 	8471,
-	6775,
 	8471,
+	8471,
+	8471,
+	6775,
+	6712,
 	8471,
 	8471,
 	8471,
@@ -1298,6 +1321,13 @@ static const int32_t s_InvokerIndices[608] =
 	8324,
 	8471,
 	8324,
+	8471,
+	8471,
+	8471,
+	8471,
+	8471,
+	6775,
+	8471,
 	8471,
 	8471,
 	8471,
@@ -1832,8 +1862,8 @@ static const int32_t s_InvokerIndices[608] =
 };
 static const Il2CppTokenRangePair s_rgctxIndices[2] = 
 {
-	{ 0x0200002F, { 0, 6 } },
-	{ 0x02000030, { 6, 4 } },
+	{ 0x02000030, { 0, 6 } },
+	{ 0x02000031, { 6, 4 } },
 };
 extern const uint32_t g_rgctx_Singleton_1_tEB10BC7581192E8DC4004CC6A80E88A3E42C3444;
 extern const uint32_t g_rgctx_T_t2337B8A22C295A41D129CA0B4B104663AAC37B94;
@@ -1862,7 +1892,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	608,
+	618,
 	s_methodPointers,
 	0,
 	NULL,

@@ -3377,8 +3377,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName:
-    m_SceneAsset: {fileID: 102900000, guid: 6a68386b0c00cf74d93276a653e15216, type: 3}
-    m_SceneName: _1_Level
+    m_SceneAsset: {fileID: 102900000, guid: 4cc06954cdc7b5d4887afec8b2dd22d6, type: 3}
+    m_SceneName: LevelsScene
 --- !u!114 &1469818370
 MonoBehaviour:
   m_ObjectHideFlags: 0
