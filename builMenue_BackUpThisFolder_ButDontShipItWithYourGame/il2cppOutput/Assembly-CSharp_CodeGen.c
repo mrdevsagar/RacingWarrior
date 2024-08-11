@@ -7,6 +7,10 @@
 
 
 
+extern void InputHandler_Awake_m2AE59413AE854EFF4970DEE57EDBC7E1D6E23C30 (void);
+extern void InputHandler_OnClick_m52C6B9AD8A37D9893C563A2AA2C47E1BB296E547 (void);
+extern void InputHandler_Click_m5A733947FBFB458C52DC0A5795B2DADBE706EFD4 (void);
+extern void InputHandler__ctor_m6F970BFB5070CD4229F65C8544F51C4B5994654B (void);
 extern void ObjectPressHandler_OnEnable_m2451CB09D49E82162969D25774562BACCF44E6F3 (void);
 extern void ObjectPressHandler_OnDisable_mEFE67A551ECE4BA4EF0EED349C4E4C9AEFD609AF (void);
 extern void ObjectPressHandler_OnPointerPerformed_m0E9D1B1BD8F156469202A9F26033CAECF64D5B88 (void);
@@ -253,6 +257,9 @@ extern void RewardCanvas_Start_mC418DC469D829D623F1BB38F02AD9254862C00D1 (void);
 extern void RewardCanvas_ShowCanvas_mB2802FC0A7A3B0E4437040F7FD844CBD1247D1CE (void);
 extern void RewardCanvas_HideCanvas_m73FBF58CFE0D51C99ADF67415FA55CD089777DBD (void);
 extern void RewardCanvas__ctor_m953B20A7F105EF6BB94185BB842D00689078DCED (void);
+extern void TempPlayer_Start_mCC55D2A8AB356F142B5F233072D62751BB2B6358 (void);
+extern void TempPlayer_Update_m460C4F61ACFB50B4F56E79677BBE9673CF1777C9 (void);
+extern void TempPlayer__ctor_mF6311449D352FA76BC84415F42E7997C6BF0F009 (void);
 extern void RotateTriangle_Update_m034138EC5E010F65D09D8B61739D5F4E99CBBB86 (void);
 extern void RotateTriangle__ctor_m1B57AE99DD985094BB825DCEA965CE15B9303F9B (void);
 extern void BlinkingLoadingText_OnEnable_m5BBD60DDA6C0E2CB2B124038B9B28229C6F89D88 (void);
@@ -601,8 +608,12 @@ extern void U3CWarpTextU3Ed__8_MoveNext_mCE7A826C5E4854C2C509C77BD18F5A9B6D691B0
 extern void U3CWarpTextU3Ed__8_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mD80368E9B7E259311C03E406B75161ED6F7618E3 (void);
 extern void U3CWarpTextU3Ed__8_System_Collections_IEnumerator_Reset_m07746C332D2D8CE5DEA59873C26F2FAD4B369B42 (void);
 extern void U3CWarpTextU3Ed__8_System_Collections_IEnumerator_get_Current_m71D7F84D9DEF63BEC6B44866515DDCF35B142A19 (void);
-static Il2CppMethodPointer s_methodPointers[601] = 
+static Il2CppMethodPointer s_methodPointers[608] = 
 {
+	InputHandler_Awake_m2AE59413AE854EFF4970DEE57EDBC7E1D6E23C30,
+	InputHandler_OnClick_m52C6B9AD8A37D9893C563A2AA2C47E1BB296E547,
+	InputHandler_Click_m5A733947FBFB458C52DC0A5795B2DADBE706EFD4,
+	InputHandler__ctor_m6F970BFB5070CD4229F65C8544F51C4B5994654B,
 	ObjectPressHandler_OnEnable_m2451CB09D49E82162969D25774562BACCF44E6F3,
 	ObjectPressHandler_OnDisable_mEFE67A551ECE4BA4EF0EED349C4E4C9AEFD609AF,
 	ObjectPressHandler_OnPointerPerformed_m0E9D1B1BD8F156469202A9F26033CAECF64D5B88,
@@ -849,6 +860,9 @@ static Il2CppMethodPointer s_methodPointers[601] =
 	RewardCanvas_ShowCanvas_mB2802FC0A7A3B0E4437040F7FD844CBD1247D1CE,
 	RewardCanvas_HideCanvas_m73FBF58CFE0D51C99ADF67415FA55CD089777DBD,
 	RewardCanvas__ctor_m953B20A7F105EF6BB94185BB842D00689078DCED,
+	TempPlayer_Start_mCC55D2A8AB356F142B5F233072D62751BB2B6358,
+	TempPlayer_Update_m460C4F61ACFB50B4F56E79677BBE9673CF1777C9,
+	TempPlayer__ctor_mF6311449D352FA76BC84415F42E7997C6BF0F009,
 	RotateTriangle_Update_m034138EC5E010F65D09D8B61739D5F4E99CBBB86,
 	RotateTriangle__ctor_m1B57AE99DD985094BB825DCEA965CE15B9303F9B,
 	BlinkingLoadingText_OnEnable_m5BBD60DDA6C0E2CB2B124038B9B28229C6F89D88,
@@ -1205,8 +1219,12 @@ static Il2CppMethodPointer s_methodPointers[601] =
 	U3CWarpTextU3Ed__8_System_Collections_IEnumerator_Reset_m07746C332D2D8CE5DEA59873C26F2FAD4B369B42,
 	U3CWarpTextU3Ed__8_System_Collections_IEnumerator_get_Current_m71D7F84D9DEF63BEC6B44866515DDCF35B142A19,
 };
-static const int32_t s_InvokerIndices[601] = 
+static const int32_t s_InvokerIndices[608] = 
 {
+	8471,
+	6775,
+	8471,
+	8471,
 	8471,
 	8471,
 	6775,
@@ -1451,6 +1469,9 @@ static const int32_t s_InvokerIndices[601] =
 	8471,
 	8471,
 	1105,
+	8471,
+	8471,
+	8471,
 	8471,
 	8471,
 	8471,
@@ -1811,8 +1832,8 @@ static const int32_t s_InvokerIndices[601] =
 };
 static const Il2CppTokenRangePair s_rgctxIndices[2] = 
 {
-	{ 0x0200002D, { 0, 6 } },
-	{ 0x0200002E, { 6, 4 } },
+	{ 0x0200002F, { 0, 6 } },
+	{ 0x02000030, { 6, 4 } },
 };
 extern const uint32_t g_rgctx_Singleton_1_tEB10BC7581192E8DC4004CC6A80E88A3E42C3444;
 extern const uint32_t g_rgctx_T_t2337B8A22C295A41D129CA0B4B104663AAC37B94;
@@ -1841,7 +1862,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	601,
+	608,
 	s_methodPointers,
 	0,
 	NULL,

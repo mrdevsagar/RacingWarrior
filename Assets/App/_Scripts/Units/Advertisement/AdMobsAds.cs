@@ -27,7 +27,7 @@ public class AdMobsAds : Singleton<AdMobsAds>
     // Condition for switching Admob test with real id.
 #if UNITY_ANDROID
 
-    #if IS_USE_REAL_AD_IDS
+#if IS_USE_REAL_AD_IDS
         //Real ID's 
         readonly string BANNER_ID = "ca-app-pub-7191923771378224/9446040059";
         readonly string INTERSTIAL_ID = "ca-app-pub-7191923771378224/4353463651";
@@ -39,16 +39,35 @@ public class AdMobsAds : Singleton<AdMobsAds>
         readonly  string INTERSTIAL_ID = "ca-app-pub-3940256099942544/1033173712";
         readonly string REWARDED_ID = "ca-app-pub-3940256099942544/5224354917";
         readonly   string NATIVE_ID = "ca-app-pub-3940256099942544/2247696110";
-#endif
 
+#endif
 #elif UNITY_IPHONE
 
     string BANNER_ID = "ca-app-pub-3940256099942544/2934735716";
     string INTERSTIAL_ID = "ca-app-pub-3940256099942544/4411468910";
     string REWARDED_ID = "ca-app-pub-3940256099942544/1712485313";
     string NATIVE_ID = "ca-app-pub-3940256099942544/3986624511";
+#endif
+
+#if UNITY_STANDALONE_WIN
+#if IS_USE_REAL_AD_IDS
+        //Real ID's 
+        readonly string BANNER_ID = "ca-app-pub-7191923771378224/9446040059";
+        readonly string INTERSTIAL_ID = "ca-app-pub-7191923771378224/4353463651";
+        readonly string REWARDED_ID = "ca-app-pub-7191923771378224/1567550036";
+        readonly string NATIVE_ID = "ca-app-pub-7191923771378224/1727300312";
+#else
+    //Test ID's
+    readonly string BANNER_ID = "ca-app-pub-3940256099942544/6300978111";
+    readonly string INTERSTIAL_ID = "ca-app-pub-3940256099942544/1033173712";
+    readonly string REWARDED_ID = "ca-app-pub-3940256099942544/5224354917";
+    readonly string NATIVE_ID = "ca-app-pub-3940256099942544/2247696110";
 
 #endif
+#endif
+
+
+
 
     [SerializeField] bool isAdverisementEnabaled =  true;
     BannerView _bannerView;
