@@ -40,10 +40,11 @@
           {
             "name": "AudioBehaviour",
             "scenes": [
-              "Assets/Scenes/_0_SplashScene.unity",
-              "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity",
-              "Assets/Scenes/Levels/_1_Level.unity"
+              "Assets/App/Scenes/_0_SplashScene.unity",
+              "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/AdmobAds.unity",
+              "Assets/App/Scenes/Levels/_1_Level.unity",
+              "Assets/App/Scenes/LevelsScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -57,10 +58,11 @@
           {
             "name": "AudioListener",
             "scenes": [
-              "Assets/Scenes/_0_SplashScene.unity",
-              "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity",
-              "Assets/Scenes/Levels/_1_Level.unity"
+              "Assets/App/Scenes/_0_SplashScene.unity",
+              "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/AdmobAds.unity",
+              "Assets/App/Scenes/Levels/_1_Level.unity",
+              "Assets/App/Scenes/LevelsScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -103,10 +105,11 @@
           {
             "name": "Camera",
             "scenes": [
-              "Assets/Scenes/_0_SplashScene.unity",
-              "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity",
-              "Assets/Scenes/Levels/_1_Level.unity"
+              "Assets/App/Scenes/_0_SplashScene.unity",
+              "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/AdmobAds.unity",
+              "Assets/App/Scenes/Levels/_1_Level.unity",
+              "Assets/App/Scenes/LevelsScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -126,8 +129,9 @@
           {
             "name": "Cubemap",
             "scenes": [
-              "Assets/Scenes/_0_SplashScene.unity",
-              "Assets/Scenes/AdmobAds.unity"
+              "Assets/App/Scenes/_0_SplashScene.unity",
+              "Assets/App/Scenes/AdmobAds.unity",
+              "Assets/App/Scenes/LevelsScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -147,10 +151,11 @@
           {
             "name": "EditorExtension",
             "scenes": [
-              "Assets/Scenes/_0_SplashScene.unity",
-              "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity",
-              "Assets/Scenes/Levels/_1_Level.unity"
+              "Assets/App/Scenes/_0_SplashScene.unity",
+              "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/AdmobAds.unity",
+              "Assets/App/Scenes/Levels/_1_Level.unity",
+              "Assets/App/Scenes/LevelsScene.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -164,10 +169,11 @@
           {
             "name": "GameObject",
             "scenes": [
-              "Assets/Scenes/_0_SplashScene.unity",
-              "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity",
-              "Assets/Scenes/Levels/_1_Level.unity"
+              "Assets/App/Scenes/_0_SplashScene.unity",
+              "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/AdmobAds.unity",
+              "Assets/App/Scenes/Levels/_1_Level.unity",
+              "Assets/App/Scenes/LevelsScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -193,10 +199,11 @@
           {
             "name": "LevelGameManager",
             "scenes": [
-              "Assets/Scenes/_0_SplashScene.unity",
-              "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity",
-              "Assets/Scenes/Levels/_1_Level.unity"
+              "Assets/App/Scenes/_0_SplashScene.unity",
+              "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/AdmobAds.unity",
+              "Assets/App/Scenes/Levels/_1_Level.unity",
+              "Assets/App/Scenes/LevelsScene.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -222,10 +229,11 @@
           {
             "name": "LightmapSettings",
             "scenes": [
-              "Assets/Scenes/_0_SplashScene.unity",
-              "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity",
-              "Assets/Scenes/Levels/_1_Level.unity"
+              "Assets/App/Scenes/_0_SplashScene.unity",
+              "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/AdmobAds.unity",
+              "Assets/App/Scenes/Levels/_1_Level.unity",
+              "Assets/App/Scenes/LevelsScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -239,10 +247,11 @@
           {
             "name": "Material",
             "scenes": [
-              "Assets/Scenes/_0_SplashScene.unity",
-              "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity",
-              "Assets/Scenes/Levels/_1_Level.unity"
+              "Assets/App/Scenes/_0_SplashScene.unity",
+              "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/AdmobAds.unity",
+              "Assets/App/Scenes/Levels/_1_Level.unity",
+              "Assets/App/Scenes/LevelsScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -268,10 +277,11 @@
           {
             "name": "MonoBehaviour",
             "scenes": [
-              "Assets/Scenes/_0_SplashScene.unity",
-              "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity",
-              "Assets/Scenes/Levels/_1_Level.unity"
+              "Assets/App/Scenes/_0_SplashScene.unity",
+              "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/AdmobAds.unity",
+              "Assets/App/Scenes/Levels/_1_Level.unity",
+              "Assets/App/Scenes/LevelsScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -285,10 +295,11 @@
           {
             "name": "MonoScript",
             "scenes": [
-              "Assets/Scenes/_0_SplashScene.unity",
-              "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity",
-              "Assets/Scenes/Levels/_1_Level.unity"
+              "Assets/App/Scenes/_0_SplashScene.unity",
+              "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/AdmobAds.unity",
+              "Assets/App/Scenes/Levels/_1_Level.unity",
+              "Assets/App/Scenes/LevelsScene.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -296,10 +307,11 @@
           {
             "name": "NamedObject",
             "scenes": [
-              "Assets/Scenes/_0_SplashScene.unity",
-              "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity",
-              "Assets/Scenes/Levels/_1_Level.unity"
+              "Assets/App/Scenes/_0_SplashScene.unity",
+              "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/AdmobAds.unity",
+              "Assets/App/Scenes/Levels/_1_Level.unity",
+              "Assets/App/Scenes/LevelsScene.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -331,10 +343,11 @@
           {
             "name": "RectTransform",
             "scenes": [
-              "Assets/Scenes/_0_SplashScene.unity",
-              "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity",
-              "Assets/Scenes/Levels/_1_Level.unity"
+              "Assets/App/Scenes/_0_SplashScene.unity",
+              "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/AdmobAds.unity",
+              "Assets/App/Scenes/Levels/_1_Level.unity",
+              "Assets/App/Scenes/LevelsScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -348,10 +361,11 @@
           {
             "name": "RenderSettings",
             "scenes": [
-              "Assets/Scenes/_0_SplashScene.unity",
-              "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity",
-              "Assets/Scenes/Levels/_1_Level.unity"
+              "Assets/App/Scenes/_0_SplashScene.unity",
+              "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/AdmobAds.unity",
+              "Assets/App/Scenes/Levels/_1_Level.unity",
+              "Assets/App/Scenes/LevelsScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -365,8 +379,9 @@
           {
             "name": "Renderer",
             "scenes": [
-              "Assets/Scenes/AdmobAds.unity",
-              "Assets/Scenes/Levels/_1_Level.unity"
+              "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/AdmobAds.unity",
+              "Assets/App/Scenes/Levels/_1_Level.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -386,10 +401,11 @@
           {
             "name": "Shader",
             "scenes": [
-              "Assets/Scenes/_0_SplashScene.unity",
-              "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity",
-              "Assets/Scenes/Levels/_1_Level.unity"
+              "Assets/App/Scenes/_0_SplashScene.unity",
+              "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/AdmobAds.unity",
+              "Assets/App/Scenes/Levels/_1_Level.unity",
+              "Assets/App/Scenes/LevelsScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -409,10 +425,11 @@
           {
             "name": "Sprite",
             "scenes": [
-              "Assets/Scenes/_0_SplashScene.unity",
-              "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity",
-              "Assets/Scenes/Levels/_1_Level.unity"
+              "Assets/App/Scenes/_0_SplashScene.unity",
+              "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/AdmobAds.unity",
+              "Assets/App/Scenes/Levels/_1_Level.unity",
+              "Assets/App/Scenes/LevelsScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -426,8 +443,9 @@
           {
             "name": "SpriteRenderer",
             "scenes": [
-              "Assets/Scenes/AdmobAds.unity",
-              "Assets/Scenes/Levels/_1_Level.unity"
+              "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/AdmobAds.unity",
+              "Assets/App/Scenes/Levels/_1_Level.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -569,6 +587,12 @@
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.runtimeinitializeonloadmanagerinitializer"
+          },
+          {
+            "name": "Required by SpriteShape Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.spriteshape"
           },
           {
             "name": "Required by Subsystems Module",
@@ -784,7 +808,17 @@
         "dependencies": [
           {
             "name": "Collider",
-            "scenes": [],
+            "scenes": [
+              "Assets/App/Scenes/_1_MainScene.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "MeshCollider",
+            "scenes": [
+              "Assets/App/Scenes/_1_MainScene.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
@@ -818,8 +852,24 @@
         "name": "Physics2D",
         "dependencies": [
           {
+            "name": "BoxCollider2D",
+            "scenes": [
+              "Assets/App/Scenes/_1_MainScene.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
             "name": "Collider2D",
             "scenes": [],
+            "dependencyType": 1,
+            "icon": null
+          },
+          {
+            "name": "EdgeCollider2D",
+            "scenes": [
+              "Assets/App/Scenes/_1_MainScene.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
@@ -827,6 +877,20 @@
             "name": "Physics2DSettings",
             "scenes": [],
             "dependencyType": 1,
+            "icon": null
+          },
+          {
+            "name": "PolygonCollider2D",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "Rigidbody2D",
+            "scenes": [
+              "Assets/App/Scenes/_1_MainScene.unity"
+            ],
+            "dependencyType": 0,
             "icon": null
           }
         ]
@@ -953,6 +1017,12 @@
             "icon": "package/com.unity.modules.runtimeinitializeonloadmanagerinitializer"
           },
           {
+            "name": "Required by SpriteShape Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.spriteshape"
+          },
+          {
             "name": "Required by Subsystems Module",
             "scenes": [],
             "dependencyType": 2,
@@ -1021,6 +1091,19 @@
         ]
       },
       {
+        "name": "SpriteShape",
+        "dependencies": [
+          {
+            "name": "SpriteShapeRenderer",
+            "scenes": [
+              "Assets/App/Scenes/_1_MainScene.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          }
+        ]
+      },
+      {
         "name": "Subsystems",
         "dependencies": [
           {
@@ -1082,10 +1165,11 @@
           {
             "name": "Font",
             "scenes": [
-              "Assets/Scenes/_0_SplashScene.unity",
-              "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity",
-              "Assets/Scenes/Levels/_1_Level.unity"
+              "Assets/App/Scenes/_0_SplashScene.unity",
+              "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/AdmobAds.unity",
+              "Assets/App/Scenes/Levels/_1_Level.unity",
+              "Assets/App/Scenes/LevelsScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1134,27 +1218,33 @@
           {
             "name": "Canvas",
             "scenes": [
-              "Assets/Scenes/_0_SplashScene.unity",
-              "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity",
-              "Assets/Scenes/Levels/_1_Level.unity"
+              "Assets/App/Scenes/_0_SplashScene.unity",
+              "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/AdmobAds.unity",
+              "Assets/App/Scenes/Levels/_1_Level.unity",
+              "Assets/App/Scenes/LevelsScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
           },
           {
             "name": "CanvasGroup",
-            "scenes": [],
+            "scenes": [
+              "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/AdmobAds.unity",
+              "Assets/App/Scenes/LevelsScene.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
           {
             "name": "CanvasRenderer",
             "scenes": [
-              "Assets/Scenes/_0_SplashScene.unity",
-              "Assets/Scenes/_1_MainScene.unity",
-              "Assets/Scenes/AdmobAds.unity",
-              "Assets/Scenes/Levels/_1_Level.unity"
+              "Assets/App/Scenes/_0_SplashScene.unity",
+              "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/AdmobAds.unity",
+              "Assets/App/Scenes/Levels/_1_Level.unity",
+              "Assets/App/Scenes/LevelsScene.unity"
             ],
             "dependencyType": 0,
             "icon": null

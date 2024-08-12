@@ -46,7 +46,8 @@ public class DCTCanvas : MonoBehaviour
         UpdateDiamondDisplay(GameManager.Instance.GetDiamonds());
         UpdateCoinDisplay(GameManager.Instance.GetCoins());
         UpdateTokensDisplay(TokenManager.Instance.Tokens);
-        
+        _panelDCTCanvasGroup.alpha = 0;
+
     }
 
     void Update()
