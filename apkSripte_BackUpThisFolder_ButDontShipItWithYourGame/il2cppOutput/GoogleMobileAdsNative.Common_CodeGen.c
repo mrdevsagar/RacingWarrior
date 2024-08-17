@@ -1,0 +1,257 @@
+﻿#include "pch-c.h"
+
+
+#include "codegen/il2cpp-codegen-metadata.h"
+
+
+
+
+
+extern void AdLoaderClientArgs__ctor_m3EDBE0EB4073D98D628DBC22E4D6A5482B58E2C4 (void);
+extern void AdLoaderClientArgs_get_AdUnitId_m9CB2CEDA6950AE81735C721A64024FEE084C1095 (void);
+extern void AdLoaderClientArgs_set_AdUnitId_m34A02E7BED010ED5B54210F776C015BDD4274533 (void);
+extern void AdLoaderClientArgs_get_AdTypes_m3286F08DA89AEF0941C3580385F858CE95635BD4 (void);
+extern void AdLoaderClientArgs_set_AdTypes_mE8471AB7B6B5C530E1A0B6D78162BAC632A093BC (void);
+extern void AdLoaderClientArgs_get_FormatIds_m6731C0FF425BE0CC73D07B3C07A81D5A5C33CF4A (void);
+extern void AdLoaderClientArgs_set_FormatIds_mE911774361C90840258F37567C0056339C90F596 (void);
+extern void AdLoaderClientArgs_get_NumberOfAdsToLoad_m16518458445D87FF740EE67FB2117837684591E0 (void);
+extern void AdLoaderClientArgs_set_NumberOfAdsToLoad_mF3469CEA3FB4D145DDC2D8D89909A508BD09CC04 (void);
+extern void CustomNativeClientEventArgs__ctor_mB86D8364F64424DC0778551C310DC8F0B71A46FB (void);
+extern void CustomNativeClientEventArgs_get_nativeAdClient_mB118DF740C6798C44D0956205D2C3D69789401DE (void);
+extern void CustomNativeClientEventArgs_set_nativeAdClient_m7C4578E96709771F4B4E26B0EF01FD72C1CF0E75 (void);
+extern void CustomNativeClientEventArgs_get_assetName_m96CFE0392F78AA558C8AEEE2386CF67937BC066C (void);
+extern void CustomNativeClientEventArgs_set_assetName_m0FFF03346E29AB4599BEB94FD9E2CB5BD6D163C4 (void);
+extern void DummyNativeClient__ctor_m116A1174D312D713C92ADBB744748987A37D15C1 (void);
+extern void DummyNativeClient_add_OnAdFailedToLoad_mE19CF62A441BBDA3FBC5FD4FCC654935E688E3E0 (void);
+extern void DummyNativeClient_remove_OnAdFailedToLoad_m012233AC4F460F40B7AE8F40D8883F090412FF5C (void);
+extern void DummyNativeClient_add_OnCustomNativeAdLoaded_mF5FFADEED1C6BF11037B399AA045493AA2A98BA8 (void);
+extern void DummyNativeClient_remove_OnCustomNativeAdLoaded_m046BCA8F1440E2BED108EE87BF4C6836554AC970 (void);
+extern void DummyNativeClient_add_OnCustomNativeAdClicked_m6E4C7A86ED17F20A921AADA8CC73D5D816AE6064 (void);
+extern void DummyNativeClient_remove_OnCustomNativeAdClicked_mA13FF4C222892F20518EE3CCC62FE72DBE7F8235 (void);
+extern void DummyNativeClient_add_OnNativeAdLoaded_m68DE1DD994A3327A3ABDDD5F50E5240FFB4EE6FF (void);
+extern void DummyNativeClient_remove_OnNativeAdLoaded_mD934DD4C5A86DCEF3BF02E62E1BF54D232C2E579 (void);
+extern void DummyNativeClient_add_OnNativeAdImpression_mC1504373A35D80EA6D081B4140740EA8DEC6AAFC (void);
+extern void DummyNativeClient_remove_OnNativeAdImpression_mC4EA945F95C959E5F9D35B01A1B0281F22FDDCFF (void);
+extern void DummyNativeClient_add_OnNativeAdClicked_m9C92EC5CF79F76E80457D10B1D1DDD8BB2829691 (void);
+extern void DummyNativeClient_remove_OnNativeAdClicked_m86A68ABDCA9E4FF42ABCF764B846A4D16E88BEA3 (void);
+extern void DummyNativeClient_add_OnNativeAdOpening_mB9D5A7637E5A1404B74B471719C0D129D06613D9 (void);
+extern void DummyNativeClient_remove_OnNativeAdOpening_mF2C4CC41A95A57AFB53D0F9C8F98486FAC9EEC0E (void);
+extern void DummyNativeClient_add_OnNativeAdClosed_m1BE0CBCF4DB94DA22214BB63E4B17F4C7C228BF0 (void);
+extern void DummyNativeClient_remove_OnNativeAdClosed_m189771B6A21F600E0232DC5BAAF236BF55F25E55 (void);
+extern void DummyNativeClient_LoadAd_m7E722391E6E01E839224FFEC3D9C66A86BDEADA0 (void);
+extern void NativeClientEventArgs__ctor_mF7DEA301F79DC4E7B2B76ECC00B6AD55D15FF636 (void);
+extern void NativeClientEventArgs_get_nativeAdClient_mF79E2E7446CB3E969C52C6FC00106FC3185CC366 (void);
+extern void NativeClientEventArgs_set_nativeAdClient_mCEDBB0459BE0B3E308DA85F15E98E31D740B97FA (void);
+extern void NativeLoadAdErrorClient__ctor_m4888B46A83BD8FB56BBF15B21DEDF5138A417A61 (void);
+extern void NativeLoadAdErrorClient_GetCode_m0213AFFA52C44214C353F22D10B90FA5346CBCB3 (void);
+extern void NativeLoadAdErrorClient_GetDomain_m2DEF5942506C20D7A0026661E74A904385E9A5B5 (void);
+extern void NativeLoadAdErrorClient_GetMessage_m4E1ECB7C240BD02AB4F1D3737A1B699EAE8FC2D2 (void);
+extern void NativeLoadAdErrorClient_GetCause_m77B4A99A0761541DD0D74D452C0BA29CB8126513 (void);
+extern void NativeLoadAdErrorClient_ToString_mA1E78BC84A6833A1D19DE15417D8CD0949FD7C67 (void);
+extern void NativeLoadAdErrorClient_GetResponseInfoClient_m39C7456EDA931B9B25FA891C3BEFF0D94E4AA4A1 (void);
+extern void NativeUtils__cctor_mCFCE22CDEBE17B78930750EAACF5561C914A1F77 (void);
+extern void NativeUtils_get_Version_mB8F63B5B552D940B0351BE63FA0ED6E4B93B04D2 (void);
+extern void NativeUtils_set_Version_mB3A98DC5F620D19981313DB5627BB2572B667C60 (void);
+extern void NativeUtils_IsRenderedInScreenSpaceOverlayCanvas_mD47FDE3F9B369951487DC87C8D6DE4C1FEFE6037 (void);
+extern void NativeUtils_GetBoundsMin_mF9218116D07AA34F569A8E186A0BA861D1725B76 (void);
+extern void NativeUtils_GetBoundsMax_m4244BDEA6C5A5159941B2E6CA57B8B023FAFA385 (void);
+extern void NativeUtils_GetCamera_mBFD7F9FAD3DB7B4810FA4BB9AFB50075A0252343 (void);
+extern void NativeUtils_CastAssetIDMappings_m7E3C8BCCFD5A11C1B344838C26028076B70D52C2 (void);
+extern void NativeUtils_LoadImage_m118496AF78F71C1A94171787526A28AC04F6E2F9 (void);
+extern void U3CLoadImageU3Ec__Iterator0__ctor_m3319180E2244B4A0BDE9388C719DFC1D3A0CA152 (void);
+extern void U3CLoadImageU3Ec__Iterator0_MoveNext_mD5720F90DA8EBB770CFD52B99DF1BD0131DBBA4B (void);
+extern void U3CLoadImageU3Ec__Iterator0_System_Collections_Generic_IEnumeratorU3CobjectU3E_get_Current_m9AFDAD53AE250C9B03796A4973188B45DBB0C46B (void);
+extern void U3CLoadImageU3Ec__Iterator0_System_Collections_IEnumerator_get_Current_m85416CD329F37DEE6FF083BA32D671DF7D1B50A3 (void);
+extern void U3CLoadImageU3Ec__Iterator0_Dispose_m2A50688ED8740C6BD03711341EBC6C0E3DD64BF3 (void);
+extern void U3CLoadImageU3Ec__Iterator0_Reset_m9D94F4255730107893E8DF4523D892E474047090 (void);
+static Il2CppMethodPointer s_methodPointers[82] = 
+{
+	AdLoaderClientArgs__ctor_m3EDBE0EB4073D98D628DBC22E4D6A5482B58E2C4,
+	AdLoaderClientArgs_get_AdUnitId_m9CB2CEDA6950AE81735C721A64024FEE084C1095,
+	AdLoaderClientArgs_set_AdUnitId_m34A02E7BED010ED5B54210F776C015BDD4274533,
+	AdLoaderClientArgs_get_AdTypes_m3286F08DA89AEF0941C3580385F858CE95635BD4,
+	AdLoaderClientArgs_set_AdTypes_mE8471AB7B6B5C530E1A0B6D78162BAC632A093BC,
+	AdLoaderClientArgs_get_FormatIds_m6731C0FF425BE0CC73D07B3C07A81D5A5C33CF4A,
+	AdLoaderClientArgs_set_FormatIds_mE911774361C90840258F37567C0056339C90F596,
+	AdLoaderClientArgs_get_NumberOfAdsToLoad_m16518458445D87FF740EE67FB2117837684591E0,
+	AdLoaderClientArgs_set_NumberOfAdsToLoad_mF3469CEA3FB4D145DDC2D8D89909A508BD09CC04,
+	CustomNativeClientEventArgs__ctor_mB86D8364F64424DC0778551C310DC8F0B71A46FB,
+	CustomNativeClientEventArgs_get_nativeAdClient_mB118DF740C6798C44D0956205D2C3D69789401DE,
+	CustomNativeClientEventArgs_set_nativeAdClient_m7C4578E96709771F4B4E26B0EF01FD72C1CF0E75,
+	CustomNativeClientEventArgs_get_assetName_m96CFE0392F78AA558C8AEEE2386CF67937BC066C,
+	CustomNativeClientEventArgs_set_assetName_m0FFF03346E29AB4599BEB94FD9E2CB5BD6D163C4,
+	DummyNativeClient__ctor_m116A1174D312D713C92ADBB744748987A37D15C1,
+	DummyNativeClient_add_OnAdFailedToLoad_mE19CF62A441BBDA3FBC5FD4FCC654935E688E3E0,
+	DummyNativeClient_remove_OnAdFailedToLoad_m012233AC4F460F40B7AE8F40D8883F090412FF5C,
+	DummyNativeClient_add_OnCustomNativeAdLoaded_mF5FFADEED1C6BF11037B399AA045493AA2A98BA8,
+	DummyNativeClient_remove_OnCustomNativeAdLoaded_m046BCA8F1440E2BED108EE87BF4C6836554AC970,
+	DummyNativeClient_add_OnCustomNativeAdClicked_m6E4C7A86ED17F20A921AADA8CC73D5D816AE6064,
+	DummyNativeClient_remove_OnCustomNativeAdClicked_mA13FF4C222892F20518EE3CCC62FE72DBE7F8235,
+	DummyNativeClient_add_OnNativeAdLoaded_m68DE1DD994A3327A3ABDDD5F50E5240FFB4EE6FF,
+	DummyNativeClient_remove_OnNativeAdLoaded_mD934DD4C5A86DCEF3BF02E62E1BF54D232C2E579,
+	DummyNativeClient_add_OnNativeAdImpression_mC1504373A35D80EA6D081B4140740EA8DEC6AAFC,
+	DummyNativeClient_remove_OnNativeAdImpression_mC4EA945F95C959E5F9D35B01A1B0281F22FDDCFF,
+	DummyNativeClient_add_OnNativeAdClicked_m9C92EC5CF79F76E80457D10B1D1DDD8BB2829691,
+	DummyNativeClient_remove_OnNativeAdClicked_m86A68ABDCA9E4FF42ABCF764B846A4D16E88BEA3,
+	DummyNativeClient_add_OnNativeAdOpening_mB9D5A7637E5A1404B74B471719C0D129D06613D9,
+	DummyNativeClient_remove_OnNativeAdOpening_mF2C4CC41A95A57AFB53D0F9C8F98486FAC9EEC0E,
+	DummyNativeClient_add_OnNativeAdClosed_m1BE0CBCF4DB94DA22214BB63E4B17F4C7C228BF0,
+	DummyNativeClient_remove_OnNativeAdClosed_m189771B6A21F600E0232DC5BAAF236BF55F25E55,
+	DummyNativeClient_LoadAd_m7E722391E6E01E839224FFEC3D9C66A86BDEADA0,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NativeClientEventArgs__ctor_mF7DEA301F79DC4E7B2B76ECC00B6AD55D15FF636,
+	NativeClientEventArgs_get_nativeAdClient_mF79E2E7446CB3E969C52C6FC00106FC3185CC366,
+	NativeClientEventArgs_set_nativeAdClient_mCEDBB0459BE0B3E308DA85F15E98E31D740B97FA,
+	NativeLoadAdErrorClient__ctor_m4888B46A83BD8FB56BBF15B21DEDF5138A417A61,
+	NativeLoadAdErrorClient_GetCode_m0213AFFA52C44214C353F22D10B90FA5346CBCB3,
+	NativeLoadAdErrorClient_GetDomain_m2DEF5942506C20D7A0026661E74A904385E9A5B5,
+	NativeLoadAdErrorClient_GetMessage_m4E1ECB7C240BD02AB4F1D3737A1B699EAE8FC2D2,
+	NativeLoadAdErrorClient_GetCause_m77B4A99A0761541DD0D74D452C0BA29CB8126513,
+	NativeLoadAdErrorClient_ToString_mA1E78BC84A6833A1D19DE15417D8CD0949FD7C67,
+	NativeLoadAdErrorClient_GetResponseInfoClient_m39C7456EDA931B9B25FA891C3BEFF0D94E4AA4A1,
+	NativeUtils__cctor_mCFCE22CDEBE17B78930750EAACF5561C914A1F77,
+	NativeUtils_get_Version_mB8F63B5B552D940B0351BE63FA0ED6E4B93B04D2,
+	NativeUtils_set_Version_mB3A98DC5F620D19981313DB5627BB2572B667C60,
+	NativeUtils_IsRenderedInScreenSpaceOverlayCanvas_mD47FDE3F9B369951487DC87C8D6DE4C1FEFE6037,
+	NativeUtils_GetBoundsMin_mF9218116D07AA34F569A8E186A0BA861D1725B76,
+	NativeUtils_GetBoundsMax_m4244BDEA6C5A5159941B2E6CA57B8B023FAFA385,
+	NativeUtils_GetCamera_mBFD7F9FAD3DB7B4810FA4BB9AFB50075A0252343,
+	NativeUtils_CastAssetIDMappings_m7E3C8BCCFD5A11C1B344838C26028076B70D52C2,
+	NativeUtils_LoadImage_m118496AF78F71C1A94171787526A28AC04F6E2F9,
+	U3CLoadImageU3Ec__Iterator0__ctor_m3319180E2244B4A0BDE9388C719DFC1D3A0CA152,
+	U3CLoadImageU3Ec__Iterator0_MoveNext_mD5720F90DA8EBB770CFD52B99DF1BD0131DBBA4B,
+	U3CLoadImageU3Ec__Iterator0_System_Collections_Generic_IEnumeratorU3CobjectU3E_get_Current_m9AFDAD53AE250C9B03796A4973188B45DBB0C46B,
+	U3CLoadImageU3Ec__Iterator0_System_Collections_IEnumerator_get_Current_m85416CD329F37DEE6FF083BA32D671DF7D1B50A3,
+	U3CLoadImageU3Ec__Iterator0_Dispose_m2A50688ED8740C6BD03711341EBC6C0E3DD64BF3,
+	U3CLoadImageU3Ec__Iterator0_Reset_m9D94F4255730107893E8DF4523D892E474047090,
+};
+static const int32_t s_InvokerIndices[82] = 
+{
+	9225,
+	9069,
+	7198,
+	9069,
+	7198,
+	9069,
+	7198,
+	9013,
+	7145,
+	9225,
+	9069,
+	7198,
+	9069,
+	7198,
+	9225,
+	7198,
+	7198,
+	7198,
+	7198,
+	7198,
+	7198,
+	7198,
+	7198,
+	7198,
+	7198,
+	7198,
+	7198,
+	7198,
+	7198,
+	7198,
+	7198,
+	7198,
+	-1,
+	-1,
+	-1,
+	-1,
+	-1,
+	-1,
+	-1,
+	-1,
+	-1,
+	-1,
+	-1,
+	-1,
+	-1,
+	-1,
+	-1,
+	-1,
+	-1,
+	-1,
+	-1,
+	-1,
+	-1,
+	-1,
+	-1,
+	-1,
+	-1,
+	9225,
+	9069,
+	7198,
+	7198,
+	9013,
+	9069,
+	9069,
+	9069,
+	9069,
+	9069,
+	13923,
+	13856,
+	13571,
+	13067,
+	11295,
+	11295,
+	13856,
+	13303,
+	12201,
+	9225,
+	8917,
+	9069,
+	9069,
+	9225,
+	9225,
+};
+IL2CPP_EXTERN_C const Il2CppCodeGenModule g_GoogleMobileAdsNative_Common_CodeGenModule;
+const Il2CppCodeGenModule g_GoogleMobileAdsNative_Common_CodeGenModule = 
+{
+	"GoogleMobileAdsNative.Common.dll",
+	82,
+	s_methodPointers,
+	0,
+	NULL,
+	s_InvokerIndices,
+	0,
+	NULL,
+	0,
+	NULL,
+	0,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+};
