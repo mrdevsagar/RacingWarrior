@@ -132,4 +132,9 @@ public class LevelManager : SingletonLocal<LevelManager>
         }
     }
     
+    public void GameOver()
+    {
+        IsGameEnded = true;
+        ShowResultScreen();
+    }
 }

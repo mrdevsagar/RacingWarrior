@@ -9,6 +9,18 @@
         "name": "Animation",
         "dependencies": [
           {
+            "name": "Animation",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "AnimationClip",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
             "name": "Animator",
             "scenes": [],
             "dependencyType": 0,
@@ -27,10 +39,34 @@
             "icon": null
           },
           {
+            "name": "Avatar",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "AvatarMask",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "Motion",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
             "name": "RuntimeAnimatorController",
             "scenes": [],
             "dependencyType": 1,
             "icon": null
+          },
+          {
+            "name": "Required by Director Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.director"
           }
         ]
       },
@@ -84,6 +120,12 @@
             "scenes": [],
             "dependencyType": 1,
             "icon": null
+          },
+          {
+            "name": "Required by Director Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.director"
           }
         ]
       },
@@ -210,7 +252,9 @@
           },
           {
             "name": "Light",
-            "scenes": [],
+            "scenes": [
+              "Assets/App/Scenes/Levels/_1_Level.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
@@ -418,7 +462,9 @@
           },
           {
             "name": "SortingGroup",
-            "scenes": [],
+            "scenes": [
+              "Assets/App/Scenes/_1_MainScene.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
@@ -517,6 +563,12 @@
             "icon": "package/com.unity.modules.audio"
           },
           {
+            "name": "Required by Director Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.director"
+          },
+          {
             "name": "Required by GraphicsStateCollectionSerializer Module",
             "scenes": [],
             "dependencyType": 2,
@@ -587,6 +639,12 @@
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.runtimeinitializeonloadmanagerinitializer"
+          },
+          {
+            "name": "Required by ScreenCapture Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.screencapture"
           },
           {
             "name": "Required by SpriteShape Module",
@@ -663,6 +721,17 @@
         ]
       },
       {
+        "name": "Director",
+        "dependencies": [
+          {
+            "name": "PlayableDirector",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
+          }
+        ]
+      },
+      {
         "name": "GraphicsStateCollectionSerializer",
         "dependencies": [
           {
@@ -703,7 +772,14 @@
       },
       {
         "name": "ImageConversion",
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "Required by ScreenCapture Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.screencapture"
+          }
+        ]
       },
       {
         "name": "Input",
@@ -807,6 +883,18 @@
         "name": "Physics",
         "dependencies": [
           {
+            "name": "BoxCollider",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "CapsuleCollider",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
             "name": "Collider",
             "scenes": [
               "Assets/App/Scenes/_1_MainScene.unity"
@@ -835,6 +923,12 @@
             "icon": null
           },
           {
+            "name": "SphereCollider",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
             "name": "Required by VR Module",
             "scenes": [],
             "dependencyType": 2,
@@ -852,9 +946,35 @@
         "name": "Physics2D",
         "dependencies": [
           {
+            "name": "AnchoredJoint2D",
+            "scenes": [
+              "Assets/App/Scenes/Levels/_1_Level.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
             "name": "BoxCollider2D",
             "scenes": [
+              "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/Levels/_1_Level.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "CapsuleCollider2D",
+            "scenes": [
               "Assets/App/Scenes/_1_MainScene.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "CircleCollider2D",
+            "scenes": [
+              "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/Levels/_1_Level.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -866,11 +986,24 @@
             "icon": null
           },
           {
+            "name": "CompositeCollider2D",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
             "name": "EdgeCollider2D",
             "scenes": [
-              "Assets/App/Scenes/_1_MainScene.unity"
+              "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/Levels/_1_Level.unity"
             ],
             "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "Joint2D",
+            "scenes": [],
+            "dependencyType": 1,
             "icon": null
           },
           {
@@ -881,14 +1014,25 @@
           },
           {
             "name": "PolygonCollider2D",
-            "scenes": [],
+            "scenes": [
+              "Assets/App/Scenes/Levels/_1_Level.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
           {
             "name": "Rigidbody2D",
             "scenes": [
-              "Assets/App/Scenes/_1_MainScene.unity"
+              "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/Levels/_1_Level.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "WheelJoint2D",
+            "scenes": [
+              "Assets/App/Scenes/Levels/_1_Level.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -918,6 +1062,10 @@
         ]
       },
       {
+        "name": "ScreenCapture",
+        "dependencies": []
+      },
+      {
         "name": "SharedInternals",
         "dependencies": [
           {
@@ -943,6 +1091,12 @@
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.core"
+          },
+          {
+            "name": "Required by Director Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.director"
           },
           {
             "name": "Required by GraphicsStateCollectionSerializer Module",
@@ -1015,6 +1169,12 @@
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.runtimeinitializeonloadmanagerinitializer"
+          },
+          {
+            "name": "Required by ScreenCapture Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.screencapture"
           },
           {
             "name": "Required by SpriteShape Module",
@@ -1096,7 +1256,8 @@
           {
             "name": "SpriteShapeRenderer",
             "scenes": [
-              "Assets/App/Scenes/_1_MainScene.unity"
+              "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/Levels/_1_Level.unity"
             ],
             "dependencyType": 0,
             "icon": null
