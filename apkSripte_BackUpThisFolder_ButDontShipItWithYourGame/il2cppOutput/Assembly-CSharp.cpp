@@ -9413,10 +9413,9 @@ IL_0062_1:
 		{
 			il2cpp_codegen_runtime_class_init_inline(MobileAds_tE6A198EF1FBB6C42E5C1062E4B6CD5FB5B5494D5_il2cpp_TypeInfo_var);
 			MobileAds_Initialize_m9151E3C38E0FAD4439DA5020A217BAB90ABB76AD(G_B3_0, NULL);
-			AdMobsAds_LoadInterstitialAd_m2794270B2F72750937D5EEDA8D1E8611FD3E2D1B(__this, NULL);
 			float L_11 = __this->___interstitialAdInterval;
 			__this->___interstitialAdTimer = L_11;
-			goto IL_00a3;
+			goto IL_009d;
 		}
 	}
 	catch(Il2CppExceptionWrapper& e)
@@ -9424,12 +9423,12 @@ IL_0062_1:
 		if(il2cpp_codegen_class_is_assignable_from (((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&Exception_t_il2cpp_TypeInfo_var)), il2cpp_codegen_object_class(e.ex)))
 		{
 			IL2CPP_PUSH_ACTIVE_EXCEPTION(e.ex);
-			goto CATCH_007b;
+			goto CATCH_0075;
 		}
 		throw e;
 	}
 
-CATCH_007b:
+CATCH_0075:
 	{
 		Exception_t* L_12 = ((Exception_t*)IL2CPP_GET_ACTIVE_EXCEPTION(Exception_t*));;
 		V_0 = L_12;
@@ -9450,10 +9449,10 @@ CATCH_007b:
 		il2cpp_codegen_runtime_class_init_inline(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var)));
 		Debug_LogError_mB00B2B4468EF3CAF041B038D840820FB84C924B2(L_18, NULL);
 		IL2CPP_POP_ACTIVE_EXCEPTION(Exception_t*);
-		goto IL_00a3;
+		goto IL_009d;
 	}
 
-IL_00a3:
+IL_009d:
 	{
 		return;
 	}

@@ -121,7 +121,7 @@ public class AdMobsAds : Singleton<AdMobsAds>
                 print("Ads Initialized !!");
 
             });
-            LoadInterstitialAd();
+           /* LoadInterstitialAd();*/
             interstitialAdTimer = interstitialAdInterval;
         }
         catch (Exception ex)

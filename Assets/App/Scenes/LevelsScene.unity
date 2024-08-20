@@ -1346,6 +1346,7 @@ GameObject:
   - component: {fileID: 576732049}
   - component: {fileID: 576732048}
   - component: {fileID: 576732047}
+  - component: {fileID: 576732050}
   m_Layer: 0
   m_Name: Level (1)
   m_TagString: Untagged
@@ -1417,9 +1418,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1112144317}
-        m_TargetAssemblyTypeName: LevelsManager, Assembly-CSharp
-        m_MethodName: ShowWarningScreen
+      - m_Target: {fileID: 576732050}
+        m_TargetAssemblyTypeName: SwitchSceneAsyncButton, Assembly-CSharp
+        m_MethodName: OnButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1467,6 +1468,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 576732045}
   m_CullTransparentMesh: 1
+--- !u!114 &576732050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576732045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ee0fad5202338d43b779dce0a82ebab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName:
+    m_SceneAsset: {fileID: 102900000, guid: c9777b6b9647ca746b47e9d8e7420d11, type: 3}
+    m_SceneName: _2_Level
 --- !u!1 &587963866
 GameObject:
   m_ObjectHideFlags: 0

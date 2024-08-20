@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 public class TouchManager : MonoBehaviour
@@ -10,12 +11,13 @@ public class TouchManager : MonoBehaviour
 
     private Camera mainCamera;
 
+    [SerializeField] private SceneField ShopeScene;
+
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
         _touchPositionAction = playerInput.actions["TouchPosition"];
         _touchPressAction = playerInput.actions["TouchPress"];
-       
     }
 
     private void Start()
@@ -41,22 +43,40 @@ public class TouchManager : MonoBehaviour
 
     private void PressedPostion(Vector2 touchPosition)
     {
-        Vector2 worldPoint = mainCamera.ScreenToWorldPoint(touchPosition);
-        RaycastHit2D hit = Physics2D.Raycast(worldPoint, Vector2.zero);
+        if (mainCamera == null) {
+
+            Debug.Log("camera not found");
+            return;
+        }
+        RaycastHit2D hit;
+
+        if(mainCamera.orthographic )
+        {
+            Vector2 worldPoint = mainCamera.ScreenToWorldPoint(touchPosition);
+            hit = Physics2D.Raycast(worldPoint, Vector2.zero);
+        } else
+        {
+            Vector3 worldPoint = mainCamera.ScreenToWorldPoint(new Vector3(touchPosition.x, touchPosition.y, -mainCamera.transform.position.z));
+            hit = Physics2D.Raycast(worldPoint, Vector2.zero);
+        }
 
         if (hit.collider != null)
         {
-            Debug.Log("Touched " + hit.collider.gameObject.name);
+            Debug.Log("Hit object: " + hit.collider.gameObject.tag);
+            if (hit.collider.gameObject.CompareTag("Player"))
+            {
+                MyLoadSceneAsync.Instance.Load(ShopeScene);
+            }
+            else if (hit.collider.gameObject.CompareTag("Vehicle"))
+            {
+                MyLoadSceneAsync.Instance.Load(ShopeScene);
+            }
 
-            // Perform actions based on which object was touched
-            if (hit.collider.gameObject.name == "Sprite1")
-            {
-                Debug.Log("Sprite1 was touched!");
-            }
-            else if (hit.collider.gameObject.name == "Sprite2")
-            {
-                Debug.Log("Sprite2 was touched!");
-            }
         }
+        else
+        {
+            Debug.Log("No object hit");
+        }
+
     }
 }
