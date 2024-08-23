@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4974d1849f8fd7246bab23dbf636559f
+guid: 552586276785c59468afbe7d8150762b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2483833780724164762
-    second: armLeft_0
+      213: -1757416802594889805
+    second: ForArmRight_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 50
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: armLeft_0
+      name: ForArmRight_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 20
-        height: 40
+        width: 21
+        height: 51
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,44 +128,48 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones:
-      - name: L_Arm
-        guid: e1b980089be058f418dea7e422c272ae
-        position: {x: 8.107178, y: 35.978367, z: 0}
-        rotation: {x: 0, y: 0, z: -0.66830707, w: 0.7438856}
-        length: 35.00822
+      - name: bone_1
+        guid: c760ad98926e4eb469f5d693af3420fd
+        position: {x: 6.519544, y: 44.24263, z: 0}
+        rotation: {x: 0, y: 0, z: -0.639815, w: 0.76852906}
+        length: 41.49499
         parentId: -1
         color:
           serializedVersion: 2
           rgba: 4278190335
-      spriteID: 66712da1656a78dd0800000000000000
-      internalID: -2483833780724164762
+      spriteID: 3bf570faab66c97e0800000000000000
+      internalID: -1757416802594889805
       vertices:
-      - {x: 11.179, y: 0.055000305}
-      - {x: 16.014, y: 0.4589996}
-      - {x: 18.434, y: 2.3789997}
-      - {x: 19.708, y: 6.880999}
-      - {x: 19.961, y: 11.839}
-      - {x: 19.994, y: 16.839}
-      - {x: 19.986, y: 21.837}
-      - {x: 19.868, y: 26.822}
-      - {x: 19.553001, y: 28.781}
-      - {x: 18, y: 35}
-      - {x: 14.327, y: 38.35}
-      - {x: 11.939, y: 39.503998}
-      - {x: 5.17, y: 39.534}
-      - {x: 0.9289999, y: 37.927002}
-      - {x: 0.19799995, y: 33.293}
-      - {x: 0.027999878, y: 28.312}
-      - {x: 0.0089998245, y: 23.312}
-      - {x: 0.062999725, y: 18.316}
-      - {x: 0.38199997, y: 13.348}
-      - {x: 1.3430004, y: 8.518}
-      - {x: 3.5489995, y: 4.148}
-      - {x: 6.182, y: 0}
-      indices: 0000000003000000010000000a0000000f0000000e0000000a0000000e0000000b000000090000000f0000000a000000080000000f0000000900000007000000100000000f000000070000000f000000080000000600000011000000100000000600000010000000070000000500000012000000110000000500000011000000060000000400000014000000130000000400000013000000120000000400000012000000050000000300000014000000040000000100000003000000020000000000000015000000140000000000000014000000030000000b0000000e0000000c0000000c0000000e0000000d000000
+      - {x: 21, y: 1}
+      - {x: 20.989, y: 6.49}
+      - {x: 20.897, y: 11.976}
+      - {x: 20.534, y: 16.283}
+      - {x: 17.723, y: 21.523}
+      - {x: 17.432, y: 26.741}
+      - {x: 18.607, y: 31.821}
+      - {x: 19.663, y: 36.897}
+      - {x: 19.491001, y: 42.247}
+      - {x: 17.535, y: 47.047}
+      - {x: 14.236, y: 51}
+      - {x: 8.749, y: 51}
+      - {x: 4.31, y: 50.263}
+      - {x: 0.11999989, y: 47.118}
+      - {x: 0.024999619, y: 41.677002}
+      - {x: 0.005999565, y: 36.187}
+      - {x: 0.015999794, y: 30.697}
+      - {x: 0.12699986, y: 25.216}
+      - {x: 0.47299957, y: 19.775}
+      - {x: 0.11999989, y: 14.53}
+      - {x: 0.055999756, y: 9.049}
+      - {x: 0.3699999, y: 3.6299992}
+      - {x: 1.5200005, y: 0}
+      - {x: 8.01, y: 0}
+      - {x: 13.496, y: 0}
+      - {x: 18.987, y: 0}
+      indices: 000000001900000001000000010000001800000002000000010000001900000018000000020000001300000003000000020000001400000013000000020000001700000014000000020000001800000017000000030000001300000004000000040000001100000005000000040000001200000011000000040000001300000012000000050000001000000006000000050000001100000010000000060000000f0000000700000006000000100000000f000000070000000e00000008000000070000000f0000000e000000080000000e00000009000000090000000b0000000a000000090000000e0000000b0000000b0000000e0000000c0000000c0000000e0000000d000000140000001700000015000000150000001700000016000000
       edges:
       - {x: 0, y: 1}
-      - {x: 0, y: 21}
+      - {x: 0, y: 25}
       - {x: 1, y: 2}
       - {x: 2, y: 3}
       - {x: 3, y: 4}
@@ -186,7 +190,43 @@ TextureImporter:
       - {x: 18, y: 19}
       - {x: 19, y: 20}
       - {x: 20, y: 21}
+      - {x: 21, y: 22}
+      - {x: 22, y: 23}
+      - {x: 23, y: 24}
+      - {x: 24, y: 25}
       weights:
+      - 'weight[0]': 1
+        'weight[1]': 0
+        'weight[2]': 0
+        'weight[3]': 0
+        'boneIndex[0]': 0
+        'boneIndex[1]': 0
+        'boneIndex[2]': 0
+        'boneIndex[3]': 0
+      - 'weight[0]': 1
+        'weight[1]': 0
+        'weight[2]': 0
+        'weight[3]': 0
+        'boneIndex[0]': 0
+        'boneIndex[1]': 0
+        'boneIndex[2]': 0
+        'boneIndex[3]': 0
+      - 'weight[0]': 1
+        'weight[1]': 0
+        'weight[2]': 0
+        'weight[3]': 0
+        'boneIndex[0]': 0
+        'boneIndex[1]': 0
+        'boneIndex[2]': 0
+        'boneIndex[3]': 0
+      - 'weight[0]': 1
+        'weight[1]': 0
+        'weight[2]': 0
+        'weight[3]': 0
+        'boneIndex[0]': 0
+        'boneIndex[1]': 0
+        'boneIndex[2]': 0
+        'boneIndex[3]': 0
       - 'weight[0]': 1
         'weight[1]': 0
         'weight[2]': 0
@@ -367,7 +407,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: fc4dda52614f76e44a093179bfdc06c2
+    spriteID: afd7161f71c227d488194e6bd55ed22f
     internalID: 0
     vertices: []
     indices: 
@@ -377,7 +417,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      armLeft_0: -2483833780724164762
+      ForArmRight_0: -1757416802594889805
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

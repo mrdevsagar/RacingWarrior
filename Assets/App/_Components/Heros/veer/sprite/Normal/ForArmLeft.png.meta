@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 581a1e66b5f568a429de624e59ee27a5
+guid: 88ef94c714587b0419f3b1a5bf80f484
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4126787835036822459
-    second: armRight_0
+      213: -1067349108623671673
+    second: ForArmLeft_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 50
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: armRight_0
+      name: ForArmLeft_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 19
-        height: 40
+        width: 21
+        height: 51
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,45 +128,48 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones:
-      - name: R_Arm
-        guid: eb816a60b4d980a43b9b938bd637828d
-        position: {x: 8.24631, y: 36.519173, z: 0}
-        rotation: {x: 0, y: 0, z: -0.6857356, w: 0.7278508}
-        length: 35.510372
+      - name: bone_1
+        guid: 61ef390d815c313409b8eaaab3df9360
+        position: {x: 7.4598093, y: 43.5531, z: 0}
+        rotation: {x: 0, y: 0, z: -0.6455054, w: 0.7637557}
+        length: 40.623413
         parentId: -1
         color:
           serializedVersion: 2
           rgba: 4278190335
-      spriteID: 5441a352454bab6c0800000000000000
-      internalID: -4126787835036822459
+      spriteID: 78ef72904a30031f0800000000000000
+      internalID: -1067349108623671673
       vertices:
-      - {x: 17.739, y: 3.0480003}
-      - {x: 18.151001, y: 7.985}
-      - {x: 18.814, y: 12.783}
-      - {x: 19, y: 17.764}
-      - {x: 19, y: 22.763}
-      - {x: 19, y: 27.763}
-      - {x: 18.982, y: 27.998}
-      - {x: 17.911, y: 32.814}
-      - {x: 15.695, y: 36.902}
-      - {x: 13, y: 40}
-      - {x: 8, y: 40}
-      - {x: 3, y: 40}
-      - {x: 0.62699986, y: 36.023003}
-      - {x: 0, y: 31.241}
-      - {x: 0, y: 26.242}
-      - {x: 0, y: 21.241}
-      - {x: 0, y: 16.244}
-      - {x: 0.17399979, y: 11.259}
-      - {x: 1.0349998, y: 6.49}
-      - {x: 3.236, y: 2.3619995}
-      - {x: 6.977, y: 0.29500008}
-      - {x: 11.905, y: 0.05200005}
-      - {x: 16.905, y: 0}
-      indices: 000000001500000001000000000000001600000015000000010000001100000002000000010000001200000011000000010000001400000012000000010000001500000014000000020000001000000003000000020000001100000010000000030000000f0000000400000003000000100000000f000000040000000e00000005000000040000000f0000000e000000050000000e00000006000000060000000e00000007000000070000000d00000008000000070000000e0000000d000000080000000a00000009000000080000000d0000000a0000000a0000000c0000000b0000000a0000000d0000000c000000120000001400000013000000
+      - {x: 21, y: 1}
+      - {x: 20.989, y: 6.49}
+      - {x: 20.897, y: 11.976}
+      - {x: 20.534, y: 16.283}
+      - {x: 17.723, y: 21.523}
+      - {x: 17.432, y: 26.741}
+      - {x: 18.607, y: 31.821}
+      - {x: 19.663, y: 36.897}
+      - {x: 19.491001, y: 42.247}
+      - {x: 17.535, y: 47.047}
+      - {x: 14.236, y: 51}
+      - {x: 8.749, y: 51}
+      - {x: 4.31, y: 50.263}
+      - {x: 0.11999989, y: 47.118}
+      - {x: 0.024999619, y: 41.677002}
+      - {x: 0.005999565, y: 36.187}
+      - {x: 0.015999794, y: 30.697}
+      - {x: 0.12699986, y: 25.216}
+      - {x: 0.47299957, y: 19.775}
+      - {x: 0.11999989, y: 14.53}
+      - {x: 0.055999756, y: 9.049}
+      - {x: 0.3699999, y: 3.6299992}
+      - {x: 1.5200005, y: 0}
+      - {x: 8.01, y: 0}
+      - {x: 13.496, y: 0}
+      - {x: 18.987, y: 0}
+      indices: 000000001900000001000000010000001800000002000000010000001900000018000000020000001300000003000000020000001400000013000000020000001700000014000000020000001800000017000000030000001300000004000000040000001100000005000000040000001200000011000000040000001300000012000000050000001000000006000000050000001100000010000000060000000f0000000700000006000000100000000f000000070000000e00000008000000070000000f0000000e000000080000000e00000009000000090000000b0000000a000000090000000e0000000b0000000b0000000e0000000c0000000c0000000e0000000d000000140000001700000015000000150000001700000016000000
       edges:
       - {x: 0, y: 1}
-      - {x: 0, y: 22}
+      - {x: 0, y: 25}
       - {x: 1, y: 2}
       - {x: 2, y: 3}
       - {x: 3, y: 4}
@@ -188,7 +191,34 @@ TextureImporter:
       - {x: 19, y: 20}
       - {x: 20, y: 21}
       - {x: 21, y: 22}
+      - {x: 22, y: 23}
+      - {x: 23, y: 24}
+      - {x: 24, y: 25}
       weights:
+      - 'weight[0]': 1
+        'weight[1]': 0
+        'weight[2]': 0
+        'weight[3]': 0
+        'boneIndex[0]': 0
+        'boneIndex[1]': 0
+        'boneIndex[2]': 0
+        'boneIndex[3]': 0
+      - 'weight[0]': 1
+        'weight[1]': 0
+        'weight[2]': 0
+        'weight[3]': 0
+        'boneIndex[0]': 0
+        'boneIndex[1]': 0
+        'boneIndex[2]': 0
+        'boneIndex[3]': 0
+      - 'weight[0]': 1
+        'weight[1]': 0
+        'weight[2]': 0
+        'weight[3]': 0
+        'boneIndex[0]': 0
+        'boneIndex[1]': 0
+        'boneIndex[2]': 0
+        'boneIndex[3]': 0
       - 'weight[0]': 1
         'weight[1]': 0
         'weight[2]': 0
@@ -377,7 +407,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a115b585969517340bf70ac854e1a58f
+    spriteID: cb4e0fee7e193c249a71eae5b18bf98a
     internalID: 0
     vertices: []
     indices: 
@@ -387,7 +417,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      armRight_0: -4126787835036822459
+      ForArmLeft_0: -1067349108623671673
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
