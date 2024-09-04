@@ -27820,9 +27820,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3708[2] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3709[2] = 
 {
 	static_cast<int32_t>(offsetof(BoundsInt_t4E757DE5EFF9FCB42000F173360DDC63B5585485, ___m_Position)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(BoundsInt_t4E757DE5EFF9FCB42000F173360DDC63B5585485, ___m_Size)) + static_cast<int32_t>(sizeof(RuntimeObject)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3711[2] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3711[3] = 
 {
-	static_cast<int32_t>(offsetof(Plane_tB7D8CC6F7AACF5F3AA483AF005C1102A8577BC0C, ___m_Normal)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(Plane_tB7D8CC6F7AACF5F3AA483AF005C1102A8577BC0C, ___m_Distance)) + static_cast<int32_t>(sizeof(RuntimeObject)),};
+	0,static_cast<int32_t>(offsetof(Plane_tB7D8CC6F7AACF5F3AA483AF005C1102A8577BC0C, ___m_Normal)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(Plane_tB7D8CC6F7AACF5F3AA483AF005C1102A8577BC0C, ___m_Distance)) + static_cast<int32_t>(sizeof(RuntimeObject)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3712[2] = 
 {
 	static_cast<int32_t>(offsetof(Ray_t2B1742D7958DC05BDC3EFC7461D3593E1430DC00, ___m_Origin)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(Ray_t2B1742D7958DC05BDC3EFC7461D3593E1430DC00, ___m_Direction)) + static_cast<int32_t>(sizeof(RuntimeObject)),};

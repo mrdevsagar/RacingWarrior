@@ -78,6 +78,7 @@
             "scenes": [
               "Assets/App/Scenes/_0_SplashScene.unity",
               "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/_2_ShopScene.unity",
               "Assets/App/Scenes/AdmobAds.unity",
               "Assets/App/Scenes/Levels/_1_Level.unity",
               "Assets/App/Scenes/Levels/_2_Level.unity",
@@ -97,6 +98,7 @@
             "scenes": [
               "Assets/App/Scenes/_0_SplashScene.unity",
               "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/_2_ShopScene.unity",
               "Assets/App/Scenes/AdmobAds.unity",
               "Assets/App/Scenes/Levels/_1_Level.unity",
               "Assets/App/Scenes/Levels/_2_Level.unity",
@@ -151,6 +153,7 @@
             "scenes": [
               "Assets/App/Scenes/_0_SplashScene.unity",
               "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/_2_ShopScene.unity",
               "Assets/App/Scenes/AdmobAds.unity",
               "Assets/App/Scenes/Levels/_1_Level.unity",
               "Assets/App/Scenes/Levels/_2_Level.unity",
@@ -198,6 +201,7 @@
             "scenes": [
               "Assets/App/Scenes/_0_SplashScene.unity",
               "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/_2_ShopScene.unity",
               "Assets/App/Scenes/AdmobAds.unity",
               "Assets/App/Scenes/Levels/_1_Level.unity",
               "Assets/App/Scenes/Levels/_2_Level.unity",
@@ -217,6 +221,7 @@
             "scenes": [
               "Assets/App/Scenes/_0_SplashScene.unity",
               "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/_2_ShopScene.unity",
               "Assets/App/Scenes/AdmobAds.unity",
               "Assets/App/Scenes/Levels/_1_Level.unity",
               "Assets/App/Scenes/Levels/_2_Level.unity",
@@ -248,6 +253,7 @@
             "scenes": [
               "Assets/App/Scenes/_0_SplashScene.unity",
               "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/_2_ShopScene.unity",
               "Assets/App/Scenes/AdmobAds.unity",
               "Assets/App/Scenes/Levels/_1_Level.unity",
               "Assets/App/Scenes/Levels/_2_Level.unity",
@@ -282,6 +288,7 @@
             "scenes": [
               "Assets/App/Scenes/_0_SplashScene.unity",
               "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/_2_ShopScene.unity",
               "Assets/App/Scenes/AdmobAds.unity",
               "Assets/App/Scenes/Levels/_1_Level.unity",
               "Assets/App/Scenes/Levels/_2_Level.unity",
@@ -301,6 +308,7 @@
             "scenes": [
               "Assets/App/Scenes/_0_SplashScene.unity",
               "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/_2_ShopScene.unity",
               "Assets/App/Scenes/AdmobAds.unity",
               "Assets/App/Scenes/Levels/_1_Level.unity",
               "Assets/App/Scenes/Levels/_2_Level.unity",
@@ -332,6 +340,7 @@
             "scenes": [
               "Assets/App/Scenes/_0_SplashScene.unity",
               "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/_2_ShopScene.unity",
               "Assets/App/Scenes/AdmobAds.unity",
               "Assets/App/Scenes/Levels/_1_Level.unity",
               "Assets/App/Scenes/Levels/_2_Level.unity",
@@ -351,6 +360,7 @@
             "scenes": [
               "Assets/App/Scenes/_0_SplashScene.unity",
               "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/_2_ShopScene.unity",
               "Assets/App/Scenes/AdmobAds.unity",
               "Assets/App/Scenes/Levels/_1_Level.unity",
               "Assets/App/Scenes/Levels/_2_Level.unity",
@@ -364,6 +374,7 @@
             "scenes": [
               "Assets/App/Scenes/_0_SplashScene.unity",
               "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/_2_ShopScene.unity",
               "Assets/App/Scenes/AdmobAds.unity",
               "Assets/App/Scenes/Levels/_1_Level.unity",
               "Assets/App/Scenes/Levels/_2_Level.unity",
@@ -401,6 +412,7 @@
             "scenes": [
               "Assets/App/Scenes/_0_SplashScene.unity",
               "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/_2_ShopScene.unity",
               "Assets/App/Scenes/AdmobAds.unity",
               "Assets/App/Scenes/Levels/_1_Level.unity",
               "Assets/App/Scenes/Levels/_2_Level.unity",
@@ -420,6 +432,7 @@
             "scenes": [
               "Assets/App/Scenes/_0_SplashScene.unity",
               "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/_2_ShopScene.unity",
               "Assets/App/Scenes/AdmobAds.unity",
               "Assets/App/Scenes/Levels/_1_Level.unity",
               "Assets/App/Scenes/Levels/_2_Level.unity",
@@ -438,6 +451,7 @@
             "name": "Renderer",
             "scenes": [
               "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/_2_ShopScene.unity",
               "Assets/App/Scenes/AdmobAds.unity",
               "Assets/App/Scenes/Levels/_1_Level.unity",
               "Assets/App/Scenes/Levels/_2_Level.unity"
@@ -462,6 +476,7 @@
             "scenes": [
               "Assets/App/Scenes/_0_SplashScene.unity",
               "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/_2_ShopScene.unity",
               "Assets/App/Scenes/AdmobAds.unity",
               "Assets/App/Scenes/Levels/_1_Level.unity",
               "Assets/App/Scenes/Levels/_2_Level.unity",
@@ -480,6 +495,7 @@
             "name": "SortingGroup",
             "scenes": [
               "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/_2_ShopScene.unity",
               "Assets/App/Scenes/Levels/_2_Level.unity"
             ],
             "dependencyType": 0,
@@ -490,6 +506,7 @@
             "scenes": [
               "Assets/App/Scenes/_0_SplashScene.unity",
               "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/_2_ShopScene.unity",
               "Assets/App/Scenes/AdmobAds.unity",
               "Assets/App/Scenes/Levels/_1_Level.unity",
               "Assets/App/Scenes/Levels/_2_Level.unity",
@@ -508,6 +525,7 @@
             "name": "SpriteRenderer",
             "scenes": [
               "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/_2_ShopScene.unity",
               "Assets/App/Scenes/AdmobAds.unity",
               "Assets/App/Scenes/Levels/_1_Level.unity",
               "Assets/App/Scenes/Levels/_2_Level.unity"
@@ -968,6 +986,7 @@
             "name": "AnchoredJoint2D",
             "scenes": [
               "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/_2_ShopScene.unity",
               "Assets/App/Scenes/Levels/_1_Level.unity",
               "Assets/App/Scenes/Levels/_2_Level.unity"
             ],
@@ -977,6 +996,7 @@
           {
             "name": "BoxCollider2D",
             "scenes": [
+              "Assets/App/Scenes/_2_ShopScene.unity",
               "Assets/App/Scenes/Levels/_1_Level.unity",
               "Assets/App/Scenes/Levels/_2_Level.unity"
             ],
@@ -987,6 +1007,7 @@
             "name": "CapsuleCollider2D",
             "scenes": [
               "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/_2_ShopScene.unity",
               "Assets/App/Scenes/Levels/_2_Level.unity"
             ],
             "dependencyType": 0,
@@ -996,6 +1017,7 @@
             "name": "CircleCollider2D",
             "scenes": [
               "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/_2_ShopScene.unity",
               "Assets/App/Scenes/Levels/_1_Level.unity",
               "Assets/App/Scenes/Levels/_2_Level.unity"
             ],
@@ -1040,6 +1062,7 @@
             "name": "PolygonCollider2D",
             "scenes": [
               "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/_2_ShopScene.unity",
               "Assets/App/Scenes/Levels/_1_Level.unity",
               "Assets/App/Scenes/Levels/_2_Level.unity"
             ],
@@ -1050,6 +1073,7 @@
             "name": "Rigidbody2D",
             "scenes": [
               "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/_2_ShopScene.unity",
               "Assets/App/Scenes/Levels/_1_Level.unity",
               "Assets/App/Scenes/Levels/_2_Level.unity"
             ],
@@ -1060,6 +1084,7 @@
             "name": "WheelJoint2D",
             "scenes": [
               "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/_2_ShopScene.unity",
               "Assets/App/Scenes/Levels/_1_Level.unity",
               "Assets/App/Scenes/Levels/_2_Level.unity"
             ],
@@ -1358,6 +1383,7 @@
             "scenes": [
               "Assets/App/Scenes/_0_SplashScene.unity",
               "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/_2_ShopScene.unity",
               "Assets/App/Scenes/AdmobAds.unity",
               "Assets/App/Scenes/Levels/_1_Level.unity",
               "Assets/App/Scenes/Levels/_2_Level.unity",
@@ -1412,6 +1438,7 @@
             "scenes": [
               "Assets/App/Scenes/_0_SplashScene.unity",
               "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/_2_ShopScene.unity",
               "Assets/App/Scenes/AdmobAds.unity",
               "Assets/App/Scenes/Levels/_1_Level.unity",
               "Assets/App/Scenes/Levels/_2_Level.unity",
@@ -1424,6 +1451,7 @@
             "name": "CanvasGroup",
             "scenes": [
               "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/_2_ShopScene.unity",
               "Assets/App/Scenes/AdmobAds.unity",
               "Assets/App/Scenes/LevelsScene.unity"
             ],
@@ -1435,6 +1463,7 @@
             "scenes": [
               "Assets/App/Scenes/_0_SplashScene.unity",
               "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/_2_ShopScene.unity",
               "Assets/App/Scenes/AdmobAds.unity",
               "Assets/App/Scenes/Levels/_1_Level.unity",
               "Assets/App/Scenes/Levels/_2_Level.unity",

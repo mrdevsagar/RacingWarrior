@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library:
+  - m_Name: shirt
+    m_Hash: 195423248
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: A
+      m_Hash: 333029003
+      m_Sprite: {fileID: -6913995061627264494, guid: cd11bb9670804b4408af38cc1dc7743a, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -6913995061627264494, guid: cd11bb9670804b4408af38cc1dc7743a, type: 3}
+    - m_Name: B
+      m_Hash: 181456689
+      m_Sprite: {fileID: -2530768103833504371, guid: 7826fb4b016d47a4bb2a442248063829, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -2530768103833504371, guid: 7826fb4b016d47a4bb2a442248063829, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 2
+  - m_Name: pelves
+    m_Hash: 456701794
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: A
+      m_Hash: 333029003
+      m_Sprite: {fileID: 4877194764949164067, guid: aaec72479971a424da201e01fbe4157d, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 4877194764949164067, guid: aaec72479971a424da201e01fbe4157d, type: 3}
+    - m_Name: B
+      m_Hash: 181456689
+      m_Sprite: {fileID: 4877194764949164067, guid: 90330b44433fc794d9c5b78168d4292c, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 4877194764949164067, guid: 90330b44433fc794d9c5b78168d4292c, type: 3}
+    - m_Name: C
+      m_Hash: 1037565863
+      m_Sprite: {fileID: 4877194764949164067, guid: 06739110635d8fc469597dcf8af12ff7, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 4877194764949164067, guid: 06739110635d8fc469597dcf8af12ff7, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 3
+  m_PrimaryLibraryGUID: 
+  m_ModificationHash: 638610493663396939
+  m_Version: 1
