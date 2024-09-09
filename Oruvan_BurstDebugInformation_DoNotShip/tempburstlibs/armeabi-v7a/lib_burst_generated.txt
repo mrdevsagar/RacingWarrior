@@ -9,6 +9,7 @@ Library: C:\Users\soora\OneDrive\Desktop\Avesham\Infinite\Temp\BurstOutput\tempb
 --target-framework=NetFramework
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=C:\Users\soora\OneDrive\Desktop\Avesham\Infinite\Temp\Burst
+--debug=Full
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.0.10f1/Editor/Data/PlaybackEngines/AndroidPlayer
 --decode-folder=C:\Users\soora\OneDrive\Desktop\Avesham\Infinite\Library\Burst
 --output=C:\Users\soora\OneDrive\Desktop\Avesham\Infinite\Temp\BurstOutput\tempburstlibs\armeabi-v7a\lib_burst_generated
