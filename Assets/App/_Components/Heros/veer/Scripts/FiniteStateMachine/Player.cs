@@ -17,11 +17,18 @@ public class Player : MonoBehaviour
 
     public Rigidbody2D RB { get; private set; }
 
+    public PhysicsMaterial2D moveMaterial;
+
+    public PhysicsMaterial2D stillMaterial;
+
+    public bool IsWalkingBackward; 
+  
+
     /*private Vector2 _workspace;*/
 
     /*public Vector2 CurrentVelocity { get; private set; }*/
 
-   /* public TextMeshProUGUI textBox;*/
+    /* public TextMeshProUGUI textBox;*/
 
     private void Awake()
     {
@@ -53,7 +60,7 @@ public class Player : MonoBehaviour
 
         StateMachine.CurrentState.LogicUpdate();
 
-        /*Debug.Log(input.MoveInput);*/
+       /* Debug.Log(input.MoveInput);*/
     }
 
     private void FixedUpdate()
@@ -66,4 +73,27 @@ public class Player : MonoBehaviour
         RB.velocity = new Vector2(velocityX, RB.velocity.y);
     }
 
+    public void SetFrictionMaterial(bool isMoving)
+    {
+        if(isMoving)
+        {
+            GetComponent<Collider2D>().sharedMaterial = moveMaterial;
+        }
+        else
+        {
+            GetComponent<Collider2D>().sharedMaterial = stillMaterial;
+        }
+
+    }
+
+    public void FlipPlayer(bool isRightFacing)
+    {
+        if(isRightFacing)
+        {
+            transform.localScale = new Vector3(0.5f, 0.5f,0f);
+        } else
+        {
+            transform.localScale = new Vector3(-0.5f, 0.5f, 0f);
+        }
+    }
 }

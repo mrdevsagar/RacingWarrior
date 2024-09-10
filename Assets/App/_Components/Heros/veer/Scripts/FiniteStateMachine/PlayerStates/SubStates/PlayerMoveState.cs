@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class PlayerMoveState : PlayerGroundedState
@@ -24,16 +25,33 @@ public class PlayerMoveState : PlayerGroundedState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+       
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-
-        Debug.Log(MoveInput);
-        if (MoveInput.x != 0)
+/*
+        Debug.Log(MoveInput);*/
+        if (MoveInput.x == 0)
         {
-            player.SetVelocityX(MoveInput.x * playerData.MovementVelocity);
-        } 
+            player.SetFrictionMaterial(false);
+        } else
+        {
+            player.SetFrictionMaterial(true);
+
+            Debug.Log(player.IsWalkingBackward.ToString()+"tt");
+
+            if (!player.IsWalkingBackward)
+            {
+                player.SetVelocityX(MoveInput.x * playerData.MovementVelocity);
+            } else
+            {
+                player.SetVelocityX(MoveInput.x * playerData.BackwardMovementVelocity);
+            }
+
+            
+        }
     }
 }

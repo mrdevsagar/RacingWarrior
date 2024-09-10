@@ -4,5 +4,8 @@ using UnityEngine;
 public class PlayerData : ScriptableObject
 {
     [Header("Move State")]
-    public float MovementVelocity = 10f;
+    public float MovementVelocity = 4.5f;
+
+    [Header("Move State")]
+    public float BackwardMovementVelocity = 2.8f;
 }

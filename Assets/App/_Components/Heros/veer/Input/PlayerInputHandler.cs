@@ -1,3 +1,4 @@
+using NUnit.Framework.Constraints;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -6,14 +7,63 @@ using UnityEngine.InputSystem;
 public class PlayerInputHandler : MonoBehaviour
 {
     public Vector2 MoveInput {  get; private set; }
+    public float LookInput { get; private set; }
+    public bool IsFiring { get; private set; }
 
     public TextMeshProUGUI textBox;
-    public void OnMoveInput(InputAction.CallbackContext context)
-   {
-        Vector2 rawInput = context.ReadValue<Vector2>();
 
-        textBox.text = rawInput.ToString();
-        if (context.control.name.Contains("Stick"))
+    private PlayerInputActions playerInput; // Replace with your input action class name
+
+
+  
+    private Vector2 moveInput;
+
+    private string controlName;
+
+    private void Awake()
+    {
+        // Initialize the input actions
+        playerInput = new PlayerInputActions();
+
+        // Bind the input action callbacks
+        playerInput.Player.Move.performed += OnMovePerformed;
+        playerInput.Player.Move.canceled += OnMovePerformed;
+    }
+
+    private void OnEnable()
+    {
+        // Enable the input action map
+        playerInput.Player.Enable(); // Replace "Player" with your action map name
+    }
+
+    private void OnDisable()
+    {
+        // Disable the input action map
+        playerInput.Player.Disable();
+    }
+
+    // Callback for the Move input action
+    private void OnMovePerformed(InputAction.CallbackContext context)
+    {
+        var control = context.control;
+        controlName = control.name;  // Capture the name of the control
+    }
+    private void Update()
+    {
+        GetMoveInput();
+        GetLockAndFireInput();
+    }
+    public void GetMoveInput()
+   {
+        Vector2 rawInput = playerInput.Player.Move.ReadValue<Vector2>();
+
+        // Optionally debug the control name if needed
+        /*if (!string.IsNullOrEmpty(controlName))
+        {
+            Debug.Log("Control Name: " + controlName);
+        }*/
+
+        if (!string.IsNullOrEmpty(controlName) && controlName.Contains("Stick"))
         {
           
             Vector2 joystickInput = rawInput;
@@ -26,16 +76,16 @@ public class PlayerInputHandler : MonoBehaviour
             }
             float distance = joystickInput.magnitude;
 
-            if ((angle >= 0 && angle < 90) || (angle >= 340 && angle < 360))
+            if ((angle >= 0 && angle < 90) || (angle >= 350 && angle < 360))
             {
                 MoveInput = new Vector2(1, 1);
-            } else if (angle >= 90 && angle < 200)
+            } else if (angle >= 90 && angle < 190)
             {
                 MoveInput = new Vector2(-1,1);
-            } else if (angle >= 200 && angle < 270)
+            } else if (angle >= 190 && angle < 270)
             {
                 MoveInput = new Vector2(-1, -1);
-            } else if (angle >= 270 && angle < 340)
+            } else if (angle >= 270 && angle < 350)
             {
                 MoveInput = new Vector2(1, -1);
             }
@@ -65,13 +115,14 @@ public class PlayerInputHandler : MonoBehaviour
                 {
                     MoveInput = new Vector2(1, -1);
                 }
-                /*else
+                else
                 {
                     MoveInput = Vector2.zero;
-                }*/
+                }
             }
                
         }
+        
     }
 
     public void OnJump(InputAction.CallbackContext context)
@@ -92,19 +143,35 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
-    public void OnLockAndFireInput(InputAction.CallbackContext context)
+    public void GetLockAndFireInput()
     {
-  
-        Vector2 joystickInput = context.ReadValue<Vector2>();
-        float angle = Mathf.Atan2(joystickInput.y, joystickInput.x) * Mathf.Rad2Deg;
+        Vector2 joystickInput = playerInput.Player.Look.ReadValue<Vector2>();
 
+        float angle = Mathf.Atan2(joystickInput.y, joystickInput.x) * Mathf.Rad2Deg;
 
         if (angle < 0)
         {
             angle += 360f;
         }
+
         float distance = joystickInput.magnitude;
-        /*Debug.Log("Joystick Angle: " + angle + "   distance " + distance);*/
-        
+
+        if (distance > 0.2f)
+        {
+            LookInput = angle;
+        } else
+        {
+            LookInput = float.NaN;
+        }
+
+        if (distance > 0.98f)
+        {
+            IsFiring = true;
+        } else
+        {
+            IsFiring = false;
+        }
+
+        textBox.text = angle.ToString();
     }
 }
