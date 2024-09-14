@@ -119,6 +119,7 @@ extern void Player_FixedUpdate_mEDDB0539FCD5145298CB87D4592DFFF98503AF9B (void);
 extern void Player_SetVelocityX_mF5DDB5C29ADDBBE3CB8863C1A24AF5588C51C11E (void);
 extern void Player_SetFrictionMaterial_m52C696702C21783CFF644BE74351C4A6FF20521F (void);
 extern void Player_FlipPlayer_mE03CC19BA2DBC3DC4F0848DED05095EA3ECC8B2E (void);
+extern void Player_ChangeCameraPosition_m14033A1CD08A50A960CC95676AC0F79AF461E79E (void);
 extern void Player__ctor_m0A83E0706592FC871B0CF188B37AFC6649F3D85D (void);
 extern void PlayerState__ctor_m9E0401C2B086C916CFC97E4061712744BB9FB657 (void);
 extern void PlayerState_Enter_mB75136E899AE9E7FB62F62369B93F3DCD7BF2366 (void);
@@ -778,7 +779,7 @@ extern void U3CWarpTextU3Ed__8_MoveNext_mCE7A826C5E4854C2C509C77BD18F5A9B6D691B0
 extern void U3CWarpTextU3Ed__8_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mD80368E9B7E259311C03E406B75161ED6F7618E3 (void);
 extern void U3CWarpTextU3Ed__8_System_Collections_IEnumerator_Reset_m07746C332D2D8CE5DEA59873C26F2FAD4B369B42 (void);
 extern void U3CWarpTextU3Ed__8_System_Collections_IEnumerator_get_Current_m71D7F84D9DEF63BEC6B44866515DDCF35B142A19 (void);
-static Il2CppMethodPointer s_methodPointers[784] = 
+static Il2CppMethodPointer s_methodPointers[785] = 
 {
 	TouchManager_Awake_mF16F8C69C865C03D41E2D065503B44804BB80EBD,
 	TouchManager_Start_m088CE1AB8AC888BE8E70A91A12E039904CBF8328,
@@ -896,6 +897,7 @@ static Il2CppMethodPointer s_methodPointers[784] =
 	Player_SetVelocityX_mF5DDB5C29ADDBBE3CB8863C1A24AF5588C51C11E,
 	Player_SetFrictionMaterial_m52C696702C21783CFF644BE74351C4A6FF20521F,
 	Player_FlipPlayer_mE03CC19BA2DBC3DC4F0848DED05095EA3ECC8B2E,
+	Player_ChangeCameraPosition_m14033A1CD08A50A960CC95676AC0F79AF461E79E,
 	Player__ctor_m0A83E0706592FC871B0CF188B37AFC6649F3D85D,
 	PlayerState__ctor_m9E0401C2B086C916CFC97E4061712744BB9FB657,
 	PlayerState_Enter_mB75136E899AE9E7FB62F62369B93F3DCD7BF2366,
@@ -1604,19 +1606,19 @@ static Il2CppTokenAdjustorThunkPair s_adjustorThunks[24] =
 	{ 0x0600004D, PlayerActions_UnregisterCallbacks_m0EE7276BB6AF3F8AD8B9C9BD95F21DD411202770_AdjustorThunk },
 	{ 0x0600004E, PlayerActions_RemoveCallbacks_m744BBD23DF0FD87FB89E1B70A9F42D4B365D3674_AdjustorThunk },
 	{ 0x0600004F, PlayerActions_SetCallbacks_mF14401481D7EDE8CDE7441FF33A814595D844AE0_AdjustorThunk },
-	{ 0x0600019F, GamePlayActions__ctor_m489A4DD094AA2B01615E6C7F2BA65FC34C010CD1_AdjustorThunk },
-	{ 0x060001A0, GamePlayActions_get_Jump_m892B09ABD7F9750B75D6E517AB1DC30FF6044886_AdjustorThunk },
-	{ 0x060001A1, GamePlayActions_get_Joystick_mC40AA39638E3BDF46D2A862C2E08EC333CA77C1D_AdjustorThunk },
-	{ 0x060001A2, GamePlayActions_Get_m322BC6CFE2D404942726DCD5DE16C289B517606B_AdjustorThunk },
-	{ 0x060001A3, GamePlayActions_Enable_m139EA6D1455987F60B8744C3B0E0D3ED583464D4_AdjustorThunk },
-	{ 0x060001A4, GamePlayActions_Disable_m25E23A1901A183BDD65BE755DE66E3A8E67A1DD9_AdjustorThunk },
-	{ 0x060001A5, GamePlayActions_get_enabled_mADAE833A4228D384FDD6577B69660BF537E46C8F_AdjustorThunk },
-	{ 0x060001A7, GamePlayActions_AddCallbacks_mE329FBA09331DABC3D5543ED320AA5B0160EA223_AdjustorThunk },
-	{ 0x060001A8, GamePlayActions_UnregisterCallbacks_mFA237E08ADBF3A1F3316BE5C0D9E3573C6670218_AdjustorThunk },
-	{ 0x060001A9, GamePlayActions_RemoveCallbacks_m662155891D7A42875C5FE6A7E29C0028D3A58994_AdjustorThunk },
-	{ 0x060001AA, GamePlayActions_SetCallbacks_mA74CFB41E76EDBE201C76D2D27D1E0CE262BAAE2_AdjustorThunk },
+	{ 0x060001A0, GamePlayActions__ctor_m489A4DD094AA2B01615E6C7F2BA65FC34C010CD1_AdjustorThunk },
+	{ 0x060001A1, GamePlayActions_get_Jump_m892B09ABD7F9750B75D6E517AB1DC30FF6044886_AdjustorThunk },
+	{ 0x060001A2, GamePlayActions_get_Joystick_mC40AA39638E3BDF46D2A862C2E08EC333CA77C1D_AdjustorThunk },
+	{ 0x060001A3, GamePlayActions_Get_m322BC6CFE2D404942726DCD5DE16C289B517606B_AdjustorThunk },
+	{ 0x060001A4, GamePlayActions_Enable_m139EA6D1455987F60B8744C3B0E0D3ED583464D4_AdjustorThunk },
+	{ 0x060001A5, GamePlayActions_Disable_m25E23A1901A183BDD65BE755DE66E3A8E67A1DD9_AdjustorThunk },
+	{ 0x060001A6, GamePlayActions_get_enabled_mADAE833A4228D384FDD6577B69660BF537E46C8F_AdjustorThunk },
+	{ 0x060001A8, GamePlayActions_AddCallbacks_mE329FBA09331DABC3D5543ED320AA5B0160EA223_AdjustorThunk },
+	{ 0x060001A9, GamePlayActions_UnregisterCallbacks_mFA237E08ADBF3A1F3316BE5C0D9E3573C6670218_AdjustorThunk },
+	{ 0x060001AA, GamePlayActions_RemoveCallbacks_m662155891D7A42875C5FE6A7E29C0028D3A58994_AdjustorThunk },
+	{ 0x060001AB, GamePlayActions_SetCallbacks_mA74CFB41E76EDBE201C76D2D27D1E0CE262BAAE2_AdjustorThunk },
 };
-static const int32_t s_InvokerIndices[784] = 
+static const int32_t s_InvokerIndices[785] = 
 {
 	9498,
 	9498,
@@ -1732,6 +1734,7 @@ static const int32_t s_InvokerIndices[784] =
 	9498,
 	9498,
 	7418,
+	7213,
 	7213,
 	7213,
 	9498,
@@ -2435,7 +2438,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	784,
+	785,
 	s_methodPointers,
 	24,
 	s_adjustorThunks,

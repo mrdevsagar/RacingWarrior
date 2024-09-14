@@ -41,8 +41,6 @@ public class PlayerMoveState : PlayerGroundedState
         {
             player.SetFrictionMaterial(true);
 
-            Debug.Log(player.IsWalkingBackward.ToString()+"tt");
-
             if (!player.IsWalkingBackward)
             {
                 player.SetVelocityX(MoveInput.x * playerData.MovementVelocity);
@@ -50,8 +48,6 @@ public class PlayerMoveState : PlayerGroundedState
             {
                 player.SetVelocityX(MoveInput.x * playerData.BackwardMovementVelocity);
             }
-
-            
         }
     }
 }

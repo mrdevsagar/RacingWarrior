@@ -1,13 +1,19 @@
 using TMPro;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+
+    #region State machine Reference
     public PlayerStateMachine StateMachine {  get; private set; }
 
     public PlayerIdleState IdleState { get; private set; }
     public PlayerMoveState MoveState { get; private set; }
-       
+
+    #endregion
+
+    #region Unity Variables
     public Animator Anim { get; private set; }
 
     [SerializeField]
@@ -21,14 +27,29 @@ public class Player : MonoBehaviour
 
     public PhysicsMaterial2D stillMaterial;
 
-    public bool IsWalkingBackward; 
-  
+    #endregion
+
+
+    #region Other Variables 
+
+    public bool IsWalkingBackward;
+
+    public bool IsPlayerLeftFacing = false;
+
+
+    #endregion
+
+    public GameObject RightCineMachineCamera;
+    public GameObject LeftCineMachineCamera;
 
     /*private Vector2 _workspace;*/
 
     /*public Vector2 CurrentVelocity { get; private set; }*/
 
     /* public TextMeshProUGUI textBox;*/
+
+    #region Unity Callback functions
+
 
     private void Awake()
     {
@@ -50,6 +71,9 @@ public class Player : MonoBehaviour
 
         StateMachine.Initialize(IdleState);
 
+         
+
+
     }
 
     private void Update()
@@ -68,6 +92,10 @@ public class Player : MonoBehaviour
         StateMachine.CurrentState.PhysicsUpdate();
     }
 
+    #endregion
+
+
+    #region Other Functions 
     public void SetVelocityX(float velocityX)
     {
         RB.velocity = new Vector2(velocityX, RB.velocity.y);
@@ -88,12 +116,24 @@ public class Player : MonoBehaviour
 
     public void FlipPlayer(bool isRightFacing)
     {
-        if(isRightFacing)
+        IsPlayerLeftFacing = !isRightFacing;
+        if (isRightFacing)
         {
             transform.localScale = new Vector3(0.5f, 0.5f,0f);
         } else
         {
             transform.localScale = new Vector3(-0.5f, 0.5f, 0f);
         }
+        ChangeCameraPosition(isRightFacing);
     }
+
+    private void ChangeCameraPosition(bool isRightFacing)
+    {
+        
+            RightCineMachineCamera.SetActive(isRightFacing);
+            LeftCineMachineCamera.SetActive(!isRightFacing);
+        
+    }
+
+    #endregion
 }
