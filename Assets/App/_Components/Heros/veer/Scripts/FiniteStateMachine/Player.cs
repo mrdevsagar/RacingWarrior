@@ -1,5 +1,6 @@
 using TMPro;
 using Unity.Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -41,6 +42,8 @@ public class Player : MonoBehaviour
 
     public GameObject RightCineMachineCamera;
     public GameObject LeftCineMachineCamera;
+    public GameObject BottomRightCineMachineCamera;
+    public GameObject BottomLeftCineMachineCamera;
 
     /*private Vector2 _workspace;*/
 
@@ -84,7 +87,14 @@ public class Player : MonoBehaviour
 
         StateMachine.CurrentState.LogicUpdate();
 
-       /* Debug.Log(input.MoveInput);*/
+        /* Debug.Log(input.MoveInput);*/
+
+        if (!input.LookInput.Equals(float.NaN))
+        {
+            Debug.Log("kiiiiii"+ input.LookInput); 
+            ChangeCameraPosition(true);
+        }
+        
     }
 
     private void FixedUpdate()
@@ -129,11 +139,45 @@ public class Player : MonoBehaviour
 
     private void ChangeCameraPosition(bool isRightFacing)
     {
-        
+        float angle = input.LookInput;
+        if ((angle >= 0 && angle < 90) || (angle >= 350 && angle < 360))
+        {
+            RightCineMachineCamera.SetActive(true);
+            LeftCineMachineCamera.SetActive(false);
+            BottomRightCineMachineCamera.SetActive(false);
+            BottomLeftCineMachineCamera.SetActive(false);
+        }
+        else if (angle >= 90 && angle < 190)
+        {
+            RightCineMachineCamera.SetActive(false);
+            LeftCineMachineCamera.SetActive(true);
+            BottomRightCineMachineCamera.SetActive(false);
+            BottomLeftCineMachineCamera.SetActive(false);
+        }
+        else if (angle >= 190 && angle < 270)
+        {
+            RightCineMachineCamera.SetActive(false);
+            LeftCineMachineCamera.SetActive(false);
+            BottomRightCineMachineCamera.SetActive(false);
+            BottomLeftCineMachineCamera.SetActive(true);
+        }
+        else if (angle >= 270 && angle < 350)
+        {
+            RightCineMachineCamera.SetActive(false);
+            LeftCineMachineCamera.SetActive(false);
+            BottomRightCineMachineCamera.SetActive(true);
+            BottomLeftCineMachineCamera.SetActive(false);
+        } else
+        {
             RightCineMachineCamera.SetActive(isRightFacing);
             LeftCineMachineCamera.SetActive(!isRightFacing);
-        
+            BottomRightCineMachineCamera.SetActive(false);
+            BottomLeftCineMachineCamera.SetActive(false);
+        }
     }
+
+
+
 
     #endregion
 }
