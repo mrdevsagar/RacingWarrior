@@ -1,6 +1,3 @@
-using GoogleMobileAds.Api;
-using System.Net.Http.Headers;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.U2D;
 

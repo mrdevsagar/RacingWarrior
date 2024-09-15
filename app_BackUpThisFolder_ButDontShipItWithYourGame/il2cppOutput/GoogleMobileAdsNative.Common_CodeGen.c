@@ -43,12 +43,7 @@ extern void NativeClientEventArgs__ctor_mF7DEA301F79DC4E7B2B76ECC00B6AD55D15FF63
 extern void NativeClientEventArgs_get_nativeAdClient_mF79E2E7446CB3E969C52C6FC00106FC3185CC366 (void);
 extern void NativeClientEventArgs_set_nativeAdClient_mCEDBB0459BE0B3E308DA85F15E98E31D740B97FA (void);
 extern void NativeLoadAdErrorClient__ctor_m4888B46A83BD8FB56BBF15B21DEDF5138A417A61 (void);
-extern void NativeLoadAdErrorClient_GetCode_m0213AFFA52C44214C353F22D10B90FA5346CBCB3 (void);
-extern void NativeLoadAdErrorClient_GetDomain_m2DEF5942506C20D7A0026661E74A904385E9A5B5 (void);
-extern void NativeLoadAdErrorClient_GetMessage_m4E1ECB7C240BD02AB4F1D3737A1B699EAE8FC2D2 (void);
-extern void NativeLoadAdErrorClient_GetCause_m77B4A99A0761541DD0D74D452C0BA29CB8126513 (void);
 extern void NativeLoadAdErrorClient_ToString_mA1E78BC84A6833A1D19DE15417D8CD0949FD7C67 (void);
-extern void NativeLoadAdErrorClient_GetResponseInfoClient_m39C7456EDA931B9B25FA891C3BEFF0D94E4AA4A1 (void);
 extern void NativeUtils__cctor_mCFCE22CDEBE17B78930750EAACF5561C914A1F77 (void);
 extern void NativeUtils_get_Version_mB8F63B5B552D940B0351BE63FA0ED6E4B93B04D2 (void);
 extern void NativeUtils_set_Version_mB3A98DC5F620D19981313DB5627BB2572B667C60 (void);
@@ -64,7 +59,7 @@ extern void U3CLoadImageU3Ec__Iterator0_System_Collections_Generic_IEnumeratorU3
 extern void U3CLoadImageU3Ec__Iterator0_System_Collections_IEnumerator_get_Current_m85416CD329F37DEE6FF083BA32D671DF7D1B50A3 (void);
 extern void U3CLoadImageU3Ec__Iterator0_Dispose_m2A50688ED8740C6BD03711341EBC6C0E3DD64BF3 (void);
 extern void U3CLoadImageU3Ec__Iterator0_Reset_m9D94F4255730107893E8DF4523D892E474047090 (void);
-static Il2CppMethodPointer s_methodPointers[82] = 
+static Il2CppMethodPointer s_methodPointers[77] = 
 {
 	AdLoaderClientArgs__ctor_m3EDBE0EB4073D98D628DBC22E4D6A5482B58E2C4,
 	AdLoaderClientArgs_get_AdUnitId_m9CB2CEDA6950AE81735C721A64024FEE084C1095,
@@ -127,12 +122,7 @@ static Il2CppMethodPointer s_methodPointers[82] =
 	NativeClientEventArgs_get_nativeAdClient_mF79E2E7446CB3E969C52C6FC00106FC3185CC366,
 	NativeClientEventArgs_set_nativeAdClient_mCEDBB0459BE0B3E308DA85F15E98E31D740B97FA,
 	NativeLoadAdErrorClient__ctor_m4888B46A83BD8FB56BBF15B21DEDF5138A417A61,
-	NativeLoadAdErrorClient_GetCode_m0213AFFA52C44214C353F22D10B90FA5346CBCB3,
-	NativeLoadAdErrorClient_GetDomain_m2DEF5942506C20D7A0026661E74A904385E9A5B5,
-	NativeLoadAdErrorClient_GetMessage_m4E1ECB7C240BD02AB4F1D3737A1B699EAE8FC2D2,
-	NativeLoadAdErrorClient_GetCause_m77B4A99A0761541DD0D74D452C0BA29CB8126513,
 	NativeLoadAdErrorClient_ToString_mA1E78BC84A6833A1D19DE15417D8CD0949FD7C67,
-	NativeLoadAdErrorClient_GetResponseInfoClient_m39C7456EDA931B9B25FA891C3BEFF0D94E4AA4A1,
 	NativeUtils__cctor_mCFCE22CDEBE17B78930750EAACF5561C914A1F77,
 	NativeUtils_get_Version_mB8F63B5B552D940B0351BE63FA0ED6E4B93B04D2,
 	NativeUtils_set_Version_mB3A98DC5F620D19981313DB5627BB2572B667C60,
@@ -149,7 +139,7 @@ static Il2CppMethodPointer s_methodPointers[82] =
 	U3CLoadImageU3Ec__Iterator0_Dispose_m2A50688ED8740C6BD03711341EBC6C0E3DD64BF3,
 	U3CLoadImageU3Ec__Iterator0_Reset_m9D94F4255730107893E8DF4523D892E474047090,
 };
-static const int32_t s_InvokerIndices[82] = 
+static const int32_t s_InvokerIndices[77] = 
 {
 	9498,
 	9342,
@@ -212,11 +202,6 @@ static const int32_t s_InvokerIndices[82] =
 	9342,
 	7363,
 	7363,
-	9285,
-	9342,
-	9342,
-	9342,
-	9342,
 	9342,
 	14553,
 	14486,
@@ -238,7 +223,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_GoogleMobileAdsNative_Common_CodeGen
 const Il2CppCodeGenModule g_GoogleMobileAdsNative_Common_CodeGenModule = 
 {
 	"GoogleMobileAdsNative.Common.dll",
-	82,
+	77,
 	s_methodPointers,
 	0,
 	NULL,

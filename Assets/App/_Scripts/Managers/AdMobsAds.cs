@@ -12,11 +12,17 @@
 
 
 using UnityEngine;
-using GoogleMobileAds.Api;
+
 using UnityEngine.UI;
 using System;
 using System.Collections;
 using Unity.Mathematics;
+
+#if UNITY_ANDROID
+
+using GoogleMobileAds.Api;
+
+#endif
 
 /// <summary>
 ///   AdMobsAds for managing AdMob ads with singleton instance.
@@ -58,11 +64,11 @@ public class AdMobsAds : Singleton<AdMobsAds>
         readonly string NATIVE_ID = "ca-app-pub-7191923771378224/1727300312";
 #else
     //Test ID's
-    readonly string BANNER_ID = "ca-app-pub-3940256099942544/6300978111";
+/*    readonly string BANNER_ID = "ca-app-pub-3940256099942544/6300978111";
     readonly string INTERSTIAL_ID = "ca-app-pub-3940256099942544/1033173712";
     readonly string REWARDED_ID = "ca-app-pub-3940256099942544/5224354917";
     readonly string NATIVE_ID = "ca-app-pub-3940256099942544/2247696110";
-
+*/
 #endif
 #endif
 
@@ -70,11 +76,15 @@ public class AdMobsAds : Singleton<AdMobsAds>
 
 
     [SerializeField] bool isAdverisementEnabaled =  true;
+
+    #if UNITY_ANDROID
+
     BannerView _bannerView;
     InterstitialAd _interstitialAd;
     RewardedAd _rewardedAd;
     NativeAd _nativeAd;
 
+    #endif
    
     private GameObject _videoErrorCanvasPrefab;
     private GameObject _videoErrorCanvas;
@@ -113,6 +123,7 @@ public class AdMobsAds : Singleton<AdMobsAds>
         // Set the canvas as a child of the GameManager GameObject
         VideoErrorCanvas.transform.SetParent(this.transform);
 
+        #if UNITY_ANDROID
         try
         {
             MobileAds.RaiseAdEventsOnUnityMainThread = true;
@@ -129,10 +140,10 @@ public class AdMobsAds : Singleton<AdMobsAds>
             ToastMessage.ShowToast(ex.Message.ToString());
             Debug.LogError("sooraj: An error occurred during AdMob initialization: " + ex.Message);
         }
-
+        #endif
     }
 
-    #endregion
+#endregion
     private void Start()
     {
         CheckCooldown();
@@ -152,6 +163,7 @@ public class AdMobsAds : Singleton<AdMobsAds>
     /// </summary>
     private void LoadBannerAd()
     {
+        #if UNITY_ANDROID
         try
         {
 
@@ -180,18 +192,21 @@ public class AdMobsAds : Singleton<AdMobsAds>
             ToastMessage.ShowToast("loading banner ads failed");
             Debug.LogError("sooraj: An error occurred during loading banner ad" + ex.Message);
         }
-
+        #endif
     }
     void CreateBannerView()
     {
+#if UNITY_ANDROID
         if (_bannerView != null)
         {
             DestroyBannerAd();
         }
         _bannerView = new BannerView(BANNER_ID, AdSize.Banner, AdPosition.TopLeft);
+#endif
     }
     void ListenToBannerEvents()
     {
+#if UNITY_ANDROID
         _bannerView.OnBannerAdLoaded += () =>
         {
             _isBannerLoaded = true;
@@ -237,15 +252,18 @@ public class AdMobsAds : Singleton<AdMobsAds>
         {
             Debug.Log("Banner view full screen content closed.");
         };
+#endif
     }
     private void DestroyBannerAd()
     {
+#if UNITY_ANDROID
         if (_bannerView != null)
         {
             print("Destroying banner Ad");
             _bannerView.Destroy();
             _bannerView = null;
         }
+#endif
     }
 
     /// <summary>
@@ -253,7 +271,9 @@ public class AdMobsAds : Singleton<AdMobsAds>
     /// </summary>
     public void HideBannerAd()
     {
-        _bannerView?.Hide();
+#if UNITY_ANDROID
+                _bannerView?.Hide();
+#endif
     }
 
     /// <summary>
@@ -271,7 +291,9 @@ public class AdMobsAds : Singleton<AdMobsAds>
             }
             else
             {
+#if UNITY_ANDROID
                 _bannerView?.Show();
+#endif
             }
         }
         catch (Exception ex)
@@ -281,12 +303,13 @@ public class AdMobsAds : Singleton<AdMobsAds>
         }
     }
 
-    #endregion
+#endregion
 
     #region Interstitial
 
     public void LoadInterstitialAd()
     {
+#if UNITY_ANDROID
         try{ 
         // My Implementation start
         if (!isAdverisementEnabaled)
@@ -295,13 +318,14 @@ public class AdMobsAds : Singleton<AdMobsAds>
         }
 
         IsLoadingInterstitialAd = true;
-        // My Implementation end
+            // My Implementation end
 
         if (_interstitialAd != null)
         {
             _interstitialAd?.Destroy();
             _interstitialAd = null;
         }
+        
         var adRequest = new AdRequest();
         adRequest.Keywords.Add("unity-admob-sample");
 
@@ -325,11 +349,12 @@ public class AdMobsAds : Singleton<AdMobsAds>
             ToastMessage.ShowToast("loading interstitial ads failed");
             Debug.LogError("sooraj: An error occurred during showing banner ad" + ex.Message);
         }
-
+#endif
     }
 
     public void ShowInterstitialAd()
     {
+#if UNITY_ANDROID
         try
         { 
         if (!isAdverisementEnabaled)
@@ -351,10 +376,12 @@ public class AdMobsAds : Singleton<AdMobsAds>
             ToastMessage.ShowToast("ShowInterstitialAds failed");
             Debug.LogError("sooraj: An error occurred during ShowInterstitialAd" + ex.Message);
         }
+#endif
     }
 
     public void SwitchSceneByShowingAd(string screenName)
     {
+#if UNITY_ANDROID
         try
         {
             MyLoadSceneAsync.Instance.ShowLoadingScreen();
@@ -386,12 +413,18 @@ public class AdMobsAds : Singleton<AdMobsAds>
             Debug.LogError("sooraj: An error occurred during SwitchSceneByShowingAd" + ex.Message);
             SwitchScene(screenName);
         }
+    #else
+
+    SwitchScene(screenName);
+
+    #endif
     }
 
 
     // Private methods
     private void ShowInterstitialAdScreenChange(string screenName)
     {
+#if UNITY_ANDROID
         Debug.Log("Ad available, showing ad for screen: " + screenName);
         _interstitialAd?.Show();
         IsLoadingInterstitialAd = false;
@@ -414,10 +447,12 @@ public class AdMobsAds : Singleton<AdMobsAds>
             Debug.LogError("Interstitial ad failed to open full screen content with error: " + error);
             SwitchScene(screenName);
         };
+#endif
     }
 
     private void LoadAndShowInterstitialAd(string screenName)
     {
+#if UNITY_ANDROID
         if (_interstitialAd != null)
         {
             _interstitialAd?.Destroy();
@@ -449,6 +484,7 @@ public class AdMobsAds : Singleton<AdMobsAds>
                 SwitchScene(screenName);
             }
         });
+#endif
     }
 
     private void SwitchScene(string screenName)
@@ -458,6 +494,7 @@ public class AdMobsAds : Singleton<AdMobsAds>
         MyLoadSceneAsync.Instance.Load(screenName);
     }
 
+#if UNITY_ANDROID
     private void InterstitialEvent(InterstitialAd ad)
     {
         // Raised when the ad is estimated to have earned money.
@@ -496,17 +533,19 @@ public class AdMobsAds : Singleton<AdMobsAds>
                            "with error : " + error);
         };
     }
+#endif
 
     private void ResetInterstitialAdRepitTimer()
     {
         interstitialAdTimer = interstitialAdInterval;
     }
-    #endregion
+#endregion
 
     #region Rewarded
 
     private void LoadRewardedAd(string title, string subTitle, int count, Collectible collectibleType)
     {
+#if UNITY_ANDROID
         IsLoadingRewardedAd = true;
        /* _videoErrorCanvas.SetActive(false);*/
         if (_rewardedAd != null)
@@ -541,9 +580,11 @@ public class AdMobsAds : Singleton<AdMobsAds>
             }
             
         });
+#endif
     }
     private void ShowRewardedAd(string title, string subTitle, int count, Collectible collectibleType)
     {
+#if UNITY_ANDROID
         if (_rewardedAd != null && _rewardedAd.CanShowAd())
         {
             _rewardedAd.Show((Reward reward) =>
@@ -585,6 +626,7 @@ public class AdMobsAds : Singleton<AdMobsAds>
             print("Rewarded ad not ready");
             IsLoadingRewardedAd = false;
         }
+#endif
     }
 
     public void ShowRewardPanel(string title, string subTitle, int count, Collectible collectibleType)
@@ -610,6 +652,7 @@ public class AdMobsAds : Singleton<AdMobsAds>
 
     public void ShowOrLoadRewardedAd(string title, string subTitle, int count, Collectible collectibleType)
     {
+#if UNITY_ANDROID
         if (_rewardedAd != null && _rewardedAd.CanShowAd())
         {
             ShowRewardedAd(title, subTitle, count, collectibleType);
@@ -617,6 +660,7 @@ public class AdMobsAds : Singleton<AdMobsAds>
         {
             LoadRewardedAd(title, subTitle, count, collectibleType);
         }
+#endif
     }
 
     /*private void RewardedAdShowed()
@@ -708,8 +752,8 @@ public class AdMobsAds : Singleton<AdMobsAds>
             }
         }
     }
-
-    public void RewardedAdEvents(RewardedAd ad, string title, string subTitle, int count, Collectible collectibleType)
+#if UNITY_ANDROID
+    private void RewardedAdEvents(RewardedAd ad, string title, string subTitle, int count, Collectible collectibleType)
     {
         
         // Raised when the ad is estimated to have earned money.
@@ -748,8 +792,9 @@ public class AdMobsAds : Singleton<AdMobsAds>
                            "with error : " + error);
         };
     }
+#endif
 
-    #endregion
+#endregion
 
 
     #region Native
@@ -759,15 +804,17 @@ public class AdMobsAds : Singleton<AdMobsAds>
     [System.Obsolete]
     public void RequestNativeAd()
     {
-
+#if UNITY_ANDROID
         AdLoader adLoader = new AdLoader.Builder(NATIVE_ID).ForNativeAd().Build();
 
         adLoader.OnNativeAdLoaded += this.HandleNativeAdLoaded;
         adLoader.OnAdFailedToLoad += this.HandleNativeAdFailedToLoad;
 
         adLoader.LoadAd(new AdRequest());
+#endif
     }
 
+#if UNITY_ANDROID
     private void HandleNativeAdLoaded(object sender, NativeAdEventArgs e)
     {
         print("Native ad loaded");
@@ -786,7 +833,9 @@ public class AdMobsAds : Singleton<AdMobsAds>
         print("Native ad failed to load" + e.ToString());
 
     }
-    #endregion
+#endif
+
+#endregion
 
 
     

@@ -1064,6 +1064,14 @@
             "icon": null
           },
           {
+            "name": "Effector2D",
+            "scenes": [
+              "Assets/App/Scenes/Levels/_1_Level.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
             "name": "Joint2D",
             "scenes": [],
             "dependencyType": 1,
@@ -1082,6 +1090,14 @@
               "Assets/App/Scenes/_2_ShopScene.unity",
               "Assets/App/Scenes/Levels/_1_Level.unity",
               "Assets/App/Scenes/Levels/_2_Level.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "PlatformEffector2D",
+            "scenes": [
+              "Assets/App/Scenes/Levels/_1_Level.unity"
             ],
             "dependencyType": 0,
             "icon": null
