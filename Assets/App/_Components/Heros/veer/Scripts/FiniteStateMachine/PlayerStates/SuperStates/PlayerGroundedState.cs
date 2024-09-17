@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerGroundedState : PlayerState
+public class PlayerGroundedState : PlayerAliveState
 {
     public PlayerGroundedState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {

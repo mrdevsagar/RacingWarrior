@@ -43,49 +43,6 @@ public class PlayerState
         MoveInput = player.input.MoveInput;
         LookInput = player.input.LookInput;
         IsFiring = player.input.IsFiring;
-
-        /*Debug.Log(MoveInput +"  "+ LookInput+"  " + IsFiring +"  "+LookInput);*/
-
-        if ( MoveInput.x != 0 || !LookInput.Equals(float.NaN))
-        {
-            if (MoveInput.x > 0 && player.transform.localScale.x < 0 && LookInput.Equals(float.NaN))
-            {
-                player.FlipPlayer(true);
-            }
-            else if (MoveInput.x < 0 && player.transform.localScale.x > 0 && LookInput.Equals(float.NaN))
-            {
-                player.FlipPlayer(false);
-            }
-
-            if (((LookInput >= 0 && LookInput <= 90) || (LookInput >= 270 && LookInput <= 360)))
-            {
-                if(player.transform.localScale.x < 0)
-                {
-                    player.FlipPlayer(true);
-                }
-               /* player.IsWalkingBackward = true;*/
-
-
-            }
-            else if (LookInput > 90 && LookInput < 270)
-            {
-                if (player.transform.localScale.x > 0)
-                {
-                    player.FlipPlayer(false);
-                } 
-             /*   player.IsWalkingBackward = true;*/
-               
-                
-            }
-
-            if ((MoveInput.x > 0 && player.transform.localScale.x > 0) || (MoveInput.x < 0 && player.transform.localScale.x < 0))
-            {
-                player.IsWalkingBackward = false;
-            } else
-            {
-                player.IsWalkingBackward = true;
-            }
-        }
     }
 
     public virtual void PhysicsUpdate()

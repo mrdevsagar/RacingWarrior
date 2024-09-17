@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using Unity.Cinemachine;
 using Unity.VisualScripting;
@@ -37,13 +38,20 @@ public class Player : MonoBehaviour
 
     public bool IsPlayerLeftFacing = false;
 
+    [SerializeField]
+    private GameObject RightCineMachineCamera;
+    [SerializeField]
+    private GameObject LeftCineMachineCamera;
+    [SerializeField]
+    private GameObject BottomRightCineMachineCamera;
+    [SerializeField]
+    private GameObject BottomLeftCineMachineCamera;
+
+    private List<GameObject> vertualCMCList;
 
     #endregion
 
-    public GameObject RightCineMachineCamera;
-    public GameObject LeftCineMachineCamera;
-    public GameObject BottomRightCineMachineCamera;
-    public GameObject BottomLeftCineMachineCamera;
+
 
     /*private Vector2 _workspace;*/
 
@@ -74,24 +82,23 @@ public class Player : MonoBehaviour
 
         StateMachine.Initialize(IdleState);
 
-         
-
+        vertualCMCList = new List<GameObject>
+        {
+            RightCineMachineCamera,
+            BottomRightCineMachineCamera,
+            LeftCineMachineCamera,
+            BottomLeftCineMachineCamera
+        };
 
     }
 
     private void Update()
     {
-        /* CurrentVelocity = RB.velocity;*/
-
-       
-
         StateMachine.CurrentState.LogicUpdate();
 
-        /* Debug.Log(input.MoveInput);*/
 
         if (!input.LookInput.Equals(float.NaN))
         {
-            Debug.Log("kiiiiii"+ input.LookInput); 
             ChangeCameraPosition(true);
         }
         
@@ -105,7 +112,7 @@ public class Player : MonoBehaviour
     #endregion
 
 
-    #region Other Functions 
+    #region Other Public Methods 
     public void SetVelocityX(float velocityX)
     {
         RB.velocity = new Vector2(velocityX, RB.velocity.y);
@@ -137,36 +144,27 @@ public class Player : MonoBehaviour
         ChangeCameraPosition(isRightFacing);
     }
 
+    #endregion
+
+    #region Private Methods
     private void ChangeCameraPosition(bool isRightFacing)
     {
         float angle = input.LookInput;
         if ((angle >= 0 && angle < 90) || (angle >= 350 && angle < 360))
         {
-            RightCineMachineCamera.SetActive(true);
-            LeftCineMachineCamera.SetActive(false);
-            BottomRightCineMachineCamera.SetActive(false);
-            BottomLeftCineMachineCamera.SetActive(false);
+            EnableSelectedVCMC(RightCineMachineCamera);
         }
         else if (angle >= 90 && angle < 190)
         {
-            RightCineMachineCamera.SetActive(false);
-            LeftCineMachineCamera.SetActive(true);
-            BottomRightCineMachineCamera.SetActive(false);
-            BottomLeftCineMachineCamera.SetActive(false);
+            EnableSelectedVCMC(LeftCineMachineCamera);
         }
         else if (angle >= 190 && angle < 270)
         {
-            RightCineMachineCamera.SetActive(false);
-            LeftCineMachineCamera.SetActive(false);
-            BottomRightCineMachineCamera.SetActive(false);
-            BottomLeftCineMachineCamera.SetActive(true);
+            EnableSelectedVCMC(BottomLeftCineMachineCamera);
         }
         else if (angle >= 270 && angle < 350)
         {
-            RightCineMachineCamera.SetActive(false);
-            LeftCineMachineCamera.SetActive(false);
-            BottomRightCineMachineCamera.SetActive(true);
-            BottomLeftCineMachineCamera.SetActive(false);
+            EnableSelectedVCMC(BottomRightCineMachineCamera);
         } else
         {
             RightCineMachineCamera.SetActive(isRightFacing);
@@ -174,10 +172,24 @@ public class Player : MonoBehaviour
             BottomRightCineMachineCamera.SetActive(false);
             BottomLeftCineMachineCamera.SetActive(false);
         }
+
+        void EnableSelectedVCMC(GameObject toEnable)
+        {
+
+            foreach (GameObject obj in vertualCMCList)
+            {
+                if (obj == toEnable)
+                {
+                    obj.SetActive(true);
+                }
+                else
+                {
+                    obj.SetActive(false);
+                }
+            }
+        }
+
     }
-
-
-
 
     #endregion
 }
