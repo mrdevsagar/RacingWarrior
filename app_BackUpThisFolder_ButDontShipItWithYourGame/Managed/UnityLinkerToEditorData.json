@@ -16,7 +16,12 @@
           },
           {
             "name": "AnimationClip",
-            "scenes": [],
+            "scenes": [
+              "Assets/App/Scenes/_1_MainScene.unity",
+              "Assets/App/Scenes/_2_ShopScene.unity",
+              "Assets/App/Scenes/Levels/_1_Level.unity",
+              "Assets/App/Scenes/Levels/_2_Level.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
@@ -63,7 +68,7 @@
           {
             "name": "Motion",
             "scenes": [],
-            "dependencyType": 0,
+            "dependencyType": 1,
             "icon": null
           },
           {
