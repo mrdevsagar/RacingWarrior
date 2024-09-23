@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerAliveState : PlayerState
 {
+    #region State Machine Override Methods
     public PlayerAliveState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
     }
@@ -33,6 +34,17 @@ public class PlayerAliveState : PlayerState
         base.PhysicsUpdate();
     }
 
+    public override void LatePhysicsUpdate()
+    {
+        base.LatePhysicsUpdate();
+        RotateHand();
+    }
+
+
+
+    #endregion
+
+    #region Other Methods
     private void FlipPlayer()
     {
         if (MoveInput.x != 0 || !LookInput.Equals(float.NaN))
@@ -72,4 +84,12 @@ public class PlayerAliveState : PlayerState
             }
         }
     }
+   
+    private void RotateHand()
+    {
+        player.RotateLeftHandStraight(LookInput);
+       /* player.MoveBowRightHand(LookInput,LookDragDistance);*/
+    }
+
+    #endregion
 }

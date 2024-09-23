@@ -1,2 +1,22 @@
 fileFormatVersion: 2
 guid: 63351f06d7d06084eb1c372b865fc5dc
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _playerData: {fileID: 11400000, guid: dc5515bf38edd8f46bdd2ed147a20cc0, type: 2}
+  - input: {instanceID: 0}
+  - moveMaterial: {fileID: 6200000, guid: 59270e6461fb078488092cc33980eb4b, type: 2}
+  - stillMaterial: {instanceID: 0}
+  - LeftHandTarget: {instanceID: 0}
+  - LeftHandArm: {instanceID: 0}
+  - LeftHandFist: {instanceID: 0}
+  - RightCineMachineCamera: {instanceID: 0}
+  - LeftCineMachineCamera: {instanceID: 0}
+  - BottomRightCineMachineCamera: {instanceID: 0}
+  - BottomLeftCineMachineCamera: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

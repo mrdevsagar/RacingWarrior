@@ -8,6 +8,7 @@ public class PlayerInputHandler : MonoBehaviour
 {
     public Vector2 MoveInput {  get; private set; }
     public float LookInput { get; private set; }
+    public float LookDragDistance { get; private set; }
     public bool IsFiring { get; private set; }
 
     public TextMeshProUGUI textBox;
@@ -28,6 +29,7 @@ public class PlayerInputHandler : MonoBehaviour
         // Bind the input action callbacks
         playerInput.Player.Move.performed += OnMovePerformed;
         playerInput.Player.Move.canceled += OnMovePerformed;
+        LookInput = float.NaN;
     }
 
     private void OnEnable()
@@ -155,12 +157,14 @@ public class PlayerInputHandler : MonoBehaviour
         }
 
         float distance = joystickInput.magnitude;
-
-        if (distance > 0.2f)
+        
+        if (distance > 0.05f)
         {
+            LookDragDistance = distance;
             LookInput = angle;
         } else
         {
+            LookDragDistance = float.NaN;
             LookInput = float.NaN;
         }
 

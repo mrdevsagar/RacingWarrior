@@ -1,8 +1,11 @@
+using NUnit.Framework;
 using System.Collections.Generic;
 using TMPro;
 using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.U2D.IK;
+using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
@@ -29,6 +32,12 @@ public class Player : MonoBehaviour
 
     public PhysicsMaterial2D stillMaterial;
 
+   
+  
+
+    [SerializeField]
+    private Vector3 v;
+    
     #endregion
 
 
@@ -47,17 +56,57 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject BottomLeftCineMachineCamera;
 
+
     private List<GameObject> vertualCMCList;
+
+
+
+    public Solver2D  LeftArmIKSolver;
+    public Solver2D LeftFistIKSolver;
+
+    public Solver2D RightArmIKSolver;
+    public Solver2D RightFistIKSolver;
+
+    [Header("OldTargets")]
+    [SerializeField]
+    private Transform AnimLeftArmTarget;
+    [SerializeField]
+    private Transform AnimLeftFistTarget;
+    [SerializeField]
+    private Transform AnimRightArmTarget;
+    [SerializeField]
+    private Transform AnimRightFistTarget;
+
+    [Space(10)]
+
+   
+    
+    [Header("NewTargetsParents")]
+    [SerializeField]
+    private Transform P_Parent_LeftHandTarget;
+    [SerializeField]
+    private Transform P_Parent_RightHandTarget;
+    [Space(10)]
+
+    [Header("NewTargets")]
+    [SerializeField]
+    public Transform P_LeftArmTarget;
+    [SerializeField]
+    public Transform P_LeftFistTarget;
+
+    [SerializeField]
+    public Transform P_RightArmTarget;
+    [SerializeField]
+    public Transform P_RightFistTarget;
+    [Space(10)]
+
+
 
     #endregion
 
+    [SerializeField]
+    private float flipAngle;
 
-
-    /*private Vector2 _workspace;*/
-
-    /*public Vector2 CurrentVelocity { get; private set; }*/
-
-    /* public TextMeshProUGUI textBox;*/
 
     #region Unity Callback functions
 
@@ -89,7 +138,6 @@ public class Player : MonoBehaviour
             LeftCineMachineCamera,
             BottomLeftCineMachineCamera
         };
-
     }
 
     private void Update()
@@ -107,6 +155,12 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         StateMachine.CurrentState.PhysicsUpdate();
+    }
+
+    private void LateUpdate()
+    {
+        StateMachine.CurrentState.LatePhysicsUpdate();
+
     }
 
     #endregion
@@ -144,12 +198,49 @@ public class Player : MonoBehaviour
         ChangeCameraPosition(isRightFacing);
     }
 
+    public void RotateLeftHandStraight(float angle)
+    {
+        Debug.Log(angle);
+
+        if (angle.Equals(float.NaN))
+        {
+            LeftArmIKSolver.GetChain(0).target = AnimLeftArmTarget;
+            LeftFistIKSolver.GetChain(0).target = AnimLeftFistTarget;
+
+            RightArmIKSolver.GetChain(0).target = AnimRightArmTarget;
+            RightFistIKSolver.GetChain(0).target = AnimRightFistTarget;
+            return;
+        } else
+        {
+            if (IsPlayerLeftFacing)
+            {
+                angle += flipAngle;
+            }
+
+            LeftArmIKSolver.GetChain(0).target = P_LeftArmTarget;
+            LeftFistIKSolver.GetChain(0).target = P_LeftFistTarget;
+
+            RightArmIKSolver.GetChain(0).target = P_RightArmTarget;
+            RightFistIKSolver.GetChain(0).target = P_RightFistTarget;
+
+            P_Parent_LeftHandTarget.transform.eulerAngles = new Vector3(P_Parent_LeftHandTarget.transform.rotation.x, P_Parent_LeftHandTarget.transform.rotation.y, angle);
+
+            P_Parent_RightHandTarget.transform.eulerAngles = new Vector3(P_Parent_RightHandTarget.transform.rotation.x, P_Parent_RightHandTarget.transform.rotation.y, angle);
+        }
+    }
+
+    public void MoveBowRightHand(float angle,float distance)
+    {
+        Debug.Log(angle + "  distance" + distance);
+    }
     #endregion
 
     #region Private Methods
     private void ChangeCameraPosition(bool isRightFacing)
     {
         float angle = input.LookInput;
+
+
         if ((angle >= 0 && angle < 90) || (angle >= 350 && angle < 360))
         {
             EnableSelectedVCMC(RightCineMachineCamera);
@@ -165,7 +256,8 @@ public class Player : MonoBehaviour
         else if (angle >= 270 && angle < 350)
         {
             EnableSelectedVCMC(BottomRightCineMachineCamera);
-        } else
+        }
+        else
         {
             RightCineMachineCamera.SetActive(isRightFacing);
             LeftCineMachineCamera.SetActive(!isRightFacing);
@@ -193,3 +285,6 @@ public class Player : MonoBehaviour
 
     #endregion
 }
+
+
+//4.33 0.65
