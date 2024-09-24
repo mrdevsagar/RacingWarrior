@@ -26,7 +26,7 @@ public class PlayerAliveState : PlayerState
     {
         base.LogicUpdate();
         FlipPlayer();
-
+        RotateHand();
     }
 
     public override void PhysicsUpdate()
@@ -37,7 +37,7 @@ public class PlayerAliveState : PlayerState
     public override void LatePhysicsUpdate()
     {
         base.LatePhysicsUpdate();
-        RotateHand();
+       
     }
 
 
@@ -87,7 +87,7 @@ public class PlayerAliveState : PlayerState
    
     private void RotateHand()
     {
-        player.RotateLeftHandStraight(LookInput);
+        player.RotateLeftHandStraight();
        /* player.MoveBowRightHand(LookInput,LookDragDistance);*/
     }
 

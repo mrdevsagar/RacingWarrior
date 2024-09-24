@@ -79,8 +79,9 @@ public class Player : MonoBehaviour
 
     [Space(10)]
 
-   
-    
+    [Header("Head Bone")]
+    [SerializeField]
+    private Transform Head;
     [Header("NewTargetsParents")]
     [SerializeField]
     private Transform P_Parent_LeftHandTarget;
@@ -100,12 +101,13 @@ public class Player : MonoBehaviour
     public Transform P_RightFistTarget;
     [Space(10)]
 
+    public float headRotationAngle;
 
 
     #endregion
 
-    [SerializeField]
-    private float flipAngle;
+    
+    private float flipAngle = -180;
 
 
     #region Unity Callback functions
@@ -198,34 +200,65 @@ public class Player : MonoBehaviour
         ChangeCameraPosition(isRightFacing);
     }
 
-    public void RotateLeftHandStraight(float angle)
+    public void RotateLeftHandStraight()
     {
-        Debug.Log(angle);
+        float angle = input.LookInput;
 
-        if (angle.Equals(float.NaN))
+        float handRotationAngle = angle;
+        float headRotationAngle = angle;
+        
+
+        if (handRotationAngle.Equals(float.NaN))
         {
-            LeftArmIKSolver.GetChain(0).target = AnimLeftArmTarget;
+           /* LeftArmIKSolver.GetChain(0).target = AnimLeftArmTarget;
             LeftFistIKSolver.GetChain(0).target = AnimLeftFistTarget;
 
             RightArmIKSolver.GetChain(0).target = AnimRightArmTarget;
-            RightFistIKSolver.GetChain(0).target = AnimRightFistTarget;
+            RightFistIKSolver.GetChain(0).target = AnimRightFistTarget;*/
             return;
         } else
         {
             if (IsPlayerLeftFacing)
             {
-                angle += flipAngle;
+                handRotationAngle += flipAngle;
             }
-
+            
             LeftArmIKSolver.GetChain(0).target = P_LeftArmTarget;
             LeftFistIKSolver.GetChain(0).target = P_LeftFistTarget;
 
             RightArmIKSolver.GetChain(0).target = P_RightArmTarget;
             RightFistIKSolver.GetChain(0).target = P_RightFistTarget;
 
-            P_Parent_LeftHandTarget.transform.eulerAngles = new Vector3(P_Parent_LeftHandTarget.transform.rotation.x, P_Parent_LeftHandTarget.transform.rotation.y, angle);
+            P_Parent_LeftHandTarget.transform.eulerAngles = new Vector3(P_Parent_LeftHandTarget.transform.rotation.x, P_Parent_LeftHandTarget.transform.rotation.y, handRotationAngle);
 
-            P_Parent_RightHandTarget.transform.eulerAngles = new Vector3(P_Parent_RightHandTarget.transform.rotation.x, P_Parent_RightHandTarget.transform.rotation.y, angle);
+            P_Parent_RightHandTarget.transform.eulerAngles = new Vector3(P_Parent_RightHandTarget.transform.rotation.x, P_Parent_RightHandTarget.transform.rotation.y, handRotationAngle);
+
+            if (angle >= 0 && angle <= 90) {
+                headRotationAngle  = 95f + angle / 3;
+            } else if (angle > 270 && angle <= 360)
+            {
+                /*headRotationAngle = 95f - (360 - angle) / 3;*/
+                headRotationAngle = 95f - (35f * (360 - angle) / 90);
+            }
+
+            if (angle > 90 && angle <= 270)
+            {
+                headRotationAngle = - (125f - (65f * (angle - 90) / 180)); // Transition from 125 to 60
+            }
+
+            Debug.Log(headRotationAngle + "   angel  " + angle);
+
+            Head.eulerAngles = new Vector3(Head.eulerAngles.x, Head.eulerAngles.y, headRotationAngle);
+
+            if (headRotationAngle == 0 )
+            {
+              /*  Head.eulerAngles = new Vector3(Head.eulerAngles.x, Head.eulerAngles.y, angle + angle / 4);*/
+            } else
+            {
+                
+            }
+
+           
         }
     }
 
@@ -238,6 +271,8 @@ public class Player : MonoBehaviour
     #region Private Methods
     private void ChangeCameraPosition(bool isRightFacing)
     {
+        return;
+
         float angle = input.LookInput;
 
 

@@ -151,6 +151,7 @@ public class PlayerInputHandler : MonoBehaviour
 
         float angle = Mathf.Atan2(joystickInput.y, joystickInput.x) * Mathf.Rad2Deg;
 
+
         if (angle < 0)
         {
             angle += 360f;
