@@ -65,7 +65,7 @@ public class Player : MonoBehaviour
     public Solver2D  LeftArmIKSolver;
     public Solver2D LeftFistIKSolver;
 
-    public Solver2D RightArmIKSolver;
+    public LimbSolver2D RightArmIKSolver;
     public Solver2D RightFistIKSolver;
 
     [Header("OldTargets")]
@@ -285,6 +285,7 @@ public class Player : MonoBehaviour
 
         float handRotationAngle = angle;
 
+        float rightJoysticDistance = input.LookDragDistance;
 
 
         if (handRotationAngle.Equals(float.NaN))
@@ -312,12 +313,55 @@ public class Player : MonoBehaviour
             RightArmIKSolver.GetChain(0).target = P_BOW_RightArmTarget;
             RightFistIKSolver.GetChain(0).target = P_BOW_RightFistTarget;
 
+            float convertAngle = ConvertValue(rightJoysticDistance);
+
+            if (angle >= 180 && angle <= 360 && convertAngle < -0.15)
+            {
+                RightArmIKSolver.flip = false;
+            } else
+            {
+                RightArmIKSolver.flip = true;
+            }
+
+            P_Bow_Parent_RightHandTarget.transform.localPosition = new Vector3(convertAngle, 0, 0);
+
+            /* P_BOW_RightArmTarget.position = new Vector3(ConvertValue(angle), P_BOW_RightArmTarget.position.y, P_BOW_RightArmTarget.position.z);*/
+
+            Debug.Log(angle + "angle" + convertAngle);
+            /*if (rightJoysticDistance > 0.1f && rightJoysticDistance < 0.96f)
+            {
+
+               
+
+            } else if (rightJoysticDistance >= 0.96f)
+            {
+               
+            } else
+            {
+                
+            }*/
+
             P_Bow_Parent_LeftHandTarget.transform.eulerAngles = new Vector3(P_Bow_Parent_LeftHandTarget.transform.rotation.x, P_Bow_Parent_LeftHandTarget.transform.rotation.y, handRotationAngle);
 
             P_Bow_Parent_RightHandTarget.transform.eulerAngles = new Vector3(P_Bow_Parent_RightHandTarget.transform.rotation.x, P_Bow_Parent_RightHandTarget.transform.rotation.y, handRotationAngle);
 
             RotateHead(angle);
 
+            float ConvertValue(float value)
+            {
+                // Source range [0.1f, 0.96f]
+                float inputMin = 0.1f;
+                float inputMax = 0.96f;
+
+                // Target range [0, -0.4f]
+                float outputMin = 0f;
+                float outputMax = -0.4f;
+
+                // Linear interpolation formula
+                float outputValue = outputMin + (value - inputMin) * (outputMax - outputMin) / (inputMax - inputMin);
+
+                return outputValue;
+            }
 
         }
     }
@@ -338,7 +382,7 @@ public class Player : MonoBehaviour
             headRotationAngle = -(125f - (65f * (angle - 90) / 180)); // Transition from 125 to 60
         }
 
-        Debug.Log(headRotationAngle + "   angel  " + angle);
+       
 
         Head.eulerAngles = new Vector3(Head.eulerAngles.x, Head.eulerAngles.y, headRotationAngle);
 
