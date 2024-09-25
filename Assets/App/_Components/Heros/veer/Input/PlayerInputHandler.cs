@@ -127,23 +127,23 @@ public class PlayerInputHandler : MonoBehaviour
         
     }
 
-    public void OnJump(InputAction.CallbackContext context)
+   /* public void OnJump(InputAction.CallbackContext context)
     {
         if (context.started)
         {
-            /*Debug.Log("Started");*/
+            *//*Debug.Log("Started");*//*
         }
 
         if (context.performed) 
         {
-            /*Debug.Log("performed");*/
+            *//*Debug.Log("performed");*//*
         }
 
         if (context.canceled)
         {
-           /* Debug.Log("canceled");*/
+           *//* Debug.Log("canceled");*//*
         }
-    }
+    }*/
 
     public void GetLockAndFireInput()
     {

@@ -26,7 +26,7 @@ public class PlayerAliveState : PlayerState
     {
         base.LogicUpdate();
         FlipPlayer();
-        RotateHand();
+        
     }
 
     public override void PhysicsUpdate()
@@ -37,7 +37,7 @@ public class PlayerAliveState : PlayerState
     public override void LatePhysicsUpdate()
     {
         base.LatePhysicsUpdate();
-       
+        RotateHand();
     }
 
 
@@ -87,8 +87,26 @@ public class PlayerAliveState : PlayerState
    
     private void RotateHand()
     {
-        player.RotateLeftHandStraight();
-       /* player.MoveBowRightHand(LookInput,LookDragDistance);*/
+        if (player.SelectedWeapon.Equals(WeaponState.AKM))
+        {
+            player.RifleAim();
+        }
+
+        switch (player.SelectedWeapon)
+        {
+            case WeaponState.AKM: 
+                player.RifleAim();                  
+                break;
+
+            case WeaponState.BOW:
+                player.BowAim();
+                break;
+
+            default : break;
+        }
+
+
+        /* player.MoveBowRightHand(LookInput,LookDragDistance);*/
     }
 
     #endregion

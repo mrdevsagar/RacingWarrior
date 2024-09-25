@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.U2D.IK;
 using UnityEngine.UIElements;
 
+
 public class Player : MonoBehaviour
 {
 
@@ -82,31 +83,66 @@ public class Player : MonoBehaviour
     [Header("Head Bone")]
     [SerializeField]
     private Transform Head;
+    [SerializeField]
+    private Transform SpineBoneTransform;
+
+
     [Header("NewTargetsParents")]
     [SerializeField]
-    private Transform P_Parent_LeftHandTarget;
+    private Transform P_AKM_Parent_LeftHandTarget;
     [SerializeField]
-    private Transform P_Parent_RightHandTarget;
+    private Transform P_AKM_Parent_RightHandTarget;
     [Space(10)]
 
-    [Header("NewTargets")]
     [SerializeField]
-    public Transform P_LeftArmTarget;
+    private Transform P_Bow_Parent_LeftHandTarget;
     [SerializeField]
-    public Transform P_LeftFistTarget;
+    private Transform P_Bow_Parent_RightHandTarget;
+    [Space(10)]
+
+
+
+    [Header("New AKM Targets")]
+    [SerializeField]
+    public Transform P_AKM_LeftArmTarget;
+    [SerializeField]
+    public Transform P_AKM_LeftFistTarget;
 
     [SerializeField]
-    public Transform P_RightArmTarget;
+    public Transform P_AKM_RightArmTarget;
     [SerializeField]
-    public Transform P_RightFistTarget;
+    public Transform P_AKM_RightFistTarget;
+    [Space(10)]
+
+    [Header("New Bow Targets")]
+   
+
+    [SerializeField]
+    public Transform P_BOW_LeftArmTarget;
+    [SerializeField]
+    public Transform P_BOW_LeftFistTarget;
+
+    [SerializeField]
+    public Transform P_BOW_RightArmTarget;
+    [SerializeField]
+    public Transform P_BOW_RightFistTarget;
     [Space(10)]
 
     public float headRotationAngle;
 
+    public WeaponState SelectedWeapon = WeaponState.FIST;
+
+    [Header("Weapon GameObjeets")]
+    [SerializeField]
+    private GameObject AkmGameObj;
+    [SerializeField]
+    private GameObject SordGameObj;
+    [SerializeField]
+    private GameObject BowGameObj;
 
     #endregion
 
-    
+
     private float flipAngle = -180;
 
 
@@ -200,21 +236,24 @@ public class Player : MonoBehaviour
         ChangeCameraPosition(isRightFacing);
     }
 
-    public void RotateLeftHandStraight()
+    public void RifleAim()
     {
         float angle = input.LookInput;
 
         float handRotationAngle = angle;
-        float headRotationAngle = angle;
+        
         
 
         if (handRotationAngle.Equals(float.NaN))
         {
-           /* LeftArmIKSolver.GetChain(0).target = AnimLeftArmTarget;
+            LeftArmIKSolver.GetChain(0).target = AnimLeftArmTarget;
             LeftFistIKSolver.GetChain(0).target = AnimLeftFistTarget;
 
             RightArmIKSolver.GetChain(0).target = AnimRightArmTarget;
-            RightFistIKSolver.GetChain(0).target = AnimRightFistTarget;*/
+            RightFistIKSolver.GetChain(0).target = AnimRightFistTarget;
+
+            Head.eulerAngles = new Vector3(Head.eulerAngles.x, Head.eulerAngles.y, 90 * (IsPlayerLeftFacing ? -1 : 1)) ;
+
             return;
         } else
         {
@@ -223,43 +262,87 @@ public class Player : MonoBehaviour
                 handRotationAngle += flipAngle;
             }
             
-            LeftArmIKSolver.GetChain(0).target = P_LeftArmTarget;
-            LeftFistIKSolver.GetChain(0).target = P_LeftFistTarget;
+            LeftArmIKSolver.GetChain(0).target = P_AKM_LeftArmTarget;
+            LeftFistIKSolver.GetChain(0).target = P_AKM_LeftFistTarget;
 
-            RightArmIKSolver.GetChain(0).target = P_RightArmTarget;
-            RightFistIKSolver.GetChain(0).target = P_RightFistTarget;
+            RightArmIKSolver.GetChain(0).target = P_AKM_RightArmTarget;
+            RightFistIKSolver.GetChain(0).target = P_AKM_RightFistTarget;
 
-            P_Parent_LeftHandTarget.transform.eulerAngles = new Vector3(P_Parent_LeftHandTarget.transform.rotation.x, P_Parent_LeftHandTarget.transform.rotation.y, handRotationAngle);
+            P_AKM_Parent_LeftHandTarget.transform.eulerAngles = new Vector3(P_AKM_Parent_LeftHandTarget.transform.rotation.x, P_AKM_Parent_LeftHandTarget.transform.rotation.y, handRotationAngle);
 
-            P_Parent_RightHandTarget.transform.eulerAngles = new Vector3(P_Parent_RightHandTarget.transform.rotation.x, P_Parent_RightHandTarget.transform.rotation.y, handRotationAngle);
+            P_AKM_Parent_RightHandTarget.transform.eulerAngles = new Vector3(P_AKM_Parent_RightHandTarget.transform.rotation.x, P_AKM_Parent_RightHandTarget.transform.rotation.y, handRotationAngle);
 
-            if (angle >= 0 && angle <= 90) {
-                headRotationAngle  = 95f + angle / 3;
-            } else if (angle > 270 && angle <= 360)
-            {
-                /*headRotationAngle = 95f - (360 - angle) / 3;*/
-                headRotationAngle = 95f - (35f * (360 - angle) / 90);
-            }
-
-            if (angle > 90 && angle <= 270)
-            {
-                headRotationAngle = - (125f - (65f * (angle - 90) / 180)); // Transition from 125 to 60
-            }
-
-            Debug.Log(headRotationAngle + "   angel  " + angle);
-
-            Head.eulerAngles = new Vector3(Head.eulerAngles.x, Head.eulerAngles.y, headRotationAngle);
-
-            if (headRotationAngle == 0 )
-            {
-              /*  Head.eulerAngles = new Vector3(Head.eulerAngles.x, Head.eulerAngles.y, angle + angle / 4);*/
-            } else
-            {
-                
-            }
+            RotateHead(angle);
 
            
         }
+    }
+
+
+    public void BowAim()
+    {
+        float angle = input.LookInput;
+
+        float handRotationAngle = angle;
+
+
+
+        if (handRotationAngle.Equals(float.NaN))
+        {
+           /* LeftArmIKSolver.GetChain(0).target = AnimLeftArmTarget;
+            LeftFistIKSolver.GetChain(0).target = AnimLeftFistTarget;
+
+            RightArmIKSolver.GetChain(0).target = AnimRightArmTarget;
+            RightFistIKSolver.GetChain(0).target = AnimRightFistTarget;
+
+            Head.eulerAngles = new Vector3(Head.eulerAngles.x, Head.eulerAngles.y, 90 * (IsPlayerLeftFacing ? -1 : 1));
+
+            return;*/
+        }
+        else
+        {
+            if (IsPlayerLeftFacing)
+            {
+                handRotationAngle += flipAngle;
+            }
+
+            LeftArmIKSolver.GetChain(0).target = P_BOW_LeftArmTarget;
+            LeftFistIKSolver.GetChain(0).target = P_BOW_LeftFistTarget;
+
+            RightArmIKSolver.GetChain(0).target = P_BOW_RightArmTarget;
+            RightFistIKSolver.GetChain(0).target = P_BOW_RightFistTarget;
+
+            P_Bow_Parent_LeftHandTarget.transform.eulerAngles = new Vector3(P_Bow_Parent_LeftHandTarget.transform.rotation.x, P_Bow_Parent_LeftHandTarget.transform.rotation.y, handRotationAngle);
+
+            P_Bow_Parent_RightHandTarget.transform.eulerAngles = new Vector3(P_Bow_Parent_RightHandTarget.transform.rotation.x, P_Bow_Parent_RightHandTarget.transform.rotation.y, handRotationAngle);
+
+            RotateHead(angle);
+
+
+        }
+    }
+    private void RotateHead(float angle)
+    {
+        if (angle >= 0 && angle <= 90)
+        {
+            headRotationAngle = 95f + angle / 3;
+        }
+        else if (angle >= 270 && angle <= 360)
+        {
+            /*headRotationAngle = 95f - (360 - angle) / 3;*/
+            headRotationAngle = 95f - (35f * (360 - angle) / 90);
+        }
+
+        if (angle > 90 && angle < 270)
+        {
+            headRotationAngle = -(125f - (65f * (angle - 90) / 180)); // Transition from 125 to 60
+        }
+
+        Debug.Log(headRotationAngle + "   angel  " + angle);
+
+        Head.eulerAngles = new Vector3(Head.eulerAngles.x, Head.eulerAngles.y, headRotationAngle);
+
+        
     }
 
     public void MoveBowRightHand(float angle,float distance)
@@ -315,6 +398,46 @@ public class Player : MonoBehaviour
                 }
             }
         }
+
+    }
+
+    public void SwitchWeapon()
+    {
+
+            // Increment the weapon state
+            SelectedWeapon++;
+            
+            if(SelectedWeapon == WeaponState.SORD )
+            {
+                BowGameObj.SetActive(false);
+                AkmGameObj.SetActive(false);
+                SordGameObj.SetActive(true);
+            } else if (SelectedWeapon == WeaponState.AKM)
+            {
+                BowGameObj.SetActive(false);
+                AkmGameObj.SetActive(true);
+                SordGameObj.SetActive(false);
+            } else if  (SelectedWeapon == WeaponState.BOW) {
+                BowGameObj.SetActive(true);
+                AkmGameObj.SetActive(false);
+                SordGameObj.SetActive(false);
+            } else
+            {
+                BowGameObj.SetActive(false);
+                AkmGameObj.SetActive(false);
+                SordGameObj.SetActive(false);
+            }
+
+            // If we've gone past the last weapon state, loop back to the first one
+            if ((int)SelectedWeapon >= System.Enum.GetValues(typeof(WeaponState)).Length)
+            {
+                SelectedWeapon = WeaponState.FIST;
+                BowGameObj.SetActive(false);
+                AkmGameObj.SetActive(false);
+                SordGameObj.SetActive(false);
+            } 
+
+
 
     }
 
