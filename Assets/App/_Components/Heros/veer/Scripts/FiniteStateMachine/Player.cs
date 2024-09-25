@@ -68,6 +68,9 @@ public class Player : MonoBehaviour
     public LimbSolver2D RightArmIKSolver;
     public Solver2D RightFistIKSolver;
 
+    public CCDSolver2D BowTopCCDIK;
+    public CCDSolver2D BowBottomCCDIK;
+
     [Header("OldTargets")]
     [SerializeField]
     private Transform AnimLeftArmTarget;
@@ -287,10 +290,11 @@ public class Player : MonoBehaviour
 
         float rightJoysticDistance = input.LookDragDistance;
 
+        Debug.Log(angle);
 
-        if (handRotationAngle.Equals(float.NaN))
+        if (angle.Equals(float.NaN))
         {
-           /* LeftArmIKSolver.GetChain(0).target = AnimLeftArmTarget;
+            LeftArmIKSolver.GetChain(0).target = AnimLeftArmTarget;
             LeftFistIKSolver.GetChain(0).target = AnimLeftFistTarget;
 
             RightArmIKSolver.GetChain(0).target = AnimRightArmTarget;
@@ -298,7 +302,8 @@ public class Player : MonoBehaviour
 
             Head.eulerAngles = new Vector3(Head.eulerAngles.x, Head.eulerAngles.y, 90 * (IsPlayerLeftFacing ? -1 : 1));
 
-            return;*/
+            BowTopCCDIK.weight = 0;
+            BowBottomCCDIK.weight = 0;
         }
         else
         {
@@ -314,6 +319,17 @@ public class Player : MonoBehaviour
             RightFistIKSolver.GetChain(0).target = P_BOW_RightFistTarget;
 
             float convertAngle = ConvertValue(rightJoysticDistance);
+
+            if (rightJoysticDistance > 0.1f)
+            {
+                BowTopCCDIK.weight = 1;
+                BowBottomCCDIK.weight = 1;
+            } else
+            {
+                BowTopCCDIK.weight = 0;
+                BowBottomCCDIK.weight = 0;
+            }
+
 
             if (angle >= 180 && angle <= 360 && convertAngle < -0.15)
             {
