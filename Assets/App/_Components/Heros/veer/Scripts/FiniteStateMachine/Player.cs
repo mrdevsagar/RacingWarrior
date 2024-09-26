@@ -120,7 +120,9 @@ public class Player : MonoBehaviour
 
 
     [Header("New Bow Targets")]
-   
+
+    [SerializeField]
+    private GameObject BowGameObject;
 
     [SerializeField]
     public Transform P_BOW_LeftArmTarget;
@@ -137,6 +139,7 @@ public class Player : MonoBehaviour
 
 
 
+
     [SerializeField]
     public Transform BowInitialTarget;
 
@@ -148,7 +151,15 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Transform ArrowHolder;
 
-    public bool IsArrowAvailable = true;
+    [SerializeField]
+    private GameObject ArrowPrefab;
+
+    private GameObject CurrentArrowObject;
+
+    [SerializeField]
+    private GameObject _arrowPostion;
+
+    public bool IsArrowAvailable = false;
 
 
     [Space(10)]
@@ -319,11 +330,13 @@ public class Player : MonoBehaviour
 
         if (angle.Equals(float.NaN))
         {
-           /* LeftArmIKSolver.GetChain(0).target = AnimLeftArmTarget;
-            LeftFistIKSolver.GetChain(0).target = AnimLeftFistTarget;
+            /* LeftArmIKSolver.GetChain(0).target = AnimLeftArmTarget;
+             LeftFistIKSolver.GetChain(0).target = AnimLeftFistTarget;
 
-            RightArmIKSolver.GetChain(0).target = AnimRightArmTarget;
-            RightFistIKSolver.GetChain(0).target = AnimRightFistTarget;*/
+             RightArmIKSolver.GetChain(0).target = AnimRightArmTarget;
+             RightFistIKSolver.GetChain(0).target = AnimRightFistTarget;*/
+
+            
 
             Head.eulerAngles = new Vector3(Head.eulerAngles.x, Head.eulerAngles.y, 90 * (IsPlayerLeftFacing ? -1 : 1));
 
@@ -353,9 +366,34 @@ public class Player : MonoBehaviour
 
                 BowTopCCDIK.weight = 1;
                 BowBottomCCDIK.weight = 1;
-                IsArrowAvailable = true;
+                
                 float v = ConvertValue(rightJoysticDistance, new Vector2(0.1f, 0.985f), new Vector2(0f, -0.37f));
                 ArrowHolder.localPosition = new Vector3(v, ArrowHolder.localPosition.y, ArrowHolder.localPosition.z);
+
+                if (ArrowPrefab != null)
+                {
+                    if (!IsArrowAvailable)
+                    {
+                        IsArrowAvailable = true;
+                        // Instantiate the prefab at the origin (0, 0, 0) with no rotation
+                        CurrentArrowObject = Instantiate(ArrowPrefab, Vector3.zero, BowGameObject.transform.rotation);
+                        CurrentArrowObject.transform.parent = _arrowPostion.transform;
+                        CurrentArrowObject.transform.localPosition = Vector3.zero;
+                        if (IsPlayerLeftFacing)
+                        {
+                            CurrentArrowObject.transform.localScale = new Vector3(-1*CurrentArrowObject.transform.localScale.x, CurrentArrowObject.transform.localScale.y, CurrentArrowObject.transform.localScale.z);
+                        }
+                        
+                    }
+                   
+                    // Optional: Set the parent of the new object to this script's GameObject
+
+                }
+                else
+                {
+                    IsArrowAvailable = false;
+                    Debug.LogError("Prefab not assigned in the inspector.");
+                }
 
             } 
             else
@@ -363,8 +401,23 @@ public class Player : MonoBehaviour
                 if (rightJoysticDistance >= 0.985f && IsArrowAvailable)
                 {
                     Debug.Log("fired arrow");
+                    CurrentArrowObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                    
+                    if (IsPlayerLeftFacing)
+                    {
+                        CurrentArrowObject.GetComponent<Rigidbody2D>().AddForce(-CurrentArrowObject.transform.right * 20f, ForceMode2D.Impulse);
+                    }
+                    else
+                    {
+                        CurrentArrowObject.GetComponent<Rigidbody2D>().AddForce(CurrentArrowObject.transform.right * 20f, ForceMode2D.Impulse);
+                    }
+                    
+
+                    CurrentArrowObject.transform.parent = null;
+                    CurrentArrowObject = null;
+                    IsArrowAvailable = false;
                 }
-                IsArrowAvailable = false;
+                
 
                 BowTopCCDIK.GetChain(0).target = BowInitialTarget;
                 BowBottomCCDIK.GetChain(0).target = BowInitialTarget;

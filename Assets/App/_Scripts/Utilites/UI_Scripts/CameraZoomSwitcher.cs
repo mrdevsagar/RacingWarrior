@@ -32,7 +32,7 @@ public class CameraZoomSwitcher : MonoBehaviour
     {
         if (positionComposer != null)
         {
-            Debug.LogError(cameraDistances[currentDistanceIndex]);
+            /*Debug.LogError(cameraDistances[currentDistanceIndex]);*/
             positionComposer.CameraDistance = cameraDistances[currentDistanceIndex];
 
             // Update the button text to match the zoom level

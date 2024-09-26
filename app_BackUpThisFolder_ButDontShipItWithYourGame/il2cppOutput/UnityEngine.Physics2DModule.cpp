@@ -406,6 +406,10 @@ struct RaycastHit2D_t3EAAA06E6603C6BC61AC1291DD881C5C1E23BDFA
 	float ___m_Fraction;
 	int32_t ___m_Collider;
 };
+struct RigidbodyType2D_tEF5CD47739A3D3C138B62431C112C44E5B18EB9A 
+{
+	int32_t ___value__;
+};
 struct RawData_t37CAF2D3F74B7723974ED7CEEE9B297D8FA64ED0  : public RuntimeObject
 {
 	intptr_t ___Bounds;
@@ -835,6 +839,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ThrowHelper_ThrowNullReferenceException_
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Rigidbody2D_get_velocity_Injected_mDA636D0F92F49812D44ECFB515D816BBE63B1287 (intptr_t ___0__unity_self, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* ___1_ret, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Rigidbody2D_set_velocity_Injected_mC01581E09F5F3474502262F055008B633560F38D (intptr_t ___0__unity_self, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* ___1_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Rigidbody2D_get_mass_Injected_m9207BACE59FF826B274360A81F024A8A57761297 (intptr_t ___0__unity_self, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Rigidbody2D_set_bodyType_Injected_m21D5F9FE596EE3369F25C39D14B7E7B6965F87AC (intptr_t ___0__unity_self, int32_t ___1_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Rigidbody2D_AddForce_Internal_mEB52E31C5043DB6B1E7F728D2E0D1C2A22B1A5CC (Rigidbody2D_tBEBE9523CF4448544085AF46BF7E10AA499F320F* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_force, int32_t ___1_mode, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Rigidbody2D_AddForce_Internal_Injected_m0F88F3DAD58E7A647F01447ABBAC216D9425715E (intptr_t ___0__unity_self, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* ___1_force, int32_t ___2_mode, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Rigidbody2D_AddTorque_m6B732A4BBCC6DFE0A5A8160FAF4DD292C76AC4D2 (Rigidbody2D_tBEBE9523CF4448544085AF46BF7E10AA499F320F* __this, float ___0_torque, int32_t ___1_mode, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Rigidbody2D_AddTorque_Injected_m2B763851E459A7099D52C689A0ACC152E4EB005A (intptr_t ___0__unity_self, float ___1_torque, int32_t ___2_mode, const RuntimeMethod* method) ;
 inline intptr_t MarshalledUnityObject_MarshalNotNull_TisCollider2D_t6A17BA7734600EF3F26588E9ED903617D5B8EB52_mEEA1C36090C2581A8C78F304909A57CA5B755023_inline (Collider2D_t6A17BA7734600EF3F26588E9ED903617D5B8EB52* ___0_obj, const RuntimeMethod* method)
@@ -2271,6 +2278,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Physics2D_GetRayIntersectionAll_Internal
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
 IL2CPP_EXTERN_C void ContactFilter2D_t54A8515C326BF7DA16E5DE97EA7D3CD9B2F77F14_marshal_pinvoke(const ContactFilter2D_t54A8515C326BF7DA16E5DE97EA7D3CD9B2F77F14& unmarshaled, ContactFilter2D_t54A8515C326BF7DA16E5DE97EA7D3CD9B2F77F14_marshaled_pinvoke& marshaled)
 {
 	marshaled.___useTriggers = static_cast<int32_t>(unmarshaled.___useTriggers);
@@ -3042,6 +3057,85 @@ IL_000f:
 		return L_2;
 	}
 }
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Rigidbody2D_set_bodyType_mE2FAC2D78B06B445BD2AD58F87AC5B1865B23248 (Rigidbody2D_tBEBE9523CF4448544085AF46BF7E10AA499F320F* __this, int32_t ___0_value, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&MarshalledUnityObject_MarshalNotNull_TisRigidbody2D_tBEBE9523CF4448544085AF46BF7E10AA499F320F_mF75744C9E4F665F5AB594D683BADEEC3D47BC2BF_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	intptr_t G_B2_0;
+	memset((&G_B2_0), 0, sizeof(G_B2_0));
+	intptr_t G_B1_0;
+	memset((&G_B1_0), 0, sizeof(G_B1_0));
+	{
+		intptr_t L_0;
+		L_0 = MarshalledUnityObject_MarshalNotNull_TisRigidbody2D_tBEBE9523CF4448544085AF46BF7E10AA499F320F_mF75744C9E4F665F5AB594D683BADEEC3D47BC2BF_inline(__this, MarshalledUnityObject_MarshalNotNull_TisRigidbody2D_tBEBE9523CF4448544085AF46BF7E10AA499F320F_mF75744C9E4F665F5AB594D683BADEEC3D47BC2BF_RuntimeMethod_var);
+		intptr_t L_1 = L_0;
+		if (L_1)
+		{
+			G_B2_0 = L_1;
+			goto IL_000f;
+		}
+		G_B1_0 = L_1;
+	}
+	{
+		ThrowHelper_ThrowNullReferenceException_mA9C7629D32240EE0218631933DAC647668CA63CF(__this, NULL);
+		G_B2_0 = G_B1_0;
+	}
+
+IL_000f:
+	{
+		int32_t L_2 = ___0_value;
+		Rigidbody2D_set_bodyType_Injected_m21D5F9FE596EE3369F25C39D14B7E7B6965F87AC(G_B2_0, L_2, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Rigidbody2D_AddForce_mDD5CAE0137A42660C2D585B090D7E24496976E1B (Rigidbody2D_tBEBE9523CF4448544085AF46BF7E10AA499F320F* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_force, int32_t ___1_mode, const RuntimeMethod* method) 
+{
+	{
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_0 = ___0_force;
+		int32_t L_1 = ___1_mode;
+		Rigidbody2D_AddForce_Internal_mEB52E31C5043DB6B1E7F728D2E0D1C2A22B1A5CC(__this, L_0, L_1, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Rigidbody2D_AddForce_Internal_mEB52E31C5043DB6B1E7F728D2E0D1C2A22B1A5CC (Rigidbody2D_tBEBE9523CF4448544085AF46BF7E10AA499F320F* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_force, int32_t ___1_mode, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&MarshalledUnityObject_MarshalNotNull_TisRigidbody2D_tBEBE9523CF4448544085AF46BF7E10AA499F320F_mF75744C9E4F665F5AB594D683BADEEC3D47BC2BF_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	intptr_t G_B2_0;
+	memset((&G_B2_0), 0, sizeof(G_B2_0));
+	intptr_t G_B1_0;
+	memset((&G_B1_0), 0, sizeof(G_B1_0));
+	{
+		intptr_t L_0;
+		L_0 = MarshalledUnityObject_MarshalNotNull_TisRigidbody2D_tBEBE9523CF4448544085AF46BF7E10AA499F320F_mF75744C9E4F665F5AB594D683BADEEC3D47BC2BF_inline(__this, MarshalledUnityObject_MarshalNotNull_TisRigidbody2D_tBEBE9523CF4448544085AF46BF7E10AA499F320F_mF75744C9E4F665F5AB594D683BADEEC3D47BC2BF_RuntimeMethod_var);
+		intptr_t L_1 = L_0;
+		if (L_1)
+		{
+			G_B2_0 = L_1;
+			goto IL_000f;
+		}
+		G_B1_0 = L_1;
+	}
+	{
+		ThrowHelper_ThrowNullReferenceException_mA9C7629D32240EE0218631933DAC647668CA63CF(__this, NULL);
+		G_B2_0 = G_B1_0;
+	}
+
+IL_000f:
+	{
+		int32_t L_2 = ___1_mode;
+		Rigidbody2D_AddForce_Internal_Injected_m0F88F3DAD58E7A647F01447ABBAC216D9425715E(G_B2_0, (&___0_force), L_2, NULL);
+		return;
+	}
+}
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Rigidbody2D_AddTorque_mB126101CF0ECA5CC8C284ED06132B24FD8885029 (Rigidbody2D_tBEBE9523CF4448544085AF46BF7E10AA499F320F* __this, float ___0_torque, const RuntimeMethod* method) 
 {
 	{
@@ -3110,6 +3204,22 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Rigidbody2D_get_mass_Injected_m9207BACE
 	_il2cpp_icall_func = (Rigidbody2D_get_mass_Injected_m9207BACE59FF826B274360A81F024A8A57761297_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Rigidbody2D::get_mass_Injected(System.IntPtr)");
 	float icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Rigidbody2D_set_bodyType_Injected_m21D5F9FE596EE3369F25C39D14B7E7B6965F87AC (intptr_t ___0__unity_self, int32_t ___1_value, const RuntimeMethod* method) 
+{
+	typedef void (*Rigidbody2D_set_bodyType_Injected_m21D5F9FE596EE3369F25C39D14B7E7B6965F87AC_ftn) (intptr_t, int32_t);
+	static Rigidbody2D_set_bodyType_Injected_m21D5F9FE596EE3369F25C39D14B7E7B6965F87AC_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (Rigidbody2D_set_bodyType_Injected_m21D5F9FE596EE3369F25C39D14B7E7B6965F87AC_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Rigidbody2D::set_bodyType_Injected(System.IntPtr,UnityEngine.RigidbodyType2D)");
+	_il2cpp_icall_func(___0__unity_self, ___1_value);
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Rigidbody2D_AddForce_Internal_Injected_m0F88F3DAD58E7A647F01447ABBAC216D9425715E (intptr_t ___0__unity_self, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* ___1_force, int32_t ___2_mode, const RuntimeMethod* method) 
+{
+	typedef void (*Rigidbody2D_AddForce_Internal_Injected_m0F88F3DAD58E7A647F01447ABBAC216D9425715E_ftn) (intptr_t, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7*, int32_t);
+	static Rigidbody2D_AddForce_Internal_Injected_m0F88F3DAD58E7A647F01447ABBAC216D9425715E_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (Rigidbody2D_AddForce_Internal_Injected_m0F88F3DAD58E7A647F01447ABBAC216D9425715E_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Rigidbody2D::AddForce_Internal_Injected(System.IntPtr,UnityEngine.Vector2&,UnityEngine.ForceMode2D)");
+	_il2cpp_icall_func(___0__unity_self, ___1_force, ___2_mode);
 }
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Rigidbody2D_AddTorque_Injected_m2B763851E459A7099D52C689A0ACC152E4EB005A (intptr_t ___0__unity_self, float ___1_torque, int32_t ___2_mode, const RuntimeMethod* method) 
 {
