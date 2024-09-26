@@ -117,6 +117,8 @@ public class Player : MonoBehaviour
     public Transform P_AKM_RightFistTarget;
     [Space(10)]
 
+
+
     [Header("New Bow Targets")]
    
 
@@ -129,19 +131,42 @@ public class Player : MonoBehaviour
     public Transform P_BOW_RightArmTarget;
     [SerializeField]
     public Transform P_BOW_RightFistTarget;
+
+    [SerializeField]
+    public Transform BowFistTarget;
+
+
+
+    [SerializeField]
+    public Transform BowInitialTarget;
+
     [Space(10)]
+
+
+    [Header("Arrow")]
+
+    [SerializeField]
+    private Transform ArrowHolder;
+
+    public bool IsArrowAvailable = true;
+
+
+    [Space(10)]
+
 
     public float headRotationAngle;
 
     public WeaponState SelectedWeapon = WeaponState.FIST;
 
-    [Header("Weapon GameObjeets")]
+    [Header("Weapon GameObjets")]
     [SerializeField]
     private GameObject AkmGameObj;
     [SerializeField]
     private GameObject SordGameObj;
     [SerializeField]
     private GameObject BowGameObj;
+
+    
 
     #endregion
 
@@ -294,11 +319,11 @@ public class Player : MonoBehaviour
 
         if (angle.Equals(float.NaN))
         {
-            LeftArmIKSolver.GetChain(0).target = AnimLeftArmTarget;
+           /* LeftArmIKSolver.GetChain(0).target = AnimLeftArmTarget;
             LeftFistIKSolver.GetChain(0).target = AnimLeftFistTarget;
 
             RightArmIKSolver.GetChain(0).target = AnimRightArmTarget;
-            RightFistIKSolver.GetChain(0).target = AnimRightFistTarget;
+            RightFistIKSolver.GetChain(0).target = AnimRightFistTarget;*/
 
             Head.eulerAngles = new Vector3(Head.eulerAngles.x, Head.eulerAngles.y, 90 * (IsPlayerLeftFacing ? -1 : 1));
 
@@ -318,16 +343,31 @@ public class Player : MonoBehaviour
             RightArmIKSolver.GetChain(0).target = P_BOW_RightArmTarget;
             RightFistIKSolver.GetChain(0).target = P_BOW_RightFistTarget;
 
-            float convertAngle = ConvertValue(rightJoysticDistance);
+            float convertAngle = ConvertValue(rightJoysticDistance, new Vector2(0.1f, 0.96f), new Vector2(0f, -0.4f));
+    /*            ConvertValue(rightJoysticDistance);*/
 
-            if (rightJoysticDistance > 0.1f)
+            if (rightJoysticDistance > 0.1f && rightJoysticDistance < 0.985f)
             {
+                BowTopCCDIK.GetChain(0).target = BowFistTarget;
+                BowBottomCCDIK.GetChain(0).target = BowFistTarget;
+
                 BowTopCCDIK.weight = 1;
                 BowBottomCCDIK.weight = 1;
-            } else
+                IsArrowAvailable = true;
+                float v = ConvertValue(rightJoysticDistance, new Vector2(0.1f, 0.985f), new Vector2(0f, -0.37f));
+                ArrowHolder.localPosition = new Vector3(v, ArrowHolder.localPosition.y, ArrowHolder.localPosition.z);
+
+            } 
+            else
             {
-                BowTopCCDIK.weight = 0;
-                BowBottomCCDIK.weight = 0;
+                if (rightJoysticDistance >= 0.985f && IsArrowAvailable)
+                {
+                    Debug.Log("fired arrow");
+                }
+                IsArrowAvailable = false;
+
+                BowTopCCDIK.GetChain(0).target = BowInitialTarget;
+                BowBottomCCDIK.GetChain(0).target = BowInitialTarget;
             }
 
 
@@ -340,6 +380,8 @@ public class Player : MonoBehaviour
             }
 
             P_Bow_Parent_RightHandTarget.transform.localPosition = new Vector3(convertAngle, 0, 0);
+
+            
 
             /* P_BOW_RightArmTarget.position = new Vector3(ConvertValue(angle), P_BOW_RightArmTarget.position.y, P_BOW_RightArmTarget.position.z);*/
 
@@ -363,8 +405,10 @@ public class Player : MonoBehaviour
 
             RotateHead(angle);
 
-            float ConvertValue(float value)
+            /*float ConvertValue(float value)
             {
+
+            ConvertValue(float value, new Vector2(0.1f,0.96f),new Vector2(0f,-0.4f))
                 // Source range [0.1f, 0.96f]
                 float inputMin = 0.1f;
                 float inputMax = 0.96f;
@@ -375,6 +419,16 @@ public class Player : MonoBehaviour
 
                 // Linear interpolation formula
                 float outputValue = outputMin + (value - inputMin) * (outputMax - outputMin) / (inputMax - inputMin);
+
+                return outputValue;
+            }*/
+
+
+
+            float ConvertValue(float value, Vector2 inputRange, Vector2 outputRange)
+            {
+                // Linear interpolation formula
+                float outputValue = outputRange.x + (value - inputRange.x) * (outputRange.y - outputRange.x) / (inputRange.y - inputRange.x);
 
                 return outputValue;
             }
