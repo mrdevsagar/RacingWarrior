@@ -17570,7 +17570,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1686439273885884317, guid: 20ba9c1a7646b424eaa4f5740a01207a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.3615575
+      value: 5.750488
       objectReference: {fileID: 0}
     - target: {fileID: 1686439273885884317, guid: 20ba9c1a7646b424eaa4f5740a01207a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -17790,6 +17790,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1020890627886329699, guid: e138a7cc632c0bc4d860c142ff144197, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.6597886
+      objectReference: {fileID: 0}
     - target: {fileID: 3724290678163475872, guid: e138a7cc632c0bc4d860c142ff144197, type: 3}
       propertyPath: ArrowPrefab
       value: 
@@ -17802,6 +17806,10 @@ PrefabInstance:
       propertyPath: _arrowPostion
       value: 
       objectReference: {fileID: 1244301753}
+    - target: {fileID: 3724290678163475872, guid: e138a7cc632c0bc4d860c142ff144197, type: 3}
+      propertyPath: SelectedWeapon
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5484571152290241097, guid: e138a7cc632c0bc4d860c142ff144197, type: 3}
       propertyPath: m_IsActive
       value: 0

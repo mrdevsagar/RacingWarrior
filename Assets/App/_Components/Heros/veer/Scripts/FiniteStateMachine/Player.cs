@@ -161,6 +161,9 @@ public class Player : MonoBehaviour
 
     public bool IsArrowAvailable = false;
 
+    private bool isFiring = false;
+    private float customDistance = -0.5f;
+
 
     [Space(10)]
 
@@ -342,6 +345,7 @@ public class Player : MonoBehaviour
 
             BowTopCCDIK.weight = 0;
             BowBottomCCDIK.weight = 0;
+            isFiring = false;
         }
         else
         {
@@ -356,101 +360,40 @@ public class Player : MonoBehaviour
             RightArmIKSolver.GetChain(0).target = P_BOW_RightArmTarget;
             RightFistIKSolver.GetChain(0).target = P_BOW_RightFistTarget;
 
-            float convertAngle = ConvertValue(rightJoysticDistance, new Vector2(0.1f, 0.96f), new Vector2(0f, -0.4f));
-    /*            ConvertValue(rightJoysticDistance);*/
+            
+            /*            ConvertValue(rightJoysticDistance);*/
 
             if (rightJoysticDistance > 0.1f && rightJoysticDistance < 0.985f)
             {
-                BowTopCCDIK.GetChain(0).target = BowFistTarget;
-                BowBottomCCDIK.GetChain(0).target = BowFistTarget;
-
-                BowTopCCDIK.weight = 1;
-                BowBottomCCDIK.weight = 1;
-                
-                float v = ConvertValue(rightJoysticDistance, new Vector2(0.1f, 0.985f), new Vector2(0f, -0.37f));
-                ArrowHolder.localPosition = new Vector3(v, ArrowHolder.localPosition.y, ArrowHolder.localPosition.z);
-
-                if (ArrowPrefab != null)
-                {
-                    if (!IsArrowAvailable)
-                    {
-                        IsArrowAvailable = true;
-                        // Instantiate the prefab at the origin (0, 0, 0) with no rotation
-                        CurrentArrowObject = Instantiate(ArrowPrefab, Vector3.zero, BowGameObject.transform.rotation);
-                        CurrentArrowObject.transform.parent = _arrowPostion.transform;
-                        CurrentArrowObject.transform.localPosition = Vector3.zero;
-                        if (IsPlayerLeftFacing)
-                        {
-                            CurrentArrowObject.transform.localScale = new Vector3(-1*CurrentArrowObject.transform.localScale.x, CurrentArrowObject.transform.localScale.y, CurrentArrowObject.transform.localScale.z);
-                        }
-                        
-                    }
-                   
-                    // Optional: Set the parent of the new object to this script's GameObject
-
-                }
-                else
-                {
-                    IsArrowAvailable = false;
-                    Debug.LogError("Prefab not assigned in the inspector.");
-                }
-
-            } 
-            else
+                isFiring = false;
+                MoveArrow(rightJoysticDistance, angle);
+            } else if (rightJoysticDistance >= 0.985f)
             {
-                if (rightJoysticDistance >= 0.985f && IsArrowAvailable)
+                if (!isFiring&& IsArrowAvailable)
                 {
-                    Debug.Log("fired arrow");
-                    CurrentArrowObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-                    
-                    if (IsPlayerLeftFacing)
-                    {
-                        CurrentArrowObject.GetComponent<Rigidbody2D>().AddForce(-CurrentArrowObject.transform.right * 20f, ForceMode2D.Impulse);
-                    }
-                    else
-                    {
-                        CurrentArrowObject.GetComponent<Rigidbody2D>().AddForce(CurrentArrowObject.transform.right * 20f, ForceMode2D.Impulse);
-                    }
-                    
-
-                    CurrentArrowObject.transform.parent = null;
-                    CurrentArrowObject = null;
-                    IsArrowAvailable = false;
+                    FireArrow(rightJoysticDistance, angle);
+                    isFiring = true;
                 }
-                
-
-                BowTopCCDIK.GetChain(0).target = BowInitialTarget;
-                BowBottomCCDIK.GetChain(0).target = BowInitialTarget;
             }
 
+            if (isFiring)
+            {
+                customDistance += Time.deltaTime;  // Increase the custom distance over time
+                Debug.Log(customDistance);
+                MoveArrow(customDistance,angle);  // Move the arrow with custom distance
 
-            if (angle >= 180 && angle <= 360 && convertAngle < -0.15)
-            {
-                RightArmIKSolver.flip = false;
-            } else
-            {
-                RightArmIKSolver.flip = true;
+                if (customDistance >= 0.985f)
+                {
+                    FireArrow(customDistance, angle);
+                    customDistance = -0.5f;  // Reset the distance for the next cycle
+                    /*isFiring = false;*/  // Reset the firing state
+                }
             }
 
-            P_Bow_Parent_RightHandTarget.transform.localPosition = new Vector3(convertAngle, 0, 0);
 
             
 
-            /* P_BOW_RightArmTarget.position = new Vector3(ConvertValue(angle), P_BOW_RightArmTarget.position.y, P_BOW_RightArmTarget.position.z);*/
 
-            Debug.Log(angle + "angle" + convertAngle);
-            /*if (rightJoysticDistance > 0.1f && rightJoysticDistance < 0.96f)
-            {
-
-               
-
-            } else if (rightJoysticDistance >= 0.96f)
-            {
-               
-            } else
-            {
-                
-            }*/
 
             P_Bow_Parent_LeftHandTarget.transform.eulerAngles = new Vector3(P_Bow_Parent_LeftHandTarget.transform.rotation.x, P_Bow_Parent_LeftHandTarget.transform.rotation.y, handRotationAngle);
 
@@ -458,35 +401,115 @@ public class Player : MonoBehaviour
 
             RotateHead(angle);
 
-            /*float ConvertValue(float value)
+        }
+    }
+
+
+    public void HandPull(float distance, float angle)
+    {
+        if (distance < 0.1f)
+        {
+            distance = 0.1f;
+        }
+        float convertAngle = ConvertValue(distance, new Vector2(0.1f, 0.96f), new Vector2(0f, -0.4f));
+        if (angle >= 180 && angle <= 360 && convertAngle < -0.15)
+        {
+            RightArmIKSolver.flip = false;
+        }
+        else
+        {
+            RightArmIKSolver.flip = true;
+        }
+
+        P_Bow_Parent_RightHandTarget.transform.localPosition = new Vector3(convertAngle, 0, 0);
+    }
+
+    private void MoveArrow(float distance, float angle)
+    {
+        if (distance < 0.1f)
+        {
+            distance = 0.1f;
+        }
+        HandPull(distance,angle);
+        if (distance > 0.1f && distance < 0.985f)
+        {
+            BowTopCCDIK.GetChain(0).target = BowFistTarget;
+            BowBottomCCDIK.GetChain(0).target = BowFistTarget;
+
+            BowTopCCDIK.weight = 1;
+            BowBottomCCDIK.weight = 1;
+
+            float v = ConvertValue(distance, new Vector2(0.1f, 0.985f), new Vector2(0f, -0.37f));
+            ArrowHolder.localPosition = new Vector3(v, ArrowHolder.localPosition.y, ArrowHolder.localPosition.z);
+
+            if (ArrowPrefab != null)
             {
+                if (!IsArrowAvailable)
+                {
+                    IsArrowAvailable = true;
+                    // Instantiate the prefab at the origin (0, 0, 0) with no rotation
+                    CurrentArrowObject = Instantiate(ArrowPrefab, Vector3.zero, BowGameObject.transform.rotation);
+                    CurrentArrowObject.transform.parent = _arrowPostion.transform;
+                    CurrentArrowObject.transform.localPosition = Vector3.zero;
+                    if (IsPlayerLeftFacing)
+                    {
+                        CurrentArrowObject.transform.localScale = new Vector3(-1 * CurrentArrowObject.transform.localScale.x, CurrentArrowObject.transform.localScale.y, CurrentArrowObject.transform.localScale.z);
+                    }
 
-            ConvertValue(float value, new Vector2(0.1f,0.96f),new Vector2(0f,-0.4f))
-                // Source range [0.1f, 0.96f]
-                float inputMin = 0.1f;
-                float inputMax = 0.96f;
+                }
 
-                // Target range [0, -0.4f]
-                float outputMin = 0f;
-                float outputMax = -0.4f;
+                // Optional: Set the parent of the new object to this script's GameObject
 
-                // Linear interpolation formula
-                float outputValue = outputMin + (value - inputMin) * (outputMax - outputMin) / (inputMax - inputMin);
-
-                return outputValue;
-            }*/
-
-
-
-            float ConvertValue(float value, Vector2 inputRange, Vector2 outputRange)
+            }
+            else
             {
-                // Linear interpolation formula
-                float outputValue = outputRange.x + (value - inputRange.x) * (outputRange.y - outputRange.x) / (inputRange.y - inputRange.x);
-
-                return outputValue;
+                IsArrowAvailable = false;
+                Debug.LogError("Prefab not assigned in the inspector.");
             }
 
         }
+        
+    }
+
+    private void FireArrow(float distance, float angle)
+    {
+        if (distance < 0.1f)
+        {
+            distance = 0.1f;
+        }
+
+        HandPull(distance, angle);
+        Debug.Log("fired arrow");
+        if (CurrentArrowObject != null)
+        {
+            CurrentArrowObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+
+            if (IsPlayerLeftFacing)
+            {
+                CurrentArrowObject.GetComponent<Rigidbody2D>().AddForce(-CurrentArrowObject.transform.right * 20f, ForceMode2D.Impulse);
+            }
+            else
+            {
+                CurrentArrowObject.GetComponent<Rigidbody2D>().AddForce(CurrentArrowObject.transform.right * 20f, ForceMode2D.Impulse);
+            }
+        
+
+            CurrentArrowObject.transform.parent = null;
+        }
+        CurrentArrowObject = null;
+            IsArrowAvailable = false;
+
+
+        BowTopCCDIK.GetChain(0).target = BowInitialTarget;
+        BowBottomCCDIK.GetChain(0).target = BowInitialTarget;
+    }
+
+    public float ConvertValue(float value, Vector2 inputRange, Vector2 outputRange)
+    {
+        // Linear interpolation formula
+        float outputValue = outputRange.x + (value - inputRange.x) * (outputRange.y - outputRange.x) / (inputRange.y - inputRange.x);
+
+        return outputValue;
     }
     private void RotateHead(float angle)
     {

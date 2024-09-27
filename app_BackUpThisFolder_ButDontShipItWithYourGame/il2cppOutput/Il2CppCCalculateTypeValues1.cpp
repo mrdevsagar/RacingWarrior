@@ -19090,6 +19090,8 @@ struct Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74  : public MonoBehaviour_
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___CurrentArrowObject;
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ____arrowPostion;
 	bool ___IsArrowAvailable;
+	bool ___isFiring;
+	float ___customDistance;
 	float ___headRotationAngle;
 	int32_t ___SelectedWeapon;
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___AkmGameObj;
