@@ -47,7 +47,10 @@ public class LevelManager : SingletonLocal<LevelManager>
     void OnDestroy()
     {
         // Remove the listener when the object is destroyed to prevent memory leaks
-        button.onClick.RemoveListener(OnButtonClick);
+        if (button != null)
+        {
+            button.onClick.RemoveListener(OnButtonClick);
+        }
     }
 
     void OnEnable()
