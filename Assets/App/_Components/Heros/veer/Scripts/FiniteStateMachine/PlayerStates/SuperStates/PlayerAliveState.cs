@@ -102,6 +102,10 @@ public class PlayerAliveState : PlayerState
                 player.BowAim();
                 break;
 
+            case WeaponState.Revolver:
+                player.RevolverAim();
+                break;
+
             default : break;
         }
 

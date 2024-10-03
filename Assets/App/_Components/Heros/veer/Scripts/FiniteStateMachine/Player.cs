@@ -103,6 +103,11 @@ public class Player : MonoBehaviour
     private Transform P_Bow_Parent_RightHandTarget;
     [Space(10)]
 
+    [SerializeField]
+    private Transform P_Revolver_Parent_LeftHandTarget;
+    [SerializeField]
+    private Transform P_Revolver_Parent_RightHandTarget;
+    [Space(10)]
 
 
     [Header("New AKM Targets")]
@@ -115,6 +120,18 @@ public class Player : MonoBehaviour
     public Transform P_AKM_RightArmTarget;
     [SerializeField]
     public Transform P_AKM_RightFistTarget;
+    [Space(10)]
+
+    [Header("New Revolver Targets")]
+    [SerializeField]
+    public Transform P_Revolver_LeftArmTarget;
+    [SerializeField]
+    public Transform P_Revolver_LeftFistTarget;
+
+    [SerializeField]
+    public Transform P_Revolver_RightArmTarget;
+    [SerializeField]
+    public Transform P_Revolver_RightFistTarget;
     [Space(10)]
 
 
@@ -320,6 +337,49 @@ public class Player : MonoBehaviour
         }
     }
 
+
+    public void RevolverAim()
+    {
+        float angle = input.LookInput;
+
+        float handRotationAngle = angle;
+
+
+
+        if (handRotationAngle.Equals(float.NaN))
+        {
+            LeftArmIKSolver.GetChain(0).target = AnimLeftArmTarget;
+            LeftFistIKSolver.GetChain(0).target = AnimLeftFistTarget;
+
+            RightArmIKSolver.GetChain(0).target = AnimRightArmTarget;
+            RightFistIKSolver.GetChain(0).target = AnimRightFistTarget;
+
+            Head.eulerAngles = new Vector3(Head.eulerAngles.x, Head.eulerAngles.y, 90 * (IsPlayerLeftFacing ? -1 : 1));
+
+            return;
+        }
+        else
+        {
+            if (IsPlayerLeftFacing)
+            {
+                handRotationAngle += flipAngle;
+            }
+
+            LeftArmIKSolver.GetChain(0).target = P_Revolver_LeftArmTarget;
+            LeftFistIKSolver.GetChain(0).target = P_Revolver_LeftFistTarget;
+
+            RightArmIKSolver.GetChain(0).target = P_Revolver_RightArmTarget;
+            RightFistIKSolver.GetChain(0).target = P_Revolver_RightFistTarget;
+
+            P_Revolver_Parent_LeftHandTarget.transform.eulerAngles = new Vector3(P_Revolver_Parent_LeftHandTarget.transform.rotation.x, P_Revolver_Parent_LeftHandTarget.transform.rotation.y, handRotationAngle);
+
+            P_Revolver_Parent_RightHandTarget.transform.eulerAngles = new Vector3(P_Revolver_Parent_RightHandTarget.transform.rotation.x, P_Revolver_Parent_RightHandTarget.transform.rotation.y, handRotationAngle);
+
+            RotateHead(angle);
+
+
+        }
+    }
 
     public void BowAim()
     {
