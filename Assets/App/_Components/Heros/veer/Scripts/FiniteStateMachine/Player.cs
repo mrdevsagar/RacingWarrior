@@ -311,9 +311,8 @@ public class Player : MonoBehaviour
             RightArmIKSolver.GetChain(0).target = AnimRightArmTarget;
             RightFistIKSolver.GetChain(0).target = AnimRightFistTarget;
 
-            Head.eulerAngles = new Vector3(Head.eulerAngles.x, Head.eulerAngles.y, 90 * (IsPlayerLeftFacing ? -1 : 1)) ;
+            Head.eulerAngles = new Vector3(Head.eulerAngles.x, Head.eulerAngles.y, 90 * (IsPlayerLeftFacing ? -1 : 1));
 
-            return;
         } else
         {
             if (IsPlayerLeftFacing)
@@ -356,7 +355,7 @@ public class Player : MonoBehaviour
 
             Head.eulerAngles = new Vector3(Head.eulerAngles.x, Head.eulerAngles.y, 90 * (IsPlayerLeftFacing ? -1 : 1));
 
-            return;
+           
         }
         else
         {
@@ -393,13 +392,13 @@ public class Player : MonoBehaviour
 
         if (angle.Equals(float.NaN))
         {
-            /* LeftArmIKSolver.GetChain(0).target = AnimLeftArmTarget;
-             LeftFistIKSolver.GetChain(0).target = AnimLeftFistTarget;
+            LeftArmIKSolver.GetChain(0).target = AnimLeftArmTarget;
+            LeftFistIKSolver.GetChain(0).target = AnimLeftFistTarget;
 
-             RightArmIKSolver.GetChain(0).target = AnimRightArmTarget;
-             RightFistIKSolver.GetChain(0).target = AnimRightFistTarget;*/
+            RightArmIKSolver.GetChain(0).target = AnimRightArmTarget;
+            RightFistIKSolver.GetChain(0).target = AnimRightFistTarget;
 
-            
+
 
             Head.eulerAngles = new Vector3(Head.eulerAngles.x, Head.eulerAngles.y, 90 * (IsPlayerLeftFacing ? -1 : 1));
 
