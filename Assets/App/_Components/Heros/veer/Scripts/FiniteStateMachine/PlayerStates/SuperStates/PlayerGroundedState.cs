@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class PlayerGroundedState : PlayerAliveState
 {
-    public PlayerGroundedState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
+
+    public PlayerGroundedState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBodyBoolName, string animLegsBoolName) : base(player, stateMachine, playerData, animBodyBoolName, animLegsBoolName)
     {
     }
 
@@ -25,12 +26,18 @@ public class PlayerGroundedState : PlayerAliveState
     {
         base.LogicUpdate();
 
-       
+        
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+        
+    }
+
+    public override void LatePhysicsUpdate()
+    {
+        base.LatePhysicsUpdate();
     }
 
     private bool IsGrounded()

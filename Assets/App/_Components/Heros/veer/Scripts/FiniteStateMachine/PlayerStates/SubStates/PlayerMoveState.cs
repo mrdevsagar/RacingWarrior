@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerMoveState : PlayerGroundedState
 {
-    public PlayerMoveState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
+    public PlayerMoveState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBodyBoolName, string animLegsBoolName) : base(player, stateMachine, playerData, animBodyBoolName, animLegsBoolName)
     {
     }
 
@@ -26,28 +26,27 @@ public class PlayerMoveState : PlayerGroundedState
     {
         base.LogicUpdate();
 
-       
+        if (MoveInput.x == 0f)
+        {
+          /*  if (player.GetComponent<Rigidbody2D>().velocityX == 0f)*/
+            stateMachine.ChangeState(player.IdleState);
+        }
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-/*
-        Debug.Log(MoveInput);*/
-        if (MoveInput.x == 0)
-        {
-            player.SetFrictionMaterial(false);
-        } else
-        {
-            player.SetFrictionMaterial(true);
 
-            if (!player.IsWalkingBackward)
-            {
-                player.SetVelocityX(MoveInput.x * playerData.MovementVelocity);
-            } else
-            {
-                player.SetVelocityX(MoveInput.x * playerData.BackwardMovementVelocity);
-            }
+        if (player.IsWalkingBackward)
+        {
+            player.SetVelocityX(MoveInput.x * playerData.BackwardMovementVelocity);
         }
+        else
+        {
+            player.SetVelocityX(MoveInput.x * playerData.MovementVelocity);
+        }
+
     }
+
+    
 }

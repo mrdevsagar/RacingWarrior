@@ -10,7 +10,9 @@ public class PlayerState
 
     protected float startTime;
 
-    private string _animBoolName;
+    private string _animBodyBoolName;
+
+    private string _animLegsBoolName;
 
     protected Vector2 MoveInput;
 
@@ -19,24 +21,33 @@ public class PlayerState
     protected bool IsFiring;
 
     protected float LookDragDistance;
-    public PlayerState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName)
+    public PlayerState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBodyBoolName, string animLegsBoolName)
     {
         this.player = player;
         this.stateMachine = stateMachine;
         this.playerData = playerData;
-        _animBoolName = animBoolName;
+        _animBodyBoolName = animBodyBoolName;
+        _animLegsBoolName = animLegsBoolName;
     }
 
     public virtual void Enter()
     {
         DoChecks();
-        player.Anim.SetBool(_animBoolName, true);
+
+        if (player.IsOverrideAnimation == false)
+        {
+            player.Anim.SetBool(_animBodyBoolName, true);
+        }
+
+        player.Anim.SetBool(_animLegsBoolName, true);
+
         startTime = Time.time;
     }
 
     public virtual void Exit()
     {
-        player.Anim.SetBool(_animBoolName, false);
+        player.Anim.SetBool(_animBodyBoolName, false);
+        player.Anim.SetBool(_animLegsBoolName, false);
     }
 
     public virtual void LogicUpdate()
@@ -61,5 +72,15 @@ public class PlayerState
     public virtual void DoChecks() 
     {
         
+    }
+
+    public void SetCurrentBodyAnimation(bool isPlayAnimation)
+    {
+        player.Anim.SetBool(_animBodyBoolName, isPlayAnimation);
+    }
+
+    public void SetCurrentLegsAnimation(bool isPlayAnimation)
+    {
+        player.Anim.SetBool(_animLegsBoolName, isPlayAnimation);
     }
 }

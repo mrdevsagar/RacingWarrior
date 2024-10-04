@@ -33,8 +33,8 @@ public class Player : MonoBehaviour
 
     public PhysicsMaterial2D stillMaterial;
 
-   
-  
+
+    public bool IsOverrideAnimation { get; private set; }
 
     [SerializeField]
     private Vector3 v;
@@ -187,7 +187,7 @@ public class Player : MonoBehaviour
 
     public float headRotationAngle;
 
-    public WeaponState SelectedWeapon = WeaponState.FIST;
+    public Weapon SelectedWeapon = Weapon.FIST;
 
     [Header("Weapon GameObjets")]
     [SerializeField]
@@ -212,8 +212,8 @@ public class Player : MonoBehaviour
     {
         StateMachine = new PlayerStateMachine();
 
-        IdleState = new PlayerIdleState(this,StateMachine, _playerData,"idle");
-        MoveState = new PlayerMoveState(this, StateMachine, _playerData, "move");
+        IdleState = new PlayerIdleState(this,StateMachine, _playerData, "BodyIdle", "LegsIdle");
+        MoveState = new PlayerMoveState(this, StateMachine, _playerData, "BodyWalk", "LegsWalk");
 
         input = GetComponent<PlayerInputHandler>();
 
@@ -266,19 +266,20 @@ public class Player : MonoBehaviour
     #region Other Public Methods 
     public void SetVelocityX(float velocityX)
     {
+        Debug.LogWarning(velocityX);
         RB.velocity = new Vector2(velocityX, RB.velocity.y);
     }
 
     public void SetFrictionMaterial(bool isMoving)
     {
-        if(isMoving)
+       /* if(isMoving)
         {
             GetComponent<Collider2D>().sharedMaterial = moveMaterial;
         }
         else
         {
             GetComponent<Collider2D>().sharedMaterial = stillMaterial;
-        }
+        }*/
 
     }
 
@@ -388,7 +389,7 @@ public class Player : MonoBehaviour
 
         float rightJoysticDistance = input.LookDragDistance;
 
-        Debug.Log(angle);
+
 
         if (angle.Equals(float.NaN))
         {
@@ -438,7 +439,7 @@ public class Player : MonoBehaviour
             if (isFiring)
             {
                 customDistance += Time.deltaTime;  // Increase the custom distance over time
-                Debug.Log(customDistance);
+              
                 MoveArrow(customDistance,angle);  // Move the arrow with custom distance
 
                 if (customDistance >= 0.985f)
@@ -463,6 +464,14 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void SwordAttack()
+    {
+        if (input.IsFiring)
+        {
+            StateMachine.CurrentState.SetCurrentBodyAnimation(false);
+            Anim.SetBool("SordAttck", true);
+        } 
+    }
 
     public void HandPull(float distance, float angle)
     {
@@ -596,8 +605,21 @@ public class Player : MonoBehaviour
 
     public void MoveBowRightHand(float angle,float distance)
     {
-        Debug.Log(angle + "  distance" + distance);
+        
     }
+
+    public void OnImportantAnimationStarts()
+    {
+        IsOverrideAnimation = true;
+    }
+
+    public void OnImportantAnimationDone(string BodyAnimationBoolName)
+    {
+        IsOverrideAnimation = false;
+        Anim.SetBool(BodyAnimationBoolName, false);
+        StateMachine.CurrentState.SetCurrentBodyAnimation(true);
+    }
+
     #endregion
 
     #region Private Methods
@@ -656,17 +678,17 @@ public class Player : MonoBehaviour
             // Increment the weapon state
             SelectedWeapon++;
             
-            if(SelectedWeapon == WeaponState.SORD )
+            if(SelectedWeapon == Weapon.SWORD )
             {
                 BowGameObj.SetActive(false);
                 AkmGameObj.SetActive(false);
                 SordGameObj.SetActive(true);
-            } else if (SelectedWeapon == WeaponState.AKM)
+            } else if (SelectedWeapon == Weapon.AKM)
             {
                 BowGameObj.SetActive(false);
                 AkmGameObj.SetActive(true);
                 SordGameObj.SetActive(false);
-            } else if  (SelectedWeapon == WeaponState.BOW) {
+            } else if  (SelectedWeapon == Weapon.BOW) {
                 BowGameObj.SetActive(true);
                 AkmGameObj.SetActive(false);
                 SordGameObj.SetActive(false);
@@ -678,9 +700,9 @@ public class Player : MonoBehaviour
             }
 
             // If we've gone past the last weapon state, loop back to the first one
-            if ((int)SelectedWeapon >= System.Enum.GetValues(typeof(WeaponState)).Length)
+            if ((int)SelectedWeapon >= System.Enum.GetValues(typeof(Weapon)).Length)
             {
-                SelectedWeapon = WeaponState.FIST;
+                SelectedWeapon = Weapon.FIST;
                 BowGameObj.SetActive(false);
                 AkmGameObj.SetActive(false);
                 SordGameObj.SetActive(false);
