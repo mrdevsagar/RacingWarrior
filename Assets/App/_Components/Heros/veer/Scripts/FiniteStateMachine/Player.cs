@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
 
     #region State machine Reference
-    public PlayerStateMachine StateMachine {  get; private set; }
+    public PlayerStateMachine StateMachine { get; private set; }
 
     public PlayerIdleState IdleState { get; private set; }
     public PlayerMoveState MoveState { get; private set; }
@@ -64,7 +64,7 @@ public class Player : MonoBehaviour
 
 
 
-    public Solver2D  LeftArmIKSolver;
+    public Solver2D LeftArmIKSolver;
     public Solver2D LeftFistIKSolver;
 
     public LimbSolver2D RightArmIKSolver;
@@ -199,10 +199,15 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject BowGameObj;
 
-    
+
 
     #endregion
 
+    private HashSet<Collider2D> CenterGroundedColliders = new HashSet<Collider2D>();
+    public bool CenterGrounded { get; private set; } = false;
+
+    public bool RightFootGrounded = false;
+    public bool LeftFootGrounded = false;
 
     private float flipAngle = -180;
 
@@ -214,7 +219,7 @@ public class Player : MonoBehaviour
     {
         StateMachine = new PlayerStateMachine();
 
-        IdleState = new PlayerIdleState(this,StateMachine, _playerData, "BodyIdle", "LegsIdle");
+        IdleState = new PlayerIdleState(this, StateMachine, _playerData, "BodyIdle", "LegsIdle");
         MoveState = new PlayerMoveState(this, StateMachine, _playerData, "BodyWalk", "LegsWalk");
 
         input = GetComponent<PlayerInputHandler>();
@@ -259,10 +264,8 @@ public class Player : MonoBehaviour
             {
                 ManuallyCancelPress();
             }
-           
 
         }
-        
 
     }
 
@@ -285,6 +288,32 @@ public class Player : MonoBehaviour
     #endregion
 
 
+    #region Important Functions
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Add the collider to the set when it enters
+        CenterGroundedColliders.Add(collision);
+        CenterGrounded = true; // Set to true when at least one collider is touching
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        // Remove the collider from the set when it exits
+        CenterGroundedColliders.Remove(collision);
+
+        // Check if there are no grounded colliders left
+        if (CenterGroundedColliders.Count == 0)
+        {
+            CenterGrounded = false; // Set to false if no colliders are touching
+        }
+    }
+
+    public bool IsTouchingGround()
+    {
+        return CenterGrounded || RightFootGrounded || LeftFootGrounded;
+    }
+
+    #endregion
     #region Other Public Methods 
     public void SetVelocityX(float velocityX)
     {
