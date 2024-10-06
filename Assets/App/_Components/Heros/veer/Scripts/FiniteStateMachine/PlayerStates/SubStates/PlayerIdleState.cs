@@ -40,4 +40,6 @@ public class PlayerIdleState : PlayerGroundedState
         base.PhysicsUpdate();
         
     }
+
+   
 }

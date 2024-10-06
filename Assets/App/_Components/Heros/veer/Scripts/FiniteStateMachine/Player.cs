@@ -1,12 +1,7 @@
-using NUnit.Framework;
 using System.Collections.Generic;
-using TMPro;
-using Unity.Cinemachine;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.U2D.IK;
-using UnityEngine.UIElements;
-
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -38,7 +33,14 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private Vector3 v;
-    
+
+    public Button JumpButton;
+
+    public float maxPressTime = 0.01f;  // Maximum allowed press duration in seconds
+    private float pressStartTime;      // When the button press started
+    private bool isPressing = false;
+    private bool isCancelled = false;  // Flag to track if the press is canceled
+
     #endregion
 
 
@@ -235,6 +237,13 @@ public class Player : MonoBehaviour
             LeftCineMachineCamera,
             BottomLeftCineMachineCamera
         };
+
+#if UNITY_ANDROID && !UNITY_EDITOR
+                if (JumpButton != null)
+                {
+                    JumpButton.onClick.AddListener(OnJump);
+                }
+#endif
     }
 
     private void Update()
@@ -245,8 +254,16 @@ public class Player : MonoBehaviour
         if (!input.LookInput.Equals(float.NaN))
         {
             ChangeCameraPosition(true);
+
+            if (input.LookInput > 0.02f)
+            {
+                ManuallyCancelPress();
+            }
+           
+
         }
         
+
     }
 
     private void FixedUpdate()
@@ -258,6 +275,11 @@ public class Player : MonoBehaviour
     {
         StateMachine.CurrentState.LatePhysicsUpdate();
 
+    }
+
+    private void OnJump()
+    {
+        StateMachine.CurrentState.OnJumpPress();
     }
 
     #endregion
@@ -282,6 +304,7 @@ public class Player : MonoBehaviour
         }*/
 
     }
+
 
     public void FlipPlayer(bool isRightFacing)
     {
@@ -393,12 +416,12 @@ public class Player : MonoBehaviour
 
         if (angle.Equals(float.NaN))
         {
-            LeftArmIKSolver.GetChain(0).target = AnimLeftArmTarget;
+           /* LeftArmIKSolver.GetChain(0).target = AnimLeftArmTarget;
             LeftFistIKSolver.GetChain(0).target = AnimLeftFistTarget;
 
             RightArmIKSolver.GetChain(0).target = AnimRightArmTarget;
             RightFistIKSolver.GetChain(0).target = AnimRightFistTarget;
-
+*/
 
 
             Head.eulerAngles = new Vector3(Head.eulerAngles.x, Head.eulerAngles.y, 90 * (IsPlayerLeftFacing ? -1 : 1));
@@ -464,13 +487,18 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void SwordAttack()
+    public void SwordMovement()
     {
         if (input.IsFiring)
         {
-            StateMachine.CurrentState.SetCurrentBodyAnimation(false);
-            Anim.SetBool("SordAttck", true);
+            AttackSword();
         } 
+    }
+
+    public void AttackSword()
+    {
+        StateMachine.CurrentState.SetCurrentBodyAnimation(false);
+        Anim.SetBool("SordAttck", true);
     }
 
     public void HandPull(float distance, float angle)
@@ -620,6 +648,64 @@ public class Player : MonoBehaviour
         StateMachine.CurrentState.SetCurrentBodyAnimation(true);
     }
 
+    #endregion
+
+    #region FireButtton
+    // When the button is pressed down
+    public void OnPointerDown()
+    {
+        pressStartTime = Time.time;  // Record the time when button is pressed
+        isPressing = true;           // Set the pressing flag to true
+        isCancelled = false;         // Reset the cancel flag
+    }
+
+    // When the button is released
+    public void OnPointerUp()
+    {
+        if (isPressing && !isCancelled)
+        {
+            float pressDuration = Time.time - pressStartTime;  // Calculate how long the button was pressed
+
+            // Check if the button was pressed and released quickly (within the allowed time)
+            if (pressDuration <= maxPressTime)
+            {
+                OnQuickPress();  // Call the function for quick press
+            }
+            else
+            {
+                CancelPress();  // Call the function to cancel the press if it exceeds maxPressTime
+            }
+
+            isPressing = false;  // Reset the pressing flag
+        }
+    }
+
+    // This function will be called if the button is pressed and released within the allowed time
+    private void OnQuickPress()
+    {
+        Debug.Log("Button pressed and released within the time limit!");
+        // Add your functionality here for quick press
+
+        AttackSword();
+    }
+
+    // This function will be called if the button press is canceled (e.g., too long or manual cancel)
+    private void CancelPress()
+    {
+        Debug.Log("Button press was canceled!");
+        // Add your functionality here for press cancelation
+        isCancelled = true;  // Set the flag to true to prevent further actions
+    }
+
+    // Manual cancel function (you can call this method from anywhere in your code to cancel the press)
+    public void ManuallyCancelPress()
+    {
+        if (isPressing)
+        {
+            CancelPress();
+            isPressing = false;
+        }
+    }
     #endregion
 
     #region Private Methods

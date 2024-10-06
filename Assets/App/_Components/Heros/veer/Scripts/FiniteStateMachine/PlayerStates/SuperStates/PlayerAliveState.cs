@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class PlayerAliveState : PlayerState
 {
+    protected int JumpCount = 0; 
     public PlayerAliveState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBodyBoolName, string animLegsBoolName) : base(player, stateMachine, playerData, animBodyBoolName, animLegsBoolName)
     {
+        
     }
     #region State Machine Override Methods
    
@@ -16,6 +18,7 @@ public class PlayerAliveState : PlayerState
     public override void Enter()
     {
         base.Enter();
+        JumpCount = 0;
     }
 
     public override void Exit()
@@ -108,7 +111,7 @@ public class PlayerAliveState : PlayerState
                 break;
 
             case Weapon.SWORD:
-                player.SwordAttack();
+                player.SwordMovement();
                 break;
 
             default : break;
@@ -117,6 +120,23 @@ public class PlayerAliveState : PlayerState
 
         /* player.MoveBowRightHand(LookInput,LookDragDistance);*/
     }
+
+    public override void OnJumpPress()
+    {
+        base.OnJumpPress();
+        if (JumpCount <= 0)
+        {
+            player.RB.AddRelativeForceY(playerData.JumpForce);
+        }
+    }
+
+    /*    private void OnJump()
+        {
+            Debug.Log("jump!!!");
+            player.RB.AddForce(new Vector2 (0, 20));
+        }
+    */
+
 
     #endregion
 }

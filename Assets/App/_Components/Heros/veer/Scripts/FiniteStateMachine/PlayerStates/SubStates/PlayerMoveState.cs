@@ -48,5 +48,9 @@ public class PlayerMoveState : PlayerGroundedState
 
     }
 
-    
+    public override void OnJumpPress()
+    {
+        base.OnJumpPress();
+       /* JumpCount++;*/
+    }
 }

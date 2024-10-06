@@ -6,4 +6,5 @@ public class PlayerData : ScriptableObject
     [Header("Move State")]
     public float MovementVelocity = 4.5f;
     public float BackwardMovementVelocity = 2.8f;
+    public float JumpForce = 800f;
 }

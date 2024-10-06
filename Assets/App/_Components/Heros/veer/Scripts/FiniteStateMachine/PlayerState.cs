@@ -74,13 +74,20 @@ public class PlayerState
         
     }
 
-    public void SetCurrentBodyAnimation(bool isPlayAnimation)
+    public virtual void OnJumpPress()
+    {
+
+    }
+
+    public virtual void SetCurrentBodyAnimation(bool isPlayAnimation)
     {
         player.Anim.SetBool(_animBodyBoolName, isPlayAnimation);
     }
 
-    public void SetCurrentLegsAnimation(bool isPlayAnimation)
+    public virtual void SetCurrentLegsAnimation(bool isPlayAnimation)
     {
         player.Anim.SetBool(_animLegsBoolName, isPlayAnimation);
     }
+
+
 }
