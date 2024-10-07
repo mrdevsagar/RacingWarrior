@@ -36,11 +36,13 @@ public class PlayerAliveState : PlayerState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+
+        
     }
 
-    public override void LatePhysicsUpdate()
+    public override void PhysicsLateUpdate()
     {
-        base.LatePhysicsUpdate();
+        base.PhysicsLateUpdate();
         RotateHand();
     }
 
@@ -126,7 +128,7 @@ public class PlayerAliveState : PlayerState
         base.OnJumpPress();
         if (JumpCount <= 0)
         {
-            player.RB.AddRelativeForceY(playerData.JumpForce);
+            player.RB.AddRelativeForceY(playerData.JumpForce,ForceMode2D.Impulse);
         }
     }
 

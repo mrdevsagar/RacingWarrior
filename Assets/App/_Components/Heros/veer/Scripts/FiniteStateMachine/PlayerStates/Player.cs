@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     public PlayerIdleState IdleState { get; private set; }
     public PlayerMoveState MoveState { get; private set; }
 
+    public PlayerInAirState InAirState { get; private set; }
+
     #endregion
 
     #region Unity Variables
@@ -24,9 +26,9 @@ public class Player : MonoBehaviour
 
     public Rigidbody2D RB { get; private set; }
 
-    public PhysicsMaterial2D moveMaterial;
+  /*  public PhysicsMaterial2D moveMaterial;
 
-    public PhysicsMaterial2D stillMaterial;
+    public PhysicsMaterial2D stillMaterial;*/
 
 
     public bool IsOverrideAnimation { get; private set; }
@@ -221,6 +223,7 @@ public class Player : MonoBehaviour
 
         IdleState = new PlayerIdleState(this, StateMachine, _playerData, "BodyIdle", "LegsIdle");
         MoveState = new PlayerMoveState(this, StateMachine, _playerData, "BodyWalk", "LegsWalk");
+        InAirState = new PlayerInAirState(this, StateMachine, _playerData, "BodyJump", "LegsJump");
 
         input = GetComponent<PlayerInputHandler>();
 
@@ -255,6 +258,7 @@ public class Player : MonoBehaviour
     {
         StateMachine.CurrentState.LogicUpdate();
 
+        Debug.Log("GRounding......." +LeftFootGrounded +CenterGrounded +RightFootGrounded +IsTouchingGround());
 
         if (!input.LookInput.Equals(float.NaN))
         {
@@ -276,7 +280,7 @@ public class Player : MonoBehaviour
 
     private void LateUpdate()
     {
-        StateMachine.CurrentState.LatePhysicsUpdate();
+        StateMachine.CurrentState.PhysicsLateUpdate();
 
     }
 
@@ -317,7 +321,6 @@ public class Player : MonoBehaviour
     #region Other Public Methods 
     public void SetVelocityX(float velocityX)
     {
-        Debug.LogWarning(velocityX);
         RB.velocity = new Vector2(velocityX, RB.velocity.y);
     }
 

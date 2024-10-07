@@ -39,18 +39,16 @@ public class PlayerMoveState : PlayerGroundedState
 
         if (player.IsWalkingBackward)
         {
+            player.Anim.SetFloat("WalkBlend", 1);
             player.SetVelocityX(MoveInput.x * playerData.BackwardMovementVelocity);
         }
         else
         {
+            player.Anim.SetFloat("WalkBlend", 0);
             player.SetVelocityX(MoveInput.x * playerData.MovementVelocity);
         }
 
     }
 
-    public override void OnJumpPress()
-    {
-        base.OnJumpPress();
-       /* JumpCount++;*/
-    }
+   
 }

@@ -26,18 +26,21 @@ public class PlayerGroundedState : PlayerAliveState
     {
         base.LogicUpdate();
 
+        if (!player.IsTouchingGround())
+        {
+            stateMachine.ChangeState(player.InAirState);
+        }
         
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-        
     }
 
-    public override void LatePhysicsUpdate()
+    public override void PhysicsLateUpdate()
     {
-        base.LatePhysicsUpdate();
+        base.PhysicsLateUpdate();
     }
 
     private bool IsGrounded()

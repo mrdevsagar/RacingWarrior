@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementVelocity: 4
   BackwardMovementVelocity: 3
-  JumpForce: 1000
+  JumpMovementVelocity: 5.5
+  JumpBackwardMovementVelocity: 4.5
+  JumpForce: 40

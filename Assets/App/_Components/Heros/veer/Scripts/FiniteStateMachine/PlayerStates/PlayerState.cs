@@ -34,12 +34,14 @@ public class PlayerState
     {
         DoChecks();
 
-        if (player.IsOverrideAnimation == false)
-        {
-            player.Anim.SetBool(_animBodyBoolName, true);
-        }
+        
+            if (player.IsOverrideAnimation == false)
+            {
+                player.Anim.SetBool(_animBodyBoolName, true);
+            }
+            player.Anim.SetBool(_animLegsBoolName, true);
 
-        player.Anim.SetBool(_animLegsBoolName, true);
+        
 
         startTime = Time.time;
     }
@@ -63,7 +65,7 @@ public class PlayerState
         DoChecks();
     }
 
-    public virtual void LatePhysicsUpdate()
+    public virtual void PhysicsLateUpdate()
     {
 
     }
