@@ -4,21 +4,30 @@ using UnityEngine;
 
 public class FootGroundCheck : MonoBehaviour
 {
+    private enum FootCollider {  LeftFoot, BottomCenter, RightFoot }
+
     [SerializeField]
     private Player player;
 
     [SerializeField]
-    private bool _isLefFool;
+    private FootCollider SelectedCollider;
+
+
 
     private HashSet<Collider2D> Colliders = new HashSet<Collider2D>();
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Add the collider to the set when it enters
         Colliders.Add(collision);
-        if(_isLefFool)
+        if(SelectedCollider == FootCollider.LeftFoot)
         {
             player.LeftFootGrounded = true;
-        } else
+        }
+        else if (SelectedCollider == FootCollider.BottomCenter)
+        {
+            player.CenterGrounded = true;
+        }
+        else if (SelectedCollider == FootCollider.RightFoot)
         {
             player.RightFootGrounded = true;
         }
@@ -33,11 +42,15 @@ public class FootGroundCheck : MonoBehaviour
         // Check if there are no grounded colliders left
         if (Colliders.Count == 0)
         {
-            if (_isLefFool)
+            if (SelectedCollider == FootCollider.LeftFoot)
             {
-                player.LeftFootGrounded = false; // Set to false if no colliders are touching
+                player.LeftFootGrounded = false;
             }
-            else
+            else if (SelectedCollider == FootCollider.BottomCenter)
+            {
+                player.CenterGrounded = false;
+            }
+            else if (SelectedCollider == FootCollider.RightFoot)
             {
                 player.RightFootGrounded = false;
             }
@@ -46,3 +59,5 @@ public class FootGroundCheck : MonoBehaviour
     }
 
 }
+
+

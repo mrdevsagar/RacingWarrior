@@ -206,7 +206,8 @@ public class Player : MonoBehaviour
     #endregion
 
     private HashSet<Collider2D> CenterGroundedColliders = new HashSet<Collider2D>();
-    public bool CenterGrounded { get; private set; } = false;
+
+    public bool CenterGrounded = false;
 
     public bool RightFootGrounded = false;
     public bool LeftFootGrounded = false;
@@ -293,24 +294,7 @@ public class Player : MonoBehaviour
 
 
     #region Important Functions
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        // Add the collider to the set when it enters
-        CenterGroundedColliders.Add(collision);
-        CenterGrounded = true; // Set to true when at least one collider is touching
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        // Remove the collider from the set when it exits
-        CenterGroundedColliders.Remove(collision);
-
-        // Check if there are no grounded colliders left
-        if (CenterGroundedColliders.Count == 0)
-        {
-            CenterGrounded = false; // Set to false if no colliders are touching
-        }
-    }
+    
 
     public bool IsTouchingGround()
     {
