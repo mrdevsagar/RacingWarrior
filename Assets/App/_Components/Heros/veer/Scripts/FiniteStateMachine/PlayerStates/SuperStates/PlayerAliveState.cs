@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class PlayerAliveState : PlayerState
 {
-    protected int JumpCount = 0; 
+    protected int JumpCount = 0;
+
     public PlayerAliveState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBodyBoolName, string animLegsBoolName) : base(player, stateMachine, playerData, animBodyBoolName, animLegsBoolName)
     {
-        
+     
     }
     #region State Machine Override Methods
    
@@ -37,7 +38,6 @@ public class PlayerAliveState : PlayerState
     {
         base.PhysicsUpdate();
 
-        
     }
 
     public override void PhysicsLateUpdate()
@@ -93,27 +93,23 @@ public class PlayerAliveState : PlayerState
    
     private void RotateHand()
     {
-        if (player.SelectedWeapon.Equals(Weapon.AKM))
-        {
-            player.RifleAim();
-        }
-
         switch (player.SelectedWeapon)
         {
-            case Weapon.AKM: 
-                player.RifleAim();                  
+            case WeaponTypes.AKM:
+                /* player.RifleAim();        */
+               /* WeaponStateMachine.ChangeState(WeaponRifleState);*/
                 break;
 
-            case Weapon.BOW:
-                player.BowAim();
+            case WeaponTypes.BOW:
+               /* player.BowAim();*/
                 break;
 
-            case Weapon.Revolver:
-                player.RevolverAim();
+            case WeaponTypes.Revolver:
+                /*player.RevolverAim();*/
                 break;
 
-            case Weapon.SWORD:
-                player.SwordMovement();
+            case WeaponTypes.SWORD:
+               /* player.SwordMovement();*/
                 break;
 
             default : break;
