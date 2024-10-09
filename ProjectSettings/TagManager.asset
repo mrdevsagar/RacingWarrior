@@ -48,5 +48,8 @@ TagManager:
   - name: Player
     uniqueID: 15352971
     locked: 0
+  - name: Slope
+    uniqueID: 2546786525
+    locked: 0
   m_RenderingLayers:
   - Default

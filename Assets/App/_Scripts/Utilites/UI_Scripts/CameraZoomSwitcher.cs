@@ -8,7 +8,7 @@ public class CameraZoomSwitcher : MonoBehaviour
     public CinemachinePositionComposer positionComposer;  // Updated to use CinemachineCamera
     public Button zoomButton;
 
-    private float[] cameraDistances = { 80f, 100f, 110f, 125f };  // Distances you want to switch between
+    private float[] cameraDistances = { 10f, 12f, 14f, 16f };  // Distances you want to switch between
     private string[] zoomTexts = { "1x", "2x", "3x", "4x" };
     private int currentDistanceIndex = 0;
 

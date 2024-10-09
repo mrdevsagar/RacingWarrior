@@ -4,10 +4,10 @@ public class WeaponBowState : WeaponState
 {
     private bool IsArrowAvailable = false;
     private bool isFiring = false;
-    private float customDistance = -0.5f;
+    private float customDistance = -0.1f;
 
     private GameObject CurrentArrowObject;
-    public WeaponBowState(Player player, PlayerStateMachine playerStateMachine, PlayerData playerData, WeaponData weaponData) : base(player, playerStateMachine, playerData, weaponData)
+    public WeaponBowState(Player player, PlayerStateMachine playerStateMachine, PlayerData playerData, WeaponData weaponData, GameObject weaponObject) : base(player, playerStateMachine, playerData, weaponData, weaponObject)
     {
     }
 
@@ -19,11 +19,14 @@ public class WeaponBowState : WeaponState
     public override void Enter()
     {
         base.Enter();
+        player.Anim.SetFloat("BlendIdle", 3);
     }
 
     public override void Exit()
     {
         base.Exit();
+        player.Comp.Body.RightArmIKSolver.flip = true;
+        RotateLeftHand(0);
     }
 
     public override void LogicUpdate()
@@ -55,16 +58,6 @@ public class WeaponBowState : WeaponState
 
         if (angle.Equals(float.NaN))
         {
-           /* LeftArmIKSolver.GetChain(0).target = player.Comp.Body.AnimLeftArmTarget;
-            player.Comp.Body.LeftFistIKSolver.GetChain(0).target = player.Comp.Body.AnimLeftFistTarget;
-
-            player.Comp.Body.RightArmIKSolver.GetChain(0).target = player.Comp.Body.AnimRightArmTarget;
-            player.Comp.Body.RightFistIKSolver.GetChain(0).target = player.Comp.Body.AnimRightFistTarget;
-*/
-
-
-            player.Comp.Body.Head.eulerAngles = new Vector3(player.Comp.Body.Head.eulerAngles.x, player.Comp.Body.Head.eulerAngles.y, 90 * (player.IsPlayerLeftFacing ? -1 : 1));
-
             player.Comp.Bow.BowTopCCDIK.weight = 0;
             player.Comp.Bow.BowBottomCCDIK.weight = 0;
             isFiring = false;
@@ -75,16 +68,6 @@ public class WeaponBowState : WeaponState
             {
                 handRotationAngle += player.flipAngle;
             }
-
-            player.Comp.Body.LeftArmIKSolver.GetChain(0).target = player.Comp.Bow.P_BOW_LeftArmTarget;
-            player.Comp.Body.LeftFistIKSolver.GetChain(0).target = player.Comp.Bow.P_BOW_LeftFistTarget;
-
-            player.Comp.Body.RightArmIKSolver.GetChain(0).target = player.Comp.Bow.P_BOW_RightArmTarget;
-            player.Comp.Body.RightFistIKSolver.GetChain(0).target = player.Comp.Bow.P_BOW_RightFistTarget;
-
-            
-            /*            ConvertValue(rightJoysticDistance);*/
-
             if (rightJoysticDistance > 0.1f && rightJoysticDistance < 0.985f)
             {
                 isFiring = false;
@@ -107,20 +90,12 @@ public class WeaponBowState : WeaponState
                 if (customDistance >= 0.985f)
                 {
                     FireArrow(customDistance, angle);
-                    customDistance = -0.5f;  // Reset the distance for the next cycle
+                    customDistance = -0.1f;  // Reset the distance for the next cycle
                     /*isFiring = false;*/  // Reset the firing state
                 }
             }
 
-
-            
-
-
-
-            player.Comp.Bow.P_Bow_Parent_LeftHandTarget.transform.eulerAngles = new Vector3(player.Comp.Bow.P_Bow_Parent_LeftHandTarget.transform.rotation.x, player.Comp.Bow.P_Bow_Parent_LeftHandTarget.transform.rotation.y, handRotationAngle);
-
-            player.Comp.Bow.P_Bow_Parent_RightHandTarget.transform.eulerAngles = new Vector3(player.Comp.Bow.P_Bow_Parent_RightHandTarget.transform.rotation.x, player.Comp.Bow.P_Bow_Parent_RightHandTarget.transform.rotation.y, handRotationAngle);
-
+            RotateLeftHand(handRotationAngle);
             player.RotateHead(angle);
 
         }
@@ -225,5 +200,21 @@ public class WeaponBowState : WeaponState
         player.Comp.Bow.BowBottomCCDIK.GetChain(0).target = player.Comp.Bow.BowInitialTarget;
     }
 
+    protected override void SetHandsIKSolvers()
+    {
+        player.Comp.Body.LeftArmIKSolver.GetChain(0).target = player.Comp.Bow.P_BOW_LeftArmTarget;
+        player.Comp.Body.LeftFistIKSolver.GetChain(0).target = player.Comp.Bow.P_BOW_LeftFistTarget;
+
+        player.Comp.Body.RightArmIKSolver.GetChain(0).target = player.Comp.Bow.P_BOW_RightArmTarget;
+        player.Comp.Body.RightFistIKSolver.GetChain(0).target = player.Comp.Bow.P_BOW_RightFistTarget;
+    }
+
+    private void RotateLeftHand(float handRotationAngle)
+    {
+        player.Comp.Bow.P_Bow_Parent_LeftHandTarget.transform.eulerAngles = new Vector3(player.Comp.Bow.P_Bow_Parent_LeftHandTarget.transform.rotation.x, player.Comp.Bow.P_Bow_Parent_LeftHandTarget.transform.rotation.y, handRotationAngle);
+
+        player.Comp.Bow.P_Bow_Parent_RightHandTarget.transform.eulerAngles = new Vector3(player.Comp.Bow.P_Bow_Parent_RightHandTarget.transform.rotation.x, player.Comp.Bow.P_Bow_Parent_RightHandTarget.transform.rotation.y, handRotationAngle);
+
+    }
 }
 

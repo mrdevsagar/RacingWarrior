@@ -22,6 +22,9 @@ public class PlayerComponents
     [SerializeField]
     public Bow Bow;
 
+    [SerializeField]
+    public Gloves Gloves;
+
     public PlayerComponents()
     {
         Body = new Body();
@@ -30,6 +33,7 @@ public class PlayerComponents
         Pistol = new Pistol();
         Rifle = new Rifle();
         Bow = new Bow();
+        Gloves = new Gloves();
     }
 }
 
@@ -165,4 +169,14 @@ public class Sword
     [SerializeField]
     public GameObject SwordGameObj;
     [SerializeField] public float a;
+}
+
+[System.Serializable]
+public class Gloves
+{
+    [SerializeField]
+    public GameObject GlovesGameObj;
+
+    [SerializeField]
+    public GameObject LeftGlovesGameObj;
 }

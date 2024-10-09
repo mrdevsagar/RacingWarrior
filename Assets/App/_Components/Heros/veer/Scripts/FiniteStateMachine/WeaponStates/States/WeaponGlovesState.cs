@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class WeaponGlovesState : WeaponState
 {
-    public WeaponGlovesState(Player player, PlayerStateMachine playerStateMachine, PlayerData playerData, WeaponData weaponData) : base(player, playerStateMachine, playerData, weaponData)
+    public WeaponGlovesState(Player player, PlayerStateMachine playerStateMachine, PlayerData playerData, WeaponData weaponData, GameObject weaponObject) : base(player, playerStateMachine, playerData, weaponData, weaponObject)
     {
     }
 
@@ -14,11 +14,14 @@ public class WeaponGlovesState : WeaponState
     public override void Enter()
     {
         base.Enter();
+
+        player.Comp.Gloves.LeftGlovesGameObj.SetActive(true);
     }
 
     public override void Exit()
     {
         base.Exit();
+        player.Comp.Gloves.LeftGlovesGameObj.SetActive(false);
     }
 
     public override void LogicUpdate()
@@ -34,5 +37,23 @@ public class WeaponGlovesState : WeaponState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+
+        if (player.input.IsFiring)
+        {
+            AttackFist();
+        }
+    }
+
+    public override void AttackWeapon()
+    {
+        base.AttackWeapon();
+        AttackFist();
+    }
+
+
+    public void AttackFist()
+    {
+        playerStateMachine.CurrentState.SetCurrentBodyAnimation(false);
+        player.Anim.SetBool("PunchAttack", true);
     }
 }

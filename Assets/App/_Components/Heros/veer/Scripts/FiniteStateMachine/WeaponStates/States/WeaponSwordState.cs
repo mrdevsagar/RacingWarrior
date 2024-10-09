@@ -3,7 +3,7 @@ using UnityEngine.Windows;
 
 public class WeaponSwordState : WeaponState
 {
-    public WeaponSwordState(Player player, PlayerStateMachine playerStateMachine, PlayerData playerData, WeaponData weaponData) : base(player, playerStateMachine, playerData, weaponData)
+    public WeaponSwordState(Player player, PlayerStateMachine playerStateMachine, PlayerData playerData, WeaponData weaponData, GameObject weaponObject) : base(player, playerStateMachine, playerData, weaponData, weaponObject)
     {
     }
 
@@ -15,6 +15,7 @@ public class WeaponSwordState : WeaponState
     public override void Enter()
     {
         base.Enter();
+        player.Anim.SetFloat("BlendIdle", 1);
     }
 
     public override void Exit()
@@ -55,6 +56,6 @@ public class WeaponSwordState : WeaponState
     public void AttackSword()
     {
         playerStateMachine.CurrentState.SetCurrentBodyAnimation(false);
-        player.Anim.SetBool("SordAttck", true);
+        player.Anim.SetBool("SwordAttack", true);
     }
 }

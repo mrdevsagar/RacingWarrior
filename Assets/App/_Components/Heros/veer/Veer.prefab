@@ -4019,51 +4019,64 @@ MonoBehaviour:
   LeftCineMachineCamera: {fileID: 0}
   BottomRightCineMachineCamera: {fileID: 0}
   BottomLeftCineMachineCamera: {fileID: 0}
-  LeftArmIKSolver: {fileID: 8031210192655373092}
-  LeftFistIKSolver: {fileID: 6173475094554583154}
-  RightArmIKSolver: {fileID: 7773702795737416219}
-  RightFistIKSolver: {fileID: 7357045166516296754}
-  BowTopCCDIK: {fileID: 8153435197934862677}
-  BowBottomCCDIK: {fileID: 1599516432803633172}
-  AnimLeftArmTarget: {fileID: 5760926412107442687}
-  AnimLeftFistTarget: {fileID: 1170916361479734183}
-  AnimRightArmTarget: {fileID: 3394003033665753794}
-  AnimRightFistTarget: {fileID: 4060556271642749660}
-  Head: {fileID: 5339466511437472020}
-  SpineBoneTransform: {fileID: 0}
-  P_AKM_Parent_LeftHandTarget: {fileID: 4737097132129487759}
-  P_AKM_Parent_RightHandTarget: {fileID: 4737097132129487759}
-  P_Bow_Parent_LeftHandTarget: {fileID: 7847927774910589608}
-  P_Bow_Parent_RightHandTarget: {fileID: 7720070076476098364}
-  P_Revolver_Parent_LeftHandTarget: {fileID: 3506537084724848877}
-  P_Revolver_Parent_RightHandTarget: {fileID: 7630559668399054692}
-  P_AKM_LeftArmTarget: {fileID: 5740862154805219382}
-  P_AKM_LeftFistTarget: {fileID: 2489268191268518908}
-  P_AKM_RightArmTarget: {fileID: 4014941912232181999}
-  P_AKM_RightFistTarget: {fileID: 4155393232597072322}
-  P_Revolver_LeftArmTarget: {fileID: 8410069902743399605}
-  P_Revolver_LeftFistTarget: {fileID: 5214860349050218145}
-  P_Revolver_RightArmTarget: {fileID: 543914880763085337}
-  P_Revolver_RightFistTarget: {fileID: 8478621764684212020}
-  BowGameObject: {fileID: 5467991719466938798}
-  P_BOW_LeftArmTarget: {fileID: 378587700941347688}
-  P_BOW_LeftFistTarget: {fileID: 8648317407061823791}
-  P_BOW_RightArmTarget: {fileID: 1596649714563401578}
-  P_BOW_RightFistTarget: {fileID: 3143237293408975652}
-  BowFistTarget: {fileID: 3670290160321523495}
-  BowInitialTarget: {fileID: 557710250591590028}
-  ArrowHolder: {fileID: 7648969687308180423}
-  ArrowPrefab: {fileID: 5444938547299039201, guid: f5622789368d506449413ae44c607fb8, type: 3}
-  _arrowPostion: {fileID: 5654989772638222486}
-  IsArrowAvailable: 0
+  Comp:
+    Body:
+      Head: {fileID: 5339466511437472020}
+      LeftArmIKSolver: {fileID: 8031210192655373092}
+      LeftFistIKSolver: {fileID: 6173475094554583154}
+      RightArmIKSolver: {fileID: 7773702795737416219}
+      RightFistIKSolver: {fileID: 7357045166516296754}
+      AnimLeftArmTarget: {fileID: 5760926412107442687}
+      AnimLeftFistTarget: {fileID: 1170916361479734183}
+      AnimRightArmTarget: {fileID: 3394003033665753794}
+      AnimRightFistTarget: {fileID: 4060556271642749660}
+    Fist:
+      a: 0
+    Sword:
+      SwordGameObj: {fileID: 3160415297954140795}
+      a: 0
+    Pistol:
+      PistolGameObj: {fileID: 8057377104240268952}
+      P_Revolver_Parent_LeftHandTarget: {fileID: 3506537084724848877}
+      P_Revolver_Parent_RightHandTarget: {fileID: 7630559668399054692}
+      P_Revolver_LeftArmTarget: {fileID: 8410069902743399605}
+      P_Revolver_LeftFistTarget: {fileID: 5214860349050218145}
+      P_Revolver_RightArmTarget: {fileID: 543914880763085337}
+      P_Revolver_RightFistTarget: {fileID: 8478621764684212020}
+    Rifle:
+      AkmGameObj: {fileID: 8534267622138782948}
+      P_AKM_Parent_LeftHandTarget: {fileID: 4737097132129487759}
+      P_AKM_Parent_RightHandTarget: {fileID: 4737097132129487759}
+      P_AKM_LeftArmTarget: {fileID: 5740862154805219382}
+      P_AKM_LeftFistTarget: {fileID: 2489268191268518908}
+      P_AKM_RightArmTarget: {fileID: 4014941912232181999}
+      P_AKM_RightFistTarget: {fileID: 4155393232597072322}
+    Bow:
+      BowGameObj: {fileID: 5467991719466938798}
+      BowTopCCDIK: {fileID: 8153435197934862677}
+      BowBottomCCDIK: {fileID: 1599516432803633172}
+      P_Bow_Parent_LeftHandTarget: {fileID: 7847927774910589608}
+      P_Bow_Parent_RightHandTarget: {fileID: 7720070076476098364}
+      P_BOW_LeftArmTarget: {fileID: 378587700941347688}
+      P_BOW_LeftFistTarget: {fileID: 8648317407061823791}
+      P_BOW_RightArmTarget: {fileID: 1596649714563401578}
+      P_BOW_RightFistTarget: {fileID: 3143237293408975652}
+      BowFistTarget: {fileID: 3670290160321523495}
+      BowInitialTarget: {fileID: 557710250591590028}
+      ArrowHolder: {fileID: 7648969687308180423}
+      ArrowPrefab: {fileID: 5444938547299039201, guid: f5622789368d506449413ae44c607fb8, type: 3}
+      CurrentArrowObject: {fileID: 0}
+      _arrowPostion: {fileID: 5654989772638222486}
+      IsArrowAvailable: 0
+    Gloves:
+      GlovesGameObj: {fileID: 876244027590628547}
+      LeftGlovesGameObj: {fileID: 1384000515585217663}
   headRotationAngle: 0
-  SelectedWeapon: 2
-  AkmGameObj: {fileID: 8534267622138782948}
-  SordGameObj: {fileID: 3160415297954140795}
-  BowGameObj: {fileID: 5467991719466938798}
+  SelectedWeapon: 0
   CenterGrounded: 0
   RightFootGrounded: 0
   LeftFootGrounded: 0
+  flipAngle: -180
 --- !u!95 &341550683109811737
 Animator:
   serializedVersion: 7
@@ -7277,7 +7290,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4042666737923496087
 Transform:
   m_ObjectHideFlags: 0

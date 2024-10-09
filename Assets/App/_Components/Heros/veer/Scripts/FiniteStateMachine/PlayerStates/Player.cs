@@ -109,6 +109,8 @@ public class Player : MonoBehaviour
 
     public float flipAngle = -180;
 
+ 
+
 
     #region Unity Callback functions
 
@@ -124,12 +126,12 @@ public class Player : MonoBehaviour
 
         WeaponStateMachine = new WeaponStateMachine();
 
-        WeaponFistState = new WeaponFistState(this, PlayerStateMachine, _playerData, WeaponData);
-        WeaponGlovesState = new WeaponGlovesState(this, PlayerStateMachine, _playerData, WeaponData);
-        WeaponSwordState = new WeaponSwordState(this, PlayerStateMachine, _playerData, WeaponData);
-        WeaponPistolState = new WeaponPistolState(this, PlayerStateMachine, _playerData, WeaponData);
-        WeaponRifleState = new WeaponRifleState(this, PlayerStateMachine, _playerData, WeaponData);
-        WeaponBowState = new WeaponBowState(this, PlayerStateMachine, _playerData, WeaponData);
+        WeaponFistState = new WeaponFistState(this, PlayerStateMachine, _playerData, WeaponData,null);
+        WeaponGlovesState = new WeaponGlovesState(this, PlayerStateMachine, _playerData, WeaponData,Comp.Gloves.GlovesGameObj);
+        WeaponSwordState = new WeaponSwordState(this, PlayerStateMachine, _playerData, WeaponData,Comp.Sword.SwordGameObj);
+        WeaponPistolState = new WeaponPistolState(this, PlayerStateMachine, _playerData, WeaponData,Comp.Pistol.PistolGameObj);
+        WeaponRifleState = new WeaponRifleState(this, PlayerStateMachine, _playerData, WeaponData, Comp.Rifle.AkmGameObj);
+        WeaponBowState = new WeaponBowState(this, PlayerStateMachine, _playerData, WeaponData,Comp.Bow.BowGameObj);
 
         input = GetComponent<PlayerInputHandler>();
 
@@ -415,54 +417,37 @@ public class Player : MonoBehaviour
 
     public void SwitchWeapon()
     {
-
-            // Increment the weapon state
             SelectedWeapon++;
             
             if(SelectedWeapon == WeaponTypes.SWORD )
             {
                 WeaponStateMachine.ChangeState(WeaponSwordState);
-                Comp.Bow.BowGameObj.SetActive(false);
-                Comp.Rifle.AkmGameObj.SetActive(false);
-                Comp.Sword.SwordGameObj.SetActive(true);
-            } else if (SelectedWeapon == WeaponTypes.AKM)
+            } 
+            else if (SelectedWeapon == WeaponTypes.AKM)
             {
                 WeaponStateMachine.ChangeState(WeaponRifleState);
-                Comp.Bow.BowGameObj.SetActive(false);
-                Comp.Rifle.AkmGameObj.SetActive(true);
-                Comp.Sword.SwordGameObj.SetActive(false);
-            } else if  (SelectedWeapon == WeaponTypes.BOW) {
+            } 
+            else if  (SelectedWeapon == WeaponTypes.BOW) {
                 WeaponStateMachine.ChangeState(WeaponBowState);
-                Comp.Bow.BowGameObj.SetActive(true);
-                Comp.Rifle.AkmGameObj.SetActive(false);
-                Comp.Sword.SwordGameObj.SetActive(false);
             }
             else if (SelectedWeapon == WeaponTypes.Revolver)
             {
                 WeaponStateMachine.ChangeState(WeaponPistolState);
-                Comp.Bow.BowGameObj.SetActive(false);
-                Comp.Rifle.AkmGameObj.SetActive(false);
-                Comp.Sword.SwordGameObj.SetActive(false);
+            }
+            else if (SelectedWeapon == WeaponTypes.GLOWS)
+            {
+                WeaponStateMachine.ChangeState(WeaponGlovesState);
             }
             else
             {
                 WeaponStateMachine.ChangeState(WeaponFistState);
-                Comp.Bow.BowGameObj.SetActive(false);
-                Comp.Rifle.AkmGameObj.SetActive(false);
-                Comp.Sword.SwordGameObj.SetActive(false);
             }
 
             // If we've gone past the last weapon state, loop back to the first one
             if ((int)SelectedWeapon >= System.Enum.GetValues(typeof(WeaponTypes)).Length)
             {
                 SelectedWeapon = WeaponTypes.FIST;
-                Comp.Bow.BowGameObj.SetActive(false);
-                Comp.Rifle.AkmGameObj.SetActive(false);
-                Comp.Sword.SwordGameObj.SetActive(false);
             } 
-
-
-
     }
 
     #endregion
