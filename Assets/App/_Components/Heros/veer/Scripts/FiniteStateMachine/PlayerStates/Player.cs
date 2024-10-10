@@ -39,7 +39,8 @@ public class Player : MonoBehaviour
 
     public Rigidbody2D RB { get; private set; }
 
-    public WeaponData WeaponData { get; private set; }
+    [SerializeField]
+    public WeaponData WeaponData;
 
 
    

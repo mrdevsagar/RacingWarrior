@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41e68517083c2d04a98661a7fc294e98, type: 3}
   m_Name: WeaponData
   m_EditorClassIdentifier: 
+  ArrowSpeed: 15

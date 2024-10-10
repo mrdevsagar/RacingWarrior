@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class WeaponBowState : WeaponState
@@ -182,14 +183,16 @@ public class WeaponBowState : WeaponState
 
             if (player.IsPlayerLeftFacing)
             {
-                CurrentArrowObject.GetComponent<Rigidbody2D>().AddForce(-CurrentArrowObject.transform.right * 20f, ForceMode2D.Impulse);
+                CurrentArrowObject.GetComponent<Rigidbody2D>().AddForce(-CurrentArrowObject.transform.right * weaponData.ArrowSpeed, ForceMode2D.Impulse);
+                CurrentArrowObject.GetComponent<ArrowStick>().IsFiredLeft = true;
             }
             else
             {
-                CurrentArrowObject.GetComponent<Rigidbody2D>().AddForce(CurrentArrowObject.transform.right * 20f, ForceMode2D.Impulse);
+                CurrentArrowObject.GetComponent<Rigidbody2D>().AddForce(CurrentArrowObject.transform.right * weaponData.ArrowSpeed, ForceMode2D.Impulse);
+                CurrentArrowObject.GetComponent<ArrowStick>().IsFiredRight = true;
             }
-
-
+            CurrentArrowObject.GetComponent<BoxCollider2D>().enabled = true;
+           
             CurrentArrowObject.transform.parent = null;
         }
         CurrentArrowObject = null;

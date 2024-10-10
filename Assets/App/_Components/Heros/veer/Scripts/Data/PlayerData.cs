@@ -11,4 +11,6 @@ public class PlayerData : ScriptableObject
     public float JumpBackwardMovementVelocity = 4.5f;
 
     public float JumpForce = 800f;
+
+    
 }

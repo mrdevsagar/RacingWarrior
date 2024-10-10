@@ -177,6 +177,10 @@ public class PlayerInputHandler : MonoBehaviour
             IsFiring = false;
         }
 
-        textBox.text = angle.ToString();
+        if (textBox != null)
+        {
+            textBox.text = angle.ToString();
+        }
+        
     }
 }

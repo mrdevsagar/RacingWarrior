@@ -7,7 +7,7 @@ TagManager:
   - Ground
   - End
   - Vehicle
-  - Enemi
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -19,9 +19,9 @@ TagManager:
   - 
   - Vehicle
   - Player
-  - Enemi
-  - 
-  - 
+  - Enemy
+  - PlayerWeapon
+  - EnemyHit
   - 
   - 
   - 
