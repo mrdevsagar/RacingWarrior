@@ -19,7 +19,7 @@ public class ArrowStick : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         if (IsFiredRight && !hasCollided)
         {

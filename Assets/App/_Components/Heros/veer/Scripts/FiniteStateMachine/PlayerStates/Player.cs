@@ -1,3 +1,5 @@
+// Ignore Spelling: Collider
+
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D.IK;
@@ -110,8 +112,13 @@ public class Player : MonoBehaviour
 
     public float flipAngle = -180;
 
- 
+    #region Slope
 
+    public Collider2D PlayerCollider;
+
+    public List<GameObject> DisabledSlopeObjects;
+
+    #endregion
 
     #region Unity Callback functions
 
@@ -138,7 +145,7 @@ public class Player : MonoBehaviour
 
         RB = GetComponent<Rigidbody2D>();
 
-        
+        DisabledSlopeObjects = new List<GameObject>();
     }
 
     private void Start()
@@ -164,7 +171,7 @@ public class Player : MonoBehaviour
                     JumpButton.onClick.AddListener(OnJump);
                 }
 #endif
-
+        
     }
 
     private void Update()
@@ -449,6 +456,21 @@ public class Player : MonoBehaviour
             {
                 SelectedWeapon = WeaponTypes.FIST;
             } 
+    }
+
+    #endregion
+
+    #region Slope Go through
+    public void DisableCollisionForPlayer(Collider2D collider)
+    {
+       
+        Physics2D.IgnoreCollision(collider, PlayerCollider);
+ 
+    }
+
+    public void EnableCollisionForPlayer(Collider2D collider)
+    {
+        Physics2D.IgnoreCollision(collider, PlayerCollider, false);
     }
 
     #endregion

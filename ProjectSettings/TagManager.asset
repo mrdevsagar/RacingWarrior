@@ -8,6 +8,8 @@ TagManager:
   - End
   - Vehicle
   - Enemy
+  - SlopeLeft
+  - SlopeRight
   layers:
   - Default
   - TransparentFX
@@ -22,8 +24,8 @@ TagManager:
   - Enemy
   - PlayerWeapon
   - EnemyHit
-  - 
-  - 
+  - SlopeLeft
+  - SlopeRight
   - 
   - 
   - 

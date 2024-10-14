@@ -43,7 +43,7 @@ public class PlayerAliveState : PlayerState
     public override void PhysicsLateUpdate()
     {
         base.PhysicsLateUpdate();
-        RotateHand();
+       
     }
 
 
@@ -91,34 +91,7 @@ public class PlayerAliveState : PlayerState
         }
     }
    
-    private void RotateHand()
-    {
-        switch (player.SelectedWeapon)
-        {
-            case WeaponTypes.AKM:
-                /* player.RifleAim();        */
-               /* WeaponStateMachine.ChangeState(WeaponRifleState);*/
-                break;
-
-            case WeaponTypes.BOW:
-               /* player.BowAim();*/
-                break;
-
-            case WeaponTypes.Revolver:
-                /*player.RevolverAim();*/
-                break;
-
-            case WeaponTypes.SWORD:
-               /* player.SwordMovement();*/
-                break;
-
-            default : break;
-        }
-
-
-        /* player.MoveBowRightHand(LookInput,LookDragDistance);*/
-    }
-
+  
     public override void OnJumpPress()
     {
         base.OnJumpPress();
