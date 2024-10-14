@@ -32,9 +32,41 @@ public class Drive : MonoBehaviour
     [SerializeField]
     private Transform WeaponHolder;
 
+    
     private void Awake()
     {
         DisabledSlopeObjects = new List<GameObject>();
+    }
+
+
+    private void OnEnable()
+    {
+        // Subscribe to the rotation event
+        CanvasController.OnRotationChanged += RotateObject;
+    }
+
+    private void OnDisable()
+    {
+        // Unsubscribe to avoid memory leaks
+        CanvasController.OnRotationChanged -= RotateObject;
+    }
+
+    public void RotateObject(CanvasController.RotationDirection direction)
+    {
+        Debug.LogWarning(direction.ToString());
+
+        switch (direction)
+        {
+            case CanvasController.RotationDirection.Left:
+                _moveInput = -1;
+                break;
+            case CanvasController.RotationDirection.Right:
+                _moveInput = 1;
+                break;
+            case CanvasController.RotationDirection.None:
+                _moveInput = 0;
+                break;
+        }
     }
     private void Update()
     {
@@ -43,9 +75,9 @@ public class Drive : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _frontTireRB.AddTorque(-input.MoveInput.x * _speed * Time.deltaTime);
-        _backTireRB.AddTorque(-input.MoveInput.x * _speed * Time.deltaTime);
-        VehicleRB.AddTorque(_moveInput * _rotationalSpeed * Time.deltaTime);
+        _frontTireRB.AddTorque(-input.MoveInput.x * _speed * Time.fixedDeltaTime);
+        _backTireRB.AddTorque(-input.MoveInput.x * _speed * Time.fixedDeltaTime);
+        VehicleRB.AddTorque(_moveInput * _rotationalSpeed * Time.fixedDeltaTime);
     }
 
     private void LateUpdate()
