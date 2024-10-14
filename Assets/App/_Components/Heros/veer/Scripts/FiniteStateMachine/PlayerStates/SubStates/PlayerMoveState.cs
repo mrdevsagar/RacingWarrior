@@ -15,6 +15,8 @@ public class PlayerMoveState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
+        player.physicsMaterial.friction = 0f;
+        player.PlayerCollider.sharedMaterial = player.physicsMaterial;
     }
 
     public override void Exit()
@@ -28,7 +30,7 @@ public class PlayerMoveState : PlayerGroundedState
 
         if (MoveInput.x == 0f)
         {
-          /*  if (player.GetComponent<Rigidbody2D>().velocityX == 0f)*/
+            /*  if (player.GetComponent<Rigidbody2D>().velocityX == 0f)*/
             stateMachine.ChangeState(player.IdleState);
         }
     }

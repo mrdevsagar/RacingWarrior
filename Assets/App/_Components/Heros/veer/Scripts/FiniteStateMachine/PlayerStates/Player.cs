@@ -118,6 +118,9 @@ public class Player : MonoBehaviour
 
     public List<GameObject> DisabledSlopeObjects;
 
+    public PhysicsMaterial2D physicsMaterial;
+
+    public Transform PlayerCameraHolder;
     #endregion
 
     #region Unity Callback functions
@@ -146,6 +149,8 @@ public class Player : MonoBehaviour
         RB = GetComponent<Rigidbody2D>();
 
         DisabledSlopeObjects = new List<GameObject>();
+
+        PlayerCollider.sharedMaterial = physicsMaterial;
     }
 
     private void Start()

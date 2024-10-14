@@ -15,7 +15,8 @@ public class PlayerIdleState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
-        
+        player.physicsMaterial.friction = 8f;
+        player.PlayerCollider.sharedMaterial = player.physicsMaterial;
     }
 
     public override void Exit()

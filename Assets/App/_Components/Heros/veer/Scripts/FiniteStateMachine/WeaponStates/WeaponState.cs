@@ -51,7 +51,7 @@ public class WeaponState
 
     public virtual void PhysicsLateUpdate()
     {
-
+        CameraAim();
     }
     public virtual void DoChecks()
     {
@@ -77,5 +77,25 @@ public class WeaponState
      protected void RestHeadRotation()
     {
         player.Comp.Body.Head.eulerAngles = new Vector3(player.Comp.Body.Head.eulerAngles.x, player.Comp.Body.Head.eulerAngles.y, 90 * (player.IsPlayerLeftFacing ? -1 : 1));
+    }
+
+    private void CameraAim()
+    {
+        float angle = player.input.LookInput;
+
+        float handRotationAngle = angle;
+
+
+
+        if (!handRotationAngle.Equals(float.NaN))
+        {
+            if (player.IsPlayerLeftFacing)
+            {
+                handRotationAngle += player.flipAngle;
+            }
+
+           
+            player.PlayerCameraHolder.eulerAngles = new Vector3(player.PlayerCameraHolder.rotation.x, player.PlayerCameraHolder.rotation.y, handRotationAngle);
+        }
     }
 }
