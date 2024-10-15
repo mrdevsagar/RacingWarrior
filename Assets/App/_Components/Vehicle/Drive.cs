@@ -53,7 +53,6 @@ public class Drive : MonoBehaviour
 
     public void RotateObject(CanvasController.RotationDirection direction)
     {
-        Debug.LogWarning(direction.ToString());
 
         switch (direction)
         {
@@ -104,12 +103,12 @@ public class Drive : MonoBehaviour
 
     public void DisableCollisionForVehicle(Collider2D collider)
     {
-        if (collider.gameObject.tag == "SlopeRight" || collider.gameObject.tag == "SlopeLeft")
-        {
+        /*if (collider.gameObject.tag == "SlopeRight" || collider.gameObject.tag == "SlopeLeft")
+        {*/
             Physics2D.IgnoreCollision(collider, CarBody);
             Physics2D.IgnoreCollision(collider, WheelLeft);
             Physics2D.IgnoreCollision(collider, WheelRight);
-        }
+        /*}*/
     }
 
     public void EnableCollisionForVehicle(Collider2D collider)

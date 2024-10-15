@@ -2867,7 +2867,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7978407396279474488
 Transform:
   m_ObjectHideFlags: 0
@@ -4035,10 +4035,10 @@ BoxCollider2D:
     m_Bits: 4294967295
   m_ContactCaptureLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 24640
   m_CallbackLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 24640
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
@@ -4320,10 +4320,10 @@ BoxCollider2D:
     m_Bits: 4294967295
   m_ContactCaptureLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 24640
   m_CallbackLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 24640
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
@@ -5280,10 +5280,10 @@ BoxCollider2D:
     m_Bits: 4294967295
   m_ContactCaptureLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 24640
   m_CallbackLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 24640
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0

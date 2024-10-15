@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - SlopeLeft
   - SlopeRight
+  - EnemyInternal
   layers:
   - Default
   - TransparentFX
