@@ -105,9 +105,9 @@ public class Drive : MonoBehaviour
     {
         /*if (collider.gameObject.tag == "SlopeRight" || collider.gameObject.tag == "SlopeLeft")
         {*/
-            Physics2D.IgnoreCollision(collider, CarBody);
-            Physics2D.IgnoreCollision(collider, WheelLeft);
-            Physics2D.IgnoreCollision(collider, WheelRight);
+            Physics2D.IgnoreCollision(collider, CarBody,true);
+            Physics2D.IgnoreCollision(collider, WheelLeft,true);
+            Physics2D.IgnoreCollision(collider, WheelRight, true);
         /*}*/
     }
 

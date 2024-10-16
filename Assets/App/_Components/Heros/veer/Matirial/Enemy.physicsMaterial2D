@@ -6,6 +6,6 @@ PhysicsMaterial2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TireFriction
-  friction: 3
+  m_Name: Enemy
+  friction: 4
   bounciness: 0.5

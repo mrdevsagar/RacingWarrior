@@ -271,6 +271,7 @@ GameObject:
   - component: {fileID: 2415390491624744404}
   - component: {fileID: 6831186303303815623}
   - component: {fileID: 902666188607202481}
+  - component: {fileID: 2895488252836774683}
   m_Layer: 8
   m_Name: VEHICLE
   m_TagString: Vehicle
@@ -288,7 +289,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 23.07, y: -4.17, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2602798590185781306}
@@ -311,7 +312,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
+  m_Mass: 20
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -391,8 +392,8 @@ MonoBehaviour:
   _frontTireRB: {fileID: 143689713538471799}
   _backTireRB: {fileID: 4684643506275162229}
   VehicleRB: {fileID: 2623693463751685762}
-  _speed: 1200
-  _rotationalSpeed: 20000
+  _speed: 3000
+  _rotationalSpeed: 40000
   CarBody: {fileID: 6831186303303815623}
   WheelRight: {fileID: 3572172517365653786}
   WheelLeft: {fileID: 297497202406272869}
@@ -452,12 +453,16 @@ PolygonCollider2D:
       - {x: -0.42646074, y: 0.5900171}
       - {x: -0.79384667, y: 0.43764332}
       - {x: -0.9630728, y: -0.009876251}
-      - {x: -1.4969306, y: -0.18239212}
-      - {x: -1.6303492, y: -0.44070816}
-      - {x: -1.6458359, y: -0.5776105}
-      - {x: -1.5311189, y: -0.59105766}
-      - {x: -1.5107498, y: -0.4581604}
-      - {x: -1.381074, y: -0.28840494}
+      - {x: -1.3487871, y: -0.12111591}
+      - {x: -1.4543293, y: -0.16109149}
+      - {x: -1.5038381, y: -0.20983113}
+      - {x: -1.5591054, y: -0.27380934}
+      - {x: -1.5571936, y: -0.28339535}
+      - {x: -1.5411725, y: -0.31408462}
+      - {x: -1.4692545, y: -0.37563282}
+      - {x: -1.4755685, y: -0.3846819}
+      - {x: -1.3972294, y: -0.28676307}
+      - {x: -1.414546, y: -0.30361986}
       - {x: -1.15767, y: -0.20737934}
       - {x: -0.9141555, y: -0.2747712}
       - {x: -0.7680545, y: -0.4806943}
@@ -529,6 +534,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2895488252836774683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3223375908812034114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1764b16c51d103d4f880ab3b4a632dc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rayDistance: 5
+  hitLayers:
+    serializedVersion: 2
+    m_Bits: 24576
+  drive: {fileID: 2415390491624744404}
 --- !u!1 &3570208372065116652
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,12 +845,9 @@ PolygonCollider2D:
       - {x: -0.41175556, y: -0.49997926}
       - {x: -0.55155516, y: -0.59239745}
       - {x: -0.7714544, y: -0.6292031}
-      - {x: -1.0729456, y: -0.782871}
-      - {x: -1.1650386, y: -0.9362867}
-      - {x: -1.1971521, y: -1.0570996}
-      - {x: -1.151144, y: -1.0727623}
-      - {x: -1.1100745, y: -0.92003226}
-      - {x: -0.9484153, y: -0.7233107}
+      - {x: -0.9999145, y: -0.75548464}
+      - {x: -0.8394434, y: -0.6989369}
+      - {x: -0.81275505, y: -0.6921521}
       - {x: -0.6026172, y: -0.6656393}
       - {x: -0.39294386, y: -0.7613666}
       - {x: -0.25497293, y: -1.0562618}

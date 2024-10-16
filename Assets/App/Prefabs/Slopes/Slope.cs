@@ -31,11 +31,11 @@ public class Slope : MonoBehaviour
 
         foreach (ContactPoint2D contact in collision.contacts)
         {
-            Debug.Log(contact.normalImpulse+ collision.gameObject.name);
+           /* Debug.Log(contact.normalImpulse+ collision.gameObject.name);*/
             // Check if the normal vector indicates the object is on top of the slope
             if (contact.normalImpulse > 0)
             {
-                Debug.Log("On top of the slope");
+                /*Debug.Log("On top of the slope");*/
 
                 if (OnSlopeObjects != null && !OnSlopeObjects.Contains(collision.gameObject))
                 {
@@ -45,7 +45,7 @@ public class Slope : MonoBehaviour
             }
             else
             {
-                Debug.Log("Passing through the slope or colliding from below");
+                /*Debug.Log("Passing through the slope or colliding from below");*/
             }
         }
     }
@@ -62,7 +62,7 @@ public class Slope : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.tag);
+     
         if (InSlopeObjects != null && !InSlopeObjects.Contains(collision.gameObject) && collision.gameObject.tag == "EnemyInternal")
         {
             InSlopeObjects.Add(collision.gameObject.transform.parent.gameObject);
