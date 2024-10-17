@@ -31,8 +31,14 @@ public class Slope : MonoBehaviour
 
         foreach (ContactPoint2D contact in collision.contacts)
         {
-           /* Debug.Log(contact.normalImpulse+ collision.gameObject.name);*/
+            /*Debug.Log(contact.normalImpulse + collision.gameObject.name);*/
             // Check if the normal vector indicates the object is on top of the slope
+
+            if (!collision.gameObject.CompareTag("Enemy"))
+            {
+                return;
+            }
+
             if (contact.normalImpulse > 0)
             {
                 /*Debug.Log("On top of the slope");*/
@@ -74,8 +80,6 @@ public class Slope : MonoBehaviour
         if (InSlopeObjects != null && collision.gameObject.tag == "EnemyInternal")
         {
             InSlopeObjects.Remove(collision.gameObject.transform.parent.gameObject);
-        }
-
-        
-    }
+        } 
+    }    
 }
