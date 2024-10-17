@@ -22,7 +22,7 @@ public class Drive : MonoBehaviour
     public float _moveInput;
 
     [SerializeField]
-    public List<GameObject> DisabledSlopeObjects;
+    public List<GameObject> DisabledVehicleObjects;
 
    
 
@@ -35,7 +35,7 @@ public class Drive : MonoBehaviour
     
     private void Awake()
     {
-        DisabledSlopeObjects = new List<GameObject>();
+        DisabledVehicleObjects = new List<GameObject>();
     }
 
 

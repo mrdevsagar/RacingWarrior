@@ -59,8 +59,19 @@ public class VehicleCollisionHandler : MonoBehaviour
             }
             if (Slopes != null && slopeObj.CompareTag("SlopeLeft"))
             {
-                Slope slope = slopeObj.GetComponent<Slope>();
-                EnableSlopeTop(slope);
+                /*Slope slope = slopeObj.GetComponent<Slope>();
+                EnableSlopeTop(slope);*/
+
+                if (drive.DisabledVehicleObjects.Contains(slopeObj))
+                {
+                    Slope slope = slopeObj.GetComponent<Slope>();
+                    EnableSlopeTop(slope, false);
+                }
+                else
+                {
+                    Slope slope = slopeObj.GetComponent<Slope>();
+                    EnableSlopeTop(slope);
+                }
             }
         }
 
@@ -88,8 +99,16 @@ public class VehicleCollisionHandler : MonoBehaviour
             }
             if (Slopes != null && slopeObj.CompareTag("SlopeRight"))
             {
-                Slope slope = slopeObj.GetComponent<Slope>();
-                EnableSlopeTop(slope);
+                if (drive.DisabledVehicleObjects.Contains(slopeObj))
+                {
+                    Slope slope = slopeObj.GetComponent<Slope>();
+                    EnableSlopeTop(slope, false);
+                }
+                else
+                {
+                    Slope slope = slopeObj.GetComponent<Slope>();
+                    EnableSlopeTop(slope);
+                }
             }
         }
 

@@ -12,9 +12,9 @@ public class InternalVehicleCollider : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (drive.DisabledSlopeObjects != null && !drive.DisabledSlopeObjects.Contains(collision.gameObject))
+        if (drive.DisabledVehicleObjects != null && !drive.DisabledVehicleObjects.Contains(collision.gameObject))
         {
-            drive.DisabledSlopeObjects.Add(collision.gameObject);
+            drive.DisabledVehicleObjects.Add(collision.gameObject);
             drive.DisableCollisionForVehicle(collision);
         }
     }

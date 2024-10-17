@@ -594,6 +594,7 @@ UnityEngine.GameObject::set_layer_Injected
 UnityEngine.GeometryUtility::TestPlanesAABB_Injected
 UnityEngine.GeometryUtility::Internal_ExtractPlanes_Injected
 UnityEngine.Gizmos::DrawLine_Injected
+UnityEngine.Gizmos::DrawWireSphere_Injected
 UnityEngine.Gizmos::set_color_Injected
 UnityEngine.Gizmos::set_matrix_Injected
 UnityEngine.GL::Begin
@@ -897,6 +898,7 @@ UnityEngine.PhysicsScene::OverlapSphereNonAlloc_Internal_Injected
 UnityEngine.PhysicsScene2D::GetRayIntersectionArray_Internal_Injected
 UnityEngine.PhysicsScene2D::RaycastArray_Internal_Injected
 UnityEngine.PhysicsScene2D::RaycastList_Internal_Injected
+UnityEngine.PhysicsScene2D::CapsuleCast_Internal_Injected
 UnityEngine.PhysicsScene2D::GetRayIntersection_Internal_Injected
 UnityEngine.PhysicsScene2D::Raycast_Internal_Injected
 UnityEngine.Playables.PlayableDirector::get_duration_Injected
@@ -1073,6 +1075,7 @@ UnityEngine.Rigidbody::get_linearVelocity_Injected
 UnityEngine.Rigidbody::set_detectCollisions_Injected
 UnityEngine.Rigidbody::set_isKinematic_Injected
 UnityEngine.Rigidbody2D::get_mass_Injected
+UnityEngine.Rigidbody2D::get_velocityX_Injected
 UnityEngine.Rigidbody2D::AddForce_Internal_Injected
 UnityEngine.Rigidbody2D::AddRelativeForce_Internal_Injected
 UnityEngine.Rigidbody2D::AddTorque_Injected
