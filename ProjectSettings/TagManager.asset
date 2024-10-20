@@ -11,6 +11,8 @@ TagManager:
   - SlopeLeft
   - SlopeRight
   - EnemyInternal
+  - SlopeRightPlatform
+  - SlopeLeftPlatform
   layers:
   - Default
   - TransparentFX
@@ -27,8 +29,8 @@ TagManager:
   - EnemyHit
   - SlopeLeft
   - SlopeRight
-  - 
-  - 
+  - SlopeRightPlatform
+  - SlopeLeftPlatform
   - 
   - 
   - 

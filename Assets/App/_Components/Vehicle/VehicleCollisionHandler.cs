@@ -8,11 +8,10 @@ public class VehicleCollisionHandler : MonoBehaviour
     public float rayDistance = 2f;  
     public LayerMask hitLayers;
 
+    public LayerMask hitLayersTop;
+
     public Drive drive;
 
-    private Collider2D previousHitRight = null;
-
-    private Collider2D previousHitLeft = null;
 
     private Rigidbody2D RB;
 
@@ -27,9 +26,6 @@ public class VehicleCollisionHandler : MonoBehaviour
     void Update()
     {
 
-        /*SlopeLeftInside();
-        SlopeRightInside();*/
-
     }
 
 
@@ -37,7 +33,7 @@ public class VehicleCollisionHandler : MonoBehaviour
     {
        
 
-        RaycastHit2D hitRight = HitRay(new Vector2(transform.position.x - 1.3f, transform.position.y), Vector2.right, Color.blue);
+        RaycastHit2D hitRight = HitRay(new Vector2(transform.position.x - 1.3f, transform.position.y), Vector2.right, Color.blue, hitLayers);
         Collider2D currentHitRight = null;
         if (hitRight.collider != null && hitRight.collider.gameObject.CompareTag("SlopeLeft"))
         {
@@ -50,7 +46,7 @@ public class VehicleCollisionHandler : MonoBehaviour
             Slope slopeRight = currentHitRight.gameObject.GetComponent<Slope>();
             EnableSlopeTop(slopeRight, false);
 
-            previousHitRight = currentHitRight;
+      
         } else
         {
             if (Slopes != null && !Slopes.Contains(slopeObj))
@@ -75,7 +71,7 @@ public class VehicleCollisionHandler : MonoBehaviour
             }
         }
 
-        RaycastHit2D hitLeft = HitRay(new Vector2(transform.position.x + 1.3f, transform.position.y), -Vector2.right, Color.cyan);
+        RaycastHit2D hitLeft = HitRay(new Vector2(transform.position.x + 1.3f, transform.position.y), -Vector2.right, Color.cyan, hitLayers);
 
         Collider2D currentHitLeft =  null;
 
@@ -89,7 +85,7 @@ public class VehicleCollisionHandler : MonoBehaviour
                 Slope slopeLeft = currentHitLeft.gameObject.GetComponent<Slope>();
                 EnableSlopeTop(slopeLeft, false);
 
-            previousHitLeft = currentHitLeft;
+
         }
         else
         {
@@ -98,6 +94,76 @@ public class VehicleCollisionHandler : MonoBehaviour
                 Slopes.Add(slopeObj);
             }
             if (Slopes != null && slopeObj.CompareTag("SlopeRight"))
+            {
+                if (drive.DisabledVehicleObjects.Contains(slopeObj))
+                {
+                    Slope slope = slopeObj.GetComponent<Slope>();
+                    EnableSlopeTop(slope, false);
+                }
+                else
+                {
+                    Slope slope = slopeObj.GetComponent<Slope>();
+                    EnableSlopeTop(slope);
+                }
+            }
+        }
+
+        RaycastHit2D hitTop = HitRay(new Vector2(transform.position.x  , transform.position.y - 0.8f ), Vector2.up, Color.yellow, hitLayersTop);
+        Collider2D currentHitTopRight = null;
+        Collider2D currentHitTopLeft = null;
+
+        if (hitTop.collider != null)
+        {
+             if (hitTop.collider.gameObject.CompareTag("SlopeRightPlatform"))
+             {
+                 currentHitTopRight = hitTop.collider;
+             } else if (hitTop.collider.gameObject.CompareTag("SlopeLeftPlatform"))
+             {
+                currentHitTopLeft = hitTop.collider;
+             }
+        }
+
+
+
+        // OnEnter: If we just hit a new object
+        if (currentHitTopRight != null && RB.velocityX > 0)
+        {
+            Slope slopeTopRight = currentHitTopRight.gameObject.GetComponent<Slope>();
+            EnableSlopeTop(slopeTopRight, false);
+        }
+        else
+        {
+            if (Slopes != null && !Slopes.Contains(slopeObj))
+            {
+                Slopes.Add(slopeObj);
+            }
+            if (Slopes != null && slopeObj.CompareTag("SlopeRightPlatform"))
+            {
+                if (drive.DisabledVehicleObjects.Contains(slopeObj))
+                {
+                    Slope slope = slopeObj.GetComponent<Slope>();
+                    EnableSlopeTop(slope, false);
+                }
+                else
+                {
+                    Slope slope = slopeObj.GetComponent<Slope>();
+                    EnableSlopeTop(slope);
+                }
+            }
+        }
+
+        if (currentHitTopLeft != null && RB.velocityX < 0)
+        {
+            Slope slopeTopLeft = currentHitTopLeft.gameObject.GetComponent<Slope>();
+            EnableSlopeTop(slopeTopLeft, false);
+        }
+        else
+        {
+            if (Slopes != null && !Slopes.Contains(slopeObj))
+            {
+                Slopes.Add(slopeObj);
+            }
+            if (Slopes != null && slopeObj.CompareTag("SlopeLeftPlatform"))
             {
                 if (drive.DisabledVehicleObjects.Contains(slopeObj))
                 {
@@ -128,69 +194,6 @@ public class VehicleCollisionHandler : MonoBehaviour
 
     
 
-    public void SlopeLeftInside()
-    {
-        RaycastHit2D hitRight = HitRay(new Vector2(transform.position.x - 1.3f, transform.position.y), Vector2.right, Color.blue);
-
-        // Check if we have a hit
-        Collider2D currentHitRight = hitRight.collider;
-
-        if (currentHitRight != null && currentHitRight.gameObject.CompareTag("SlopeRight"))
-        {
-            return;
-        }
-
-        // OnEnter: If we just hit a new object
-        if (currentHitRight != null && currentHitRight != previousHitRight && RB.velocityX > 0)
-        {
-            Slope slopeRight = currentHitRight.gameObject.GetComponent<Slope>();
-            EnableSlopeTop(slopeRight, false);
-        }
-
-        // OnExit: If we no longer hit the previous object
-        if (previousHitRight != null && currentHitRight != previousHitRight)
-        {
-            Debug.Log("OnExit: " + previousHitRight.name);
-        }
-
-        // Update the previous hit
-        previousHitRight = currentHitRight;
-    }
-
-    public void SlopeRightInside()
-    {
-
-        RaycastHit2D hitLeft = HitRay(new Vector2(transform.position.x + 1.3f, transform.position.y), -Vector2.right, Color.cyan);
-
-        Collider2D currentHitLeft = hitLeft.collider;
-
-        if (currentHitLeft != null && currentHitLeft.gameObject.CompareTag("SlopeLeft"))
-        {
-            return;
-        }
-        else
-        {
-
-            // OnEnter: If we just hit a new object
-            if (currentHitLeft != null && currentHitLeft != previousHitLeft && RB.velocityX < 0)
-            {
-                Slope slopeLeft = currentHitLeft.gameObject.GetComponent<Slope>();
-                EnableSlopeTop(slopeLeft, false);
-            }
-        }
-
-
-        // OnExit: If we no longer hit the previous object
-        if (previousHitLeft != null && currentHitLeft != previousHitLeft)
-        {
-            Debug.Log("OnExit: " + previousHitLeft?.name);
-        }
-
-        // Update the previous hit
-        previousHitLeft = currentHitLeft;
-
-
-    }
     private void EnableSlopeTop(Slope  slope,bool isEnableTop = true)
     {
         if (slope != null)
@@ -270,7 +273,7 @@ public class VehicleCollisionHandler : MonoBehaviour
     }
 
 
-    private RaycastHit2D HitRay(Vector2 origin, Vector2 direction, Color color)
+    private RaycastHit2D HitRay(Vector2 origin, Vector2 direction, Color color, LayerMask hitLayers)
     {
 
         RaycastHit2D hit = Physics2D.Raycast(origin, direction, rayDistance, hitLayers);

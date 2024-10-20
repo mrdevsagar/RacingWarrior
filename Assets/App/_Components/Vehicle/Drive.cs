@@ -113,9 +113,12 @@ public class Drive : MonoBehaviour
 
     public void EnableCollisionForVehicle(Collider2D collider)
     {
-        Physics2D.IgnoreCollision(collider, CarBody, false);
-        Physics2D.IgnoreCollision(collider, WheelLeft, false);
-        Physics2D.IgnoreCollision(collider, WheelRight, false);
+        if (!DisabledVehicleObjects.Contains(collider.gameObject))
+        {
+            Physics2D.IgnoreCollision(collider, CarBody, false);
+            Physics2D.IgnoreCollision(collider, WheelLeft, false);
+            Physics2D.IgnoreCollision(collider, WheelRight, false);
+        }
     }
 
     private void VehicleWeaponAim()

@@ -1,3 +1,5 @@
+// Ignore Spelling: Collider
+
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +10,12 @@ public class ExternalColliderVehicle : MonoBehaviour
 {
     public Drive drive;
 
-    public GameObject CurruntRightSlope;
-    public GameObject CurruntLeftSlope;
+    public GameObject CurrentRightSlope;
+    public GameObject CurrentLeftSlope;
+
+    public GameObject CurrentRightPlatform;
+    public GameObject CurrentLeftPlatform;
+
     public bool isExternalCollider2;
 
 
@@ -24,11 +30,11 @@ public class ExternalColliderVehicle : MonoBehaviour
         {
             if (drive.DisabledVehicleObjects != null && !drive.DisabledVehicleObjects.Contains(collision.gameObject))
             {
-                CurruntRightSlope = collision.gameObject;
+                CurrentRightSlope = collision.gameObject;
             }
             else
             {
-                CurruntRightSlope = null;
+                CurrentRightSlope = null;
             }
         }
 
@@ -36,11 +42,35 @@ public class ExternalColliderVehicle : MonoBehaviour
         {
             if (drive.DisabledVehicleObjects != null && !drive.DisabledVehicleObjects.Contains(collision.gameObject))
             {
-                CurruntLeftSlope = collision.gameObject;
+                CurrentLeftSlope = collision.gameObject;
             }
             else
             {
-                CurruntLeftSlope = null;
+                CurrentLeftSlope = null;
+            }
+        }
+
+        if (collision.gameObject.CompareTag("SlopeRightPlatform"))
+        {
+            if (drive.DisabledVehicleObjects != null && !drive.DisabledVehicleObjects.Contains(collision.gameObject))
+            {
+                CurrentRightPlatform = collision.gameObject;
+            }
+            else
+            {
+                CurrentRightPlatform = null;
+            }
+        }
+
+        if (collision.gameObject.CompareTag("SlopeLeftPlatform"))
+        {
+            if (drive.DisabledVehicleObjects != null && !drive.DisabledVehicleObjects.Contains(collision.gameObject))
+            {
+                CurrentLeftPlatform = collision.gameObject;
+            }
+            else
+            {
+                CurrentLeftPlatform = null;
             }
         }
     }
@@ -53,14 +83,24 @@ public class ExternalColliderVehicle : MonoBehaviour
             drive.EnableCollisionForVehicle(collision);
         }
 
-        if (!(CurruntRightSlope == null) && CurruntRightSlope == collision.gameObject)
+        if (!(CurrentRightSlope == null) && CurrentRightSlope == collision.gameObject)
         {
-            CurruntRightSlope = null;
+            CurrentRightSlope = null;
         }
 
-        if (!(CurruntLeftSlope == null) && CurruntLeftSlope == collision.gameObject)
+        if (!(CurrentLeftSlope == null) && CurrentLeftSlope == collision.gameObject)
         {
-            CurruntLeftSlope = null;
+            CurrentLeftSlope = null;
+        }
+
+        if (!(CurrentRightPlatform == null) && CurrentRightPlatform == collision.gameObject)
+        {
+            CurrentRightPlatform = null;
+        }
+
+        if (!(CurrentLeftPlatform == null) && CurrentLeftPlatform == collision.gameObject)
+        {
+            CurrentLeftPlatform = null;
         }
     }
 
@@ -70,24 +110,41 @@ public class ExternalColliderVehicle : MonoBehaviour
 
         if ((drive.VehicleRB.velocity.x > 15 && isExternalCollider2) || (drive.VehicleRB.velocity.x < -15 && isExternalCollider2) || (drive.VehicleRB.velocity.x <= 15 && !isExternalCollider2) || (drive.VehicleRB.velocity.x >= -15 && !isExternalCollider2))
         {
-            if (CurruntRightSlope != null && drive.input.MoveInput.x > 0 && drive.input.MoveInput.y < 0)
+            if (CurrentRightSlope != null && drive.input.MoveInput.x > 0 && drive.input.MoveInput.y < 0)
             {
 
-                if (drive.DisabledVehicleObjects != null && !drive.DisabledVehicleObjects.Contains(CurruntRightSlope))
+                if (drive.DisabledVehicleObjects != null && !drive.DisabledVehicleObjects.Contains(CurrentRightSlope))
                 {
-                    drive.DisableCollisionForVehicle(CurruntRightSlope.GetComponent<Collider2D>());
-                    Debug.LogError("sooraj2" + CurruntRightSlope.name);
-                    drive.DisabledVehicleObjects.Add(CurruntRightSlope);
+                    drive.DisableCollisionForVehicle(CurrentRightSlope.GetComponent<Collider2D>());
+                    drive.DisabledVehicleObjects.Add(CurrentRightSlope);
                 }
             }
 
-            if (CurruntLeftSlope != null && drive.input.MoveInput.x < 0 && drive.input.MoveInput.y < 0)
+            if (CurrentLeftSlope != null && drive.input.MoveInput.x < 0 && drive.input.MoveInput.y < 0)
             {
-                if (drive.DisabledVehicleObjects != null && !drive.DisabledVehicleObjects.Contains(CurruntLeftSlope))
+                if (drive.DisabledVehicleObjects != null && !drive.DisabledVehicleObjects.Contains(CurrentLeftSlope))
                 {
-                    drive.DisableCollisionForVehicle(CurruntLeftSlope.GetComponent<Collider2D>());
-                    Debug.LogError("sooraj3" + CurruntLeftSlope.name);
-                    drive.DisabledVehicleObjects.Add(CurruntLeftSlope);
+                    drive.DisableCollisionForVehicle(CurrentLeftSlope.GetComponent<Collider2D>());
+                    drive.DisabledVehicleObjects.Add(CurrentLeftSlope);
+                }
+            }
+
+            if (CurrentRightPlatform != null && drive.input.MoveInput.x < 0 && drive.input.MoveInput.y < 0)
+            {
+
+                if (drive.DisabledVehicleObjects != null && !drive.DisabledVehicleObjects.Contains(CurrentRightPlatform))
+                {
+                    drive.DisableCollisionForVehicle(CurrentRightPlatform.GetComponent<Collider2D>());
+                    drive.DisabledVehicleObjects.Add(CurrentRightPlatform);
+                }
+            }
+
+            if (CurrentLeftPlatform != null && drive.input.MoveInput.x > 0 && drive.input.MoveInput.y < 0)
+            {
+                if (drive.DisabledVehicleObjects != null && !drive.DisabledVehicleObjects.Contains(CurrentLeftPlatform))
+                {
+                    drive.DisableCollisionForVehicle(CurrentLeftPlatform.GetComponent<Collider2D>());
+                    drive.DisabledVehicleObjects.Add(CurrentLeftPlatform);
                 }
             }
 

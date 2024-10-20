@@ -13073,8 +13073,10 @@ struct EnvironmentGenerator_tD3461AA3CA2FFB0770F04E2AAF9387C796988860  : public 
 struct ExternalColliderVehicle_t7DF341173F366640D2D41FC6F100193AA7335880  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
 	Drive_t634313E10D8B37E499D1108EDBAF1A484D90512A* ___drive;
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___CurruntRightSlope;
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___CurruntLeftSlope;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___CurrentRightSlope;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___CurrentLeftSlope;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___CurrentRightPlatform;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___CurrentLeftPlatform;
 	bool ___isExternalCollider2;
 };
 struct FootGroundCheck_t8B418ECF49572B75706802173D1756D9A09D45FD  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
@@ -13597,9 +13599,8 @@ struct VehicleCollisionHandler_t23D62438176961DA84AC07E518F0D747941A6D18  : publ
 {
 	float ___rayDistance;
 	LayerMask_t97CB6BDADEDC3D6423C7BCFEA7F86DA2EC6241DB ___hitLayers;
+	LayerMask_t97CB6BDADEDC3D6423C7BCFEA7F86DA2EC6241DB ___hitLayersTop;
 	Drive_t634313E10D8B37E499D1108EDBAF1A484D90512A* ___drive;
-	Collider2D_t6A17BA7734600EF3F26588E9ED903617D5B8EB52* ___previousHitRight;
-	Collider2D_t6A17BA7734600EF3F26588E9ED903617D5B8EB52* ___previousHitLeft;
 	Rigidbody2D_tBEBE9523CF4448544085AF46BF7E10AA499F320F* ___RB;
 	List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* ___Slopes;
 };
@@ -15888,18 +15889,18 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6301[3] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6302[14] = 
 {
 	static_cast<int32_t>(offsetof(Drive_t634313E10D8B37E499D1108EDBAF1A484D90512A, ____frontTireRB)),static_cast<int32_t>(offsetof(Drive_t634313E10D8B37E499D1108EDBAF1A484D90512A, ____backTireRB)),static_cast<int32_t>(offsetof(Drive_t634313E10D8B37E499D1108EDBAF1A484D90512A, ___VehicleRB)),static_cast<int32_t>(offsetof(Drive_t634313E10D8B37E499D1108EDBAF1A484D90512A, ____speed)),static_cast<int32_t>(offsetof(Drive_t634313E10D8B37E499D1108EDBAF1A484D90512A, ____rotationalSpeed)),static_cast<int32_t>(offsetof(Drive_t634313E10D8B37E499D1108EDBAF1A484D90512A, ___CarBody)),static_cast<int32_t>(offsetof(Drive_t634313E10D8B37E499D1108EDBAF1A484D90512A, ___WheelRight)),static_cast<int32_t>(offsetof(Drive_t634313E10D8B37E499D1108EDBAF1A484D90512A, ___WheelLeft)),static_cast<int32_t>(offsetof(Drive_t634313E10D8B37E499D1108EDBAF1A484D90512A, ___input)),static_cast<int32_t>(offsetof(Drive_t634313E10D8B37E499D1108EDBAF1A484D90512A, ____moveInput)),static_cast<int32_t>(offsetof(Drive_t634313E10D8B37E499D1108EDBAF1A484D90512A, ___DisabledVehicleObjects)),static_cast<int32_t>(offsetof(Drive_t634313E10D8B37E499D1108EDBAF1A484D90512A, ___upButton)),static_cast<int32_t>(offsetof(Drive_t634313E10D8B37E499D1108EDBAF1A484D90512A, ___downButton)),static_cast<int32_t>(offsetof(Drive_t634313E10D8B37E499D1108EDBAF1A484D90512A, ___WeaponHolder)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6303[4] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6303[6] = 
 {
-	static_cast<int32_t>(offsetof(ExternalColliderVehicle_t7DF341173F366640D2D41FC6F100193AA7335880, ___drive)),static_cast<int32_t>(offsetof(ExternalColliderVehicle_t7DF341173F366640D2D41FC6F100193AA7335880, ___CurruntRightSlope)),static_cast<int32_t>(offsetof(ExternalColliderVehicle_t7DF341173F366640D2D41FC6F100193AA7335880, ___CurruntLeftSlope)),static_cast<int32_t>(offsetof(ExternalColliderVehicle_t7DF341173F366640D2D41FC6F100193AA7335880, ___isExternalCollider2)),};
+	static_cast<int32_t>(offsetof(ExternalColliderVehicle_t7DF341173F366640D2D41FC6F100193AA7335880, ___drive)),static_cast<int32_t>(offsetof(ExternalColliderVehicle_t7DF341173F366640D2D41FC6F100193AA7335880, ___CurrentRightSlope)),static_cast<int32_t>(offsetof(ExternalColliderVehicle_t7DF341173F366640D2D41FC6F100193AA7335880, ___CurrentLeftSlope)),static_cast<int32_t>(offsetof(ExternalColliderVehicle_t7DF341173F366640D2D41FC6F100193AA7335880, ___CurrentRightPlatform)),static_cast<int32_t>(offsetof(ExternalColliderVehicle_t7DF341173F366640D2D41FC6F100193AA7335880, ___CurrentLeftPlatform)),static_cast<int32_t>(offsetof(ExternalColliderVehicle_t7DF341173F366640D2D41FC6F100193AA7335880, ___isExternalCollider2)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6304[1] = 
 {
 	static_cast<int32_t>(offsetof(InternalVehicleCollider_tAC090B8EDBA3CF3063BF85781DABAB1186F74994, ___drive)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6305[1] = 
 {
 	static_cast<int32_t>(offsetof(SlopeDetectorVehicle_t6F689E868772DE57425BE832690CA2111662BD34, ___collisionHandler)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6306[7] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6306[6] = 
 {
-	static_cast<int32_t>(offsetof(VehicleCollisionHandler_t23D62438176961DA84AC07E518F0D747941A6D18, ___rayDistance)),static_cast<int32_t>(offsetof(VehicleCollisionHandler_t23D62438176961DA84AC07E518F0D747941A6D18, ___hitLayers)),static_cast<int32_t>(offsetof(VehicleCollisionHandler_t23D62438176961DA84AC07E518F0D747941A6D18, ___drive)),static_cast<int32_t>(offsetof(VehicleCollisionHandler_t23D62438176961DA84AC07E518F0D747941A6D18, ___previousHitRight)),static_cast<int32_t>(offsetof(VehicleCollisionHandler_t23D62438176961DA84AC07E518F0D747941A6D18, ___previousHitLeft)),static_cast<int32_t>(offsetof(VehicleCollisionHandler_t23D62438176961DA84AC07E518F0D747941A6D18, ___RB)),static_cast<int32_t>(offsetof(VehicleCollisionHandler_t23D62438176961DA84AC07E518F0D747941A6D18, ___Slopes)),};
+	static_cast<int32_t>(offsetof(VehicleCollisionHandler_t23D62438176961DA84AC07E518F0D747941A6D18, ___rayDistance)),static_cast<int32_t>(offsetof(VehicleCollisionHandler_t23D62438176961DA84AC07E518F0D747941A6D18, ___hitLayers)),static_cast<int32_t>(offsetof(VehicleCollisionHandler_t23D62438176961DA84AC07E518F0D747941A6D18, ___hitLayersTop)),static_cast<int32_t>(offsetof(VehicleCollisionHandler_t23D62438176961DA84AC07E518F0D747941A6D18, ___drive)),static_cast<int32_t>(offsetof(VehicleCollisionHandler_t23D62438176961DA84AC07E518F0D747941A6D18, ___RB)),static_cast<int32_t>(offsetof(VehicleCollisionHandler_t23D62438176961DA84AC07E518F0D747941A6D18, ___Slopes)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6307[2] = 
 {
 	static_cast<int32_t>(offsetof(AdManagerAI_t790CA84B5CF2594D518E79114B7FE7438474BFF6, ____shouldShowBannerAd)),static_cast<int32_t>(offsetof(AdManagerAI_t790CA84B5CF2594D518E79114B7FE7438474BFF6, ___U3CIsRewardedAdCanceledU3Ek__BackingField)),};
