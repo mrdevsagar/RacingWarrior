@@ -56,5 +56,8 @@ TagManager:
   - name: Slope
     uniqueID: 2546786525
     locked: 0
+  - name: Ground
+    uniqueID: 1173691335
+    locked: 0
   m_RenderingLayers:
   - Default
