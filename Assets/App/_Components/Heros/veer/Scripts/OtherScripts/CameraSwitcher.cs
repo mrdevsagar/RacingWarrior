@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -44,6 +45,7 @@ public class CameraSwitcher : MonoBehaviour
     {
         if (vehicle != null)
         {
+            vehicleCamera.GetComponent<CinemachineCamera>().Follow = vehicle.transform;
             vehicleCamera.SetActive(true);
             playerCamera.SetActive(false);
             

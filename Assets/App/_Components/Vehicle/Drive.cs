@@ -50,18 +50,6 @@ public class Drive : MonoBehaviour
     }
 
 
-    private void OnEnable()
-    {
-        // Subscribe to the rotation event
-        CanvasController.OnRotationChanged += RotateObject;
-    }
-
-    private void OnDisable()
-    {
-        // Unsubscribe to avoid memory leaks
-        CanvasController.OnRotationChanged -= RotateObject;
-    }
-
     public void RotateObject(CanvasController.RotationDirection direction)
     {
 
@@ -156,16 +144,32 @@ public class Drive : MonoBehaviour
         _player.transform.position = this.transform.position;
         _player.SetActive(false);
 
+        CanvasController.OnRotationChanged += RotateObject;
         //Camera enable Event
     }
 
     public void ExitFromDriving()
     {
-        _driverGameobject.SetActive(false);
-        _player.SetActive(true);
-        _player.GetComponent<Rigidbody2D>().isKinematic = false;
-        _player.transform.SetParent(null);
+        CanvasController.OnRotationChanged -= RotateObject;
+
+        if (_driverGameobject != null && _player!= null)
+        {
+            CameraSwitcher.TriggerSwitchToPlayer(_player);
+            _driverGameobject.SetActive(false);
+
+            _player.GetComponent<Player>().FlipPlayer(true);
+            _player.SetActive(true);
+
+            _player.GetComponent<Rigidbody2D>().isKinematic = false;
+            _player.transform.rotation = Quaternion.identity;
+            _player.transform.SetParent(null);
+            _player = null;
+        }
+
+        
+
 
         //Camera disable Event
     }
+
 }
