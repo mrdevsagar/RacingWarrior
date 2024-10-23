@@ -32,10 +32,21 @@ public class Drive : MonoBehaviour
     [SerializeField]
     private Transform WeaponHolder;
 
+    [SerializeField]
+    private GameObject _driverGameobject;
+
+    private GameObject _player;
+
+
     
     private void Awake()
     {
         DisabledVehicleObjects = new List<GameObject>();
+    }
+
+    private void Start()
+    {
+        _driverGameobject.SetActive(false);
     }
 
 
@@ -97,7 +108,7 @@ public class Drive : MonoBehaviour
     private IEnumerator EndGame()
     {
         yield return new WaitForSeconds(1f);
-        LevelManager.Instance.GameOver();
+        /*LevelManager.Instance.GameOver();*/
     }
 
 
@@ -133,5 +144,28 @@ public class Drive : MonoBehaviour
         {
             WeaponHolder.eulerAngles = new Vector3(WeaponHolder.rotation.x, WeaponHolder.rotation.y, handRotationAngle);
         }
+    }
+
+    public void DriveVehicle (GameObject player)
+    {
+        CameraSwitcher.TriggerSwitchToVehicle(gameObject);
+        _driverGameobject.SetActive(true);
+        _player = player;
+        _player.transform.SetParent(this.transform);
+        _player.GetComponent<Rigidbody2D>().isKinematic = true;
+        _player.transform.position = this.transform.position;
+        _player.SetActive(false);
+
+        //Camera enable Event
+    }
+
+    public void ExitFromDriving()
+    {
+        _driverGameobject.SetActive(false);
+        _player.SetActive(true);
+        _player.GetComponent<Rigidbody2D>().isKinematic = false;
+        _player.transform.SetParent(null);
+
+        //Camera disable Event
     }
 }

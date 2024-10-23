@@ -141,8 +141,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drive: {fileID: 2415390491624744404}
-  CurruntRightSlope: {fileID: 0}
-  CurruntLeftSlope: {fileID: 0}
+  CurrentRightSlope: {fileID: 0}
+  CurrentLeftSlope: {fileID: 0}
+  CurrentRightPlatform: {fileID: 0}
+  CurrentLeftPlatform: {fileID: 0}
   isExternalCollider2: 1
 --- !u!1 &1674197144589569512
 GameObject:
@@ -157,7 +159,7 @@ GameObject:
   - component: {fileID: 3998057607950122352}
   m_Layer: 8
   m_Name: ExternalCollider
-  m_TagString: Untagged
+  m_TagString: ExternalColliderVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,7 +192,7 @@ PolygonCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -253,8 +255,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drive: {fileID: 2415390491624744404}
-  CurruntRightSlope: {fileID: 0}
-  CurruntLeftSlope: {fileID: 0}
+  CurrentRightSlope: {fileID: 0}
+  CurrentLeftSlope: {fileID: 0}
+  CurrentRightPlatform: {fileID: 0}
+  CurrentLeftPlatform: {fileID: 0}
   isExternalCollider2: 0
 --- !u!1 &3223375908812034114
 GameObject:
@@ -289,7 +293,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 23.07, y: -4.17, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2602798590185781306}
@@ -401,6 +405,7 @@ MonoBehaviour:
   _moveInput: 0
   DisabledVehicleObjects: []
   WeaponHolder: {fileID: 9017839700145823511}
+  _driverGameobject: {fileID: 6421472174357989546}
 --- !u!60 &6831186303303815623
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -479,9 +484,9 @@ PolygonCollider2D:
       - {x: 1.4405788, y: -0.3885203}
       - {x: 1.4843634, y: -0.5346354}
       - {x: 1.6691387, y: -0.5298538}
-      - {x: 1.6138281, y: -0.18573576}
-      - {x: 1.5593791, y: -0.16956855}
-      - {x: 1.4403195, y: -0.1271081}
+      - {x: 1.5368271, y: -0.26273733}
+      - {x: 1.4631267, y: -0.17197499}
+      - {x: 1.4306937, y: -0.1271081}
       - {x: 1.3938398, y: -0.10296965}
       - {x: 0.6062288, y: 0.15895289}
   m_UseDelaunayMesh: 0
@@ -530,7 +535,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: -1796666903702864442, guid: 235a377b7997dbb4b9a71e13b973049b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -556,6 +561,9 @@ MonoBehaviour:
   hitLayers:
     serializedVersion: 2
     m_Bits: 24576
+  hitLayersTop:
+    serializedVersion: 2
+    m_Bits: 98304
   drive: {fileID: 2415390491624744404}
   Slopes: []
 --- !u!1 &3570208372065116652
@@ -1028,10 +1036,10 @@ PolygonCollider2D:
     m_Bits: 4294967295
   m_ContactCaptureLayers:
     serializedVersion: 2
-    m_Bits: 24576
+    m_Bits: 122880
   m_CallbackLayers:
     serializedVersion: 2
-    m_Bits: 24576
+    m_Bits: 122880
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0

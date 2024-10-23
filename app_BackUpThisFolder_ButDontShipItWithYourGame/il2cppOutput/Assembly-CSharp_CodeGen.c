@@ -52,6 +52,8 @@ extern void U3CScrollCoroutineU3Ed__24_System_Collections_IEnumerator_get_Curren
 extern void Slope_Awake_m1B620650C83A746654624B7A049647F3E4FA9BCE (void);
 extern void Slope_Start_mCB98E5F6B887B945C499833F06EE9CDCE29A3609 (void);
 extern void Slope_OnCollisionEnter2D_mF0813BB50577A4F180AF3E171A3E4552F73D901B (void);
+extern void Slope_OnChildInternalCollideEnter_m556C42094F3AC6016B868A05EF57C558653EF0D6 (void);
+extern void Slope_OnChildInternalCollideExit_m0BB5206CE1698E42208544E630FA1C8818DB24B5 (void);
 extern void Slope_OnCollisionExit2D_m8C69DD2D84B45F508B0356AD145F090090D2D323 (void);
 extern void Slope_OnTriggerEnter2D_m365C04EA9BBD6C3DA4C66FD1B289916BB7459154 (void);
 extern void Slope_OnTriggerExit2D_mEB4837D2C67D42C5196205D586457227A2F52954 (void);
@@ -730,7 +732,7 @@ extern void U3CWarpTextU3Ed__8_MoveNext_mCE7A826C5E4854C2C509C77BD18F5A9B6D691B0
 extern void U3CWarpTextU3Ed__8_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mD80368E9B7E259311C03E406B75161ED6F7618E3 (void);
 extern void U3CWarpTextU3Ed__8_System_Collections_IEnumerator_Reset_m07746C332D2D8CE5DEA59873C26F2FAD4B369B42 (void);
 extern void U3CWarpTextU3Ed__8_System_Collections_IEnumerator_get_Current_m71D7F84D9DEF63BEC6B44866515DDCF35B142A19 (void);
-static Il2CppMethodPointer s_methodPointers[732] = 
+static Il2CppMethodPointer s_methodPointers[734] = 
 {
 	TouchManager_Awake_mF16F8C69C865C03D41E2D065503B44804BB80EBD,
 	TouchManager_Start_m088CE1AB8AC888BE8E70A91A12E039904CBF8328,
@@ -777,6 +779,8 @@ static Il2CppMethodPointer s_methodPointers[732] =
 	Slope_Awake_m1B620650C83A746654624B7A049647F3E4FA9BCE,
 	Slope_Start_mCB98E5F6B887B945C499833F06EE9CDCE29A3609,
 	Slope_OnCollisionEnter2D_mF0813BB50577A4F180AF3E171A3E4552F73D901B,
+	Slope_OnChildInternalCollideEnter_m556C42094F3AC6016B868A05EF57C558653EF0D6,
+	Slope_OnChildInternalCollideExit_m0BB5206CE1698E42208544E630FA1C8818DB24B5,
 	Slope_OnCollisionExit2D_m8C69DD2D84B45F508B0356AD145F090090D2D323,
 	Slope_OnTriggerEnter2D_m365C04EA9BBD6C3DA4C66FD1B289916BB7459154,
 	Slope_OnTriggerExit2D_mEB4837D2C67D42C5196205D586457227A2F52954,
@@ -1478,19 +1482,19 @@ extern void GamePlayActions_RemoveCallbacks_m662155891D7A42875C5FE6A7E29C0028D3A
 extern void GamePlayActions_SetCallbacks_mA74CFB41E76EDBE201C76D2D27D1E0CE262BAAE2_AdjustorThunk (void);
 static Il2CppTokenAdjustorThunkPair s_adjustorThunks[11] = 
 {
-	{ 0x06000164, GamePlayActions__ctor_m489A4DD094AA2B01615E6C7F2BA65FC34C010CD1_AdjustorThunk },
-	{ 0x06000165, GamePlayActions_get_Jump_m892B09ABD7F9750B75D6E517AB1DC30FF6044886_AdjustorThunk },
-	{ 0x06000166, GamePlayActions_get_Joystick_mC40AA39638E3BDF46D2A862C2E08EC333CA77C1D_AdjustorThunk },
-	{ 0x06000167, GamePlayActions_Get_m322BC6CFE2D404942726DCD5DE16C289B517606B_AdjustorThunk },
-	{ 0x06000168, GamePlayActions_Enable_m139EA6D1455987F60B8744C3B0E0D3ED583464D4_AdjustorThunk },
-	{ 0x06000169, GamePlayActions_Disable_m25E23A1901A183BDD65BE755DE66E3A8E67A1DD9_AdjustorThunk },
-	{ 0x0600016A, GamePlayActions_get_enabled_mADAE833A4228D384FDD6577B69660BF537E46C8F_AdjustorThunk },
-	{ 0x0600016C, GamePlayActions_AddCallbacks_mE329FBA09331DABC3D5543ED320AA5B0160EA223_AdjustorThunk },
-	{ 0x0600016D, GamePlayActions_UnregisterCallbacks_mFA237E08ADBF3A1F3316BE5C0D9E3573C6670218_AdjustorThunk },
-	{ 0x0600016E, GamePlayActions_RemoveCallbacks_m662155891D7A42875C5FE6A7E29C0028D3A58994_AdjustorThunk },
-	{ 0x0600016F, GamePlayActions_SetCallbacks_mA74CFB41E76EDBE201C76D2D27D1E0CE262BAAE2_AdjustorThunk },
+	{ 0x06000166, GamePlayActions__ctor_m489A4DD094AA2B01615E6C7F2BA65FC34C010CD1_AdjustorThunk },
+	{ 0x06000167, GamePlayActions_get_Jump_m892B09ABD7F9750B75D6E517AB1DC30FF6044886_AdjustorThunk },
+	{ 0x06000168, GamePlayActions_get_Joystick_mC40AA39638E3BDF46D2A862C2E08EC333CA77C1D_AdjustorThunk },
+	{ 0x06000169, GamePlayActions_Get_m322BC6CFE2D404942726DCD5DE16C289B517606B_AdjustorThunk },
+	{ 0x0600016A, GamePlayActions_Enable_m139EA6D1455987F60B8744C3B0E0D3ED583464D4_AdjustorThunk },
+	{ 0x0600016B, GamePlayActions_Disable_m25E23A1901A183BDD65BE755DE66E3A8E67A1DD9_AdjustorThunk },
+	{ 0x0600016C, GamePlayActions_get_enabled_mADAE833A4228D384FDD6577B69660BF537E46C8F_AdjustorThunk },
+	{ 0x0600016E, GamePlayActions_AddCallbacks_mE329FBA09331DABC3D5543ED320AA5B0160EA223_AdjustorThunk },
+	{ 0x0600016F, GamePlayActions_UnregisterCallbacks_mFA237E08ADBF3A1F3316BE5C0D9E3573C6670218_AdjustorThunk },
+	{ 0x06000170, GamePlayActions_RemoveCallbacks_m662155891D7A42875C5FE6A7E29C0028D3A58994_AdjustorThunk },
+	{ 0x06000171, GamePlayActions_SetCallbacks_mA74CFB41E76EDBE201C76D2D27D1E0CE262BAAE2_AdjustorThunk },
 };
-static const int32_t s_InvokerIndices[732] = 
+static const int32_t s_InvokerIndices[734] = 
 {
 	9505,
 	9505,
@@ -1536,6 +1540,8 @@ static const int32_t s_InvokerIndices[732] =
 	9349,
 	9505,
 	9505,
+	7370,
+	7370,
 	7370,
 	7370,
 	7370,
@@ -2257,7 +2263,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	732,
+	734,
 	s_methodPointers,
 	11,
 	s_adjustorThunks,

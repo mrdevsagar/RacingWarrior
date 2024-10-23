@@ -121,6 +121,14 @@ public class Player : MonoBehaviour
     public PhysicsMaterial2D physicsMaterial;
 
     public Transform PlayerCameraHolder;
+
+    public GameObject VehicleNearBy;
+
+    public List<GameObject> VehicleNearByList;
+
+   /* [TagSelectorDropdown]*/
+    private string ExternalVehicleColliderTag = "ExternalColliderVehicle";
+
     #endregion
 
     #region Unity Callback functions
@@ -176,7 +184,9 @@ public class Player : MonoBehaviour
                     JumpButton.onClick.AddListener(OnJump);
                 }
 #endif
-        
+
+        CameraSwitcher.TriggerSwitchToPlayer(gameObject);
+
     }
 
     private void Update()
@@ -207,6 +217,39 @@ public class Player : MonoBehaviour
     {
         PlayerStateMachine.CurrentState.PhysicsLateUpdate();
         WeaponStateMachine.CurrentWeaponState.PhysicsLateUpdate();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+       
+        if (collision.gameObject.CompareTag(ExternalVehicleColliderTag))
+        {
+            Debug.LogWarning(collision.gameObject.tag);
+            if (VehicleNearByList.Contains(collision?.gameObject?.transform?.parent?.gameObject?.transform?.parent?.gameObject)) { 
+            
+            }
+            else
+            {
+                VehicleNearByList.Add(collision?.gameObject?.transform?.parent?.gameObject?.transform?.parent?.gameObject);
+            }
+        }
+
+    }
+
+    public void GetInsideVehicle()
+    {
+        if (VehicleNearByList.Count >0)
+        {
+            VehicleNearByList[0].GetComponent<Drive>().DriveVehicle(gameObject);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag(ExternalVehicleColliderTag))
+        {
+            VehicleNearByList.Remove(collision?.gameObject?.transform?.parent?.gameObject?.transform?.parent?.gameObject);
+        }
     }
 
     private void OnJump()

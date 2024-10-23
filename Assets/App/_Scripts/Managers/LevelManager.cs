@@ -23,7 +23,7 @@ public class LevelManager : SingletonLocal<LevelManager>
     [SerializeField]
     private Button button;
 
-    
+    public bool IsPlayerInsideVehicle = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
