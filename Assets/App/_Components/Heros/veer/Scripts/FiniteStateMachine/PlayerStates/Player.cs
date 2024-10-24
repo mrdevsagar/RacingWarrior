@@ -224,7 +224,7 @@ public class Player : MonoBehaviour
        
         if (collision.gameObject.CompareTag(ExternalVehicleColliderTag))
         {
-            Debug.LogWarning(collision.gameObject.tag);
+           /* Debug.LogWarning(collision.gameObject.tag);*/
             if (VehicleNearByList.Contains(collision?.gameObject?.transform?.parent?.gameObject?.transform?.parent?.gameObject)) { 
             
             }

@@ -8830,20 +8830,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 880fe32cd352788489a3de05d6a6f5c4, type: 3}
---- !u!114 &2929252283505110278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2929252283505110282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  knobRectTransform: {fileID: 2929252284797955825}
-  radius: 50
 --- !u!114 &2929252283505110280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8893,7 +8879,7 @@ GameObject:
   - component: {fileID: 2929252283505110283}
   - component: {fileID: 2929252283505110281}
   - component: {fileID: 2929252283505110280}
-  - component: {fileID: 2929252283505110278}
+  - component: {fileID: 2929252283505110284}
   m_Layer: 5
   m_Name: Fixed Joystick
   m_TagString: Untagged
@@ -8911,7 +8897,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.2702703, y: 0.2702703, z: 0.2702703}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2929252284797955825}
   m_Father: {fileID: 337667670}
@@ -8921,6 +8907,21 @@ RectTransform:
   m_AnchoredPosition: {x: 263, y: 73}
   m_SizeDelta: {x: 256, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2929252283505110284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2929252283505110282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dcb54b3b37e5814fb57218fe078ea45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knobRectTransform: {fileID: 2929252284797955825}
+  radius: 50
+  isFiring: 0
 --- !u!114 &2929252284797954318
 MonoBehaviour:
   m_ObjectHideFlags: 0
