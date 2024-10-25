@@ -15,6 +15,8 @@ public class WeaponRifleState : WeaponState
     {
         base.Enter();
         player.Anim.SetFloat("BlendIdle", 2);
+
+        
     }
 
     public override void Exit()
@@ -22,6 +24,7 @@ public class WeaponRifleState : WeaponState
         base.Exit();
 
         RotateRightHand(0);
+
     }
 
     public override void LogicUpdate()
@@ -74,5 +77,22 @@ public class WeaponRifleState : WeaponState
 
         player.Comp.Body.RightArmIKSolver.GetChain(0).target = player.Comp.Rifle.P_AKM_RightArmTarget;
         player.Comp.Body.RightFistIKSolver.GetChain(0).target = player.Comp.Rifle.P_AKM_RightFistTarget;
+    }
+
+
+   
+
+    protected override void HandleAngleChanged(float angle)
+    {
+        base.HandleAngleChanged(angle);
+
+        if (angle > 90 && angle < 270)
+        {
+            RotateRightHand(angle - 180);
+        } else
+        {
+            RotateRightHand(angle);
+        }
+        player.RotateHead(angle);
     }
 }

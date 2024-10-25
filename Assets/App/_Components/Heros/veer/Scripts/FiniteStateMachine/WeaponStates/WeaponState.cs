@@ -10,6 +10,10 @@ public class WeaponState
     protected PlayerData playerData;
     protected WeaponData weaponData;
     protected GameObject weaponObject;
+
+    protected float Distance;
+    protected float Angle;
+    protected bool IsFiring;
     public WeaponState(Player player, PlayerStateMachine playerStateMachine, PlayerData playerData, WeaponData weaponData,GameObject weaponObject)
     {
         this.player = player;
@@ -27,6 +31,8 @@ public class WeaponState
         }
         SetHandsIKSolvers();
         RestHeadRotation();
+
+        OnEnable();
     }
 
     public virtual void Exit()
@@ -36,7 +42,7 @@ public class WeaponState
             weaponObject.SetActive(false); 
         }
 
-        
+        OnDisable();
     }
 
     public virtual void LogicUpdate()
@@ -98,4 +104,45 @@ public class WeaponState
             player.PlayerCameraHolder.eulerAngles = new Vector3(player.PlayerCameraHolder.rotation.x, player.PlayerCameraHolder.rotation.y, handRotationAngle);
         }
     }
+
+    private void OnEnable()
+    {
+        JoystickEventManager.OnFiringChanged += HandleFiringChanged;
+        JoystickEventManager.OnDistanceChanged += HandleDistanceChanged;
+        JoystickEventManager.OnAngleChanged += HandleAngleChanged;
+    }
+
+    private void OnDisable()
+    {
+        JoystickEventManager.OnFiringChanged -= HandleFiringChanged;
+        JoystickEventManager.OnDistanceChanged -= HandleDistanceChanged;
+        JoystickEventManager.OnAngleChanged -= HandleAngleChanged;
+    }
+
+    protected virtual void HandleFiringChanged(bool isFiring)
+    {
+        IsFiring = isFiring;
+    }
+
+    protected virtual void HandleDistanceChanged(float distance)
+    {
+        Distance = distance;
+    }
+
+
+
+    protected virtual void HandleAngleChanged(float angle)
+    {
+        if (angle > 90 && angle < 270)
+        {
+            player.FlipPlayer(false);
+        }
+        else
+        {
+            player.FlipPlayer(true);
+        }
+        Angle = angle;
+    } 
+
+
 }

@@ -5,7 +5,9 @@ public class WeaponBowState : WeaponState
 {
     private bool IsArrowAvailable = false;
     private bool isFiring = false;
-    private float customDistance = -0.1f;
+    private float customDistance = 0.1f;
+
+    private bool _isFirstArrow = true;
 
     private GameObject CurrentArrowObject;
     public WeaponBowState(Player player, PlayerStateMachine playerStateMachine, PlayerData playerData, WeaponData weaponData, GameObject weaponObject) : base(player, playerStateMachine, playerData, weaponData, weaponObject)
@@ -44,24 +46,26 @@ public class WeaponBowState : WeaponState
     public override void PhysicsLateUpdate()
     {
         base.PhysicsLateUpdate();
-        BowAim();
+        BowAim(player.input.LookInput, player.input.LookDragDistance, player.input.LookDragDistance >= 0.985f);
+/*        if (player.input.LookDragDistance <= 0.985f)
+        {
+            _isFirstArrow = true;
+        }*/
+        BowAim(Angle, Distance, IsFiring);
     }
 
-    public void BowAim()
+    public void BowAim(float angle,float distance,bool isFiring)
     {
-        float angle = player.input.LookInput;
+        /*float angle = player.input.LookInput;*/
 
         float handRotationAngle = angle;
-
-        float rightJoysticDistance = player.input.LookDragDistance;
-
-
 
         if (angle.Equals(float.NaN))
         {
             player.Comp.Bow.BowTopCCDIK.weight = 0;
             player.Comp.Bow.BowBottomCCDIK.weight = 0;
             isFiring = false;
+            /*_isFirstArrow = true;*/
         }
         else
         {
@@ -69,23 +73,31 @@ public class WeaponBowState : WeaponState
             {
                 handRotationAngle += player.flipAngle;
             }
-            if (rightJoysticDistance > 0.1f && rightJoysticDistance < 0.985f)
+            if (distance > 0.1f && distance < 0.985f)
             {
                 isFiring = false;
-                MoveArrow(rightJoysticDistance, angle);
-            } else if (rightJoysticDistance >= 0.985f)
+                MoveArrow(distance, angle);
+            }
+           /* else 
+            if (isFiring)
             {
                 if (!isFiring && IsArrowAvailable)
                 {
-                    FireArrow(rightJoysticDistance, angle);
+                    FireArrow(distance, angle);
                     isFiring = true;
                 }
-            }
+            }*/
 
             if (isFiring)
             {
-                customDistance += Time.deltaTime;  // Increase the custom distance over time
-              
+                if (_isFirstArrow)
+                {
+                    customDistance += 0.982f;
+                } 
+                 
+                customDistance += Time.deltaTime;
+                
+                _isFirstArrow = false;
                 MoveArrow(customDistance,angle);  // Move the arrow with custom distance
 
                 if (customDistance >= 0.985f)
@@ -219,5 +231,28 @@ public class WeaponBowState : WeaponState
         player.Comp.Bow.P_Bow_Parent_RightHandTarget.transform.eulerAngles = new Vector3(player.Comp.Bow.P_Bow_Parent_RightHandTarget.transform.rotation.x, player.Comp.Bow.P_Bow_Parent_RightHandTarget.transform.rotation.y, handRotationAngle);
 
     }
+
+    protected override void HandleFiringChanged(bool isFiring)
+    {
+        base.HandleFiringChanged(isFiring);
+       /* FireArrow(Distance, Angle);*/
+
+        if (!isFiring)
+        {
+            _isFirstArrow = true;
+        }
+    }
+
+   /* protected override void HandleDistanceChanged(float distance)
+    {
+        base.HandleDistanceChanged(distance);
+        MoveArrow(distance, Angle);
+    }
+
+    protected override void HandleAngleChanged(float angle)
+    {
+        base.HandleAngleChanged(angle);
+        BowAim(angle);
+    }*/
 }
 
