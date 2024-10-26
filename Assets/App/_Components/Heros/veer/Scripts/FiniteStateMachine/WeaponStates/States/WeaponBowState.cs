@@ -51,7 +51,7 @@ public class WeaponBowState : WeaponState
         {
             _isFirstArrow = true;
         }*/
-        BowAim(Angle, Distance, IsFiring);
+        /*BowAim(Angle, Distance, IsFiring);*/
     }
 
     public void BowAim(float angle,float distance,bool isFiring)
