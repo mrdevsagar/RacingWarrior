@@ -73,7 +73,7 @@ public class WeaponBowState : WeaponState
             {
                 handRotationAngle += player.flipAngle;
             }
-            if (distance > 0.1f && distance < 0.985f)
+            if (distance > 0.1f && distance < 0.985f && player.input.IsTouching)
             {
                 isFiring = false;
                 MoveArrow(distance, angle);
@@ -88,7 +88,7 @@ public class WeaponBowState : WeaponState
                 }
             }*/
 
-            if (isFiring)
+            if (isFiring && player.input.IsTouching)
             {
                 if (_isFirstArrow)
                 {

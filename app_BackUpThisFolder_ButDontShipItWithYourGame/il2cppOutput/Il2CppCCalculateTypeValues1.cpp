@@ -2813,6 +2813,7 @@ struct PlayerInputActions_t4371BD30BF780546160FC74115946343BB75D694  : public Ru
 	InputAction_t1B550AD2B55AF322AFB53CD28DA64081220D01CD* ___m_Player_Look;
 	InputAction_t1B550AD2B55AF322AFB53CD28DA64081220D01CD* ___m_Player_Fire;
 	InputAction_t1B550AD2B55AF322AFB53CD28DA64081220D01CD* ___m_Player_Jump;
+	InputAction_t1B550AD2B55AF322AFB53CD28DA64081220D01CD* ___m_Player_LookPress;
 	int32_t ___m_KeyboardMouseSchemeIndex;
 	int32_t ___m_GamepadSchemeIndex;
 	int32_t ___m_TouchSchemeIndex;
@@ -19395,6 +19396,7 @@ struct PlayerInputHandler_tAD09C1EF146A9FB9BDEF315722830367DD298518  : public Mo
 	float ___U3CLookInputU3Ek__BackingField;
 	float ___U3CLookDragDistanceU3Ek__BackingField;
 	bool ___U3CIsFiringU3Ek__BackingField;
+	bool ___U3CIsTouchingU3Ek__BackingField;
 	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___textBox;
 	PlayerInputActions_t4371BD30BF780546160FC74115946343BB75D694* ___playerInput;
 	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___moveInput;

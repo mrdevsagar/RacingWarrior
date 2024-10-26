@@ -10,6 +10,7 @@ public class PlayerInputHandler : MonoBehaviour
     public float LookInput { get; private set; }
     public float LookDragDistance { get; private set; }
     public bool IsFiring { get; private set; }
+    public bool IsTouching { get;private set; }
 
     public TextMeshProUGUI textBox;
 
@@ -30,6 +31,22 @@ public class PlayerInputHandler : MonoBehaviour
         playerInput.Player.Move.performed += OnMovePerformed;
         playerInput.Player.Move.canceled += OnMovePerformed;
         LookInput = float.NaN;
+
+        playerInput.Player.LookPress.performed += OnLookPerformed;
+        playerInput.Player.LookPress.canceled += OnLookPerformed;
+    }
+
+    private void OnLookPerformed(InputAction.CallbackContext context)
+    {
+        Debug.LogWarning("hii");
+
+        if (context.performed)
+        {
+            IsTouching = true;
+        } else if (context.canceled)
+        {
+            IsTouching = false;
+        }
     }
 
     private void OnEnable()
@@ -169,7 +186,7 @@ public class PlayerInputHandler : MonoBehaviour
             LookInput = float.NaN;
         }
 
-        if (distance > 0.98f)
+        if (distance > 0.98f && IsTouching)
         {
             IsFiring = true;
         } else
