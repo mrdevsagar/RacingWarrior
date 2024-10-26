@@ -30,7 +30,7 @@ public class PlayerAliveState : PlayerState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        /* FlipPlayer();*/
+        FlipPlayer();
 
         if ((MoveInput.x > 0 && player.transform.localScale.x > 0) || (MoveInput.x < 0 && player.transform.localScale.x < 0))
         {
