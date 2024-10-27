@@ -146,7 +146,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""id"": ""c1f7a91b-d0fd-4a62-997e-7fb9b69bf235"",
                     ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""StickDeadzone"",
                     ""groups"": "";Gamepad;Keyboard&Mouse;Touch;Joystick"",
                     ""action"": ""Look"",
                     ""isComposite"": false,

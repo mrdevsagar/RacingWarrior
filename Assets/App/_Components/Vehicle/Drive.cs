@@ -157,7 +157,7 @@ public class Drive : MonoBehaviour
             CameraSwitcher.TriggerSwitchToPlayer(_player);
             _driverGameobject.SetActive(false);
 
-            _player.GetComponent<Player>().FlipPlayer(true);
+           /* _player.GetComponent<Player>().FlipPlayer(true);*/
             _player.SetActive(true);
 
             _player.GetComponent<Rigidbody2D>().isKinematic = false;

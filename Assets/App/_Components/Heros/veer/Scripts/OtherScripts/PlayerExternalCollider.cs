@@ -8,6 +8,10 @@ public class PlayerExternalCollider : MonoBehaviour
 
     private GameObject CurrentLeftSlope;
 
+    private GameObject CurrentRightSlopePlatform;
+
+    private GameObject CurrentLeftSlopePlatform;
+
     [SerializeField]
     private  Player player;
     private void OnTriggerEnter2D(Collider2D collision)
@@ -35,6 +39,31 @@ public class PlayerExternalCollider : MonoBehaviour
                 CurrentLeftSlope = null;
             }
         }
+
+        if (collision.gameObject.CompareTag("SlopeRightPlatform"))
+        {
+            if (player.DisabledSlopeObjects != null && !player.DisabledSlopeObjects.Contains(collision.gameObject))
+            {
+                CurrentRightSlopePlatform = collision.gameObject;
+            }
+            else
+            {
+                CurrentRightSlopePlatform = null;
+            }
+        }
+
+        if (collision.gameObject.CompareTag("SlopeLeftPlatform"))
+        {
+            if (player.DisabledSlopeObjects != null && !player.DisabledSlopeObjects.Contains(collision.gameObject))
+            {
+                CurrentLeftSlopePlatform = collision.gameObject;
+            }
+            else
+            {
+                CurrentLeftSlopePlatform = null;
+            }
+        }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -53,6 +82,16 @@ public class PlayerExternalCollider : MonoBehaviour
         if (!(CurrentLeftSlope == null) && CurrentLeftSlope == collision.gameObject)
         {
             CurrentLeftSlope = null;
+        }
+
+        if (!(CurrentRightSlopePlatform == null) && CurrentRightSlopePlatform == collision.gameObject)
+        {
+            CurrentRightSlopePlatform = null;
+        }
+
+        if (!(CurrentLeftSlopePlatform == null) && CurrentLeftSlopePlatform == collision.gameObject)
+        {
+            CurrentLeftSlopePlatform = null;
         }
     }
 
@@ -77,6 +116,24 @@ public class PlayerExternalCollider : MonoBehaviour
                 }
             }
 
+
+        if (CurrentRightSlopePlatform != null && player.input.MoveInput.x < 0 && player.input.MoveInput.y < 0)
+        {
+            if (player.DisabledSlopeObjects != null && !player.DisabledSlopeObjects.Contains(CurrentRightSlopePlatform))
+            {
+                player.DisableCollisionForPlayer(CurrentRightSlopePlatform.GetComponent<Collider2D>());
+                player.DisabledSlopeObjects.Add(CurrentRightSlopePlatform);
+            }
+        }
+
+        if (CurrentLeftSlopePlatform != null && player.input.MoveInput.x > 0 && player.input.MoveInput.y < 0)
+        {
+            if (player.DisabledSlopeObjects != null && !player.DisabledSlopeObjects.Contains(CurrentLeftSlopePlatform))
+            {
+                player.DisableCollisionForPlayer(CurrentLeftSlopePlatform.GetComponent<Collider2D>());
+                player.DisabledSlopeObjects.Add(CurrentLeftSlopePlatform);
+            }
+        }
 
     }
 }

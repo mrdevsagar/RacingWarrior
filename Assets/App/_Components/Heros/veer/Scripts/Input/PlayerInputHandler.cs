@@ -1,4 +1,5 @@
 using NUnit.Framework.Constraints;
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -7,17 +8,28 @@ using UnityEngine.InputSystem;
 public class PlayerInputHandler : MonoBehaviour
 {
     public Vector2 MoveInput {  get; private set; }
+
+    // Event to notify listeners when MoveInput changes
+    public event Action<Vector2> OnMoveInputChanged;
+
+    // Method to update MoveInput
+    public void SetMoveInput(Vector2 newInput)
+    {
+        if (MoveInput != newInput)  // Check if the value has changed
+        {
+            MoveInput = newInput;
+            OnMoveInputChanged?.Invoke(MoveInput);  // Trigger the event
+        }
+    }
+    public float MoveDragDistance { get; private set; }
     public float LookInput { get; private set; }
     public float LookDragDistance { get; private set; }
+
     public bool IsFiring { get; private set; }
     public bool IsTouching { get;private set; }
 
-    public TextMeshProUGUI textBox;
-
     private PlayerInputActions playerInput; // Replace with your input action class name
 
-
-  
     private Vector2 moveInput;
 
     private string controlName;
@@ -38,8 +50,6 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void OnLookPerformed(InputAction.CallbackContext context)
     {
-        Debug.LogWarning("hii");
-
         if (context.performed)
         {
             IsTouching = true;
@@ -95,23 +105,44 @@ public class PlayerInputHandler : MonoBehaviour
             }
             float distance = joystickInput.magnitude;
 
-            if ((angle >= 0 && angle < 90) || (angle >= 350 && angle < 360))
+            if (distance > 0.13f)
             {
-                MoveInput = new Vector2(1, 1);
-            } else if (angle >= 90 && angle < 190)
-            {
-                MoveInput = new Vector2(-1,1);
-            } else if (angle >= 190 && angle < 270)
-            {
-                MoveInput = new Vector2(-1, -1);
-            } else if (angle >= 270 && angle < 350)
-            {
-                MoveInput = new Vector2(1, -1);
-            }
 
-            if (distance < 0.2)
+
+                if ((angle >= 0 && angle < 90) || (angle >= 330 && angle < 360))
+                {
+                    SetMoveInput(new Vector2(1, 1));
+                }
+                else if (angle >= 90 && angle < 210)
+                {
+                    SetMoveInput(new Vector2(-1, 1));
+                }
+                else if (angle >= 210 && angle < 270)
+                {
+                    if (distance > 0.98)
+                    {
+                        SetMoveInput(new Vector2(-1, -1));
+                    }
+                    else
+                    {
+                        SetMoveInput(new Vector2(-1, 1));
+                    }
+                }
+                else if (angle >= 270 && angle < 330)
+                {
+                    if (distance > 0.98)
+                    {
+                        SetMoveInput(new Vector2(1, -1));
+                    }
+                    else
+                    {
+                        SetMoveInput(new Vector2(1, 1));
+                    }
+                }
+            }
+            else if (MoveInput.x != 0 || MoveInput.y != 0)
             {
-                MoveInput = Vector2.zero;
+                SetMoveInput(Vector2.zero);
             }
 
         } else
@@ -120,26 +151,26 @@ public class PlayerInputHandler : MonoBehaviour
             {
                 if (rawInput.y == 1)
                 {
-                    MoveInput = new Vector2(1, 1);
+                    SetMoveInput(new Vector2(1, 1));
                 }
                 else if (rawInput.x == 1)
                 {
-                    MoveInput = new Vector2(-1, 1);
+                    SetMoveInput(new Vector2(-1, 1));
                 }
                 else if (rawInput.x == -1)
                 {
-                    MoveInput = new Vector2(-1, -1);
+                    SetMoveInput(new Vector2(-1, -1));
                 }
                 else if (rawInput.y == -1)
                 {
-                    MoveInput = new Vector2(1, -1);
+                    SetMoveInput(new Vector2(1, -1));
                 }
-                else
+                else if (MoveInput.x != 0 || MoveInput.y != 0)
                 {
-                    MoveInput = Vector2.zero;
+                    SetMoveInput(Vector2.zero);
                 }
             }
-               
+
         }
         
     }
@@ -194,10 +225,5 @@ public class PlayerInputHandler : MonoBehaviour
             IsFiring = false;
         }
 
-        if (textBox != null)
-        {
-            textBox.text = angle.ToString();
-        }
-        
     }
 }

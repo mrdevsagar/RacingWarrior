@@ -76,6 +76,7 @@ extern void Animator_get_hasRootMotion_mA39728839F19F4E103CF2599281E6F796D2AB341
 extern void Animator_SetFloat_m10C78733FAFC7AFEDBDACC48B7C66D3A35A0A7FE (void);
 extern void Animator_SetBool_m6F8D4FAF0770CD4EC1F54406249785DE7391E42B (void);
 extern void Animator_SetTrigger_mC9CD54D627C8843EF6E159E167449D216EF6EB30 (void);
+extern void Animator_SetTrigger_m2D9CACEFDE11FF9DB99207B5CBD251C1EC047939 (void);
 extern void Animator_ResetTrigger_m8DCA67D5A6B56702E3FAD4E18243E194B71297CC (void);
 extern void Animator_get_layerCount_m75C20E7284800DFA0E4AD7EC23910BDB6D62BDA8 (void);
 extern void Animator_GetAnimatorStateInfo_mC6C046A539DE6E8D481E830D3DA1FBF96DFC367D (void);
@@ -92,6 +93,7 @@ extern void Animator_get_avatar_m01E445FC754BC6F4A39639EAF68D3954580EAA67 (void)
 extern void Animator_SetFloatString_m1AA50083AAAE1DFFA7FB64502EA106795D3756B4 (void);
 extern void Animator_SetBoolString_m08A0BC6717BF5FD3E43D3EFB2509E359C1196C00 (void);
 extern void Animator_SetTriggerString_m177C75DFBE070DE66FC08A3232444CCEA409C25E (void);
+extern void Animator_SetTriggerID_mCC0A74BF79A56BC1EA634641C64B8E527B0B49E7 (void);
 extern void Animator_ResetTriggerString_m78259348CED35F156148A64B95EBD73CE3951868 (void);
 extern void Animator_get_isHuman_Injected_mD8E14C88452C6DB945DE4B59F242C367F919C7A2 (void);
 extern void Animator_get_hasRootMotion_Injected_mA0EB55EF6303AC9796C5AEF68AFDB61FF5758C34 (void);
@@ -106,6 +108,7 @@ extern void Animator_get_avatar_Injected_mEB858EAC34FB5CC5DC5ABECCEB244032E76DE9
 extern void Animator_SetFloatString_Injected_m830E10D3273717048546631C421F46B03CEB8015 (void);
 extern void Animator_SetBoolString_Injected_m52296144D160DC3F2C375FCC15B58645DFAED75B (void);
 extern void Animator_SetTriggerString_Injected_mD98E28EFCD06D8ED7188F7CD7D268E73ADD36ED1 (void);
+extern void Animator_SetTriggerID_Injected_m90910EEC7A52E23FC4D856D2208F1A3402B3AD74 (void);
 extern void Animator_ResetTriggerString_Injected_m3A9C4A49F7FAD1DD3553B58D4CE5FEF57C15D32A (void);
 extern void AnimatorOverrideController_OnInvalidateOverrideController_mA6B0AA977505FDEFDD6BCA2E941FD3A18AE1AD23 (void);
 extern void OnOverrideControllerDirtyCallback__ctor_mA49B11AF24CB49A9B764058DB73CE221AE54E106 (void);
@@ -222,7 +225,7 @@ extern void AnimatorControllerPlayable_GetHandle_m718D9A4E0DB7AC62947B1D09E47DBC
 extern void AnimatorControllerPlayable_SetHandle_mD86A3C0D03453FAF21903F7A52A743AB2DA6DED4 (void);
 extern void AnimatorControllerPlayable_Equals_m14125BB4CCFCDFFD098223AF20E38501BA264180 (void);
 extern void AnimatorControllerPlayable__cctor_m88506D1B15D609B818DFDC6B2BCFF42ABB41B090 (void);
-static Il2CppMethodPointer s_methodPointers[216] = 
+static Il2CppMethodPointer s_methodPointers[219] = 
 {
 	StateMachineBehaviour_OnStateEnter_mB618EFE75A50CBAA3EE6471E64A3E2CA2A2C90FD,
 	StateMachineBehaviour_OnStateUpdate_mC1A83A4F693AF3AB51BC592A0CE525CE4F320D6B,
@@ -293,6 +296,7 @@ static Il2CppMethodPointer s_methodPointers[216] =
 	Animator_SetFloat_m10C78733FAFC7AFEDBDACC48B7C66D3A35A0A7FE,
 	Animator_SetBool_m6F8D4FAF0770CD4EC1F54406249785DE7391E42B,
 	Animator_SetTrigger_mC9CD54D627C8843EF6E159E167449D216EF6EB30,
+	Animator_SetTrigger_m2D9CACEFDE11FF9DB99207B5CBD251C1EC047939,
 	Animator_ResetTrigger_m8DCA67D5A6B56702E3FAD4E18243E194B71297CC,
 	Animator_get_layerCount_m75C20E7284800DFA0E4AD7EC23910BDB6D62BDA8,
 	Animator_GetAnimatorStateInfo_mC6C046A539DE6E8D481E830D3DA1FBF96DFC367D,
@@ -309,6 +313,7 @@ static Il2CppMethodPointer s_methodPointers[216] =
 	Animator_SetFloatString_m1AA50083AAAE1DFFA7FB64502EA106795D3756B4,
 	Animator_SetBoolString_m08A0BC6717BF5FD3E43D3EFB2509E359C1196C00,
 	Animator_SetTriggerString_m177C75DFBE070DE66FC08A3232444CCEA409C25E,
+	Animator_SetTriggerID_mCC0A74BF79A56BC1EA634641C64B8E527B0B49E7,
 	Animator_ResetTriggerString_m78259348CED35F156148A64B95EBD73CE3951868,
 	Animator_get_isHuman_Injected_mD8E14C88452C6DB945DE4B59F242C367F919C7A2,
 	Animator_get_hasRootMotion_Injected_mA0EB55EF6303AC9796C5AEF68AFDB61FF5758C34,
@@ -323,6 +328,7 @@ static Il2CppMethodPointer s_methodPointers[216] =
 	Animator_SetFloatString_Injected_m830E10D3273717048546631C421F46B03CEB8015,
 	Animator_SetBoolString_Injected_m52296144D160DC3F2C375FCC15B58645DFAED75B,
 	Animator_SetTriggerString_Injected_mD98E28EFCD06D8ED7188F7CD7D268E73ADD36ED1,
+	Animator_SetTriggerID_Injected_m90910EEC7A52E23FC4D856D2208F1A3402B3AD74,
 	Animator_ResetTriggerString_Injected_m3A9C4A49F7FAD1DD3553B58D4CE5FEF57C15D32A,
 	AnimatorOverrideController_OnInvalidateOverrideController_mA6B0AA977505FDEFDD6BCA2E941FD3A18AE1AD23,
 	OnOverrideControllerDirtyCallback__ctor_mA49B11AF24CB49A9B764058DB73CE221AE54E106,
@@ -488,45 +494,45 @@ static Il2CppTokenAdjustorThunkPair s_adjustorThunks[41] =
 	{ 0x0600003C, AnimatorClipInfo_get_clip_m6205DB403EBEAEAC14DB8928FFC7EBC50142E1AC_AdjustorThunk },
 	{ 0x0600003D, AnimatorClipInfo_get_weight_m1CC29E2C37B30993EFFD12161059E4AD86EE287D_AdjustorThunk },
 	{ 0x06000040, AnimatorStateInfo_get_fullPathHash_m583FA8FAAC28BF65A65166D100949833E515210F_AdjustorThunk },
-	{ 0x0600007D, AnimationClipPlayable__ctor_mF2EE31CC772B100F98CCAE26963059C6C722FA1A_AdjustorThunk },
-	{ 0x0600007E, AnimationClipPlayable_GetHandle_mE775F2247901BA293DB01A8D384D3F9D02A25627_AdjustorThunk },
-	{ 0x06000080, AnimationClipPlayable_Equals_mC5263BEA86C02CEDF93C5B14EAA168883E1DB5F4_AdjustorThunk },
-	{ 0x06000081, AnimationClipPlayable_SetApplyFootIK_m7CBA77F56815AD21784AC53D9EBDAE18AFA48507_AdjustorThunk },
-	{ 0x06000082, AnimationClipPlayable_SetRemoveStartOffset_mBAC88E40F6A759FACA4105EF683181D43381C8E5_AdjustorThunk },
-	{ 0x06000083, AnimationClipPlayable_SetOverrideLoopTime_mF1F57940D8DDBCC6EBCB75A27C2372BB39DED177_AdjustorThunk },
-	{ 0x06000084, AnimationClipPlayable_SetLoopTime_m3AAA1134C4D339C84EF57FE289D33100D4971ED8_AdjustorThunk },
-	{ 0x0600008D, AnimationLayerMixerPlayable__ctor_m28884B8B9F7E057DF947E3B43ED78EA107368BD6_AdjustorThunk },
-	{ 0x0600008E, AnimationLayerMixerPlayable_GetHandle_m324A98D0B0BFC0441377D65CAE93C914F828721F_AdjustorThunk },
-	{ 0x06000090, AnimationLayerMixerPlayable_Equals_mA5D24E61E2DE1140B409F3B569DBA3C185751970_AdjustorThunk },
-	{ 0x06000091, AnimationLayerMixerPlayable_SetLayerMaskFromAvatarMask_mC4BDE2B476AC13C31053100085FAF6BC86000280_AdjustorThunk },
-	{ 0x0600009A, AnimationMixerPlayable__ctor_mBF84CC064549C2C00B2AE1174018335958EB7EA7_AdjustorThunk },
-	{ 0x0600009B, AnimationMixerPlayable_GetHandle_mBA6CEB1579A713A985D474E75BC282728318882F_AdjustorThunk },
-	{ 0x0600009D, AnimationMixerPlayable_Equals_m6EBE215636EEEA3196A43F4D6C1FE6DD704AFA4E_AdjustorThunk },
-	{ 0x060000A3, AnimationMotionXToDeltaPlayable__ctor_mDE3C14B4B975AC693669D66B6E41BB6432AFA940_AdjustorThunk },
-	{ 0x060000A4, AnimationMotionXToDeltaPlayable_GetHandle_m09F605E78AD7F0135C7F57EB048031091A50E3A2_AdjustorThunk },
-	{ 0x060000A6, AnimationMotionXToDeltaPlayable_Equals_m7CBF3B7618EDBA4ECC2F3C2F54011248BC45CDCC_AdjustorThunk },
-	{ 0x060000A7, AnimationMotionXToDeltaPlayable_SetAbsoluteMotion_m5D1B029F6E6BFFB521CC6CB72ACBE7EA27B28715_AdjustorThunk },
-	{ 0x060000AE, AnimationOffsetPlayable__ctor_mBF3AC6493556DAAEF608B359BEBE8FA6D9F8DBFD_AdjustorThunk },
-	{ 0x060000AF, AnimationOffsetPlayable_GetHandle_m769BEFF90379AEAB0C579F7800953458CE3EBA78_AdjustorThunk },
-	{ 0x060000B1, AnimationOffsetPlayable_Equals_mEC28392ADD4E9639EB9228D106D93E21B3587270_AdjustorThunk },
-	{ 0x060000BB, AnimationPlayableOutput__ctor_mE4FB8AA6DFB2F3C18E04A9317F5CE53597A7D22A_AdjustorThunk },
-	{ 0x060000BD, AnimationPlayableOutput_GetHandle_m2A8E2A9CBD12EDCF48FC946445AB42802083338D_AdjustorThunk },
-	{ 0x060000C0, AnimationPlayableOutput_SetTarget_m0F7745C4A721D76EB1E804AA48E70C9C798E0DCE_AdjustorThunk },
-	{ 0x060000C3, AnimationPosePlayable__ctor_mC6C096785918358CA7EC12BABCDF4BBD47F7BA3F_AdjustorThunk },
-	{ 0x060000C4, AnimationPosePlayable_GetHandle_m5DC7CA4CAF3CD525D454D99EBC3D12C3571B527B_AdjustorThunk },
-	{ 0x060000C5, AnimationPosePlayable_Equals_m10F1E7DD7037B2AB3F7DAE3E01A1DC843EABD0A3_AdjustorThunk },
-	{ 0x060000C9, AnimationRemoveScalePlayable__ctor_m4D6C7C4AB8E078050B0CC34C6732051CF043CFA2_AdjustorThunk },
-	{ 0x060000CA, AnimationRemoveScalePlayable_GetHandle_mFFA58B879F31327187A20ED30E1C814B7BEAA9C6_AdjustorThunk },
-	{ 0x060000CC, AnimationRemoveScalePlayable_Equals_m0ACDD59B80103591DA8E84CB387FB10778D8C327_AdjustorThunk },
-	{ 0x060000D0, AnimationScriptPlayable__ctor_m6DEFD72735E79009FC1484AA2A7A82E6CE601247_AdjustorThunk },
-	{ 0x060000D1, AnimationScriptPlayable_GetHandle_m30355B6EE1AA3BA36D628251FB4291386D223646_AdjustorThunk },
-	{ 0x060000D2, AnimationScriptPlayable_Equals_mAD02E40704CBE4AB188DE0569052F8EA9864F4E4_AdjustorThunk },
-	{ 0x060000D4, AnimatorControllerPlayable__ctor_mBCB9475E2740BE1AEB94C08BAD14D51333258BFE_AdjustorThunk },
-	{ 0x060000D5, AnimatorControllerPlayable_GetHandle_m718D9A4E0DB7AC62947B1D09E47DBCD25C27AF6C_AdjustorThunk },
-	{ 0x060000D6, AnimatorControllerPlayable_SetHandle_mD86A3C0D03453FAF21903F7A52A743AB2DA6DED4_AdjustorThunk },
-	{ 0x060000D7, AnimatorControllerPlayable_Equals_m14125BB4CCFCDFFD098223AF20E38501BA264180_AdjustorThunk },
+	{ 0x06000080, AnimationClipPlayable__ctor_mF2EE31CC772B100F98CCAE26963059C6C722FA1A_AdjustorThunk },
+	{ 0x06000081, AnimationClipPlayable_GetHandle_mE775F2247901BA293DB01A8D384D3F9D02A25627_AdjustorThunk },
+	{ 0x06000083, AnimationClipPlayable_Equals_mC5263BEA86C02CEDF93C5B14EAA168883E1DB5F4_AdjustorThunk },
+	{ 0x06000084, AnimationClipPlayable_SetApplyFootIK_m7CBA77F56815AD21784AC53D9EBDAE18AFA48507_AdjustorThunk },
+	{ 0x06000085, AnimationClipPlayable_SetRemoveStartOffset_mBAC88E40F6A759FACA4105EF683181D43381C8E5_AdjustorThunk },
+	{ 0x06000086, AnimationClipPlayable_SetOverrideLoopTime_mF1F57940D8DDBCC6EBCB75A27C2372BB39DED177_AdjustorThunk },
+	{ 0x06000087, AnimationClipPlayable_SetLoopTime_m3AAA1134C4D339C84EF57FE289D33100D4971ED8_AdjustorThunk },
+	{ 0x06000090, AnimationLayerMixerPlayable__ctor_m28884B8B9F7E057DF947E3B43ED78EA107368BD6_AdjustorThunk },
+	{ 0x06000091, AnimationLayerMixerPlayable_GetHandle_m324A98D0B0BFC0441377D65CAE93C914F828721F_AdjustorThunk },
+	{ 0x06000093, AnimationLayerMixerPlayable_Equals_mA5D24E61E2DE1140B409F3B569DBA3C185751970_AdjustorThunk },
+	{ 0x06000094, AnimationLayerMixerPlayable_SetLayerMaskFromAvatarMask_mC4BDE2B476AC13C31053100085FAF6BC86000280_AdjustorThunk },
+	{ 0x0600009D, AnimationMixerPlayable__ctor_mBF84CC064549C2C00B2AE1174018335958EB7EA7_AdjustorThunk },
+	{ 0x0600009E, AnimationMixerPlayable_GetHandle_mBA6CEB1579A713A985D474E75BC282728318882F_AdjustorThunk },
+	{ 0x060000A0, AnimationMixerPlayable_Equals_m6EBE215636EEEA3196A43F4D6C1FE6DD704AFA4E_AdjustorThunk },
+	{ 0x060000A6, AnimationMotionXToDeltaPlayable__ctor_mDE3C14B4B975AC693669D66B6E41BB6432AFA940_AdjustorThunk },
+	{ 0x060000A7, AnimationMotionXToDeltaPlayable_GetHandle_m09F605E78AD7F0135C7F57EB048031091A50E3A2_AdjustorThunk },
+	{ 0x060000A9, AnimationMotionXToDeltaPlayable_Equals_m7CBF3B7618EDBA4ECC2F3C2F54011248BC45CDCC_AdjustorThunk },
+	{ 0x060000AA, AnimationMotionXToDeltaPlayable_SetAbsoluteMotion_m5D1B029F6E6BFFB521CC6CB72ACBE7EA27B28715_AdjustorThunk },
+	{ 0x060000B1, AnimationOffsetPlayable__ctor_mBF3AC6493556DAAEF608B359BEBE8FA6D9F8DBFD_AdjustorThunk },
+	{ 0x060000B2, AnimationOffsetPlayable_GetHandle_m769BEFF90379AEAB0C579F7800953458CE3EBA78_AdjustorThunk },
+	{ 0x060000B4, AnimationOffsetPlayable_Equals_mEC28392ADD4E9639EB9228D106D93E21B3587270_AdjustorThunk },
+	{ 0x060000BE, AnimationPlayableOutput__ctor_mE4FB8AA6DFB2F3C18E04A9317F5CE53597A7D22A_AdjustorThunk },
+	{ 0x060000C0, AnimationPlayableOutput_GetHandle_m2A8E2A9CBD12EDCF48FC946445AB42802083338D_AdjustorThunk },
+	{ 0x060000C3, AnimationPlayableOutput_SetTarget_m0F7745C4A721D76EB1E804AA48E70C9C798E0DCE_AdjustorThunk },
+	{ 0x060000C6, AnimationPosePlayable__ctor_mC6C096785918358CA7EC12BABCDF4BBD47F7BA3F_AdjustorThunk },
+	{ 0x060000C7, AnimationPosePlayable_GetHandle_m5DC7CA4CAF3CD525D454D99EBC3D12C3571B527B_AdjustorThunk },
+	{ 0x060000C8, AnimationPosePlayable_Equals_m10F1E7DD7037B2AB3F7DAE3E01A1DC843EABD0A3_AdjustorThunk },
+	{ 0x060000CC, AnimationRemoveScalePlayable__ctor_m4D6C7C4AB8E078050B0CC34C6732051CF043CFA2_AdjustorThunk },
+	{ 0x060000CD, AnimationRemoveScalePlayable_GetHandle_mFFA58B879F31327187A20ED30E1C814B7BEAA9C6_AdjustorThunk },
+	{ 0x060000CF, AnimationRemoveScalePlayable_Equals_m0ACDD59B80103591DA8E84CB387FB10778D8C327_AdjustorThunk },
+	{ 0x060000D3, AnimationScriptPlayable__ctor_m6DEFD72735E79009FC1484AA2A7A82E6CE601247_AdjustorThunk },
+	{ 0x060000D4, AnimationScriptPlayable_GetHandle_m30355B6EE1AA3BA36D628251FB4291386D223646_AdjustorThunk },
+	{ 0x060000D5, AnimationScriptPlayable_Equals_mAD02E40704CBE4AB188DE0569052F8EA9864F4E4_AdjustorThunk },
+	{ 0x060000D7, AnimatorControllerPlayable__ctor_mBCB9475E2740BE1AEB94C08BAD14D51333258BFE_AdjustorThunk },
+	{ 0x060000D8, AnimatorControllerPlayable_GetHandle_m718D9A4E0DB7AC62947B1D09E47DBCD25C27AF6C_AdjustorThunk },
+	{ 0x060000D9, AnimatorControllerPlayable_SetHandle_mD86A3C0D03453FAF21903F7A52A743AB2DA6DED4_AdjustorThunk },
+	{ 0x060000DA, AnimatorControllerPlayable_Equals_m14125BB4CCFCDFFD098223AF20E38501BA264180_AdjustorThunk },
 };
-static const int32_t s_InvokerIndices[216] = 
+static const int32_t s_InvokerIndices[219] = 
 {
 	1783,
 	1783,
@@ -597,6 +603,7 @@ static const int32_t s_InvokerIndices[216] =
 	3789,
 	3756,
 	7371,
+	7318,
 	7371,
 	9293,
 	1744,
@@ -613,6 +620,7 @@ static const int32_t s_InvokerIndices[216] =
 	3789,
 	3756,
 	7371,
+	7318,
 	7371,
 	13678,
 	13678,
@@ -627,6 +635,7 @@ static const int32_t s_InvokerIndices[216] =
 	12044,
 	12042,
 	13111,
+	13114,
 	13111,
 	14186,
 	3773,
@@ -747,7 +756,7 @@ static const int32_t s_InvokerIndices[216] =
 };
 static const Il2CppTokenRangePair s_rgctxIndices[1] = 
 {
-	{ 0x060000B5, { 0, 2 } },
+	{ 0x060000B8, { 0, 2 } },
 };
 extern const uint32_t g_rgctx_U_t6A240D30A4B3E286D004C39E3892482214AD5F07;
 extern const Il2CppRGCTXConstrainedData g_rgctx_U_t6A240D30A4B3E286D004C39E3892482214AD5F07_IPlayable_GetHandle_m270FD2834B8DEE4CF323D5076D12384901236A5A;
@@ -760,7 +769,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_UnityEngine_AnimationModule_CodeGenM
 const Il2CppCodeGenModule g_UnityEngine_AnimationModule_CodeGenModule = 
 {
 	"UnityEngine.AnimationModule.dll",
-	216,
+	219,
 	s_methodPointers,
 	41,
 	s_adjustorThunks,

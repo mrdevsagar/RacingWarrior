@@ -64,14 +64,14 @@ public class PlayerAliveState : PlayerState
     {
         if (MoveInput.x != 0 || !LookInput.Equals(float.NaN))
         {
-            if (MoveInput.x > 0 && player.transform.localScale.x < 0 && LookInput.Equals(float.NaN))
+            /*if (MoveInput.x > 0 && player.transform.localScale.x < 0 && LookInput.Equals(float.NaN))
             {
                 player.FlipPlayer(true);
             }
             else if (MoveInput.x < 0 && player.transform.localScale.x > 0 && LookInput.Equals(float.NaN))
             {
                 player.FlipPlayer(false);
-            }
+            }*/
 
             if (((LookInput >= 0 && LookInput <= 90) || (LookInput >= 270 && LookInput <= 360)))
             {

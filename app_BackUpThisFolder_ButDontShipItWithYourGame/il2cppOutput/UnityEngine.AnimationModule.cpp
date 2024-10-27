@@ -1191,6 +1191,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Animator_get_hasRootMotion_Injected_mA0E
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_SetFloatString_m1AA50083AAAE1DFFA7FB64502EA106795D3756B4 (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, String_t* ___0_name, float ___1_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_SetBoolString_m08A0BC6717BF5FD3E43D3EFB2509E359C1196C00 (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, String_t* ___0_name, bool ___1_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_SetTriggerString_m177C75DFBE070DE66FC08A3232444CCEA409C25E (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, String_t* ___0_name, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_SetTriggerID_mCC0A74BF79A56BC1EA634641C64B8E527B0B49E7 (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, int32_t ___0_id, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_ResetTriggerString_m78259348CED35F156148A64B95EBD73CE3951868 (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, String_t* ___0_name, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Animator_get_layerCount_Injected_mCE7EC21A1E4E666CFCB427E9C5DDC4772DBB943E (intptr_t ___0__unity_self, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_GetAnimatorStateInfo_Injected_m2BC6D45B860E8FA3653AF66051A72786AA898DF8 (intptr_t ___0__unity_self, int32_t ___1_layerIndex, int32_t ___2_stateInfoIndex, AnimatorStateInfo_t1F47379289C7CE7FD588FBC3BBD79A777243B6B2* ___3_info, const RuntimeMethod* method) ;
@@ -1225,6 +1226,7 @@ inline Avatar_t7861E57EEE2CF8CC61BD63C09737BA22F7ABCA0F* Unmarshal_UnmarshalUnit
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_SetFloatString_Injected_m830E10D3273717048546631C421F46B03CEB8015 (intptr_t ___0__unity_self, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E* ___1_name, float ___2_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_SetBoolString_Injected_m52296144D160DC3F2C375FCC15B58645DFAED75B (intptr_t ___0__unity_self, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E* ___1_name, bool ___2_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_SetTriggerString_Injected_mD98E28EFCD06D8ED7188F7CD7D268E73ADD36ED1 (intptr_t ___0__unity_self, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E* ___1_name, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_SetTriggerID_Injected_m90910EEC7A52E23FC4D856D2208F1A3402B3AD74 (intptr_t ___0__unity_self, int32_t ___1_id, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_ResetTriggerString_Injected_m3A9C4A49F7FAD1DD3553B58D4CE5FEF57C15D32A (intptr_t ___0__unity_self, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E* ___1_name, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void OnOverrideControllerDirtyCallback_Invoke_m538DCB0FFFE75495DC3977DBBF55A07C570F8B5A_inline (OnOverrideControllerDirtyCallback_tDC67F7661A27502AD804BDE0B696955AFD4A44D5* __this, const RuntimeMethod* method) ;
 inline intptr_t MarshalledUnityObject_MarshalNotNull_TisAvatar_t7861E57EEE2CF8CC61BD63C09737BA22F7ABCA0F_m664527E3EAD85B5AE321227240B836D03A7F25D9_inline (Avatar_t7861E57EEE2CF8CC61BD63C09737BA22F7ABCA0F* ___0_obj, const RuntimeMethod* method)
@@ -3103,6 +3105,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_SetTrigger_mC9CD54D627C8843EF6E
 		return;
 	}
 }
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_SetTrigger_m2D9CACEFDE11FF9DB99207B5CBD251C1EC047939 (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, int32_t ___0_id, const RuntimeMethod* method) 
+{
+	{
+		int32_t L_0 = ___0_id;
+		Animator_SetTriggerID_mCC0A74BF79A56BC1EA634641C64B8E527B0B49E7(__this, L_0, NULL);
+		return;
+	}
+}
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_ResetTrigger_m8DCA67D5A6B56702E3FAD4E18243E194B71297CC (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, String_t* ___0_name, const RuntimeMethod* method) 
 {
 	{
@@ -3816,6 +3826,41 @@ IL_0047:
 		return;
 	}
 }
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_SetTriggerID_mCC0A74BF79A56BC1EA634641C64B8E527B0B49E7 (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, int32_t ___0_id, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&MarshalledUnityObject_MarshalNotNull_TisAnimator_t8A52E42AE54F76681838FE9E632683EF3952E883_m7B071EDE70A999827D66796CB3D8C40800E84206_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	intptr_t G_B2_0;
+	memset((&G_B2_0), 0, sizeof(G_B2_0));
+	intptr_t G_B1_0;
+	memset((&G_B1_0), 0, sizeof(G_B1_0));
+	{
+		intptr_t L_0;
+		L_0 = MarshalledUnityObject_MarshalNotNull_TisAnimator_t8A52E42AE54F76681838FE9E632683EF3952E883_m7B071EDE70A999827D66796CB3D8C40800E84206_inline(__this, MarshalledUnityObject_MarshalNotNull_TisAnimator_t8A52E42AE54F76681838FE9E632683EF3952E883_m7B071EDE70A999827D66796CB3D8C40800E84206_RuntimeMethod_var);
+		intptr_t L_1 = L_0;
+		if (L_1)
+		{
+			G_B2_0 = L_1;
+			goto IL_000f;
+		}
+		G_B1_0 = L_1;
+	}
+	{
+		ThrowHelper_ThrowNullReferenceException_mA9C7629D32240EE0218631933DAC647668CA63CF(__this, NULL);
+		G_B2_0 = G_B1_0;
+	}
+
+IL_000f:
+	{
+		int32_t L_2 = ___0_id;
+		Animator_SetTriggerID_Injected_m90910EEC7A52E23FC4D856D2208F1A3402B3AD74(G_B2_0, L_2, NULL);
+		return;
+	}
+}
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_ResetTriggerString_m78259348CED35F156148A64B95EBD73CE3951868 (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, String_t* ___0_name, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4022,6 +4067,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_SetTriggerString_Injected_mD98E
 	if (!_il2cpp_icall_func)
 	_il2cpp_icall_func = (Animator_SetTriggerString_Injected_mD98E28EFCD06D8ED7188F7CD7D268E73ADD36ED1_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Animator::SetTriggerString_Injected(System.IntPtr,UnityEngine.Bindings.ManagedSpanWrapper&)");
 	_il2cpp_icall_func(___0__unity_self, ___1_name);
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_SetTriggerID_Injected_m90910EEC7A52E23FC4D856D2208F1A3402B3AD74 (intptr_t ___0__unity_self, int32_t ___1_id, const RuntimeMethod* method) 
+{
+	typedef void (*Animator_SetTriggerID_Injected_m90910EEC7A52E23FC4D856D2208F1A3402B3AD74_ftn) (intptr_t, int32_t);
+	static Animator_SetTriggerID_Injected_m90910EEC7A52E23FC4D856D2208F1A3402B3AD74_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (Animator_SetTriggerID_Injected_m90910EEC7A52E23FC4D856D2208F1A3402B3AD74_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Animator::SetTriggerID_Injected(System.IntPtr,System.Int32)");
+	_il2cpp_icall_func(___0__unity_self, ___1_id);
 }
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_ResetTriggerString_Injected_m3A9C4A49F7FAD1DD3553B58D4CE5FEF57C15D32A (intptr_t ___0__unity_self, ManagedSpanWrapper_tE7FC4BBB631B130757F8DEB15853D98FD3D5DC0E* ___1_name, const RuntimeMethod* method) 
 {

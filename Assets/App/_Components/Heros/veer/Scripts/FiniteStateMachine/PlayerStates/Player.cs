@@ -68,17 +68,6 @@ public class Player : MonoBehaviour
 
     public bool IsPlayerLeftFacing = false;
 
-    [SerializeField]
-    private GameObject RightCineMachineCamera;
-    [SerializeField]
-    private GameObject LeftCineMachineCamera;
-    [SerializeField]
-    private GameObject BottomRightCineMachineCamera;
-    [SerializeField]
-    private GameObject BottomLeftCineMachineCamera;
-
-
-    private List<GameObject> vertualCMCList;
 
     /// <summary>
     /// Components of Player and Weapons
@@ -170,14 +159,7 @@ public class Player : MonoBehaviour
         PlayerStateMachine.Initialize(IdleState);
         WeaponStateMachine.Initialize(WeaponFistState);
 
-        vertualCMCList = new List<GameObject>
-        {
-            RightCineMachineCamera,
-            BottomRightCineMachineCamera,
-            LeftCineMachineCamera,
-            BottomLeftCineMachineCamera
-        };
-
+       
 #if UNITY_ANDROID && !UNITY_EDITOR
                 if (JumpButton != null)
                 {
@@ -189,6 +171,16 @@ public class Player : MonoBehaviour
 
     }
 
+    private void OnEnable()
+    {
+        Anim.enabled = true;
+    }
+
+    private void OnDisable()
+    {
+        Anim.enabled = false;
+    }
+
     private void Update()
     {
         PlayerStateMachine.CurrentState.LogicUpdate();
@@ -196,8 +188,6 @@ public class Player : MonoBehaviour
 
         if (!input.LookInput.Equals(float.NaN))
         {
-            ChangeCameraPosition(true);
-
             if (input.LookInput > 0.02f)
             {
                 ManuallyCancelPress();
@@ -288,7 +278,6 @@ public class Player : MonoBehaviour
         {
             transform.localScale = new Vector3(-0.5f, 0.5f, 0f);
         }
-        ChangeCameraPosition(isRightFacing);
     }
 
     public void SwordMovement()
@@ -422,55 +411,7 @@ public class Player : MonoBehaviour
     #endregion
 
     #region Private Methods
-    private void ChangeCameraPosition(bool isRightFacing)
-    {
-        return;
-
-        float angle = input.LookInput;
-
-
-        if ((angle >= 0 && angle < 90) || (angle >= 350 && angle < 360))
-        {
-            EnableSelectedVCMC(RightCineMachineCamera);
-        }
-        else if (angle >= 90 && angle < 190)
-        {
-            EnableSelectedVCMC(LeftCineMachineCamera);
-        }
-        else if (angle >= 190 && angle < 270)
-        {
-            EnableSelectedVCMC(BottomLeftCineMachineCamera);
-        }
-        else if (angle >= 270 && angle < 350)
-        {
-            EnableSelectedVCMC(BottomRightCineMachineCamera);
-        }
-        else
-        {
-            RightCineMachineCamera.SetActive(isRightFacing);
-            LeftCineMachineCamera.SetActive(!isRightFacing);
-            BottomRightCineMachineCamera.SetActive(false);
-            BottomLeftCineMachineCamera.SetActive(false);
-        }
-
-        void EnableSelectedVCMC(GameObject toEnable)
-        {
-
-            foreach (GameObject obj in vertualCMCList)
-            {
-                if (obj == toEnable)
-                {
-                    obj.SetActive(true);
-                }
-                else
-                {
-                    obj.SetActive(false);
-                }
-            }
-        }
-
-    }
-
+    
     public void SwitchWeapon()
     {
             SelectedWeapon++;
