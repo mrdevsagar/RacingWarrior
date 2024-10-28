@@ -10,7 +10,9 @@ public class VehicleCollisionHandler : MonoBehaviour
 
     public LayerMask hitLayersTop;
 
+
     public Drive drive;
+
 
 
     private Rigidbody2D RB;
@@ -41,7 +43,8 @@ public class VehicleCollisionHandler : MonoBehaviour
         }
 
         // OnEnter: If we just hit a new object
-        if (currentHitRight != null  && RB.velocityX > 0)
+        /* if (currentHitRight != null  && RB.velocityX > 0)*/
+        if (currentHitRight != null)
         {
             Slope slopeRight = currentHitRight.gameObject.GetComponent<Slope>();
             EnableSlopeTop(slopeRight, false);
@@ -80,7 +83,8 @@ public class VehicleCollisionHandler : MonoBehaviour
             currentHitLeft = hitLeft.collider;
         }
 
-        if (currentHitLeft != null  && RB.velocityX < 0)
+        /*if (currentHitLeft != null  && RB.velocityX < 0)*/
+        if (currentHitLeft != null)
         {
                 Slope slopeLeft = currentHitLeft.gameObject.GetComponent<Slope>();
                 EnableSlopeTop(slopeLeft, false);
