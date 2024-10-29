@@ -60,12 +60,17 @@ public class WeaponBowState : WeaponState
 
         float handRotationAngle = angle;
 
+        if (!player.input.IsTouching)
+        {
+            _isFirstArrow = true;
+        }
+
         if (angle.Equals(float.NaN))
         {
             player.Comp.Bow.BowTopCCDIK.weight = 0;
             player.Comp.Bow.BowBottomCCDIK.weight = 0;
             isFiring = false;
-            /*_isFirstArrow = true;*/
+            _isFirstArrow = true;
         }
         else
         {
@@ -76,23 +81,23 @@ public class WeaponBowState : WeaponState
             if (distance > 0.1f && distance < 0.985f && player.input.IsTouching)
             {
                 isFiring = false;
+                _isFirstArrow = true;
                 MoveArrow(distance, angle);
+
             }
-           /* else 
-            if (isFiring)
+            else
+            if (isFiring && _isFirstArrow)
             {
-                if (!isFiring && IsArrowAvailable)
-                {
-                    FireArrow(distance, angle);
-                    isFiring = true;
-                }
-            }*/
+                _isFirstArrow = false;
+                 FireArrow(distance, angle);
+                HandPull(0, angle);
+            }
 
             if (isFiring && player.input.IsTouching)
             {
                 if (_isFirstArrow)
                 {
-                    customDistance += 0.982f;
+                    customDistance += 0.986f;
                 } 
                  
                 customDistance += Time.deltaTime;

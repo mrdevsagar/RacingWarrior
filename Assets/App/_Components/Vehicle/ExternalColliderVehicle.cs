@@ -18,6 +18,8 @@ public class ExternalColliderVehicle : MonoBehaviour
 
     public bool isExternalCollider2;
 
+    public float VehicleSpeed = 10f;
+
 
     private void Awake()
     {
@@ -108,7 +110,7 @@ public class ExternalColliderVehicle : MonoBehaviour
     private void Update()
     {
 
-        if ((drive.VehicleRB.velocity.x > 15 && isExternalCollider2) || (drive.VehicleRB.velocity.x < -15 && isExternalCollider2) || (drive.VehicleRB.velocity.x <= 15 && !isExternalCollider2) || (drive.VehicleRB.velocity.x >= -15 && !isExternalCollider2))
+        if ((drive.VehicleRB.velocity.x > VehicleSpeed && isExternalCollider2) || (drive.VehicleRB.velocity.x < -VehicleSpeed && isExternalCollider2) || (drive.VehicleRB.velocity.x <= VehicleSpeed && !isExternalCollider2) || (drive.VehicleRB.velocity.x >= -VehicleSpeed && !isExternalCollider2))
         {
             if (CurrentRightSlope != null && drive.input.MoveInput.x > 0 && drive.input.MoveInput.y < 0)
             {

@@ -115,6 +115,8 @@ public class Player : MonoBehaviour
 
     public List<GameObject> VehicleNearByList;
 
+    private CapsuleCollider2D _capsuleCollider;
+
    /* [TagSelectorDropdown]*/
     private string ExternalVehicleColliderTag = "ExternalColliderVehicle";
 
@@ -148,6 +150,10 @@ public class Player : MonoBehaviour
         DisabledSlopeObjects = new List<GameObject>();
 
         PlayerCollider.sharedMaterial = physicsMaterial;
+
+        CanvasController.SwitchControls(true);
+
+        
     }
 
     private void Start()
@@ -168,17 +174,38 @@ public class Player : MonoBehaviour
 #endif
 
         CameraSwitcher.TriggerSwitchToPlayer(gameObject);
-
+        _capsuleCollider = GetComponent<CapsuleCollider2D>();
     }
 
     private void OnEnable()
     {
         Anim.enabled = true;
+        CanvasController.SwitchControls(true);
+        ResetCollider(_capsuleCollider);
     }
 
     private void OnDisable()
     {
         Anim.enabled = false;
+        CanvasController.SwitchControls(false);
+        ResetCollider(_capsuleCollider);
+    }
+
+    private void ResetCollider(CapsuleCollider2D capsuleCollider)
+    {
+        if (capsuleCollider != null)
+        {
+            Debug.LogWarning("setting value");
+            // Set the size (width, height) of the CapsuleCollider2D
+            capsuleCollider.size = new Vector2(0.9f, 3.02f); // Example values for size
+
+            // Set the offset of the CapsuleCollider2D
+            capsuleCollider.offset = new Vector2(0, 1.06f); // Example values for offset
+        }
+        else
+        {
+            Debug.LogWarning("No CapsuleCollider2D found on this GameObject.");
+        }
     }
 
     private void Update()
@@ -211,7 +238,8 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       
+     
+        
         if (collision.gameObject.CompareTag(ExternalVehicleColliderTag))
         {
            /* Debug.LogWarning(collision.gameObject.tag);*/
@@ -224,6 +252,13 @@ public class Player : MonoBehaviour
             }
         }
 
+        if (VehicleNearByList.Count > 0)
+        {
+            CanvasController.IsPlayerNearVehicle(true);
+        } else
+        {
+            CanvasController.IsPlayerNearVehicle(false);
+        }
     }
 
     public void GetInsideVehicle()
@@ -239,6 +274,11 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag(ExternalVehicleColliderTag))
         {
             VehicleNearByList.Remove(collision?.gameObject?.transform?.parent?.gameObject?.transform?.parent?.gameObject);
+        }
+
+        if (VehicleNearByList.Count == 0)
+        {
+            CanvasController.IsPlayerNearVehicle(false);
         }
     }
 

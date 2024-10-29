@@ -68,7 +68,7 @@ public class ArrowStick : MonoBehaviour
             rb.isKinematic = true;
             /*Destroy(col);*/
            /* Destroy(rb);*/
-            Debug.LogWarning(collision.gameObject.name);
+           
             transform.parent = collision.transform;
 
             spriteRenderer.sortingOrder = collision.gameObject.GetComponent<SpriteRenderer>().sortingOrder -1;

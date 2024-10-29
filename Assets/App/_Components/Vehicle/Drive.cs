@@ -49,6 +49,14 @@ public class Drive : MonoBehaviour
         _driverGameobject.SetActive(false);
     }
 
+   /* private void OnEnable()
+    {
+        CanvasController.SwitchControls(false);
+    }
+    private void OnDisable()
+    {
+        CanvasController.SwitchControls(true);
+    }*/
 
     public void RotateObject(CanvasController.RotationDirection direction)
     {
