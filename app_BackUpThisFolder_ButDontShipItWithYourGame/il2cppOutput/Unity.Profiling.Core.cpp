@@ -40,16 +40,6 @@ struct EmbeddedAttribute_t2162DE2BA28C5C71F9EE2BAE3466A44381F0A0BB  : public Att
 struct IsUnmanagedAttribute_t613A5BF19DFA2D6776C1DF030C7AD37F7AF8E4EE  : public Attribute_tFDA8EFEFB0711976D22474794576DAF28F7440AA
 {
 };
-struct ProfilerUtility_t5676CF83C31844AFB62A5195951EB25001461312 
-{
-	union
-	{
-		struct
-		{
-		};
-		uint8_t ProfilerUtility_t5676CF83C31844AFB62A5195951EB25001461312__padding[1];
-	};
-};
 struct Void_t4861ACF8F4594C3437BB48B6E56783494B843915 
 {
 	union
@@ -102,14 +92,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IsUnmanagedAttribute__ctor_mC550690DDF4A
 		return;
 	}
 }
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif

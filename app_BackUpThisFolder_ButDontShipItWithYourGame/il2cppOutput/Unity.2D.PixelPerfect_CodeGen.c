@@ -34,7 +34,6 @@ extern void PixelPerfectCamera_OnPreRender_m0DF9E768A68EEF80ABB6951FD1E0AFF89391
 extern void PixelPerfectCamera_OnPostRender_m9BC0CE38B0F281C31DADDB7097ECC1E95D83CC25 (void);
 extern void PixelPerfectCamera_OnEnable_m38F3E385ECADF00606C9E3C602188C93E6A17EB2 (void);
 extern void PixelPerfectCamera_OnDisable_m7338FD1B80302BBE823F88744B11F8B0169857A6 (void);
-extern void PixelPerfectCamera_OnGUI_m4AC740BB982B08D2C63F428B9638FC9B2BC4664A (void);
 extern void PixelPerfectCamera__ctor_mD0A0A89A62DDE239CD452527B084826C38349C65 (void);
 extern void PixelPerfectCameraInternal__ctor_m9BA2244B557EA69E48A85D9C66B7C99C45A4C0F5 (void);
 extern void PixelPerfectCameraInternal_OnBeforeSerialize_m619B674B64C11A49C5CFC75F7E1CE5C4E2E7F89F (void);
@@ -42,7 +41,7 @@ extern void PixelPerfectCameraInternal_OnAfterDeserialize_mDACB77CE1C48E71D52E67
 extern void PixelPerfectCameraInternal_CalculateCameraProperties_m0C1A9F48317FBD0710DCEF29FB7D4B7ECEADE4F7 (void);
 extern void PixelPerfectCameraInternal_CalculatePostRenderPixelRect_mC41F2F6B554C0E28AB9344868E3B887118221B39 (void);
 extern void PixelPerfectCameraInternal_CorrectCinemachineOrthoSize_mCD4C1B0EBDC7FBDE0A17AA8BE4F5EC1ABD574CED (void);
-static Il2CppMethodPointer s_methodPointers[43] = 
+static Il2CppMethodPointer s_methodPointers[42] = 
 {
 	PixelPerfectCamera_get_assetsPPU_m7236DCB6650FD2F31B83FBE71FAA1C57F8E5CD82,
 	PixelPerfectCamera_set_assetsPPU_mB5C7A2D57479E53699EA35659B246E9A8FFC5B73,
@@ -71,7 +70,6 @@ static Il2CppMethodPointer s_methodPointers[43] =
 	PixelPerfectCamera_OnPostRender_m9BC0CE38B0F281C31DADDB7097ECC1E95D83CC25,
 	PixelPerfectCamera_OnEnable_m38F3E385ECADF00606C9E3C602188C93E6A17EB2,
 	PixelPerfectCamera_OnDisable_m7338FD1B80302BBE823F88744B11F8B0169857A6,
-	PixelPerfectCamera_OnGUI_m4AC740BB982B08D2C63F428B9638FC9B2BC4664A,
 	PixelPerfectCamera__ctor_mD0A0A89A62DDE239CD452527B084826C38349C65,
 	NULL,
 	NULL,
@@ -88,37 +86,36 @@ static Il2CppMethodPointer s_methodPointers[43] =
 	PixelPerfectCameraInternal_CalculatePostRenderPixelRect_mC41F2F6B554C0E28AB9344868E3B887118221B39,
 	PixelPerfectCameraInternal_CorrectCinemachineOrthoSize_mCD4C1B0EBDC7FBDE0A17AA8BE4F5EC1ABD574CED,
 };
-static const int32_t s_InvokerIndices[43] = 
+static const int32_t s_InvokerIndices[42] = 
 {
-	9294,
-	7319,
-	9294,
-	7319,
-	9294,
-	7319,
-	9197,
-	7222,
-	9197,
-	7222,
-	9197,
-	7222,
-	9197,
-	7222,
-	9197,
-	7222,
-	9294,
-	6553,
-	6399,
-	9507,
-	9507,
-	9507,
-	9507,
-	9507,
-	9507,
-	9507,
-	9507,
-	9507,
-	9507,
+	9029,
+	7160,
+	9029,
+	7160,
+	9029,
+	7160,
+	8932,
+	7063,
+	8932,
+	7063,
+	8932,
+	7063,
+	8932,
+	7063,
+	8932,
+	7063,
+	9029,
+	6468,
+	6314,
+	9241,
+	9241,
+	9241,
+	9241,
+	9241,
+	9241,
+	9241,
+	9241,
+	9241,
 	-1,
 	-1,
 	-1,
@@ -127,18 +124,18 @@ static const int32_t s_InvokerIndices[43] =
 	-1,
 	-1,
 	-1,
-	7372,
-	9507,
-	9507,
-	3392,
-	1575,
-	6399,
+	7213,
+	9241,
+	9241,
+	3355,
+	1559,
+	6314,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_Unity_2D_PixelPerfect_CodeGenModule;
 const Il2CppCodeGenModule g_Unity_2D_PixelPerfect_CodeGenModule = 
 {
 	"Unity.2D.PixelPerfect.dll",
-	43,
+	42,
 	s_methodPointers,
 	0,
 	NULL,

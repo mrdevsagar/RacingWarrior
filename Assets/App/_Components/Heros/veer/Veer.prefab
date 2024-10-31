@@ -3112,7 +3112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63351f06d7d06084eb1c372b865fc5dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Anim: {fileID: 341550683109811737}
   _playerData: {fileID: 11400000, guid: dc5515bf38edd8f46bdd2ed147a20cc0, type: 2}
   input: {fileID: 8538570097376018864}
   WeaponData: {fileID: 11400000, guid: f3bfd052ad7d8d14987fa414e7251d1b, type: 2}
@@ -3121,10 +3120,6 @@ MonoBehaviour:
   maxPressTime: 0.2
   IsWalkingBackward: 0
   IsPlayerLeftFacing: 0
-  RightCineMachineCamera: {fileID: 0}
-  LeftCineMachineCamera: {fileID: 0}
-  BottomRightCineMachineCamera: {fileID: 0}
-  BottomLeftCineMachineCamera: {fileID: 0}
   Comp:
     Body:
       Head: {fileID: 5339466511437472020}

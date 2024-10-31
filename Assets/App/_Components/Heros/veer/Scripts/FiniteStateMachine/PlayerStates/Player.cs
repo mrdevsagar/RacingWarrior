@@ -182,11 +182,36 @@ public class Player : MonoBehaviour
         Anim.enabled = true;
         CanvasController.SwitchControls(true);
         ResetCollider(_capsuleCollider);
+
+        Anim.speed = 1;
+
+        // For layer 0
+        AnimatorStateInfo stateInfoLayer0 = Anim.GetCurrentAnimatorStateInfo(0);
+        Anim.Play(stateInfoLayer0.fullPathHash, 0, 0f); // Start from the beginning
+
+        // For layer 1
+        AnimatorStateInfo stateInfoLayer1 = Anim.GetCurrentAnimatorStateInfo(1);
+        Anim.Play(stateInfoLayer1.fullPathHash, 1, 0f);
     }
 
     private void OnDisable()
     {
+       
+
+        float endOfAnimation = 0f;
+
+        // For layer 0
+        AnimatorStateInfo stateInfoLayer0 = Anim.GetCurrentAnimatorStateInfo(0);
+        Anim.Play(stateInfoLayer0.fullPathHash, 0, endOfAnimation);
+
+        // For layer 1
+        AnimatorStateInfo stateInfoLayer1 = Anim.GetCurrentAnimatorStateInfo(1);
+        Anim.Play(stateInfoLayer1.fullPathHash, 1, endOfAnimation);
+
+        Anim.speed = 0;
+
         Anim.enabled = false;
+
         CanvasController.SwitchControls(false);
         ResetCollider(_capsuleCollider);
     }

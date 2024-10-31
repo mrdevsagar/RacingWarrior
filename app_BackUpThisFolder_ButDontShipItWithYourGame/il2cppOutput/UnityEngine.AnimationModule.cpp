@@ -1200,6 +1200,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArgumentNullException__ctor_m444AE141157
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_GetAnimatorClipInfoInternal_m98028420AD065F1B6F3DC2EB4C6C2A42B8567600 (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, int32_t ___0_layerIndex, bool ___1_isCurrent, RuntimeObject* ___2_clips, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_GetAnimatorClipInfoInternal_Injected_m8774A7F83D2EF203F9288B32B9A3A00D58D5B192 (intptr_t ___0__unity_self, int32_t ___1_layerIndex, bool ___2_isCurrent, RuntimeObject* ___3_clips, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Animator_IsInTransition_Injected_m757CE2468B95386E7DEA0F6552C953061B440126 (intptr_t ___0__unity_self, int32_t ___1_layerIndex, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_set_speed_Injected_mE41FA1AC5C2BF3CE474839EFEA07590E5C381EF8 (intptr_t ___0__unity_self, float ___1_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_Play_Injected_m9E85E31420EFCDC66D1244A0B58C589E6487B6FF (intptr_t ___0__unity_self, int32_t ___1_stateNameHash, int32_t ___2_layer, float ___3_normalizedTime, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Animator_get_runtimeAnimatorController_Injected_m2FCF48593920056E475FE66F8BD49352D48ECFDF (intptr_t ___0__unity_self, const RuntimeMethod* method) ;
 inline RuntimeAnimatorController_t6F7C753402B42EC23C163099CF935C5E0D7A7254* Unmarshal_UnmarshalUnityObject_TisRuntimeAnimatorController_t6F7C753402B42EC23C163099CF935C5E0D7A7254_m02BC2E19FB4BB93BD06E961F46D02AA36197C5E5_inline (intptr_t ___0_gcHandlePtr, const RuntimeMethod* method)
 {
@@ -3358,6 +3360,78 @@ IL_000f:
 		return L_3;
 	}
 }
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_set_speed_m933F4D6770122BC9D8A7FF82DE1CD33D514379FC (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, float ___0_value, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&MarshalledUnityObject_MarshalNotNull_TisAnimator_t8A52E42AE54F76681838FE9E632683EF3952E883_m7B071EDE70A999827D66796CB3D8C40800E84206_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	intptr_t G_B2_0;
+	memset((&G_B2_0), 0, sizeof(G_B2_0));
+	intptr_t G_B1_0;
+	memset((&G_B1_0), 0, sizeof(G_B1_0));
+	{
+		intptr_t L_0;
+		L_0 = MarshalledUnityObject_MarshalNotNull_TisAnimator_t8A52E42AE54F76681838FE9E632683EF3952E883_m7B071EDE70A999827D66796CB3D8C40800E84206_inline(__this, MarshalledUnityObject_MarshalNotNull_TisAnimator_t8A52E42AE54F76681838FE9E632683EF3952E883_m7B071EDE70A999827D66796CB3D8C40800E84206_RuntimeMethod_var);
+		intptr_t L_1 = L_0;
+		if (L_1)
+		{
+			G_B2_0 = L_1;
+			goto IL_000f;
+		}
+		G_B1_0 = L_1;
+	}
+	{
+		ThrowHelper_ThrowNullReferenceException_mA9C7629D32240EE0218631933DAC647668CA63CF(__this, NULL);
+		G_B2_0 = G_B1_0;
+	}
+
+IL_000f:
+	{
+		float L_2 = ___0_value;
+		Animator_set_speed_Injected_mE41FA1AC5C2BF3CE474839EFEA07590E5C381EF8(G_B2_0, L_2, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_Play_m3011727F1A3F331EE7F5D7CF9B98EFEADE547BBD (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, int32_t ___0_stateNameHash, int32_t ___1_layer, float ___2_normalizedTime, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&MarshalledUnityObject_MarshalNotNull_TisAnimator_t8A52E42AE54F76681838FE9E632683EF3952E883_m7B071EDE70A999827D66796CB3D8C40800E84206_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	intptr_t G_B2_0;
+	memset((&G_B2_0), 0, sizeof(G_B2_0));
+	intptr_t G_B1_0;
+	memset((&G_B1_0), 0, sizeof(G_B1_0));
+	{
+		intptr_t L_0;
+		L_0 = MarshalledUnityObject_MarshalNotNull_TisAnimator_t8A52E42AE54F76681838FE9E632683EF3952E883_m7B071EDE70A999827D66796CB3D8C40800E84206_inline(__this, MarshalledUnityObject_MarshalNotNull_TisAnimator_t8A52E42AE54F76681838FE9E632683EF3952E883_m7B071EDE70A999827D66796CB3D8C40800E84206_RuntimeMethod_var);
+		intptr_t L_1 = L_0;
+		if (L_1)
+		{
+			G_B2_0 = L_1;
+			goto IL_000f;
+		}
+		G_B1_0 = L_1;
+	}
+	{
+		ThrowHelper_ThrowNullReferenceException_mA9C7629D32240EE0218631933DAC647668CA63CF(__this, NULL);
+		G_B2_0 = G_B1_0;
+	}
+
+IL_000f:
+	{
+		int32_t L_2 = ___0_stateNameHash;
+		int32_t L_3 = ___1_layer;
+		float L_4 = ___2_normalizedTime;
+		Animator_Play_Injected_m9E85E31420EFCDC66D1244A0B58C589E6487B6FF(G_B2_0, L_2, L_3, L_4, NULL);
+		return;
+	}
+}
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeAnimatorController_t6F7C753402B42EC23C163099CF935C5E0D7A7254* Animator_get_runtimeAnimatorController_mE10F46F893A630D1AE846EF66DC2769E3ECE5AB8 (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4007,6 +4081,22 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Animator_IsInTransition_Injected_m757CE2
 	_il2cpp_icall_func = (Animator_IsInTransition_Injected_m757CE2468B95386E7DEA0F6552C953061B440126_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Animator::IsInTransition_Injected(System.IntPtr,System.Int32)");
 	bool icallRetVal = _il2cpp_icall_func(___0__unity_self, ___1_layerIndex);
 	return icallRetVal;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_set_speed_Injected_mE41FA1AC5C2BF3CE474839EFEA07590E5C381EF8 (intptr_t ___0__unity_self, float ___1_value, const RuntimeMethod* method) 
+{
+	typedef void (*Animator_set_speed_Injected_mE41FA1AC5C2BF3CE474839EFEA07590E5C381EF8_ftn) (intptr_t, float);
+	static Animator_set_speed_Injected_mE41FA1AC5C2BF3CE474839EFEA07590E5C381EF8_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (Animator_set_speed_Injected_mE41FA1AC5C2BF3CE474839EFEA07590E5C381EF8_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Animator::set_speed_Injected(System.IntPtr,System.Single)");
+	_il2cpp_icall_func(___0__unity_self, ___1_value);
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_Play_Injected_m9E85E31420EFCDC66D1244A0B58C589E6487B6FF (intptr_t ___0__unity_self, int32_t ___1_stateNameHash, int32_t ___2_layer, float ___3_normalizedTime, const RuntimeMethod* method) 
+{
+	typedef void (*Animator_Play_Injected_m9E85E31420EFCDC66D1244A0B58C589E6487B6FF_ftn) (intptr_t, int32_t, int32_t, float);
+	static Animator_Play_Injected_m9E85E31420EFCDC66D1244A0B58C589E6487B6FF_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (Animator_Play_Injected_m9E85E31420EFCDC66D1244A0B58C589E6487B6FF_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Animator::Play_Injected(System.IntPtr,System.Int32,System.Int32,System.Single)");
+	_il2cpp_icall_func(___0__unity_self, ___1_stateNameHash, ___2_layer, ___3_normalizedTime);
 }
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Animator_get_runtimeAnimatorController_Injected_m2FCF48593920056E475FE66F8BD49352D48ECFDF (intptr_t ___0__unity_self, const RuntimeMethod* method) 
 {
