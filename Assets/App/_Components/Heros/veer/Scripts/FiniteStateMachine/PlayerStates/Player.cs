@@ -17,13 +17,14 @@ public class Player : MonoBehaviour
     public PlayerInAirState InAirState { get; private set; }
 
 
-    public WeaponStateMachine WeaponStateMachine { get; private set; }
+    public WeaponStateMachine WeaponStateMachine;
 
     public WeaponFistState WeaponFistState { get; private set; }
     public WeaponGlovesState WeaponGlovesState { get; private set; }
     public WeaponSwordState WeaponSwordState { get; private set; }
 
-    public WeaponPistolState WeaponPistolState { get; private set; }
+
+    public WeaponPistolState WeaponPistolState;
 
     public WeaponRifleState WeaponRifleState { get; private set; }
 
@@ -125,17 +126,21 @@ public class Player : MonoBehaviour
     #region Unity Callback functions
 
 
+    public bool isDemo;
+
     private void Awake()
     {
         PlayerStateMachine = new PlayerStateMachine();
-
+        Debug.Log("jiiiiii55555");
+        Debug.Log(PlayerStateMachine);
         IdleState = new PlayerIdleState(this, PlayerStateMachine, _playerData, "BodyIdle", "LegsIdle");
         MoveState = new PlayerMoveState(this, PlayerStateMachine, _playerData, "BodyWalk", "LegsWalk");
         InAirState = new PlayerInAirState(this, PlayerStateMachine, _playerData, "BodyJump", "LegsJump");
 
-
+        
         WeaponStateMachine = new WeaponStateMachine();
-
+        Debug.Log("jiiiiii");
+        Debug.Log(WeaponStateMachine);
         WeaponFistState = new WeaponFistState(this, PlayerStateMachine, _playerData, WeaponData,null);
         WeaponGlovesState = new WeaponGlovesState(this, PlayerStateMachine, _playerData, WeaponData,Comp.Gloves.GlovesGameObj);
         WeaponSwordState = new WeaponSwordState(this, PlayerStateMachine, _playerData, WeaponData,Comp.Sword.SwordGameObj);
@@ -154,6 +159,7 @@ public class Player : MonoBehaviour
         CanvasController.SwitchControls(true);
 
         
+
     }
 
     private void Start()
@@ -175,23 +181,34 @@ public class Player : MonoBehaviour
 
         CameraSwitcher.TriggerSwitchToPlayer(gameObject);
         _capsuleCollider = GetComponent<CapsuleCollider2D>();
+
+        Debug.Log("jiiiiii0000000000000000000");
+        Debug.Log(WeaponStateMachine);
     }
 
     private void OnEnable()
     {
-        Anim.enabled = true;
+        /*Anim.enabled = true;*/
         CanvasController.SwitchControls(true);
         ResetCollider(_capsuleCollider);
 
-        Anim.speed = 1;
+       /* Anim.speed = 1;*/
 
-        // For layer 0
-        AnimatorStateInfo stateInfoLayer0 = Anim.GetCurrentAnimatorStateInfo(0);
-        Anim.Play(stateInfoLayer0.fullPathHash, 0, 0f); // Start from the beginning
+      
+        if (!isDemo)
+        {
+            // For layer 0
+            AnimatorStateInfo stateInfoLayer0 = Anim.GetCurrentAnimatorStateInfo(0);
 
-        // For layer 1
-        AnimatorStateInfo stateInfoLayer1 = Anim.GetCurrentAnimatorStateInfo(1);
-        Anim.Play(stateInfoLayer1.fullPathHash, 1, 0f);
+            // For layer 1
+            AnimatorStateInfo stateInfoLayer1 = Anim.GetCurrentAnimatorStateInfo(1);
+
+            Anim.Play(stateInfoLayer0.fullPathHash, 0, 0f); // Start from the beginning
+            Anim.Play(stateInfoLayer1.fullPathHash, 1, 0f);
+        }
+        
+
+        
     }
 
     private void OnDisable()
@@ -200,7 +217,7 @@ public class Player : MonoBehaviour
 
         float endOfAnimation = 0f;
 
-        // For layer 0
+    /*    // For layer 0
         AnimatorStateInfo stateInfoLayer0 = Anim.GetCurrentAnimatorStateInfo(0);
         Anim.Play(stateInfoLayer0.fullPathHash, 0, endOfAnimation);
 
@@ -210,7 +227,7 @@ public class Player : MonoBehaviour
 
         Anim.speed = 0;
 
-        Anim.enabled = false;
+        Anim.enabled = false;*/
 
         CanvasController.SwitchControls(false);
         ResetCollider(_capsuleCollider);
@@ -256,7 +273,8 @@ public class Player : MonoBehaviour
     }
 
     private void LateUpdate()
-    {
+    {/*
+        Debug.Log(WeaponStateMachine);*/
         PlayerStateMachine.CurrentState.PhysicsLateUpdate();
         WeaponStateMachine.CurrentWeaponState.PhysicsLateUpdate();
     }
@@ -480,7 +498,10 @@ public class Player : MonoBehaviour
     public void SwitchWeapon()
     {
             SelectedWeapon++;
-            
+
+        Debug.Log(SelectedWeapon);
+        Debug.Log(PlayerStateMachine);
+        Debug.Log(WeaponStateMachine);
             if(SelectedWeapon == WeaponTypes.SWORD )
             {
                 WeaponStateMachine.ChangeState(WeaponSwordState);

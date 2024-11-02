@@ -34,12 +34,16 @@ public class PlayerState
     {
         DoChecks();
 
-        
+        if (!player.isDemo)
+        {
             if (player.IsOverrideAnimation == false)
             {
                 player.Anim.SetBool(_animBodyBoolName, true);
             }
             player.Anim.SetBool(_animLegsBoolName, true);
+        }
+        
+            
 
         
 
@@ -48,8 +52,11 @@ public class PlayerState
 
     public virtual void Exit()
     {
-        player.Anim.SetBool(_animBodyBoolName, false);
-        player.Anim.SetBool(_animLegsBoolName, false);
+        if (!player.isDemo)
+        {
+            player.Anim.SetBool(_animBodyBoolName, false);
+            player.Anim.SetBool(_animLegsBoolName, false);
+        }
     }
 
     public virtual void LogicUpdate()
