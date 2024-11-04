@@ -13,3 +13,21 @@ MonoBehaviour:
   m_Name: WeaponData
   m_EditorClassIdentifier: 
   ArrowSpeed: 15
+  ParentRightHandTargetRifle: {fileID: 11400000, guid: 01ec86106354c9948b5f03890563b4ff, type: 2}
+  ParentLeftHandTargetRifle: {fileID: 11400000, guid: 06d95fa934c271341b6532389da4ff5d, type: 2}
+  RightArmRifle: {fileID: 11400000, guid: f0b388e2bc3e4ca4f8cf3ab505b9bfd6, type: 2}
+  RightFistRifle: {fileID: 11400000, guid: a931c71d073eb9441baea46dd2d4de37, type: 2}
+  LeftArmRifle: {fileID: 11400000, guid: 1c981621426c55a4fa8282c4026944f9, type: 2}
+  LeftFistRifle: {fileID: 11400000, guid: 544e846fa56421e448b1082bd6acf025, type: 2}
+  ParentRightHandTargetPistol: {fileID: 11400000, guid: 2c59168de4223074bbef5f76c918fee2, type: 2}
+  ParentLeftHandTargetPistol: {fileID: 11400000, guid: b1d73df70d22833459f53215579a02ce, type: 2}
+  RightArmPistol: {fileID: 11400000, guid: 47362e52066455444938550e276b5951, type: 2}
+  RightFistPistol: {fileID: 11400000, guid: 914fe50c52756394f800e7532bfb39c2, type: 2}
+  LeftArmPistol: {fileID: 11400000, guid: a186c5df6eb078740b977abbea8dd08a, type: 2}
+  LeftFistPistol: {fileID: 11400000, guid: aaf8856d2af884c4797c3ba720709e98, type: 2}
+  ParentRightHandTargetBow: {fileID: 11400000, guid: 58a0e3e590f76664299a57360a7ab3be, type: 2}
+  ParentLeftHandTargetBow: {fileID: 11400000, guid: d92e51655e8f9b841a978ed983fde8b9, type: 2}
+  RightArmBow: {fileID: 11400000, guid: 25de3333b33a0674e8c38c14590e32a9, type: 2}
+  RightFistBow: {fileID: 11400000, guid: d8b3f2aa4e2df854da10e008ac1f1bdb, type: 2}
+  LeftArmBow: {fileID: 11400000, guid: e129b36bd4d28c446b94d8470b848a68, type: 2}
+  LeftFistBow: {fileID: 11400000, guid: 1a0e8d2c93cfdb54899be15a3de2df86, type: 2}

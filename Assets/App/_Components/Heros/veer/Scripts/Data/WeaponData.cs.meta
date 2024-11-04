@@ -1,2 +1,17 @@
 fileFormatVersion: 2
 guid: 41e68517083c2d04a98661a7fc294e98
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - ParentRightHandTargetRifler: {instanceID: 0}
+  - ParentLeftHandTargetRifler: {instanceID: 0}
+  - RightArmRifler: {instanceID: 0}
+  - RightFistRifler: {instanceID: 0}
+  - LeftArmRifler: {instanceID: 0}
+  - LeftFistRifler: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

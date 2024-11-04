@@ -29,6 +29,13 @@ public class CanvasController : MonoBehaviour
     // Define the event
     public static event PlayerNearVehicleEvent OnPlayerNearVehicle;
 
+
+    // Define the delegate type for the event
+    public delegate void PlayerJump();
+    // Define the event
+    public static event PlayerJump OnPlayerJump;
+
+
     [SerializeField]
     private GameObject PlayerControls;
     [SerializeField]
@@ -74,6 +81,9 @@ public class CanvasController : MonoBehaviour
             GetInVehicleBtn_GO.SetActive(false);
         }
     }
+
+
+
 
     void Update()
     {
@@ -135,4 +145,6 @@ public class CanvasController : MonoBehaviour
         // Stop rotating when the button is released
         isRotatingRight = false;
     }
+
+
 }

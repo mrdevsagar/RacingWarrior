@@ -59,6 +59,9 @@ public class Body
     public Transform AnimRightArmTarget;
     [SerializeField]
     public Transform AnimRightFistTarget;
+
+    [SerializeField]
+    public Transform Targets;
 }
 
 [System.Serializable]

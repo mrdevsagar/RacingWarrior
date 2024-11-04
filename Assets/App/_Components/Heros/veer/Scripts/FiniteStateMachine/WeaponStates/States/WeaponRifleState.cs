@@ -16,7 +16,23 @@ public class WeaponRifleState : WeaponState
         base.Enter();
         player.Anim.SetFloat("BlendIdle", 2);
 
-        
+        player.Comp.Rifle.P_AKM_Parent_RightHandTarget.transform.parent = player.Comp.Body.Targets;
+
+        player.Comp.Rifle.P_AKM_LeftArmTarget.transform.parent = player.Comp.Rifle.AkmGameObj.transform;
+        player.Comp.Rifle.P_AKM_LeftFistTarget.transform.parent = player.Comp.Rifle.AkmGameObj.transform;
+
+
+        player.Comp.Rifle.P_AKM_Parent_RightHandTarget.transform.localPosition = weaponData.ParentRightHandTargetRifle.position;
+        player.Comp.Rifle.P_AKM_RightArmTarget.transform.localPosition = weaponData.RightArmRifle.position;
+        player.Comp.Rifle.P_AKM_RightFistTarget.transform.localPosition = weaponData.RightFistRifle.position;
+
+        player.Comp.Rifle.P_AKM_Parent_LeftHandTarget.transform.localPosition = weaponData.ParentLeftHandTargetRifle.position;
+        player.Comp.Rifle.P_AKM_LeftArmTarget.transform.localRotation =Quaternion.identity;
+        player.Comp.Rifle.P_AKM_LeftFistTarget.transform.localRotation =Quaternion.identity;
+        player.Comp.Rifle.P_AKM_LeftArmTarget.transform.localPosition = weaponData.LeftArmRifle.position;
+        player.Comp.Rifle.P_AKM_LeftFistTarget.transform.localPosition = weaponData.LeftFistRifle.position;
+
+     
     }
 
     public override void Exit()

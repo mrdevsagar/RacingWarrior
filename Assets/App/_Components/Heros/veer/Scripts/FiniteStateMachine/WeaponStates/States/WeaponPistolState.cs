@@ -15,8 +15,24 @@ public class WeaponPistolState : WeaponState
     {
         base.Enter();
         player.Anim.SetFloat("BlendIdle", 2);
-        
 
+
+        player.Comp.Rifle.P_AKM_Parent_RightHandTarget.transform.parent = player.Comp.Body.Targets;
+
+        player.Comp.Pistol.P_Revolver_LeftArmTarget.transform.parent = player.Comp.Pistol.PistolGameObj.transform;
+        player.Comp.Pistol.P_Revolver_LeftFistTarget.transform.parent = player.Comp.Pistol.PistolGameObj.transform;
+
+        player.Comp.Pistol.P_Revolver_Parent_RightHandTarget.transform.localPosition = weaponData.ParentRightHandTargetPistol.position;
+
+        player.Comp.Pistol.P_Revolver_RightArmTarget.transform.localPosition = weaponData.RightArmPistol.position;
+        player.Comp.Pistol.P_Revolver_RightFistTarget.transform.localPosition = weaponData.RightFistPistol.position;
+
+
+        player.Comp.Pistol.P_Revolver_LeftArmTarget.transform.localRotation = Quaternion.identity;
+        player.Comp.Pistol.P_Revolver_LeftFistTarget.transform.localRotation = Quaternion.identity;
+
+        player.Comp.Pistol.P_Revolver_LeftArmTarget.transform.localPosition = weaponData.LeftArmPistol.position;
+        player.Comp.Pistol.P_Revolver_LeftFistTarget.transform.localPosition = weaponData.LeftFistPistol.position;
     }
 
     public override void Exit()

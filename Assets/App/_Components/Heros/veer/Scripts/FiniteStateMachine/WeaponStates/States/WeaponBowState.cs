@@ -23,6 +23,30 @@ public class WeaponBowState : WeaponState
     {
         base.Enter();
         player.Anim.SetFloat("BlendIdle", 3);
+
+        player.Comp.Bow.P_BOW_LeftArmTarget.transform.parent = player.Comp.Bow.P_Bow_Parent_LeftHandTarget;
+        player.Comp.Bow.P_BOW_LeftFistTarget.transform.parent = player.Comp.Bow.P_Bow_Parent_LeftHandTarget;
+
+        player.Comp.Bow.P_Bow_Parent_LeftHandTarget.transform.SetLocalPositionAndRotation(weaponData.ParentLeftHandTargetBow.position,Quaternion.identity);
+
+        player.Comp.Bow.P_BOW_LeftArmTarget.transform.localPosition = weaponData.LeftArmBow.position ;
+        player.Comp.Bow.P_BOW_LeftFistTarget.transform.localPosition = weaponData.LeftFistBow.position;
+
+
+        player.Comp.Bow.P_Bow_Parent_RightHandTarget.transform.parent = player.Comp.Bow.BowInitialTarget.transform.parent;
+
+
+        
+        player.Comp.Bow.P_Bow_Parent_RightHandTarget.transform.localPosition = weaponData.ParentRightHandTargetBow.position;
+
+        player.Comp.Bow.P_Bow_Parent_RightHandTarget.transform.localScale = new Vector3(1,1,1);
+        player.Comp.Bow.P_BOW_RightFistTarget.transform.localPosition = Vector3.zero;
+
+
+        player.Comp.Bow.P_BOW_RightArmTarget.transform.localPosition = weaponData.RightArmBow.position;
+        player.Comp.Bow.P_BOW_RightFistTarget.transform.localPosition = weaponData.RightFistBow.position;
+
+
     }
 
     public override void Exit()
@@ -178,7 +202,6 @@ public class WeaponBowState : WeaponState
             else
             {
                 IsArrowAvailable = false;
-                Debug.LogError("Prefab not assigned in the inspector.");
             }
 
         }
@@ -193,9 +216,10 @@ public class WeaponBowState : WeaponState
         }
 
         HandPull(distance, angle);
-        Debug.Log("fired arrow");
+      
         if (CurrentArrowObject != null)
         {
+            
             CurrentArrowObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
 
             if (player.IsPlayerLeftFacing)

@@ -52,8 +52,6 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Vector3 v;
 
-    public Button JumpButton;
-
     public float maxPressTime = 0.01f;  // Maximum allowed press duration in seconds
     private float pressStartTime;      // When the button press started
     private bool isPressing = false;
@@ -131,16 +129,14 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         PlayerStateMachine = new PlayerStateMachine();
-        Debug.Log("jiiiiii55555");
-        Debug.Log(PlayerStateMachine);
+
         IdleState = new PlayerIdleState(this, PlayerStateMachine, _playerData, "BodyIdle", "LegsIdle");
         MoveState = new PlayerMoveState(this, PlayerStateMachine, _playerData, "BodyWalk", "LegsWalk");
         InAirState = new PlayerInAirState(this, PlayerStateMachine, _playerData, "BodyJump", "LegsJump");
 
         
         WeaponStateMachine = new WeaponStateMachine();
-        Debug.Log("jiiiiii");
-        Debug.Log(WeaponStateMachine);
+
         WeaponFistState = new WeaponFistState(this, PlayerStateMachine, _playerData, WeaponData,null);
         WeaponGlovesState = new WeaponGlovesState(this, PlayerStateMachine, _playerData, WeaponData,Comp.Gloves.GlovesGameObj);
         WeaponSwordState = new WeaponSwordState(this, PlayerStateMachine, _playerData, WeaponData,Comp.Sword.SwordGameObj);
@@ -171,19 +167,9 @@ public class Player : MonoBehaviour
         PlayerStateMachine.Initialize(IdleState);
         WeaponStateMachine.Initialize(WeaponFistState);
 
-       
-#if UNITY_ANDROID && !UNITY_EDITOR
-                if (JumpButton != null)
-                {
-                    JumpButton.onClick.AddListener(OnJump);
-                }
-#endif
-
         CameraSwitcher.TriggerSwitchToPlayer(gameObject);
         _capsuleCollider = GetComponent<CapsuleCollider2D>();
 
-        Debug.Log("jiiiiii0000000000000000000");
-        Debug.Log(WeaponStateMachine);
     }
 
     private void OnEnable()
@@ -237,7 +223,7 @@ public class Player : MonoBehaviour
     {
         if (capsuleCollider != null)
         {
-            Debug.LogWarning("setting value");
+           
             // Set the size (width, height) of the CapsuleCollider2D
             capsuleCollider.size = new Vector2(0.9f, 3.02f); // Example values for size
 

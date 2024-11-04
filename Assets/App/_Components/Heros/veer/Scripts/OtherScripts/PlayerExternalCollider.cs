@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PlayerExternalCollider : MonoBehaviour
 {
-    private GameObject CurrentRightSlope;
+    public GameObject CurrentRightSlope;
 
-    private GameObject CurrentLeftSlope;
+    public GameObject CurrentLeftSlope;
 
-    private GameObject CurrentRightSlopePlatform;
+    public GameObject CurrentRightSlopePlatform;
 
-    private GameObject CurrentLeftSlopePlatform;
+    public GameObject CurrentLeftSlopePlatform;
 
     [SerializeField]
     private  Player player;
@@ -100,6 +100,7 @@ public class PlayerExternalCollider : MonoBehaviour
 
             if (CurrentRightSlope != null && player.input.MoveInput.x>0 && player.input.MoveInput.y < 0)
             {
+            
                 if (player.DisabledSlopeObjects != null && !player.DisabledSlopeObjects.Contains(CurrentRightSlope))
                 {
                     player.DisableCollisionForPlayer(CurrentRightSlope.GetComponent<Collider2D>());
@@ -109,6 +110,7 @@ public class PlayerExternalCollider : MonoBehaviour
 
             if (CurrentLeftSlope != null  && player.input.MoveInput.x < 0 && player.input.MoveInput.y < 0)
             {
+            /*Debug.Log("need to penetrate");*/
                 if (player.DisabledSlopeObjects != null && !player.DisabledSlopeObjects.Contains(CurrentLeftSlope))
                 {
                     player.DisableCollisionForPlayer(CurrentLeftSlope.GetComponent<Collider2D>());

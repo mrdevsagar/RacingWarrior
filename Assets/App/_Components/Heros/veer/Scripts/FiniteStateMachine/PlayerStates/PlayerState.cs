@@ -34,6 +34,7 @@ public class PlayerState
     {
         DoChecks();
 
+        
         if (!player.isDemo)
         {
             if (player.IsOverrideAnimation == false)

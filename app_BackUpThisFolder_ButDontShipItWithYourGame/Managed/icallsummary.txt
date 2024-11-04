@@ -308,9 +308,7 @@ UnityEngine.Animator::Play_Injected
 UnityEngine.Animator::ResetTriggerString_Injected
 UnityEngine.Animator::SetBoolString_Injected
 UnityEngine.Animator::SetFloatString_Injected
-UnityEngine.Animator::SetTriggerID_Injected
 UnityEngine.Animator::SetTriggerString_Injected
-UnityEngine.Animator::set_speed_Injected
 UnityEngine.AnimatorClipInfo::InstanceIDToAnimationClipPPtr_Injected
 UnityEngine.Application::get_isBatchMode
 UnityEngine.Application::get_isFocused

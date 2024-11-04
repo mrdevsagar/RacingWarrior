@@ -16,4 +16,4 @@ MonoBehaviour:
   BackwardMovementVelocity: 3
   JumpMovementVelocity: 5.5
   JumpBackwardMovementVelocity: 4.5
-  JumpForce: 40
+  JumpForce: 6
