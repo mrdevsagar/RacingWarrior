@@ -1,6 +1,7 @@
 // Ignore Spelling: Collider
 
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.U2D.IK;
 using UnityEngine.UI;
@@ -124,8 +125,12 @@ public class Player : MonoBehaviour
     #region Unity Callback functions
 
 
+    public IKManager2D _iKManager;
+
     public bool isDemo;
 
+    [Tooltip("Add GameObjects with JointData components here.")]
+    public List<JointData> jointDataList = new List<JointData>();
     private void Awake()
     {
         PlayerStateMachine = new PlayerStateMachine();
@@ -169,6 +174,17 @@ public class Player : MonoBehaviour
 
         CameraSwitcher.TriggerSwitchToPlayer(gameObject);
         _capsuleCollider = GetComponent<CapsuleCollider2D>();
+
+
+       /* foreach (JointData jointData in jointDataList)
+        {
+
+            JointAngleLimits2D jointLimit = new JointAngleLimits2D();
+            jointLimit.min =  jointData.vectorB.x;
+            jointLimit.max =  jointData.vectorB.y;
+            jointData.hingeJoint.limits = jointLimit;
+
+        }*/
 
     }
 
@@ -340,6 +356,9 @@ public class Player : MonoBehaviour
     public void FlipPlayer(bool isRightFacing)
     {
         IsPlayerLeftFacing = !isRightFacing;
+
+        
+
         if (isRightFacing)
         {
             transform.localScale = new Vector3(0.5f, 0.5f,0f);
@@ -532,6 +551,66 @@ public class Player : MonoBehaviour
     public void EnableCollisionForPlayer(Collider2D collider)
     {
         Physics2D.IgnoreCollision(collider, PlayerCollider, false);
+    }
+
+
+    public void ActivateRagdoll()
+    {
+        _iKManager.weight = 0;
+
+        foreach (JointData jointData in jointDataList)
+        {
+
+            Rigidbody2D jointRB = jointData.hingeJoint.gameObject.GetComponent<Rigidbody2D>();
+            
+
+            JointAngleLimits2D jointLimit = jointData.hingeJoint.limits;
+            jointLimit.min = IsPlayerLeftFacing ? jointData.vectorB.x : jointData.vectorA.x;
+            jointLimit.max = IsPlayerLeftFacing ? jointData.vectorB.y : jointData.vectorA.y;
+            
+            jointData.hingeJoint.limits = jointLimit;
+            jointData.hingeJoint.useLimits = true;
+            
+
+            /*if (IsPlayerLeftFacing)
+            {
+                JointAngleLimits2D jointLimit = new JointAngleLimits2D();
+
+                jointLimit.min = jointData.hingeJoint.limits.min * -1f;
+                jointLimit.max = jointData.hingeJoint.limits.max * -1f;
+
+                jointData.hingeJoint.limits = jointLimit;
+            }*/
+
+           /* jointRB.simulated = true;*/
+        }
+
+
+
+        /*foreach (JointData jointData in jointDataList)
+        {
+
+            Rigidbody2D jointRB = jointData.hingeJoint.gameObject.GetComponent<Rigidbody2D>();
+
+            jointData.vectorB.x = jointData.hingeJoint.limits.min;
+            jointData.vectorB.y = jointData.hingeJoint.limits.max;
+        }*/
+    }
+
+
+    public void Tigger()
+    { foreach (JointData jointData in jointDataList)
+        {
+            Rigidbody2D jointRB = jointData.hingeJoint.gameObject.GetComponent<Rigidbody2D>();
+            jointRB.simulated = true;
+        }
+    }
+    public void DeactivateRegdoll()
+    {
+        foreach (JointData jointData in jointDataList)
+        {
+            jointData.hingeJoint.gameObject.GetComponent<Rigidbody2D>().simulated = false;
+        }
     }
 
     #endregion
