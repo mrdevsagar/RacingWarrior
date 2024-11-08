@@ -1078,6 +1078,14 @@
             "icon": null
           },
           {
+            "name": "HingeJoint2D",
+            "scenes": [
+              "Assets/App/Scenes/Levels/_1_Level.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
             "name": "Joint2D",
             "scenes": [],
             "dependencyType": 1,

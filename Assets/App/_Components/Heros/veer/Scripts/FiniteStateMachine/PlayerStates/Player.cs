@@ -120,6 +120,8 @@ public class Player : MonoBehaviour
    /* [TagSelectorDropdown]*/
     private string ExternalVehicleColliderTag = "ExternalColliderVehicle";
 
+    public bool IsDead =false;
+
     #endregion
 
     #region Unity Callback functions
@@ -176,15 +178,15 @@ public class Player : MonoBehaviour
         _capsuleCollider = GetComponent<CapsuleCollider2D>();
 
 
-       /* foreach (JointData jointData in jointDataList)
+        foreach (JointData jointData in jointDataList)
         {
 
             JointAngleLimits2D jointLimit = new JointAngleLimits2D();
-            jointLimit.min =  jointData.vectorB.x;
-            jointLimit.max =  jointData.vectorB.y;
+            jointLimit.min = jointData.vectorA.x;
+            jointLimit.max = jointData.vectorA.y;
             jointData.hingeJoint.limits = jointLimit;
 
-        }*/
+        }
 
     }
 
@@ -357,7 +359,23 @@ public class Player : MonoBehaviour
     {
         IsPlayerLeftFacing = !isRightFacing;
 
-        
+        foreach (JointData jointData in jointDataList)
+        {
+            jointData.hingeJoint.useLimits = false;
+            JointAngleLimits2D jointLimit = jointData.hingeJoint.limits;
+            Vector2 angle = jointData.vectorA;
+            if (IsPlayerLeftFacing)
+            {
+                angle.x = jointData.vectorB.x;
+                angle.y = jointData.vectorB.y;
+            }
+            jointLimit.min = angle.x;
+            jointLimit.max = angle.y;
+
+            jointData.hingeJoint.limits = jointLimit;
+            jointData.hingeJoint.useLimits = true;
+
+        }
 
         if (isRightFacing)
         {
@@ -413,8 +431,11 @@ public class Player : MonoBehaviour
         }
 
        
-
-        Comp.Body.Head.eulerAngles = new Vector3(Comp.Body.Head.eulerAngles.x, Comp.Body.Head.eulerAngles.y, headRotationAngle);
+        if (!IsDead)
+        {
+            Comp.Body.Head.eulerAngles = new Vector3(Comp.Body.Head.eulerAngles.x, Comp.Body.Head.eulerAngles.y, headRotationAngle);
+        }
+        
 
         
     }
@@ -561,45 +582,40 @@ public class Player : MonoBehaviour
         foreach (JointData jointData in jointDataList)
         {
 
-            Rigidbody2D jointRB = jointData.hingeJoint.gameObject.GetComponent<Rigidbody2D>();
-            
+            /*Rigidbody2D jointRB = jointData.hingeJoint.gameObject.GetComponent<Rigidbody2D>();
+
 
             JointAngleLimits2D jointLimit = jointData.hingeJoint.limits;
             jointLimit.min = IsPlayerLeftFacing ? jointData.vectorB.x : jointData.vectorA.x;
             jointLimit.max = IsPlayerLeftFacing ? jointData.vectorB.y : jointData.vectorA.y;
-            
+
             jointData.hingeJoint.limits = jointLimit;
-            jointData.hingeJoint.useLimits = true;
+            jointData.hingeJoint.useLimits = true;*/
             
 
-            /*if (IsPlayerLeftFacing)
-            {
-                JointAngleLimits2D jointLimit = new JointAngleLimits2D();
-
-                jointLimit.min = jointData.hingeJoint.limits.min * -1f;
-                jointLimit.max = jointData.hingeJoint.limits.max * -1f;
-
-                jointData.hingeJoint.limits = jointLimit;
-            }*/
+            
 
            /* jointRB.simulated = true;*/
         }
 
 
 
-        /*foreach (JointData jointData in jointDataList)
+      /*  foreach (JointData jointData in jointDataList)
         {
 
             Rigidbody2D jointRB = jointData.hingeJoint.gameObject.GetComponent<Rigidbody2D>();
 
-            jointData.vectorB.x = jointData.hingeJoint.limits.min;
-            jointData.vectorB.y = jointData.hingeJoint.limits.max;
+            jointData.vectorA.x = jointData.hingeJoint.limits.min;
+            jointData.vectorA.y = jointData.hingeJoint.limits.max;
         }*/
     }
 
 
     public void Tigger()
-    { foreach (JointData jointData in jointDataList)
+    {
+        _iKManager.weight = 0;
+        IsDead = true;
+        foreach (JointData jointData in jointDataList)
         {
             Rigidbody2D jointRB = jointData.hingeJoint.gameObject.GetComponent<Rigidbody2D>();
             jointRB.simulated = true;
@@ -612,6 +628,30 @@ public class Player : MonoBehaviour
             jointData.hingeJoint.gameObject.GetComponent<Rigidbody2D>().simulated = false;
         }
     }
+
+    private Vector2 CalculateFlippedAngles(Vector2 vectorA)
+    {
+        // Step 1: Negate the original lower and upper angles
+        float invertedLower = -vectorA.y; // Invert upper to become the new lower
+        float invertedUpper = -vectorA.x; // Invert lower to become the new upper
+
+        // Step 2: Normalize the angles to ensure they stay within [-180, 180]
+        invertedLower = NormalizeAngle(invertedLower);
+        invertedUpper = NormalizeAngle(invertedUpper);
+
+        // Return the inverted range as a new Vector2 for vectorB
+        return new Vector2(invertedLower, invertedUpper);
+    }
+
+    // Helper function to normalize angles within [-180, 180]
+    private float NormalizeAngle(float angle)
+    {
+        angle = angle % 360;
+        if (angle > 180) angle -= 360;
+        if (angle < -180) angle += 360;
+        return angle;
+    }
+
 
     #endregion
 }

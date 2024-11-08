@@ -695,6 +695,9 @@ UnityEngine.GUIUtility::set_pixelsPerPoint
 UnityEngine.GUIUtility::set_systemCopyBuffer_Injected
 UnityEngine.Hash128::Hash128ToStringImpl_Injected
 UnityEngine.Hash128::Parse_Injected
+UnityEngine.HingeJoint2D::get_limits_Injected
+UnityEngine.HingeJoint2D::set_limits_Injected
+UnityEngine.HingeJoint2D::set_useLimits_Injected
 UnityEngine.ImageConversion::LoadImage_Injected
 UnityEngine.Input::CheckDisabled
 UnityEngine.Input::GetKeyDownInt
@@ -1073,6 +1076,7 @@ UnityEngine.Rigidbody2D::AddTorque_Injected
 UnityEngine.Rigidbody2D::get_velocity_Injected
 UnityEngine.Rigidbody2D::set_bodyType_Injected
 UnityEngine.Rigidbody2D::set_freezeRotation_Injected
+UnityEngine.Rigidbody2D::set_simulated_Injected
 UnityEngine.Rigidbody2D::set_velocity_Injected
 UnityEngine.ScalableBufferManager::get_heightScaleFactor
 UnityEngine.ScalableBufferManager::get_widthScaleFactor

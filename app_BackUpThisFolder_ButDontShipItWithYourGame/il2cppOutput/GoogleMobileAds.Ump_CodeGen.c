@@ -22,11 +22,11 @@ static Il2CppMethodPointer s_methodPointers[5] =
 };
 static const int32_t s_InvokerIndices[5] = 
 {
-	9241,
-	9241,
+	9243,
+	9243,
 	3399,
 	7160,
-	7213,
+	7214,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_GoogleMobileAds_Ump_CodeGenModule;
 const Il2CppCodeGenModule g_GoogleMobileAds_Ump_CodeGenModule = 
