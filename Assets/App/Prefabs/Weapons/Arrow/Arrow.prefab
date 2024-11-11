@@ -147,25 +147,25 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1025
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 523127
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 523127
   m_ContactCaptureLayers:
     serializedVersion: 2
-    m_Bits: 4160
+    m_Bits: 523127
   m_CallbackLayers:
     serializedVersion: 2
-    m_Bits: 4160
+    m_Bits: 523127
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.4445408, y: -0.0011667982}
+  m_Offset: {x: 0.30602995, y: -0.007255163}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.09216441, y: 0.5050731}
@@ -175,5 +175,5 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.09, y: 0.23}
+  m_Size: {x: 0.7338292, y: 0.07170179}
   m_EdgeRadius: 0

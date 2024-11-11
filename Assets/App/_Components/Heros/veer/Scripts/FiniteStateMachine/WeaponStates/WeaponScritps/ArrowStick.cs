@@ -52,9 +52,19 @@ public class ArrowStick : MonoBehaviour
             transform.parent = collision.transform;
 
 
-
-            /*spriteRenderer.sortingOrder = collision.gameObject.GetComponent<SpriteRenderer>().sortingOrder + 1;*/
+            spriteRenderer.sortingLayerName = "Enemy";
+            spriteRenderer.sortingOrder = collision.gameObject.GetComponent<SpriteRenderer>().sortingOrder - 2;
             // Make sure it stays at its current position and state
+
+            Player player = GetComponentInParent<Player>();
+
+            if (player != null)
+            {
+                player.Damage(20f);
+            }
+           
+
+
             hasCollided = true;
         }
     }
@@ -71,7 +81,8 @@ public class ArrowStick : MonoBehaviour
            
             transform.parent = collision.transform;
 
-            spriteRenderer.sortingOrder = collision.gameObject.GetComponent<SpriteRenderer>().sortingOrder -1;
+            spriteRenderer.sortingLayerName = "Enemy";
+            spriteRenderer.sortingOrder = 1;
             // Make sure it stays at its current position and state
             hasCollided = true;
         }

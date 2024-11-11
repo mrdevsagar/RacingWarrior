@@ -1,5 +1,6 @@
 // Ignore Spelling: Collider
 
+using GoogleMobileAds.Api;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -58,9 +59,11 @@ public class Player : MonoBehaviour
     private bool isPressing = false;
     private bool isCancelled = false;  // Flag to track if the press is canceled
 
+    private float _curretHelath;
+    private float _maxHealth = 100f;
     #endregion
 
-   
+
 
     #region Other Variables 
 
@@ -133,6 +136,8 @@ public class Player : MonoBehaviour
 
     [Tooltip("Add GameObjects with JointData components here.")]
     public List<JointData> jointDataList = new List<JointData>();
+
+    private HealthBar _healthBar;
     private void Awake()
     {
         PlayerStateMachine = new PlayerStateMachine();
@@ -161,7 +166,7 @@ public class Player : MonoBehaviour
 
         CanvasController.SwitchControls(true);
 
-        
+        _curretHelath = _maxHealth;
 
     }
 
@@ -188,6 +193,7 @@ public class Player : MonoBehaviour
 
         }
 
+        _healthBar = GetComponentInChildren<HealthBar>();
     }
 
     private void OnEnable()
@@ -618,14 +624,14 @@ public class Player : MonoBehaviour
         foreach (JointData jointData in jointDataList)
         {
             Rigidbody2D jointRB = jointData.hingeJoint.gameObject.GetComponent<Rigidbody2D>();
-            jointRB.simulated = true;
+            jointRB.isKinematic = false;
         }
     }
     public void DeactivateRegdoll()
     {
         foreach (JointData jointData in jointDataList)
         {
-            jointData.hingeJoint.gameObject.GetComponent<Rigidbody2D>().simulated = false;
+            jointData.hingeJoint.gameObject.GetComponent<Rigidbody2D>().isKinematic =true;
         }
     }
 
@@ -654,6 +660,24 @@ public class Player : MonoBehaviour
 
 
     #endregion
+
+    public void Damage(float damageAmount)
+    {
+        _curretHelath -= damageAmount;
+
+
+        _healthBar.UpdateHealthBar(_maxHealth, _curretHelath);
+
+        if (_curretHelath <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        Tigger();
+    }
 }
 
 

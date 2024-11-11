@@ -25,7 +25,8 @@ public class ImageSwitcher : MonoBehaviour
 
     public void OnMoveInputChanged(Vector2 move)
     {
-        if (move == new Vector2(1, 1))
+        displayImage.rectTransform.localScale =  new Vector3(move.x, move.y, 1f);
+       /* if (move == new Vector2(1, 1))
         {
             ShowImageAtIndex(0);
         }
@@ -43,7 +44,7 @@ public class ImageSwitcher : MonoBehaviour
         }
         else
         {
-        }
+        }*/
     }
 
     // Method to display the image at the selected index with fade-out effect

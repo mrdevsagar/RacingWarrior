@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: d40c28a0d76f18e41ae5d48b09707e76
+guid: 1ed711511155ecd4daf0db365733ff47
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5805397673842802405
-    second: leftJoystic_0
-  - first:
-      213: 8311429605917474320
-    second: leftJoystic_1
-  - first:
-      213: 1406664478777957560
-    second: leftJoystic_2
-  - first:
-      213: -7201611703938986688
-    second: leftJoystic_3
+      213: -338672557373863113
+    second: bottmbutton3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 2
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -55,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -84,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -122,35 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: leftJoystic_0
+      name: bottmbutton3_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 83
-        width: 99
-        height: 117
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5ee77411d6ae09050800000000000000
-      internalID: 5805397673842802405
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: leftJoystic_1
-      rect:
-        serializedVersion: 2
-        x: 1
         y: 0
-        width: 98
-        height: 84
+        width: 398
+        height: 130
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,52 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 01e3064d031285370800000000000000
-      internalID: 8311429605917474320
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: leftJoystic_2
-      rect:
-        serializedVersion: 2
-        x: 101
-        y: 83
-        width: 99
-        height: 117
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8bc58bff3e9758310800000000000000
-      internalID: 1406664478777957560
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: leftJoystic_3
-      rect:
-        serializedVersion: 2
-        x: 101
-        y: 0
-        width: 98
-        height: 83
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 04dcb60af4cbe0c90800000000000000
-      internalID: -7201611703938986688
+      spriteID: 73bce8a7a1bcc4bf0800000000000000
+      internalID: -338672557373863113
       vertices: []
       indices: 
       edges: []
@@ -213,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -222,11 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      leftJoystic_0: 5805397673842802405
-      leftJoystic_1: 8311429605917474320
-      leftJoystic_2: 1406664478777957560
-      leftJoystic_3: -7201611703938986688
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
