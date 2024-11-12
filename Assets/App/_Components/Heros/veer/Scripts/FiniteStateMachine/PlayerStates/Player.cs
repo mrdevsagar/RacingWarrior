@@ -200,7 +200,7 @@ public class Player : MonoBehaviour
     {
         /*Anim.enabled = true;*/
         CanvasController.SwitchControls(true);
-        ResetCollider(_capsuleCollider);
+      /*  ResetCollider(_capsuleCollider);*/
 
        /* Anim.speed = 1;*/
 
@@ -240,7 +240,7 @@ public class Player : MonoBehaviour
         Anim.enabled = false;*/
 
         CanvasController.SwitchControls(false);
-        ResetCollider(_capsuleCollider);
+       /* ResetCollider(_capsuleCollider);*/
     }
 
     private void ResetCollider(CapsuleCollider2D capsuleCollider)
