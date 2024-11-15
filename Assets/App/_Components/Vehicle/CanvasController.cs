@@ -44,6 +44,11 @@ public class CanvasController : MonoBehaviour
     [SerializeField]
     private GameObject GetInVehicleBtn_GO;
 
+    private void Start()
+    {
+        PlayerControls.SetActive(true);
+    }
+
     private void OnEnable()
     {
         OnPlayerControls += OnPlayerControlsChange;
