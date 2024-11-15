@@ -78,7 +78,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 934489878810460583}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: bone_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -448,7 +448,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1995970672738580478}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: RightLegEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -463,7 +463,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 445270637046724644}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.03041563, w: 0.99953735}
+  m_LocalRotation: {x: -0, y: -0, z: 0.030412346, w: 0.99953747}
   m_LocalPosition: {x: 0.428, y: 0.003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -510,7 +510,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8392961895203394270}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: bone_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -525,7 +525,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 631384712084982739}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.023045724, w: 0.99973446}
+  m_LocalRotation: {x: 0, y: 0, z: 0.023094896, w: 0.9997333}
   m_LocalPosition: {x: 0.16741869, y: -0.0030974522, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -542,7 +542,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7324443109804410123}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: EffectorRoapBottom (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -573,7 +573,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2698738170304991600}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: EffectorRightPelves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -588,7 +588,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 654116475779222794}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.21186687, w: 0.9772985}
+  m_LocalRotation: {x: -0, y: -0, z: 0.21184497, w: 0.9773033}
   m_LocalPosition: {x: 0.065, y: -0.003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -719,7 +719,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 882522289972331320}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.9497594, w: 0.31298086}
+  m_LocalRotation: {x: 0, y: 0, z: -0.9497592, w: 0.31298175}
   m_LocalPosition: {x: 0.06882602, y: -0.13085702, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 1
@@ -867,7 +867,7 @@ GameObject:
   m_Component:
   - component: {fileID: 560631868172798918}
   - component: {fileID: 2989481976507306886}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: GlovesRightFist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -953,7 +953,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7893552936819403963}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: bone_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -968,7 +968,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 936582630368255148}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: 0.022329941, w: 0.99975073}
+  m_LocalRotation: {x: 0, y: -0, z: 0.022354567, w: 0.99975014}
   m_LocalPosition: {x: 0.105803445, y: -0.000000026751866, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1082,7 +1082,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3943732255747790918}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Target_BOW_FIST
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1113,7 +1113,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7588743294674679371}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: LeftFistEfffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1128,7 +1128,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1264851135590442689}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.66361946, w: 0.7480705}
+  m_LocalRotation: {x: -0, y: -0, z: -0.66357034, w: 0.7481139}
   m_LocalPosition: {x: 0.105, y: -0.044, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1144,7 +1144,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6047549393266497993}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: bone_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1490,7 +1490,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1515688805870864927}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.0031225982, w: 0.9999952}
+  m_LocalRotation: {x: 0, y: 0, z: -0.0031193132, w: 0.9999952}
   m_LocalPosition: {x: 0.5537796, y: 0.00034981966, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 1
@@ -1636,7 +1636,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6233736711174595496}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: TargetLeftArmAkm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1667,7 +1667,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2251870531238978290}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: TargetLeftFistAkm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1729,7 +1729,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8704029478010470662}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: TargetInitialBowString
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1760,7 +1760,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8025869285702222902}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: bone_16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1775,7 +1775,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1707371305650943536}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.007979414, w: 0.99996823}
+  m_LocalRotation: {x: 0, y: 0, z: 0.008035406, w: 0.9999677}
   m_LocalPosition: {x: 0.103552625, y: -0.00000000581404, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2179,7 +2179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4781172294260152494}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Target_BOW_ARM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2373,7 +2373,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7721592539579648932}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: TargetRoapTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2651,7 +2651,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8024967534462812030}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: bone_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2666,7 +2666,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2940637188407591103}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.9927836, w: 0.11991979}
+  m_LocalRotation: {x: 0, y: 0, z: -0.99278075, w: 0.11994343}
   m_LocalPosition: {x: 0.26807195, y: -0.15631826, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
@@ -2683,7 +2683,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8894626231958653180}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: bone_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2698,7 +2698,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2965162460666980328}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.005813433, w: 0.99998313}
+  m_LocalRotation: {x: 0, y: 0, z: -0.00590038, w: 0.99998266}
   m_LocalPosition: {x: 0.097260565, y: -0.000000017030889, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2715,7 +2715,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4408174898535470889}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: RightHandEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2730,7 +2730,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3342292210831805200}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: 0.43252108, w: 0.9016238}
+  m_LocalRotation: {x: 0, y: -0, z: 0.43250763, w: 0.9016303}
   m_LocalPosition: {x: 0.313, y: -0.016, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
@@ -2747,7 +2747,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3823998561208958697}
   - component: {fileID: 1993838272664281825}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: GlovesLeftFist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2897,7 +2897,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2552688501765129589}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: bone_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2912,7 +2912,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3466274167592323354}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.014117475, w: 0.99990034}
+  m_LocalRotation: {x: 0, y: 0, z: -0.014082628, w: 0.9999009}
   m_LocalPosition: {x: 0.124315985, y: -0.0036897273, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2960,7 +2960,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6929236248527501595}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: EffectorRoapTop (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2991,7 +2991,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8921606995463917424}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: bone_17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3006,7 +3006,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3656506097023402493}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0.0071566086, w: 0.9999744}
+  m_LocalRotation: {x: 0, y: -0, z: -0.0070744175, w: 0.99997497}
   m_LocalPosition: {x: 0.13710882, y: 0.00000006183394, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3023,7 +3023,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6785695757974859177}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: bone_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3056,7 +3056,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4616231555868527238}
   - component: {fileID: 962302965427394738}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: AKM_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3250,7 +3250,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2264556626033934447}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3407,7 +3407,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5053999910962863931}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: LeftHandEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3422,7 +3422,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4158994226362092235}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.3720662, w: 0.9282062}
+  m_LocalRotation: {x: -0, y: -0, z: -0.3720672, w: 0.92820585}
   m_LocalPosition: {x: 0.274, y: 0.044, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3456,7 +3456,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4213545389200173587}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.0013576371, w: -0.9999991}
+  m_LocalRotation: {x: 0, y: 0, z: 0.0013541359, w: -0.99999917}
   m_LocalPosition: {x: 0.53347874, y: 0.0034871101, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 1
@@ -3602,7 +3602,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8611961578085930011}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: ArrowPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3703,7 +3703,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 282668404323128899}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: bone_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3718,7 +3718,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4469182679905752696}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.017626971, w: 0.9998447}
+  m_LocalRotation: {x: 0, y: 0, z: -0.017662669, w: 0.999844}
   m_LocalPosition: {x: 0.11130127, y: -0.000000024716032, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3817,7 +3817,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4696622373349391522}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.024328338, w: 0.99970406}
+  m_LocalRotation: {x: 0, y: 0, z: 0.024328472, w: 0.99970406}
   m_LocalPosition: {x: 0.31851023, y: 0.0671846, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3964,7 +3964,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2342109031055749330}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: bone_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3979,7 +3979,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4812345849660277005}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.17748187, w: 0.98412406}
+  m_LocalRotation: {x: 0, y: 0, z: 0.17744648, w: 0.9841305}
   m_LocalPosition: {x: 0.14168239, y: 0.047164284, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4218,7 +4218,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8943150907824696504}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: TargetLeftFistRevolver (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4249,7 +4249,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3765786832893220969}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: bone_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4281,7 +4281,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2762362434958469626}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: bone_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4296,7 +4296,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5122605549852431059}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.02630192, w: 0.99965405}
+  m_LocalRotation: {x: 0, y: 0, z: 0.026231127, w: 0.9996559}
   m_LocalPosition: {x: 0.113756195, y: 0.046944667, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4331,7 +4331,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5221227238204257111}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.17964278, w: -0.9837319}
+  m_LocalRotation: {x: 0, y: 0, z: -0.17963454, w: -0.9837334}
   m_LocalPosition: {x: 0.31191233, y: -0.0013706932, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 1
@@ -4705,7 +4705,7 @@ GameObject:
   - component: {fileID: 1391307840014760550}
   - component: {fileID: 8914735998511399730}
   - component: {fileID: 7915911077801949304}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: sord_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4862,7 +4862,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5748316554622117010}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.33764395, w: 0.941274}
+  m_LocalRotation: {x: 0, y: 0, z: 0.33758125, w: 0.94129646}
   m_LocalPosition: {x: 0.27325097, y: -0.012997299, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 1
@@ -5007,7 +5007,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3927983816529075249}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: TargetLeftArmRevolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5069,7 +5069,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6197891161095370155}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: ArrowHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5101,7 +5101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3940213302135206492}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5199,7 +5199,7 @@ GameObject:
   - component: {fileID: 654199385622217013}
   - component: {fileID: 3433551873305258614}
   - component: {fileID: 502136512275060925}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: bowroap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5386,7 +5386,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4469532351704496358}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: bone_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5418,7 +5418,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9165772853077904176}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: TargetRightHandBow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5532,7 +5532,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6423213296121895086}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.6164153, w: -0.7874213}
+  m_LocalRotation: {x: 0, y: 0, z: -0.61644757, w: -0.787396}
   m_LocalPosition: {x: 0.4864666, y: 0.053843856, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5678,7 +5678,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3853118613458804313}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: bone_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5693,7 +5693,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6681198987575728491}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.9288463, w: -0.3704654}
+  m_LocalRotation: {x: 0, y: 0, z: -0.9288721, w: -0.37040064}
   m_LocalPosition: {x: 0.27923304, y: 0.18182561, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
@@ -5783,7 +5783,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4775586612269171899}
   - component: {fileID: 2325699317915202914}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: bow_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5872,7 +5872,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1361060159749907026}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: FirstRightEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5887,7 +5887,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7492605775013483940}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.2380684, w: -0.9712484}
+  m_LocalRotation: {x: -0, y: -0, z: -0.23806208, w: -0.97124994}
   m_LocalPosition: {x: 0.261, y: -0.024, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
@@ -5903,7 +5903,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9132910108295918130}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: EffectorLeftPelves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5918,7 +5918,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7501650837566369255}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.1480703, w: 0.98897684}
+  m_LocalRotation: {x: -0, y: -0, z: 0.14798269, w: 0.98899}
   m_LocalPosition: {x: 0.065, y: 0.001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5967,7 +5967,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6651288820704898646}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5999,7 +5999,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2789095233188714149}
   - component: {fileID: 213104765917505031}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Revolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6087,7 +6087,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5125836039918444871}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: LeftLegEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6102,7 +6102,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8260232790320911960}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.036870643, w: -0.9993201}
+  m_LocalRotation: {x: -0, y: -0, z: 0.036874145, w: -0.99932}
   m_LocalPosition: {x: 0.433, y: 0.004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6136,7 +6136,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8580840041391946234}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.9195718, w: 0.392922}
+  m_LocalRotation: {x: 0, y: 0, z: 0.91956156, w: 0.39294603}
   m_LocalPosition: {x: 0.07343578, y: 0.35810387, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 1
@@ -6430,7 +6430,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8619510456124792774}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
@@ -6488,12 +6488,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8619510456124792774}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 149b125c4951b3c4cb065192d8729a70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textBox: {fileID: 0}
 --- !u!114 &8303071449592525215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6501,7 +6500,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8619510456124792774}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63351f06d7d06084eb1c372b865fc5dc, type: 3}
   m_Name: 
@@ -6510,14 +6509,9 @@ MonoBehaviour:
   input: {fileID: 4155513503478072738}
   WeaponData: {fileID: 0}
   v: {x: 0, y: 0, z: 0}
-  JumpButton: {fileID: 0}
   maxPressTime: 0.2
   IsWalkingBackward: 0
   IsPlayerLeftFacing: 0
-  RightCineMachineCamera: {fileID: 0}
-  LeftCineMachineCamera: {fileID: 0}
-  BottomRightCineMachineCamera: {fileID: 0}
-  BottomLeftCineMachineCamera: {fileID: 0}
   Comp:
     Body:
       Head: {fileID: 6651288820704898646}
@@ -6529,6 +6523,7 @@ MonoBehaviour:
       AnimLeftFistTarget: {fileID: 3918937891956554211}
       AnimRightArmTarget: {fileID: 6376560436934362623}
       AnimRightFistTarget: {fileID: 4555807796675258024}
+      Targets: {fileID: 0}
     Fist:
       a: 0
     Sword:
@@ -6580,6 +6575,16 @@ MonoBehaviour:
   DisabledSlopeObjects: []
   physicsMaterial: {fileID: 0}
   PlayerCameraHolder: {fileID: 0}
+  VehicleNearBy: {fileID: 0}
+  VehicleNearByList: []
+  IsDead: 0
+  _iKManager: {fileID: 0}
+  isDemo: 0
+  jointDataList: []
+  slopeAngle: 0
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 122944
 --- !u!95 &730227906611058138
 Animator:
   serializedVersion: 7
@@ -6588,7 +6593,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8619510456124792774}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d251ecd1395287d48b2443c0c46a3f3b, type: 2}
   m_CullingMode: 0
@@ -6648,7 +6653,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4149868411908467670}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: bone_18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6689,7 +6694,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5444938547299039201, guid: f5622789368d506449413ae44c607fb8, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5444938547299039201, guid: f5622789368d506449413ae44c607fb8, type: 3}
       propertyPath: m_IsActive

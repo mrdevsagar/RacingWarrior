@@ -138,6 +138,10 @@ public class Player : MonoBehaviour
     public List<JointData> jointDataList = new List<JointData>();
 
     private HealthBar _healthBar;
+
+    public float slopeAngle;
+
+    public LayerMask groundLayer; // Layer to detect for slope
     private void Awake()
     {
         PlayerStateMachine = new PlayerStateMachine();
@@ -262,8 +266,12 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        DetectSlope();
         PlayerStateMachine.CurrentState.LogicUpdate();
         WeaponStateMachine.CurrentWeaponState.LogicUpdate();
+
+
+        
 
         if (!input.LookInput.Equals(float.NaN))
         {
@@ -274,12 +282,15 @@ public class Player : MonoBehaviour
 
         }
 
+        
     }
 
     private void FixedUpdate()
     {
+        RotatePlayer();
         PlayerStateMachine.CurrentState.PhysicsUpdate();
         WeaponStateMachine.CurrentWeaponState.PhysicsUpdate();
+        
     }
 
     private void LateUpdate()
@@ -324,11 +335,11 @@ public class Player : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag(ExternalVehicleColliderTag))
+        /*if (collision.gameObject.CompareTag(ExternalVehicleColliderTag))
         {
             VehicleNearByList.Remove(collision?.gameObject?.transform?.parent?.gameObject?.transform?.parent?.gameObject);
         }
-
+*/
         if (VehicleNearByList.Count == 0)
         {
             CanvasController.IsPlayerNearVehicle(false);
@@ -677,6 +688,39 @@ public class Player : MonoBehaviour
     private void Die()
     {
         Tigger();
+    }
+
+    private void DetectSlope()
+    {
+        
+        float rayDistance = 1f;
+        // Cast a ray downwards from the player to detect the ground
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, rayDistance, groundLayer);
+        Debug.DrawRay(transform.position, Vector2.down * rayDistance, hit.collider ? Color.green : Color.yellow);
+
+        if (hit.collider != null)
+        {
+            Vector2 slopeNormal = hit.normal;
+
+            float slopeDirection = Mathf.Sign(hit.normal.x); // Left (-1) or right (1)
+            slopeAngle = -slopeDirection * Vector2.Angle(slopeNormal, Vector2.up);
+
+        }
+        /*else
+        {
+            slopeAngle = 0;
+
+        }*/
+    }
+
+    private void RotatePlayer()
+    {
+
+        /*transform.rotation = Quaternion.Euler(0, 0, slopeAngle);*/
+        // Smoothly rotate towards the target angle using Lerp
+        Quaternion targetRotation = Quaternion.Euler(0, 0, slopeAngle / 1.5f);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
+
     }
 }
 

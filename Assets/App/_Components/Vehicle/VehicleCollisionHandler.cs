@@ -19,6 +19,10 @@ public class VehicleCollisionHandler : MonoBehaviour
 
     public List<GameObject> Slopes;
 
+    public GameObject LeftSlope = null;
+    public GameObject LeftSlopePlatform = null;
+    public GameObject RightSlope = null;
+    public GameObject RightSlopePlatform = null;
     private void Start()
     {
         RB = GetComponent<Rigidbody2D>();
@@ -27,11 +31,12 @@ public class VehicleCollisionHandler : MonoBehaviour
 
     void Update()
     {
-
+        OnNewSlopeStayed();
     }
 
+    
 
-    public void OnNewSlopeStayed(GameObject slopeObj)
+    public void OnNewSlopeStayed()
     {
        
 
@@ -52,23 +57,20 @@ public class VehicleCollisionHandler : MonoBehaviour
       
         } else
         {
-            if (Slopes != null && !Slopes.Contains(slopeObj))
-            {
-                Slopes.Add(slopeObj);
-            }
-            if (Slopes != null && slopeObj.CompareTag("SlopeLeft"))
+            
+            if (LeftSlope != null)
             {
                 /*Slope slope = slopeObj.GetComponent<Slope>();
                 EnableSlopeTop(slope);*/
 
-                if (drive.DisabledVehicleObjects.Contains(slopeObj))
+                if (drive.DisabledVehicleObjects.Contains(LeftSlope))
                 {
-                    Slope slope = slopeObj.GetComponent<Slope>();
+                    Slope slope = LeftSlope.GetComponent<Slope>();
                     EnableSlopeTop(slope, false);
                 }
                 else
                 {
-                    Slope slope = slopeObj.GetComponent<Slope>();
+                    Slope slope = LeftSlope.GetComponent<Slope>();
                     EnableSlopeTop(slope);
                 }
             }
@@ -93,20 +95,17 @@ public class VehicleCollisionHandler : MonoBehaviour
         }
         else
         {
-            if (Slopes != null && !Slopes.Contains(slopeObj))
+          
+            if (RightSlope != null)
             {
-                Slopes.Add(slopeObj);
-            }
-            if (Slopes != null && slopeObj.CompareTag("SlopeRight"))
-            {
-                if (drive.DisabledVehicleObjects.Contains(slopeObj))
+                if (drive.DisabledVehicleObjects.Contains(RightSlope))
                 {
-                    Slope slope = slopeObj.GetComponent<Slope>();
+                    Slope slope = RightSlope.GetComponent<Slope>();
                     EnableSlopeTop(slope, false);
                 }
                 else
                 {
-                    Slope slope = slopeObj.GetComponent<Slope>();
+                    Slope slope = RightSlope.GetComponent<Slope>();
                     EnableSlopeTop(slope);
                 }
             }
@@ -130,27 +129,23 @@ public class VehicleCollisionHandler : MonoBehaviour
 
 
         // OnEnter: If we just hit a new object
-        if (currentHitTopRight != null && RB.velocityX > 0)
+        if (currentHitTopRight != null )
         {
             Slope slopeTopRight = currentHitTopRight.gameObject.GetComponent<Slope>();
             EnableSlopeTop(slopeTopRight, false);
         }
         else
         {
-            if (Slopes != null && !Slopes.Contains(slopeObj))
+            if (RightSlopePlatform != null)
             {
-                Slopes.Add(slopeObj);
-            }
-            if (Slopes != null && slopeObj.CompareTag("SlopeRightPlatform"))
-            {
-                if (drive.DisabledVehicleObjects.Contains(slopeObj))
+                if (drive.DisabledVehicleObjects.Contains(RightSlopePlatform))
                 {
-                    Slope slope = slopeObj.GetComponent<Slope>();
+                    Slope slope = RightSlopePlatform.GetComponent<Slope>();
                     EnableSlopeTop(slope, false);
                 }
                 else
                 {
-                    Slope slope = slopeObj.GetComponent<Slope>();
+                    Slope slope = RightSlopePlatform.GetComponent<Slope>();
                     EnableSlopeTop(slope);
                 }
             }
@@ -163,20 +158,17 @@ public class VehicleCollisionHandler : MonoBehaviour
         }
         else
         {
-            if (Slopes != null && !Slopes.Contains(slopeObj))
+            
+            if (LeftSlopePlatform != null )
             {
-                Slopes.Add(slopeObj);
-            }
-            if (Slopes != null && slopeObj.CompareTag("SlopeLeftPlatform"))
-            {
-                if (drive.DisabledVehicleObjects.Contains(slopeObj))
+                if (drive.DisabledVehicleObjects.Contains(LeftSlopePlatform))
                 {
-                    Slope slope = slopeObj.GetComponent<Slope>();
+                    Slope slope = LeftSlopePlatform.GetComponent<Slope>();
                     EnableSlopeTop(slope, false);
                 }
                 else
                 {
-                    Slope slope = slopeObj.GetComponent<Slope>();
+                    Slope slope = LeftSlopePlatform.GetComponent<Slope>();
                     EnableSlopeTop(slope);
                 }
             }

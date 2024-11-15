@@ -29,6 +29,7 @@ public class LevelManager : SingletonLocal<LevelManager>
     void Start()
     {
         button.onClick.AddListener(OnButtonClick);
+        Application.targetFrameRate = 500;
     }
 
     // This method will be called when the button is clicked

@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 6831186303303815623}
   - component: {fileID: 902666188607202481}
   - component: {fileID: 2895488252836774683}
-  - component: {fileID: 7306953507504532569}
+  - component: {fileID: 3934012880606150920}
   m_Layer: 8
   m_Name: VEHICLE
   m_TagString: Vehicle
@@ -542,7 +542,11 @@ MonoBehaviour:
     m_Bits: 98304
   drive: {fileID: 2415390491624744404}
   Slopes: []
---- !u!210 &7306953507504532569
+  LeftSlope: {fileID: 0}
+  LeftSlopePlatform: {fileID: 0}
+  RightSlope: {fileID: 0}
+  RightSlopePlatform: {fileID: 0}
+--- !u!210 &3934012880606150920
 SortingGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -552,7 +556,7 @@ SortingGroup:
   m_Enabled: 1
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_SortAtRoot: 0
 --- !u!1 &3570208372065116652
 GameObject:
@@ -1010,7 +1014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f2aeebc2faa7f418ac492638044682, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionHandler: {fileID: 2895488252836774683}
+  CollisionHandler: {fileID: 2895488252836774683}
 --- !u!58 &1830786187901328838
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1037,10 +1041,10 @@ CircleCollider2D:
     m_Bits: 4294967295
   m_ContactCaptureLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 122880
   m_CallbackLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 122880
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
