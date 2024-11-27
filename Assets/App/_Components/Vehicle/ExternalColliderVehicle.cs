@@ -110,7 +110,7 @@ public class ExternalColliderVehicle : MonoBehaviour
     private void Update()
     {
 
-        if ((drive.VehicleRB.velocity.x > VehicleSpeed && isExternalCollider2) || (drive.VehicleRB.velocity.x < -VehicleSpeed && isExternalCollider2) || (drive.VehicleRB.velocity.x <= VehicleSpeed && !isExternalCollider2) || (drive.VehicleRB.velocity.x >= -VehicleSpeed && !isExternalCollider2))
+        if ((drive.VehicleRB.linearVelocity.x > VehicleSpeed && isExternalCollider2) || (drive.VehicleRB.linearVelocity.x < -VehicleSpeed && isExternalCollider2) || (drive.VehicleRB.linearVelocity.x <= VehicleSpeed && !isExternalCollider2) || (drive.VehicleRB.linearVelocity.x >= -VehicleSpeed && !isExternalCollider2))
         {
             if (CurrentRightSlope != null && drive.input.MoveInput.x > 0 && drive.input.MoveInput.y < 0)
             {

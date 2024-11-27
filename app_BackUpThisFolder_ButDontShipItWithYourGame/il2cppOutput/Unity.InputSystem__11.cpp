@@ -142,6 +142,7 @@ IL2CPP_EXTERN_C RuntimeClass* U3CSplitU3Ed__9_tDF7D6AF6AAF8F188C3A8AC7B3CFA6B382
 IL2CPP_EXTERN_C RuntimeClass* U3CTokenizeU3Ed__8_t974A4A167882F66AC70C15513407BB7218E6E64B_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* U3CU3Ec_t77EE13A2DF0F0EE25274DE8AA8898CF60A1ECEBA_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeField* TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E____table_FieldInfo_var;
 IL2CPP_EXTERN_C String_t* _stringLiteral007174B876FA7EECC4152046B9308966D3E2B5B8;
 IL2CPP_EXTERN_C String_t* _stringLiteral0BA8CB3B900ECEF5E697192B8CDA6B626EB0CE72;
 IL2CPP_EXTERN_C String_t* _stringLiteral115036F179EA48E7662F9BE55E0E00A42DDE6DA7;
@@ -217,6 +218,7 @@ IL2CPP_EXTERN_C const RuntimeMethod* U3CTokenizeU3Ed__8_System_Collections_IEnum
 IL2CPP_EXTERN_C const RuntimeMethod* U3CU3Ec_U3Cget_namesU3Eb__2_0_m106D3E5FF1FBF96009877C31E3F0684CD8943EC9_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* UnsafeUtility_SizeOf_TisColor32_t73C5004937BF5BB8AD55323D51AAA40A898EF48B_m506739DDFD44F4F6CE36D20C36BFA90D7F56E4AE_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeType* Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_0_0_0_var;
+IL2CPP_EXTERN_C const RuntimeType* TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E_0_0_0_var;
 struct Delegate_t_marshaled_com;
 struct Delegate_t_marshaled_pinvoke;
 struct Exception_t_marshaled_com;
@@ -562,7 +564,7 @@ struct Void_t4861ACF8F4594C3437BB48B6E56783494B843915
 	};
 };
 #pragma pack(push, tp, 1)
-struct __StaticArrayInitTypeSizeU3D1038_tC28C31F75224CEC520DB0A52F7C747BDF0E8A242 
+struct __StaticArrayInitTypeSizeU3D1036_t2B134D3D9BE43DDBF0CAE23F8520454B58F30720 
 {
 	union
 	{
@@ -572,7 +574,7 @@ struct __StaticArrayInitTypeSizeU3D1038_tC28C31F75224CEC520DB0A52F7C747BDF0E8A24
 			{
 			};
 		};
-		uint8_t __StaticArrayInitTypeSizeU3D1038_tC28C31F75224CEC520DB0A52F7C747BDF0E8A242__padding[1038];
+		uint8_t __StaticArrayInitTypeSizeU3D1036_t2B134D3D9BE43DDBF0CAE23F8520454B58F30720__padding[1036];
 	};
 };
 #pragma pack(pop, tp)
@@ -607,7 +609,7 @@ struct __StaticArrayInitTypeSizeU3D1575_tA8B5FF47C1B66730DBCAE65E998D5358992BC06
 };
 #pragma pack(pop, tp)
 #pragma pack(push, tp, 1)
-struct __StaticArrayInitTypeSizeU3D22610_tB5136FAC82629098D396F895451F6D83656A1325 
+struct __StaticArrayInitTypeSizeU3D22498_tC2EB6D05B103204290DD7118F3B5ABE49A8C7212 
 {
 	union
 	{
@@ -617,7 +619,7 @@ struct __StaticArrayInitTypeSizeU3D22610_tB5136FAC82629098D396F895451F6D83656A13
 			{
 			};
 		};
-		uint8_t __StaticArrayInitTypeSizeU3D22610_tB5136FAC82629098D396F895451F6D83656A1325__padding[22610];
+		uint8_t __StaticArrayInitTypeSizeU3D22498_tC2EB6D05B103204290DD7118F3B5ABE49A8C7212__padding[22498];
 	};
 };
 #pragma pack(pop, tp)
@@ -652,7 +654,7 @@ struct __StaticArrayInitTypeSizeU3D24_t226C5F521B67F6FD3E9C29695114434A267A6141
 };
 #pragma pack(pop, tp)
 #pragma pack(push, tp, 1)
-struct __StaticArrayInitTypeSizeU3D25808_t35D9565685A5D0F36E53C1AEF8EEDE0D0D938719 
+struct __StaticArrayInitTypeSizeU3D25897_t168C8F6C0638745D1F04DF1225C4E0213F796CC1 
 {
 	union
 	{
@@ -662,7 +664,7 @@ struct __StaticArrayInitTypeSizeU3D25808_t35D9565685A5D0F36E53C1AEF8EEDE0D0D9387
 			{
 			};
 		};
-		uint8_t __StaticArrayInitTypeSizeU3D25808_t35D9565685A5D0F36E53C1AEF8EEDE0D0D938719__padding[25808];
+		uint8_t __StaticArrayInitTypeSizeU3D25897_t168C8F6C0638745D1F04DF1225C4E0213F796CC1__padding[25897];
 	};
 };
 #pragma pack(pop, tp)
@@ -682,7 +684,7 @@ struct __StaticArrayInitTypeSizeU3D371_tE9F5A574450793E6E499EB69CDD3047D5F5F00F9
 };
 #pragma pack(pop, tp)
 #pragma pack(push, tp, 1)
-struct __StaticArrayInitTypeSizeU3D4011_tC6D32A64151F5DC52182F93CCD84032758712B89 
+struct __StaticArrayInitTypeSizeU3D3983_tEEC9DC81C47FD09E3A8BC01ADC3EAB853EAB8BC0 
 {
 	union
 	{
@@ -692,7 +694,7 @@ struct __StaticArrayInitTypeSizeU3D4011_tC6D32A64151F5DC52182F93CCD84032758712B8
 			{
 			};
 		};
-		uint8_t __StaticArrayInitTypeSizeU3D4011_tC6D32A64151F5DC52182F93CCD84032758712B89__padding[4011];
+		uint8_t __StaticArrayInitTypeSizeU3D3983_tEEC9DC81C47FD09E3A8BC01ADC3EAB853EAB8BC0__padding[3983];
 	};
 };
 #pragma pack(pop, tp)
@@ -951,6 +953,10 @@ struct EditorInputBehaviorInPlayMode_tC47B44FACCF39F8E2DCA21270D51417B5DEF814D
 	int32_t ___value__;
 };
 struct InputActionPropertyDrawerMode_t521985D556D158DCD4AF3C3B351D5EC081C89E86 
+{
+	int32_t ___value__;
+};
+struct ScrollDeltaBehavior_tFC5903AA0557D4ECD6CD332D3DDA61319F68A01D 
 {
 	int32_t ___value__;
 };
@@ -1586,6 +1592,7 @@ struct InputSettings_tBA8835B505722A59702A08BCBA46ECF0B0274EEF  : public Scripta
 {
 	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___m_SupportedDevices;
 	int32_t ___m_UpdateMode;
+	int32_t ___m_ScrollDeltaBehavior;
 	int32_t ___m_MaxEventBytesPerUpdate;
 	int32_t ___m_MaxQueuedEventsPerUpdate;
 	bool ___m_CompensateForScreenOrientation;
@@ -1623,16 +1630,16 @@ struct ArgumentOutOfRangeException_tEA2822DAF62B10EEED00E0E3A341D4BAF78CF85F  : 
 };
 struct U3CPrivateImplementationDetailsU3E_tF62B85DD2C59D87BA6C8DA02965E1F3203A64E53_StaticFields
 {
-	__StaticArrayInitTypeSizeU3D25808_t35D9565685A5D0F36E53C1AEF8EEDE0D0D938719 ___03332D6C47EF157423D8980C0F150F1FA1CB9F834E8206580B13444416BFC6AA;
+	__StaticArrayInitTypeSizeU3D25897_t168C8F6C0638745D1F04DF1225C4E0213F796CC1 ___187AFA8E5A9F17C91073C0FEE9EE881EC0E12FF27125249A352E7F0027DA47FA;
 	__StaticArrayInitTypeSizeU3D1575_tA8B5FF47C1B66730DBCAE65E998D5358992BC062 ___20D6FD557BDCEEB113CF0C3EFEF501EB9D7AC4BA787A6A8C0EE057D8A217C869;
-	__StaticArrayInitTypeSizeU3D4011_tC6D32A64151F5DC52182F93CCD84032758712B89 ___63B74E5F0660F3254FE5AC58EE3CD9AC8FF8948DD7A5C9B54D0F8E0C67B3260F;
+	__StaticArrayInitTypeSizeU3D976_t61AF54C311BB0D3BB3FA5795EB3A69AFB6A26BA0 ___286DD866DF46AD63DA3C6198BE2F9CDB96A5223055FDC3E0287B7CCA9F45AFB4;
 	__StaticArrayInitTypeSizeU3D234_t6F71BB8FF9822A3A3833BAB22E81F6B6955A781F ___754FF720715FE60E11AD0300104CDEEB8E30183CF25B417CB06EEF78356058EB;
-	__StaticArrayInitTypeSizeU3D976_t61AF54C311BB0D3BB3FA5795EB3A69AFB6A26BA0 ___874A158EE5E9824634584F1FFF431FA5FC62C2D71CA9FCDCAA012D8A6A926392;
+	__StaticArrayInitTypeSizeU3D22498_tC2EB6D05B103204290DD7118F3B5ABE49A8C7212 ___A05DAD79330F4D78A4CBE59D31A94BD1850A88EE05A263F17510F242348C7EED;
 	__StaticArrayInitTypeSizeU3D460_t4ABB4E2DEDD6BE50A063561639D025CC2BDD5394 ___A9936AC77D07F78E7B0473F80D59F6E15FD898CEF491CA47D4EB1BA2AA6A4E66;
-	__StaticArrayInitTypeSizeU3D22610_tB5136FAC82629098D396F895451F6D83656A1325 ___B44FC7B577D3AFF88B9E70B63CE80C1AB00E3A76849C6EC2709943C76315A903;
 	__StaticArrayInitTypeSizeU3D371_tE9F5A574450793E6E499EB69CDD3047D5F5F00F9 ___BD3331923AE2D87F6296377CB80C86CE12BF445ED38D4485D28FACFEC06BFF5B;
+	__StaticArrayInitTypeSizeU3D3983_tEEC9DC81C47FD09E3A8BC01ADC3EAB853EAB8BC0 ___CB22D97D4BE9F7A4259E5E355F9F66F2C2D11559A9EA0634CFF23EAA93DA62AE;
+	__StaticArrayInitTypeSizeU3D1036_t2B134D3D9BE43DDBF0CAE23F8520454B58F30720 ___D4ADEDA8D4E42C7133AFF7B673F4893FEA7C6A101764B0179449453A7E7F516F;
 	__StaticArrayInitTypeSizeU3D84_t625EC17B34CB913B5E4B2EA6DB080F5BAF99EAEC ___D9D05356900CBD90C107CDBD184BC94526EC3F9228772F900FC7C60E3FE82B5A;
-	__StaticArrayInitTypeSizeU3D1038_tC28C31F75224CEC520DB0A52F7C747BDF0E8A242 ___DECF56A62725B03F2A8BBB3B372DB9FB38E9C95146DAF31983F2C2EDE07A762B;
 	__StaticArrayInitTypeSizeU3D24_t226C5F521B67F6FD3E9C29695114434A267A6141 ___EEAB0A49E323B940CB01CCD3E80D47F1566617F04466CD5D6190ACDBC495CB2A;
 	__StaticArrayInitTypeSizeU3D104_tA1677EB9042DF28F651C756F41B1B978A10472EA ___FFCB0A1E90587D61767DBCE765CBEC8743DC4A67B865900B464ED065E4625BD5;
 };
@@ -1699,12 +1706,6 @@ struct Type_t_StaticFields
 	MemberFilter_tF644F1AE82F611B677CE1964D5A3277DDA21D553* ___FilterAttribute;
 	MemberFilter_tF644F1AE82F611B677CE1964D5A3277DDA21D553* ___FilterName;
 	MemberFilter_tF644F1AE82F611B677CE1964D5A3277DDA21D553* ___FilterNameIgnoreCase;
-};
-struct InputSettings_tBA8835B505722A59702A08BCBA46ECF0B0274EEF_StaticFields
-{
-	bool ___optimizedControlsFeatureEnabled;
-	bool ___readValueCachingFeatureEnabled;
-	bool ___paranoidReadValueCachingChecksEnabled;
 };
 #ifdef __clang__
 #pragma clang diagnostic pop
@@ -5914,12 +5915,26 @@ IL_00eb:
 #endif
 IL2CPP_EXTERN_C void TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E_marshal_pinvoke(const TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E& unmarshaled, TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E_marshaled_pinvoke& marshaled)
 {
-	Exception_t* ___tableException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'table' of type 'TypeTable'.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E____table_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___tableException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s'.", TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E____table_FieldInfo_var, TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___tableException, NULL);
 }
 IL2CPP_EXTERN_C void TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E_marshal_pinvoke_back(const TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E_marshaled_pinvoke& marshaled, TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E& unmarshaled)
 {
-	Exception_t* ___tableException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'table' of type 'TypeTable'.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E____table_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___tableException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s'.", TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E____table_FieldInfo_var, TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___tableException, NULL);
 }
 IL2CPP_EXTERN_C void TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E_marshal_pinvoke_cleanup(TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E_marshaled_pinvoke& marshaled)
@@ -5927,12 +5942,26 @@ IL2CPP_EXTERN_C void TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E_marshal
 }
 IL2CPP_EXTERN_C void TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E_marshal_com(const TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E& unmarshaled, TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E_marshaled_com& marshaled)
 {
-	Exception_t* ___tableException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'table' of type 'TypeTable'.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E____table_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___tableException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s'.", TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E____table_FieldInfo_var, TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___tableException, NULL);
 }
 IL2CPP_EXTERN_C void TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E_marshal_com_back(const TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E_marshaled_com& marshaled, TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E& unmarshaled)
 {
-	Exception_t* ___tableException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'table' of type 'TypeTable'.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E____table_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___tableException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s'.", TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E____table_FieldInfo_var, TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___tableException, NULL);
 }
 IL2CPP_EXTERN_C void TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E_marshal_com_cleanup(TypeTable_tEAC1ECAD849469DEA65DA2FC65B19C2D4739B67E_marshaled_com& marshaled)

@@ -348,6 +348,8 @@ IL2CPP_EXTERN_C RuntimeClass* X509EnhancedKeyUsageExtension_t237A41510BAC916B5FF
 IL2CPP_EXTERN_C RuntimeClass* X509Extension_tEDB806DCCB5A652375D9CC60A7A75AE8A2F4B7E5_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* X509KeyUsageExtension_t8AD500911A72309DBA02AF6C8461FA465CC56F1B_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* X509SubjectKeyIdentifierExtension_tBF27F0FD0209C19D9AE4A9B04AB313DC48200CE5_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeField* ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2____envVariables_FieldInfo_var;
+IL2CPP_EXTERN_C RuntimeField* ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C____password_FieldInfo_var;
 IL2CPP_EXTERN_C String_t* _stringLiteral001611EA36FEB747E4C160A3E7A402813B416AF1;
 IL2CPP_EXTERN_C String_t* _stringLiteral08F78B1140DE9B7FF7C3C57BB5C1F10BBD3B15CB;
 IL2CPP_EXTERN_C String_t* _stringLiteral0B85D604B5CD78CCF01CDA620C0DEF5DCC5C1FD7;
@@ -607,6 +609,8 @@ IL2CPP_EXTERN_C const RuntimeMethod* X509SubjectKeyIdentifierExtension_get_Subje
 IL2CPP_EXTERN_C const RuntimeType* DesignTimeVisibleAttribute_t5A6C242E753C45DE14901B748FAA3ED0BE5F88BE_0_0_0_var;
 IL2CPP_EXTERN_C const RuntimeType* IEqualityComparer_tEF8F1EC76B9C8E76695BE848D41E6B147928D1C1_0_0_0_var;
 IL2CPP_EXTERN_C const RuntimeType* ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_0_0_0_var;
+IL2CPP_EXTERN_C const RuntimeType* ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2_0_0_0_var;
+IL2CPP_EXTERN_C const RuntimeType* ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C_0_0_0_var;
 struct CultureData_tEEFDCF4ECA1BBF6C0C8C94EB3541657245598F9D_marshaled_com;
 struct CultureData_tEEFDCF4ECA1BBF6C0C8C94EB3541657245598F9D_marshaled_pinvoke;
 struct CultureInfo_t9BA817D41AD55AC8BD07480DD8AC22F8FFA378E0_marshaled_com;
@@ -2553,12 +2557,26 @@ inline int32_t ReadOnlySpan_1_get_Length_m031225D82859BA85FEE8375AA52B4CE8DF1ACE
 #endif
 IL2CPP_EXTERN_C void ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2_marshal_pinvoke(const ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2& unmarshaled, ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2_marshaled_pinvoke& marshaled)
 {
-	Exception_t* ___envVariablesException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'envVariables' of type 'ProcInfo'.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2____envVariables_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___envVariablesException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s'.", ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2____envVariables_FieldInfo_var, ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___envVariablesException, NULL);
 }
 IL2CPP_EXTERN_C void ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2_marshal_pinvoke_back(const ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2_marshaled_pinvoke& marshaled, ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2& unmarshaled)
 {
-	Exception_t* ___envVariablesException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'envVariables' of type 'ProcInfo'.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2____envVariables_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___envVariablesException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s'.", ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2____envVariables_FieldInfo_var, ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___envVariablesException, NULL);
 }
 IL2CPP_EXTERN_C void ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2_marshal_pinvoke_cleanup(ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2_marshaled_pinvoke& marshaled)
@@ -2566,12 +2584,26 @@ IL2CPP_EXTERN_C void ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2_marshal_
 }
 IL2CPP_EXTERN_C void ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2_marshal_com(const ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2& unmarshaled, ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2_marshaled_com& marshaled)
 {
-	Exception_t* ___envVariablesException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'envVariables' of type 'ProcInfo'.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2____envVariables_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___envVariablesException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s'.", ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2____envVariables_FieldInfo_var, ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___envVariablesException, NULL);
 }
 IL2CPP_EXTERN_C void ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2_marshal_com_back(const ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2_marshaled_com& marshaled, ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2& unmarshaled)
 {
-	Exception_t* ___envVariablesException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'envVariables' of type 'ProcInfo'.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2____envVariables_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___envVariablesException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s'.", ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2____envVariables_FieldInfo_var, ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___envVariablesException, NULL);
 }
 IL2CPP_EXTERN_C void ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2_marshal_com_cleanup(ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2_marshaled_com& marshaled)
@@ -2603,12 +2635,26 @@ IL2CPP_EXTERN_C void ProcInfo_t79019AEB58EDD7089B790325C2EBE830E1F458D2_marshal_
 #endif
 IL2CPP_EXTERN_C void ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C_marshal_pinvoke(const ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C& unmarshaled, ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C_marshaled_pinvoke& marshaled)
 {
-	Exception_t* ___passwordException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'password' of type 'ProcessStartInfo': Reference type field marshaling is not supported.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C____password_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___passwordException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s': Reference type field marshaling is not supported.", ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C____password_FieldInfo_var, ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___passwordException, NULL);
 }
 IL2CPP_EXTERN_C void ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C_marshal_pinvoke_back(const ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C_marshaled_pinvoke& marshaled, ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C& unmarshaled)
 {
-	Exception_t* ___passwordException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'password' of type 'ProcessStartInfo': Reference type field marshaling is not supported.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C____password_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___passwordException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s': Reference type field marshaling is not supported.", ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C____password_FieldInfo_var, ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___passwordException, NULL);
 }
 IL2CPP_EXTERN_C void ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C_marshal_pinvoke_cleanup(ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C_marshaled_pinvoke& marshaled)
@@ -2616,12 +2662,26 @@ IL2CPP_EXTERN_C void ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C_
 }
 IL2CPP_EXTERN_C void ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C_marshal_com(const ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C& unmarshaled, ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C_marshaled_com& marshaled)
 {
-	Exception_t* ___passwordException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'password' of type 'ProcessStartInfo': Reference type field marshaling is not supported.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C____password_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___passwordException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s': Reference type field marshaling is not supported.", ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C____password_FieldInfo_var, ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___passwordException, NULL);
 }
 IL2CPP_EXTERN_C void ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C_marshal_com_back(const ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C_marshaled_com& marshaled, ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C& unmarshaled)
 {
-	Exception_t* ___passwordException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'password' of type 'ProcessStartInfo': Reference type field marshaling is not supported.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C____password_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___passwordException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s': Reference type field marshaling is not supported.", ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C____password_FieldInfo_var, ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___passwordException, NULL);
 }
 IL2CPP_EXTERN_C void ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C_marshal_com_cleanup(ProcessStartInfo_t03E06D8098D3DC01CDACE23EE2D308BDA8E41D3C_marshaled_com& marshaled)

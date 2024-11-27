@@ -330,6 +330,7 @@ IL2CPP_EXTERN_C RuntimeClass* ValueInput_t2F9A2AA29F683A1C27C273BF8AABA4C2D98513
 IL2CPP_EXTERN_C RuntimeClass* ValueOutput_tADDC9DBF6515A1572E876C3881B5F110DC5EBE1B_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* fsData_t6E144EC58C6E449805AB7BF77BCDAB7230BBFA23_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeField* RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707____U3CportU3Ek__BackingField_FieldInfo_var;
 IL2CPP_EXTERN_C String_t* _stringLiteral04FAF27048DC759A0428474BF52824B2E3BACBA6;
 IL2CPP_EXTERN_C String_t* _stringLiteral05F5AA68C219733BAB29857305A6108960D34C0A;
 IL2CPP_EXTERN_C String_t* _stringLiteral20348D3F1EA456A3479BD3DA405A205912096DE0;
@@ -497,6 +498,7 @@ IL2CPP_EXTERN_C const RuntimeType* Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D971
 IL2CPP_EXTERN_C const RuntimeType* Ray2D_t48EB7C703F8A2363D8A8F4A05D58640BD5721C7A_0_0_0_var;
 IL2CPP_EXTERN_C const RuntimeType* Ray_t2B1742D7958DC05BDC3EFC7461D3593E1430DC00_0_0_0_var;
 IL2CPP_EXTERN_C const RuntimeType* Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D_0_0_0_var;
+IL2CPP_EXTERN_C const RuntimeType* RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707_0_0_0_var;
 IL2CPP_EXTERN_C const RuntimeType* UnitCategory_t9C6A3835257BFF5E9153C86419B9B7B8C5CED27C_0_0_0_var;
 IL2CPP_EXTERN_C const RuntimeType* Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7_0_0_0_var;
 IL2CPP_EXTERN_C const RuntimeType* Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2_0_0_0_var;
@@ -4046,12 +4048,26 @@ IL_0024:
 #endif
 IL2CPP_EXTERN_C void RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707_marshal_pinvoke(const RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707& unmarshaled, RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707_marshaled_pinvoke& marshaled)
 {
-	Exception_t* ___U3CportU3Ek__BackingFieldException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '<port>k__BackingField' of type 'RecursionNode': Reference type field marshaling is not supported.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707____U3CportU3Ek__BackingField_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___U3CportU3Ek__BackingFieldException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s': Reference type field marshaling is not supported.", RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707____U3CportU3Ek__BackingField_FieldInfo_var, RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___U3CportU3Ek__BackingFieldException, NULL);
 }
 IL2CPP_EXTERN_C void RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707_marshal_pinvoke_back(const RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707_marshaled_pinvoke& marshaled, RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707& unmarshaled)
 {
-	Exception_t* ___U3CportU3Ek__BackingFieldException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '<port>k__BackingField' of type 'RecursionNode': Reference type field marshaling is not supported.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707____U3CportU3Ek__BackingField_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___U3CportU3Ek__BackingFieldException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s': Reference type field marshaling is not supported.", RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707____U3CportU3Ek__BackingField_FieldInfo_var, RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___U3CportU3Ek__BackingFieldException, NULL);
 }
 IL2CPP_EXTERN_C void RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707_marshal_pinvoke_cleanup(RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707_marshaled_pinvoke& marshaled)
@@ -4059,12 +4075,26 @@ IL2CPP_EXTERN_C void RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707_mar
 }
 IL2CPP_EXTERN_C void RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707_marshal_com(const RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707& unmarshaled, RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707_marshaled_com& marshaled)
 {
-	Exception_t* ___U3CportU3Ek__BackingFieldException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '<port>k__BackingField' of type 'RecursionNode': Reference type field marshaling is not supported.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707____U3CportU3Ek__BackingField_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___U3CportU3Ek__BackingFieldException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s': Reference type field marshaling is not supported.", RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707____U3CportU3Ek__BackingField_FieldInfo_var, RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___U3CportU3Ek__BackingFieldException, NULL);
 }
 IL2CPP_EXTERN_C void RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707_marshal_com_back(const RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707_marshaled_com& marshaled, RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707& unmarshaled)
 {
-	Exception_t* ___U3CportU3Ek__BackingFieldException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '<port>k__BackingField' of type 'RecursionNode': Reference type field marshaling is not supported.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707____U3CportU3Ek__BackingField_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___U3CportU3Ek__BackingFieldException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s': Reference type field marshaling is not supported.", RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707____U3CportU3Ek__BackingField_FieldInfo_var, RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___U3CportU3Ek__BackingFieldException, NULL);
 }
 IL2CPP_EXTERN_C void RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707_marshal_com_cleanup(RecursionNode_t0C46AE9F2D87E73EC9D98C4251B9AFFC0B1E7707_marshaled_com& marshaled)

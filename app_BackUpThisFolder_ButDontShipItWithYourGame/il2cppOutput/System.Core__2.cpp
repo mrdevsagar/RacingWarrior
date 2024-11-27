@@ -514,6 +514,7 @@ IL2CPP_EXTERN_C RuntimeClass* U3CU3Ec_t56D51953ED617FE5F26E2D938B24B603B3E38CF1_
 IL2CPP_EXTERN_C RuntimeClass* UnaryExpression_tFB4F40A211A2FF9B58F1A86E0EDB474121867B96_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Utils_tC98EE4BDA92045C3F3A73050A1648C0CD74220F8_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* ValueTypeCopyInstruction_t5CA0414FF8C86A78FE5093D4F0B178A580FF4F87_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeField* InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076321_____debugInfo_FieldInfo_var;
 IL2CPP_EXTERN_C String_t* _stringLiteral052C17E9D6BC1FE3DB31F3277AED6D12A2C6BDAC;
 IL2CPP_EXTERN_C String_t* _stringLiteral07C3DCDD9C51E641BE09DD4B32155A75B755E361;
 IL2CPP_EXTERN_C String_t* _stringLiteral0B22D7E60DEDC09DDAFBD8D0F0CC44639140A60B;
@@ -692,6 +693,7 @@ IL2CPP_EXTERN_C const RuntimeMethod* U3CU3Ec_U3CValidateJumpU3Eb__9_0_m929395A9C
 IL2CPP_EXTERN_C const RuntimeMethod* U3CU3Ec__DisplayClass74_0_U3CMakeRunDelegateCtorU3Eb__0_m823FC5D46C951444206C324C201FAFF87426DEE1_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeType* Decimal_tDA6C877282B2D789CF97C0949661CC11D643969F_0_0_0_var;
 IL2CPP_EXTERN_C const RuntimeType* Func_2_t7BD20F9ECC4A1F086CAA91C5E466572C9B1164D5_0_0_0_var;
+IL2CPP_EXTERN_C const RuntimeType* InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076321_0_0_0_var;
 IL2CPP_EXTERN_C const RuntimeType* LambdaExpression_tD26FB6AEAD01B2EBB668CDEAFAAFA4948697300E_0_0_0_var;
 IL2CPP_EXTERN_C const RuntimeType* LightLambda_t877750DB4F8A254CB9FE797CA4C12C02600DD9D5_0_0_0_var;
 IL2CPP_EXTERN_C const RuntimeType* Nullable_1_t78F453FADB4A9F50F267A4E349019C34410D1A01_0_0_0_var;
@@ -9896,12 +9898,26 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugInfoComparer__ctor_m697CCDE80B3BA07
 #endif
 IL2CPP_EXTERN_C void InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076321_marshal_pinvoke(const InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076321& unmarshaled, InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076321_marshaled_pinvoke& marshaled)
 {
-	Exception_t* ____debugInfoException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '_debugInfo' of type 'InterpretedFrameInfo': Reference type field marshaling is not supported.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076321_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076321_____debugInfo_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ____debugInfoException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s': Reference type field marshaling is not supported.", InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076321_____debugInfo_FieldInfo_var, InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076321_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(____debugInfoException, NULL);
 }
 IL2CPP_EXTERN_C void InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076321_marshal_pinvoke_back(const InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076321_marshaled_pinvoke& marshaled, InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076321& unmarshaled)
 {
-	Exception_t* ____debugInfoException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '_debugInfo' of type 'InterpretedFrameInfo': Reference type field marshaling is not supported.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076321_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076321_____debugInfo_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ____debugInfoException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s': Reference type field marshaling is not supported.", InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076321_____debugInfo_FieldInfo_var, InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076321_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(____debugInfoException, NULL);
 }
 IL2CPP_EXTERN_C void InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076321_marshal_pinvoke_cleanup(InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076321_marshaled_pinvoke& marshaled)
@@ -9909,12 +9925,26 @@ IL2CPP_EXTERN_C void InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076
 }
 IL2CPP_EXTERN_C void InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076321_marshal_com(const InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076321& unmarshaled, InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076321_marshaled_com& marshaled)
 {
-	Exception_t* ____debugInfoException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '_debugInfo' of type 'InterpretedFrameInfo': Reference type field marshaling is not supported.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076321_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076321_____debugInfo_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ____debugInfoException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s': Reference type field marshaling is not supported.", InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076321_____debugInfo_FieldInfo_var, InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076321_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(____debugInfoException, NULL);
 }
 IL2CPP_EXTERN_C void InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076321_marshal_com_back(const InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076321_marshaled_com& marshaled, InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076321& unmarshaled)
 {
-	Exception_t* ____debugInfoException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '_debugInfo' of type 'InterpretedFrameInfo': Reference type field marshaling is not supported.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076321_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076321_____debugInfo_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ____debugInfoException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s': Reference type field marshaling is not supported.", InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076321_____debugInfo_FieldInfo_var, InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076321_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(____debugInfoException, NULL);
 }
 IL2CPP_EXTERN_C void InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076321_marshal_com_cleanup(InterpretedFrameInfo_tEF62B79D176B8D032C22953AA0D5B581C4076321_marshaled_com& marshaled)

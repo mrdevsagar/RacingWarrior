@@ -373,6 +373,7 @@ IL2CPP_EXTERN_C RuntimeClass* Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7_
 IL2CPP_EXTERN_C RuntimeClass* Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Vector4U5BU5D_tC0F3A7115F85007510F6D173968200CD31BCF7AD_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeField* AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC____m_InputAxisProvider_FieldInfo_var;
 IL2CPP_EXTERN_C RuntimeField* U3CPrivateImplementationDetailsU3E_tF81A938197C473BE8ACF5B2488DF671B36F5DF70____AA5072B96927F710758B3E5237A84AC68E397BC4E1BF7E864A950696D743CC32_FieldInfo_var;
 IL2CPP_EXTERN_C String_t* _stringLiteral067E3703A76FB0D9087E5969702E6EA78EFB8706;
 IL2CPP_EXTERN_C String_t* _stringLiteral0E4EF6DA6DB0D88926DD3F607F0350A4561BB1E2;
@@ -459,6 +460,7 @@ IL2CPP_EXTERN_C const RuntimeMethod* List_1_get_Item_mD1F597D131BA52D2B53B0FC959
 IL2CPP_EXTERN_C const RuntimeMethod* List_1_get_Item_mF7BAD78CA9941DF0CD8F1E94ACD1FFC6BEC5318F_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* U3CU3Ec_U3CGetActiveCameraU3Eb__8_0_mD2F56E9122FBF90DB68E7930C072C6AFFFB62A5A_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* UnityEvent_2_Invoke_m36C8A1EE64C3458ED11D774FB5CB227C9DFFE7DC_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeType* AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC_0_0_0_var;
 IL2CPP_EXTERN_C const RuntimeType* BoxCollider_tFA5D239388334D6DE0B8FFDAD6825C5B03786E23_0_0_0_var;
 IL2CPP_EXTERN_C const RuntimeType* CapsuleCollider_t3A1671C74F0836ABEF5D01A7470B5B2BE290A808_0_0_0_var;
 IL2CPP_EXTERN_C const RuntimeType* CinemachineConfiner2D_t0EA603E4C83E021C90F92AE7B113D3894443001E_0_0_0_var;
@@ -6244,12 +6246,26 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OnGUIDelegate_EndInvoke_m283F90F8BA02B6A
 
 IL2CPP_EXTERN_C void AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC_marshal_pinvoke(const AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC& unmarshaled, AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC_marshaled_pinvoke& marshaled)
 {
-	Exception_t* ___m_InputAxisProviderException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'm_InputAxisProvider' of type 'AxisState': Reference type field marshaling is not supported.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC____m_InputAxisProvider_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___m_InputAxisProviderException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s': Reference type field marshaling is not supported.", AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC____m_InputAxisProvider_FieldInfo_var, AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___m_InputAxisProviderException, NULL);
 }
 IL2CPP_EXTERN_C void AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC_marshal_pinvoke_back(const AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC_marshaled_pinvoke& marshaled, AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC& unmarshaled)
 {
-	Exception_t* ___m_InputAxisProviderException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'm_InputAxisProvider' of type 'AxisState': Reference type field marshaling is not supported.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC____m_InputAxisProvider_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___m_InputAxisProviderException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s': Reference type field marshaling is not supported.", AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC____m_InputAxisProvider_FieldInfo_var, AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___m_InputAxisProviderException, NULL);
 }
 IL2CPP_EXTERN_C void AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC_marshal_pinvoke_cleanup(AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC_marshaled_pinvoke& marshaled)
@@ -6259,12 +6275,26 @@ IL2CPP_EXTERN_C void AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC_marshal
 
 IL2CPP_EXTERN_C void AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC_marshal_com(const AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC& unmarshaled, AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC_marshaled_com& marshaled)
 {
-	Exception_t* ___m_InputAxisProviderException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'm_InputAxisProvider' of type 'AxisState': Reference type field marshaling is not supported.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC____m_InputAxisProvider_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___m_InputAxisProviderException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s': Reference type field marshaling is not supported.", AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC____m_InputAxisProvider_FieldInfo_var, AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___m_InputAxisProviderException, NULL);
 }
 IL2CPP_EXTERN_C void AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC_marshal_com_back(const AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC_marshaled_com& marshaled, AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC& unmarshaled)
 {
-	Exception_t* ___m_InputAxisProviderException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'm_InputAxisProvider' of type 'AxisState': Reference type field marshaling is not supported.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC____m_InputAxisProvider_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___m_InputAxisProviderException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s': Reference type field marshaling is not supported.", AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC____m_InputAxisProvider_FieldInfo_var, AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___m_InputAxisProviderException, NULL);
 }
 IL2CPP_EXTERN_C void AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC_marshal_com_cleanup(AxisState_t92C4FF6E41678A3A1C84A040D51DE5B5BD48ECFC_marshaled_com& marshaled)

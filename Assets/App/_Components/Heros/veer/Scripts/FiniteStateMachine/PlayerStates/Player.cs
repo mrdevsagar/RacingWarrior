@@ -366,7 +366,7 @@ public class Player : MonoBehaviour
     #region Other Public Methods 
     public void SetVelocityX(float velocityX)
     {
-        RB.velocity = new Vector2(velocityX, RB.velocity.y);
+        RB.linearVelocity = new Vector2(velocityX, RB.linearVelocity.y);
     }
 
    

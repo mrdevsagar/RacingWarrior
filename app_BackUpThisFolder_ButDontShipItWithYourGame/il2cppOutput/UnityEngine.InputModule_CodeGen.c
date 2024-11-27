@@ -24,7 +24,10 @@ extern void NativeInputSystem_QueueInputEvent_m9363FC2953D733EA8A3AE58470A90B476
 extern void NativeInputSystem_IOCTL_m11AC7B69197C6214E794B563D48FD60E848901E7 (void);
 extern void NativeInputSystem_SetPollingFrequency_mDEF2E1093D0776906BC95CC8E29A143C115910A0 (void);
 extern void NativeInputSystem_Update_m898216ECCA26122D827C2FB45FC4A20296031036 (void);
-static Il2CppMethodPointer s_methodPointers[17] = 
+extern void NativeInputSystem_get_normalizeScrollWheelDelta_mF633DF00F7F5823179F3473BC5E07BE9BF75A04F (void);
+extern void NativeInputSystem_set_normalizeScrollWheelDelta_mA6CCECFB417A30D7AEB05FDB313FEA28963F012D (void);
+extern void NativeInputSystem_GetScrollWheelDeltaPerTick_mD4FBEBF03836656D5DE3D39A8CEB3CB395DB607B (void);
+static Il2CppMethodPointer s_methodPointers[20] = 
 {
 	NativeUpdateCallback__ctor_m04FDCD50564E7535FADAFF34BBA83500585A84F5,
 	NativeUpdateCallback_Invoke_mC4B7018AE8ED52FB9C6805F65C57A81812D21333,
@@ -43,32 +46,38 @@ static Il2CppMethodPointer s_methodPointers[17] =
 	NativeInputSystem_IOCTL_m11AC7B69197C6214E794B563D48FD60E848901E7,
 	NativeInputSystem_SetPollingFrequency_mDEF2E1093D0776906BC95CC8E29A143C115910A0,
 	NativeInputSystem_Update_m898216ECCA26122D827C2FB45FC4A20296031036,
+	NativeInputSystem_get_normalizeScrollWheelDelta_mF633DF00F7F5823179F3473BC5E07BE9BF75A04F,
+	NativeInputSystem_set_normalizeScrollWheelDelta_mA6CCECFB417A30D7AEB05FDB313FEA28963F012D,
+	NativeInputSystem_GetScrollWheelDeltaPerTick_mD4FBEBF03836656D5DE3D39A8CEB3CB395DB607B,
 };
-static const int32_t s_InvokerIndices[17] = 
+static const int32_t s_InvokerIndices[20] = 
 {
-	3735,
-	3280,
-	13897,
-	13612,
-	13964,
-	13608,
-	12601,
-	12602,
-	12598,
-	13601,
-	13863,
-	13863,
-	13879,
-	13610,
-	10598,
-	13618,
-	13608,
+	3788,
+	3328,
+	14088,
+	13799,
+	14155,
+	13795,
+	12773,
+	12774,
+	12770,
+	13788,
+	14054,
+	14054,
+	14070,
+	13797,
+	10741,
+	13805,
+	13795,
+	14042,
+	13788,
+	14119,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_UnityEngine_InputModule_CodeGenModule;
 const Il2CppCodeGenModule g_UnityEngine_InputModule_CodeGenModule = 
 {
 	"UnityEngine.InputModule.dll",
-	17,
+	20,
 	s_methodPointers,
 	0,
 	NULL,

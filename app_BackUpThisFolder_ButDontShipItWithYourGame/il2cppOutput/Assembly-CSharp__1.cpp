@@ -114,6 +114,7 @@ struct HashSet_1_t5DD20B42149A11AEBF12A75505306E6EFC34943A;
 struct IEnumerable_1_tB0371F6D0932F0C778CAEED128603B65772AC357;
 struct IEnumerator_1_t5197EB77176C670D4AAF5E0D1B4F1AB9940EFE41;
 struct IEqualityComparer_1_tAE94C8F24AD5B94D4EE85CA9FC59E3409D41CAF7;
+struct List_1_tDE5B540E5F4E233D4886D058A351E0A833F40467;
 struct List_1_t2CDCA768E7F493F5EDEBC75AEB200FD621354E35;
 struct List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B;
 struct List_1_t95DB74B8EE315F8F92B7B96D93C901C8C3F6FE2C;
@@ -552,6 +553,7 @@ IL2CPP_EXTERN_C RuntimeClass* Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2_
 IL2CPP_EXTERN_C RuntimeClass* WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* WaitForSeconds_tF179DF251655B8DF044952E70A60DF4B358A3DD3_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* WordSelectionEvent_t340E6006406B5E90F7190C56218E8F7E3712945E_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeField* GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E____m_Wrapper_FieldInfo_var;
 IL2CPP_EXTERN_C RuntimeField* U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49FCA____3D3077D8C577C9A5A2A3EB2A27DF9D1846E735582AFB724744B1F4632A114C71_FieldInfo_var;
 IL2CPP_EXTERN_C RuntimeField* U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49FCA____456CE7941B1BA32A8D3C58B0DC5AC7595998D3FF1D8D4C45BDF7B1B14B1EA6E1_FieldInfo_var;
 IL2CPP_EXTERN_C RuntimeField* U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49FCA____62176A5B325C36BFEC98B5C626203E1891A6AFBD2FAD791EA4A07184A434171F_FieldInfo_var;
@@ -850,6 +852,7 @@ IL2CPP_EXTERN_C const RuntimeMethod* UnityEvent_3_Invoke_mA9B8756BF3A597179581D2
 IL2CPP_EXTERN_C const RuntimeMethod* UnityEvent_3__ctor_m945E5A788027E4B7491C93E2ACBD523B5A8E1829_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* UnityEvent_3__ctor_mFE0002F38DAAC29805C09ACB9F397DE80F6CB7BC_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeType* Font_tC95270EA3198038970422D78B74A7F2E218A96B6_0_0_0_var;
+IL2CPP_EXTERN_C const RuntimeType* GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E_0_0_0_var;
 IL2CPP_EXTERN_C const RuntimeType* TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957_0_0_0_var;
 struct Color32_t73C5004937BF5BB8AD55323D51AAA40A898EF48B;
 struct CultureData_tEEFDCF4ECA1BBF6C0C8C94EB3541657245598F9D_marshaled_com;
@@ -4471,6 +4474,8 @@ struct TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9  : public MaskableGrap
 	Color32_t73C5004937BF5BB8AD55323D51AAA40A898EF48B ___m_faceColor;
 	Color32_t73C5004937BF5BB8AD55323D51AAA40A898EF48B ___m_outlineColor;
 	float ___m_outlineWidth;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___m_currentEnvMapRotation;
+	bool ___m_hasEnvMapProperty;
 	float ___m_fontSize;
 	float ___m_currentFontSize;
 	float ___m_fontSizeBase;
@@ -4991,6 +4996,7 @@ struct Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26_StaticFields
 struct InputActionMap_tFCE82E0E014319D4DED9F8962B06655DD0420A09_StaticFields
 {
 	int32_t ___s_DeferBindingResolution;
+	bool ___s_NeedToResolveBindings;
 };
 struct RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_StaticFields
 {
@@ -4998,6 +5004,7 @@ struct RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_StaticFields
 };
 struct TMP_FontAsset_t923BF2F78D7C5AC36376E168A1193B7CB4855160_StaticFields
 {
+	List_1_tDE5B540E5F4E233D4886D058A351E0A833F40467* ___s_CallbackInstances;
 	ProfilerMarker_tA256E18DA86EDBC5528CE066FC91C96EE86501AD ___k_ReadFontAssetDefinitionMarker;
 	ProfilerMarker_tA256E18DA86EDBC5528CE066FC91C96EE86501AD ___k_AddSynthesizedCharactersMarker;
 	ProfilerMarker_tA256E18DA86EDBC5528CE066FC91C96EE86501AD ___k_TryAddGlyphMarker;
@@ -5771,7 +5778,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2D
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F Color_get_cyan_m182A29E7475C0A98ACC03E1CF5252BAB83F0BA31_inline (const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 Vector2_get_up_m41067879408BB378593EF7406AF2525F176F0ABF_inline (const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F Color_get_yellow_m66637FA14383E8D74F24AE256B577CE1D55D469F_inline (const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Rigidbody2D_get_velocityX_m20B344257D101D370B08BF3E3C861AD841EB1DDC (Rigidbody2D_tBEBE9523CF4448544085AF46BF7E10AA499F320F* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Rigidbody2D_get_linearVelocityX_m215D50FE26F351EA5684191AFEEDE44D80783EAC (Rigidbody2D_tBEBE9523CF4448544085AF46BF7E10AA499F320F* __this, const RuntimeMethod* method) ;
 inline bool List_1_Remove_mCCE85D4D5326536C4B214C73D07030F4CCD18485 (List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* __this, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_item, const RuntimeMethod* method)
 {
 	return ((  bool (*) (List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B*, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*, const RuntimeMethod*))List_1_Remove_m4DFA48F4CEB9169601E75FC28517C5C06EFA5AD7_gshared)(__this, ___0_item, method);
@@ -7502,7 +7509,7 @@ IL_02e8:
 		Rigidbody2D_tBEBE9523CF4448544085AF46BF7E10AA499F320F* L_112 = __this->___RB;
 		NullCheck(L_112);
 		float L_113;
-		L_113 = Rigidbody2D_get_velocityX_m20B344257D101D370B08BF3E3C861AD841EB1DDC(L_112, NULL);
+		L_113 = Rigidbody2D_get_linearVelocityX_m215D50FE26F351EA5684191AFEEDE44D80783EAC(L_112, NULL);
 		if ((!(((float)L_113) < ((float)(0.0f)))))
 		{
 			goto IL_031c;
@@ -14798,12 +14805,26 @@ IL_001f:
 #endif
 IL2CPP_EXTERN_C void GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E_marshal_pinvoke(const GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E& unmarshaled, GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E_marshaled_pinvoke& marshaled)
 {
-	Exception_t* ___m_WrapperException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'm_Wrapper' of type 'GamePlayActions': Reference type field marshaling is not supported.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E____m_Wrapper_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___m_WrapperException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s': Reference type field marshaling is not supported.", GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E____m_Wrapper_FieldInfo_var, GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___m_WrapperException, NULL);
 }
 IL2CPP_EXTERN_C void GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E_marshal_pinvoke_back(const GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E_marshaled_pinvoke& marshaled, GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E& unmarshaled)
 {
-	Exception_t* ___m_WrapperException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'm_Wrapper' of type 'GamePlayActions': Reference type field marshaling is not supported.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E____m_Wrapper_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___m_WrapperException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s': Reference type field marshaling is not supported.", GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E____m_Wrapper_FieldInfo_var, GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___m_WrapperException, NULL);
 }
 IL2CPP_EXTERN_C void GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E_marshal_pinvoke_cleanup(GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E_marshaled_pinvoke& marshaled)
@@ -14811,12 +14832,26 @@ IL2CPP_EXTERN_C void GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E_m
 }
 IL2CPP_EXTERN_C void GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E_marshal_com(const GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E& unmarshaled, GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E_marshaled_com& marshaled)
 {
-	Exception_t* ___m_WrapperException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'm_Wrapper' of type 'GamePlayActions': Reference type field marshaling is not supported.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E____m_Wrapper_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___m_WrapperException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s': Reference type field marshaling is not supported.", GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E____m_Wrapper_FieldInfo_var, GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___m_WrapperException, NULL);
 }
 IL2CPP_EXTERN_C void GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E_marshal_com_back(const GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E_marshaled_com& marshaled, GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E& unmarshaled)
 {
-	Exception_t* ___m_WrapperException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'm_Wrapper' of type 'GamePlayActions': Reference type field marshaling is not supported.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E____m_Wrapper_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___m_WrapperException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s': Reference type field marshaling is not supported.", GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E____m_Wrapper_FieldInfo_var, GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___m_WrapperException, NULL);
 }
 IL2CPP_EXTERN_C void GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E_marshal_com_cleanup(GamePlayActions_tBADEC7E3C6E04F5D03A5E11BD2E46DF331F7527E_marshaled_com& marshaled)

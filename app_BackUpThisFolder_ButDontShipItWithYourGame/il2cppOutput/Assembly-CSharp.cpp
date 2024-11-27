@@ -386,6 +386,7 @@ IL2CPP_EXTERN_C RuntimeClass* WeaponRifleState_t1F0099E75D8A3257E40B0EA01E3E1411
 IL2CPP_EXTERN_C RuntimeClass* WeaponStateMachine_t33A60395F2EECB6BAC973C7631E96D5BFBFE8A5F_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* WeaponSwordState_tD212194589432866907C2CE36A9765B2D8CDC998_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* WeaponTypes_t049F9051BBC730DA2220E1F6851E294D9CD93257_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeField* PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C____m_Wrapper_FieldInfo_var;
 IL2CPP_EXTERN_C String_t* _stringLiteral017B351DA3E50FAF2CFBB408359C6C0480F02932;
 IL2CPP_EXTERN_C String_t* _stringLiteral01B764591BCF5FFD0A0D3FED27FF537F1270C696;
 IL2CPP_EXTERN_C String_t* _stringLiteral01E5663803EA3F796FF14C9AD44D1F69773BD4F0;
@@ -543,6 +544,7 @@ IL2CPP_EXTERN_C const RuntimeMethod* U3CDrainHealthBarU3Ed__8_System_Collections
 IL2CPP_EXTERN_C const RuntimeMethod* U3CEndGameU3Ed__1_System_Collections_IEnumerator_Reset_m34423599ED6FB2A394E96F7B69EA610FA4844DA6_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* U3CEndGameU3Ed__23_System_Collections_IEnumerator_Reset_m0DF510E5F04D05A345F284DAF11002D94449F3C0_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* U3CScrollCoroutineU3Ed__24_System_Collections_IEnumerator_Reset_m44CBF4AB2276B230741BB8AB31FC1C89569A3674_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeType* PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C_0_0_0_var;
 IL2CPP_EXTERN_C const RuntimeType* WeaponTypes_t049F9051BBC730DA2220E1F6851E294D9CD93257_0_0_0_var;
 struct ContactPoint2D_t16A7EE2DDFB4FA3A09C6554E11F30CEDAEBFA801;
 struct Delegate_t_marshaled_com;
@@ -1480,6 +1482,8 @@ struct ContactPoint2D_t16A7EE2DDFB4FA3A09C6554E11F30CEDAEBFA801
 	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___m_Point;
 	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___m_Normal;
 	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___m_RelativeVelocity;
+	float ___m_Friction;
+	float ___m_Bounciness;
 	float ___m_Separation;
 	float ___m_NormalImpulse;
 	float ___m_TangentImpulse;
@@ -3953,6 +3957,8 @@ struct TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9  : public MaskableGrap
 	Color32_t73C5004937BF5BB8AD55323D51AAA40A898EF48B ___m_faceColor;
 	Color32_t73C5004937BF5BB8AD55323D51AAA40A898EF48B ___m_outlineColor;
 	float ___m_outlineWidth;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___m_currentEnvMapRotation;
+	bool ___m_hasEnvMapProperty;
 	float ___m_fontSize;
 	float ___m_currentFontSize;
 	float ___m_fontSizeBase;
@@ -4246,6 +4252,7 @@ struct Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184_StaticFields
 struct InputActionMap_tFCE82E0E014319D4DED9F8962B06655DD0420A09_StaticFields
 {
 	int32_t ___s_DeferBindingResolution;
+	bool ___s_NeedToResolveBindings;
 };
 struct RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_StaticFields
 {
@@ -4767,8 +4774,8 @@ inline Drive_t634313E10D8B37E499D1108EDBAF1A484D90512A* GameObject_GetComponent_
 }
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Drive_DriveVehicle_m1D9371816FE36B336F8814F73D246013135C4007 (Drive_t634313E10D8B37E499D1108EDBAF1A484D90512A* __this, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_player, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Rigidbody2D_tBEBE9523CF4448544085AF46BF7E10AA499F320F* Player_get_RB_m8A195197C54FE03367D954CE4D1BFF88E3918F77_inline (Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74* __this, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 Rigidbody2D_get_velocity_mBD8AC6F93F0E24CC41D2361BCEF74F81303720EF (Rigidbody2D_tBEBE9523CF4448544085AF46BF7E10AA499F320F* __this, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Rigidbody2D_set_velocity_m9335C5883B218F6FCDF7E229AC96232FCBAC4CE6 (Rigidbody2D_tBEBE9523CF4448544085AF46BF7E10AA499F320F* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 Rigidbody2D_get_linearVelocity_m0130BA2A5A1A680CD9656EEEBC85939D823E3B9F (Rigidbody2D_tBEBE9523CF4448544085AF46BF7E10AA499F320F* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Rigidbody2D_set_linearVelocity_mD4C890DE3DF15ECAD0DC61675586C0D1998CC1BB (Rigidbody2D_tBEBE9523CF4448544085AF46BF7E10AA499F320F* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HingeJoint2D_set_useLimits_m8E1A4EA6EE6850F7960C939DBFD0F8ED1AECF086 (HingeJoint2D_t713F69DA7EC9A05A9425DE3AE68CBFC5F8DD8839* __this, bool ___0_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JointAngleLimits2D_t5F138B6393E6861E597641646C598F34C8A095EB HingeJoint2D_get_limits_m6CAA2912070CED97CF8E724171D5FB944D45FA3F (HingeJoint2D_t713F69DA7EC9A05A9425DE3AE68CBFC5F8DD8839* __this, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool PlayerInputHandler_get_IsFiring_m01D8F91A1CA7778525A7671594B5DF5C2EDC2D6D_inline (PlayerInputHandler_tAD09C1EF146A9FB9BDEF315722830367DD298518* __this, const RuntimeMethod* method) ;
@@ -7968,13 +7975,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Player_SetVelocityX_mF5DDB5C29ADDBBE3CB8
 		L_2 = Player_get_RB_m8A195197C54FE03367D954CE4D1BFF88E3918F77_inline(__this, NULL);
 		NullCheck(L_2);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_3;
-		L_3 = Rigidbody2D_get_velocity_mBD8AC6F93F0E24CC41D2361BCEF74F81303720EF(L_2, NULL);
+		L_3 = Rigidbody2D_get_linearVelocity_m0130BA2A5A1A680CD9656EEEBC85939D823E3B9F(L_2, NULL);
 		float L_4 = L_3.___y;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_5;
 		memset((&L_5), 0, sizeof(L_5));
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_5), L_1, L_4, NULL);
 		NullCheck(L_0);
-		Rigidbody2D_set_velocity_m9335C5883B218F6FCDF7E229AC96232FCBAC4CE6(L_0, L_5, NULL);
+		Rigidbody2D_set_linearVelocity_mD4C890DE3DF15ECAD0DC61675586C0D1998CC1BB(L_0, L_5, NULL);
 		return;
 	}
 }
@@ -13008,12 +13015,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArrowStick_LateUpdate_m13F090781609036CA
 		Rigidbody2D_tBEBE9523CF4448544085AF46BF7E10AA499F320F* L_2 = __this->___rb;
 		NullCheck(L_2);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_3;
-		L_3 = Rigidbody2D_get_velocity_mBD8AC6F93F0E24CC41D2361BCEF74F81303720EF(L_2, NULL);
+		L_3 = Rigidbody2D_get_linearVelocity_m0130BA2A5A1A680CD9656EEEBC85939D823E3B9F(L_2, NULL);
 		float L_4 = L_3.___y;
 		Rigidbody2D_tBEBE9523CF4448544085AF46BF7E10AA499F320F* L_5 = __this->___rb;
 		NullCheck(L_5);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_6;
-		L_6 = Rigidbody2D_get_velocity_mBD8AC6F93F0E24CC41D2361BCEF74F81303720EF(L_5, NULL);
+		L_6 = Rigidbody2D_get_linearVelocity_m0130BA2A5A1A680CD9656EEEBC85939D823E3B9F(L_5, NULL);
 		float L_7 = L_6.___x;
 		float L_8;
 		L_8 = atan2f(L_4, L_7);
@@ -13048,12 +13055,12 @@ IL_0052:
 		Rigidbody2D_tBEBE9523CF4448544085AF46BF7E10AA499F320F* L_15 = __this->___rb;
 		NullCheck(L_15);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_16;
-		L_16 = Rigidbody2D_get_velocity_mBD8AC6F93F0E24CC41D2361BCEF74F81303720EF(L_15, NULL);
+		L_16 = Rigidbody2D_get_linearVelocity_m0130BA2A5A1A680CD9656EEEBC85939D823E3B9F(L_15, NULL);
 		float L_17 = L_16.___y;
 		Rigidbody2D_tBEBE9523CF4448544085AF46BF7E10AA499F320F* L_18 = __this->___rb;
 		NullCheck(L_18);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_19;
-		L_19 = Rigidbody2D_get_velocity_mBD8AC6F93F0E24CC41D2361BCEF74F81303720EF(L_18, NULL);
+		L_19 = Rigidbody2D_get_linearVelocity_m0130BA2A5A1A680CD9656EEEBC85939D823E3B9F(L_18, NULL);
 		float L_20 = L_19.___x;
 		float L_21;
 		L_21 = atan2f(L_17, L_20);
@@ -13103,7 +13110,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArrowStick_OnCollisionEnter2D_mC50A7747D
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_3;
 		L_3 = Vector2_op_Implicit_mE8EBEE9291F11BB02F062D6E000F4798968CBD96_inline(L_2, NULL);
 		NullCheck(L_1);
-		Rigidbody2D_set_velocity_m9335C5883B218F6FCDF7E229AC96232FCBAC4CE6(L_1, L_3, NULL);
+		Rigidbody2D_set_linearVelocity_mD4C890DE3DF15ECAD0DC61675586C0D1998CC1BB(L_1, L_3, NULL);
 		Rigidbody2D_tBEBE9523CF4448544085AF46BF7E10AA499F320F* L_4 = __this->___rb;
 		NullCheck(L_4);
 		Rigidbody2D_set_isKinematic_m7C68AB4CFB6D301F0EDF0BFF66FB121ED3CC7853(L_4, (bool)1, NULL);
@@ -13197,7 +13204,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArrowStick_OnTriggerEnter2D_mE214AE0AF4F
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_4;
 		L_4 = Vector2_op_Implicit_mE8EBEE9291F11BB02F062D6E000F4798968CBD96_inline(L_3, NULL);
 		NullCheck(L_2);
-		Rigidbody2D_set_velocity_m9335C5883B218F6FCDF7E229AC96232FCBAC4CE6(L_2, L_4, NULL);
+		Rigidbody2D_set_linearVelocity_mD4C890DE3DF15ECAD0DC61675586C0D1998CC1BB(L_2, L_4, NULL);
 		Rigidbody2D_tBEBE9523CF4448544085AF46BF7E10AA499F320F* L_5 = __this->___rb;
 		NullCheck(L_5);
 		Rigidbody2D_set_isKinematic_m7C68AB4CFB6D301F0EDF0BFF66FB121ED3CC7853(L_5, (bool)1, NULL);
@@ -15421,12 +15428,26 @@ IL_001f:
 #endif
 IL2CPP_EXTERN_C void PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C_marshal_pinvoke(const PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C& unmarshaled, PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C_marshaled_pinvoke& marshaled)
 {
-	Exception_t* ___m_WrapperException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'm_Wrapper' of type 'PlayerActions': Reference type field marshaling is not supported.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C____m_Wrapper_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___m_WrapperException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s': Reference type field marshaling is not supported.", PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C____m_Wrapper_FieldInfo_var, PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___m_WrapperException, NULL);
 }
 IL2CPP_EXTERN_C void PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C_marshal_pinvoke_back(const PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C_marshaled_pinvoke& marshaled, PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C& unmarshaled)
 {
-	Exception_t* ___m_WrapperException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'm_Wrapper' of type 'PlayerActions': Reference type field marshaling is not supported.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C____m_Wrapper_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___m_WrapperException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s': Reference type field marshaling is not supported.", PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C____m_Wrapper_FieldInfo_var, PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___m_WrapperException, NULL);
 }
 IL2CPP_EXTERN_C void PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C_marshal_pinvoke_cleanup(PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C_marshaled_pinvoke& marshaled)
@@ -15434,12 +15455,26 @@ IL2CPP_EXTERN_C void PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C_mar
 }
 IL2CPP_EXTERN_C void PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C_marshal_com(const PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C& unmarshaled, PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C_marshaled_com& marshaled)
 {
-	Exception_t* ___m_WrapperException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'm_Wrapper' of type 'PlayerActions': Reference type field marshaling is not supported.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C____m_Wrapper_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___m_WrapperException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s': Reference type field marshaling is not supported.", PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C____m_Wrapper_FieldInfo_var, PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___m_WrapperException, NULL);
 }
 IL2CPP_EXTERN_C void PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C_marshal_com_back(const PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C_marshaled_com& marshaled, PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C& unmarshaled)
 {
-	Exception_t* ___m_WrapperException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'm_Wrapper' of type 'PlayerActions': Reference type field marshaling is not supported.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C____m_Wrapper_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___m_WrapperException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s': Reference type field marshaling is not supported.", PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C____m_Wrapper_FieldInfo_var, PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___m_WrapperException, NULL);
 }
 IL2CPP_EXTERN_C void PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C_marshal_com_cleanup(PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C_marshaled_com& marshaled)
@@ -22367,7 +22402,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExternalColliderVehicle_Update_m0C1958A7
 		Rigidbody2D_tBEBE9523CF4448544085AF46BF7E10AA499F320F* L_1 = L_0->___VehicleRB;
 		NullCheck(L_1);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_2;
-		L_2 = Rigidbody2D_get_velocity_mBD8AC6F93F0E24CC41D2361BCEF74F81303720EF(L_1, NULL);
+		L_2 = Rigidbody2D_get_linearVelocity_m0130BA2A5A1A680CD9656EEEBC85939D823E3B9F(L_1, NULL);
 		float L_3 = L_2.___x;
 		float L_4 = __this->___VehicleSpeed;
 		if ((!(((float)L_3) > ((float)L_4))))
@@ -22390,7 +22425,7 @@ IL_0025:
 		Rigidbody2D_tBEBE9523CF4448544085AF46BF7E10AA499F320F* L_7 = L_6->___VehicleRB;
 		NullCheck(L_7);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_8;
-		L_8 = Rigidbody2D_get_velocity_mBD8AC6F93F0E24CC41D2361BCEF74F81303720EF(L_7, NULL);
+		L_8 = Rigidbody2D_get_linearVelocity_m0130BA2A5A1A680CD9656EEEBC85939D823E3B9F(L_7, NULL);
 		float L_9 = L_8.___x;
 		float L_10 = __this->___VehicleSpeed;
 		if ((!(((float)L_9) < ((float)((-L_10))))))
@@ -22413,7 +22448,7 @@ IL_004b:
 		Rigidbody2D_tBEBE9523CF4448544085AF46BF7E10AA499F320F* L_13 = L_12->___VehicleRB;
 		NullCheck(L_13);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_14;
-		L_14 = Rigidbody2D_get_velocity_mBD8AC6F93F0E24CC41D2361BCEF74F81303720EF(L_13, NULL);
+		L_14 = Rigidbody2D_get_linearVelocity_m0130BA2A5A1A680CD9656EEEBC85939D823E3B9F(L_13, NULL);
 		float L_15 = L_14.___x;
 		float L_16 = __this->___VehicleSpeed;
 		if ((!(((float)L_15) <= ((float)L_16))))
@@ -22436,7 +22471,7 @@ IL_0070:
 		Rigidbody2D_tBEBE9523CF4448544085AF46BF7E10AA499F320F* L_19 = L_18->___VehicleRB;
 		NullCheck(L_19);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_20;
-		L_20 = Rigidbody2D_get_velocity_mBD8AC6F93F0E24CC41D2361BCEF74F81303720EF(L_19, NULL);
+		L_20 = Rigidbody2D_get_linearVelocity_m0130BA2A5A1A680CD9656EEEBC85939D823E3B9F(L_19, NULL);
 		float L_21 = L_20.___x;
 		float L_22 = __this->___VehicleSpeed;
 		if ((!(((float)L_21) >= ((float)((-L_22))))))

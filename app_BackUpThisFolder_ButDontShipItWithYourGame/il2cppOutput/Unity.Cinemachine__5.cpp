@@ -173,6 +173,8 @@ IL2CPP_EXTERN_C RuntimeClass* PolyPathD_tDCE1178479D7769D24EAB260F3333D26870A848
 IL2CPP_EXTERN_C RuntimeClass* Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Vertex_t0CC05E568F6BB76AF6BEF7F9B228A91BE305C40E_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeField* IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0____edge1_FieldInfo_var;
+IL2CPP_EXTERN_C RuntimeField* LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929____vertex_FieldInfo_var;
 IL2CPP_EXTERN_C String_t* _stringLiteral00B28FF06B788B9B67C6B259800F404F9F3761FD;
 IL2CPP_EXTERN_C String_t* _stringLiteral33D53ED1A9D6CA0BCCB12F416C9EAF928EF2AE02;
 IL2CPP_EXTERN_C String_t* _stringLiteralB0B3FC632895D8CBC72724E08C16889FBAF9F0E1;
@@ -274,6 +276,8 @@ IL2CPP_EXTERN_C const RuntimeMethod* List_1_set_Item_m11F8AC3778F834E5967BD08C12
 IL2CPP_EXTERN_C const RuntimeMethod* List_1_set_Item_m66A2B3BDA90A83C46A59998DED3FBE2E10B565CD_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* List_1_set_Item_mE5671A1CB6B2CD7F8DABDBA1C2E721EFD1F48F25_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* List_1_set_Item_mFEA98FA49B98EC8B769FB82DED7622F672AD1ADB_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeType* IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0_0_0_0_var;
+IL2CPP_EXTERN_C const RuntimeType* LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929_0_0_0_var;
 struct AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354;;
 struct AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354_marshaled_com;
 struct AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354_marshaled_com;;
@@ -11361,12 +11365,26 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Vertex__ctor_mBED6850150FAF517F7AD9CF8E4
 #endif
 IL2CPP_EXTERN_C void LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929_marshal_pinvoke(const LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929& unmarshaled, LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929_marshaled_pinvoke& marshaled)
 {
-	Exception_t* ___vertexException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'vertex' of type 'LocalMinima': Reference type field marshaling is not supported.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929____vertex_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___vertexException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s': Reference type field marshaling is not supported.", LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929____vertex_FieldInfo_var, LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___vertexException, NULL);
 }
 IL2CPP_EXTERN_C void LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929_marshal_pinvoke_back(const LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929_marshaled_pinvoke& marshaled, LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929& unmarshaled)
 {
-	Exception_t* ___vertexException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'vertex' of type 'LocalMinima': Reference type field marshaling is not supported.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929____vertex_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___vertexException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s': Reference type field marshaling is not supported.", LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929____vertex_FieldInfo_var, LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___vertexException, NULL);
 }
 IL2CPP_EXTERN_C void LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929_marshal_pinvoke_cleanup(LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929_marshaled_pinvoke& marshaled)
@@ -11374,12 +11392,26 @@ IL2CPP_EXTERN_C void LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929_marsh
 }
 IL2CPP_EXTERN_C void LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929_marshal_com(const LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929& unmarshaled, LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929_marshaled_com& marshaled)
 {
-	Exception_t* ___vertexException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'vertex' of type 'LocalMinima': Reference type field marshaling is not supported.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929____vertex_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___vertexException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s': Reference type field marshaling is not supported.", LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929____vertex_FieldInfo_var, LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___vertexException, NULL);
 }
 IL2CPP_EXTERN_C void LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929_marshal_com_back(const LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929_marshaled_com& marshaled, LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929& unmarshaled)
 {
-	Exception_t* ___vertexException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'vertex' of type 'LocalMinima': Reference type field marshaling is not supported.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929____vertex_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___vertexException = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s': Reference type field marshaling is not supported.", LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929____vertex_FieldInfo_var, LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___vertexException, NULL);
 }
 IL2CPP_EXTERN_C void LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929_marshal_com_cleanup(LocalMinima_t9502090C226B591D760B2395FDE6655AE1811929_marshaled_com& marshaled)
@@ -11495,12 +11527,26 @@ IL2CPP_EXTERN_C  int32_t LocalMinima_GetHashCode_mCD15DB133E348BE5D7EF4CB5F967A1
 #endif
 IL2CPP_EXTERN_C void IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0_marshal_pinvoke(const IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0& unmarshaled, IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0_marshaled_pinvoke& marshaled)
 {
-	Exception_t* ___edge1Exception = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'edge1' of type 'IntersectNode': Reference type field marshaling is not supported.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0____edge1_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___edge1Exception = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s': Reference type field marshaling is not supported.", IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0____edge1_FieldInfo_var, IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___edge1Exception, NULL);
 }
 IL2CPP_EXTERN_C void IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0_marshal_pinvoke_back(const IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0_marshaled_pinvoke& marshaled, IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0& unmarshaled)
 {
-	Exception_t* ___edge1Exception = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'edge1' of type 'IntersectNode': Reference type field marshaling is not supported.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0____edge1_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___edge1Exception = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s': Reference type field marshaling is not supported.", IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0____edge1_FieldInfo_var, IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___edge1Exception, NULL);
 }
 IL2CPP_EXTERN_C void IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0_marshal_pinvoke_cleanup(IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0_marshaled_pinvoke& marshaled)
@@ -11508,12 +11554,26 @@ IL2CPP_EXTERN_C void IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0_mar
 }
 IL2CPP_EXTERN_C void IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0_marshal_com(const IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0& unmarshaled, IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0_marshaled_com& marshaled)
 {
-	Exception_t* ___edge1Exception = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'edge1' of type 'IntersectNode': Reference type field marshaling is not supported.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0____edge1_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___edge1Exception = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s': Reference type field marshaling is not supported.", IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0____edge1_FieldInfo_var, IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___edge1Exception, NULL);
 }
 IL2CPP_EXTERN_C void IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0_marshal_com_back(const IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0_marshaled_com& marshaled, IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0& unmarshaled)
 {
-	Exception_t* ___edge1Exception = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'edge1' of type 'IntersectNode': Reference type field marshaling is not supported.");
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0____edge1_FieldInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* ___edge1Exception = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field '%s' of type '%s': Reference type field marshaling is not supported.", IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0____edge1_FieldInfo_var, IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0_0_0_0_var);
 	IL2CPP_RAISE_MANAGED_EXCEPTION(___edge1Exception, NULL);
 }
 IL2CPP_EXTERN_C void IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0_marshal_com_cleanup(IntersectNode_t27607F17C7C257F0C007AD4FD907CFEF872D70A0_marshaled_com& marshaled)

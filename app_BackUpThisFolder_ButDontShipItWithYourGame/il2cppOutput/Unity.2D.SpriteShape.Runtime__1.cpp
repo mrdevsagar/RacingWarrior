@@ -13,9 +13,7 @@ struct List_1_t8F3790B7F8C471B3A1336522C7415FB0AC36D47B;
 struct AngleRangeInfoU5BU5D_t8AE5F89B8CA102A1093EFEA4E67B9364AC690BC8;
 struct CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB;
 struct DelegateU5BU5D_tC5AB7E8F745616680F337909D3A8E6C722CDF771;
-struct IntPtrU5BU5D_tFD177F8C806A6921AD7150264CCC62FA00CAD832;
 struct SpriteU5BU5D_tCEE379E10CAD9DBFA770B331480592548ED0EA1B;
-struct StackTraceU5BU5D_t32FBCB20930EAF5BAE3F450FF75228E5450DA0DF;
 struct Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07;
 struct AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C;
 struct BurstCompilerOptions_t5F93118F305E1B0C950C6F9AF8BCA74033DA01C9;
@@ -25,15 +23,12 @@ struct Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3;
 struct Delegate_t;
 struct DelegateData_t9B286B493293CD2D23A5B2B5EF0E5B1324C2B77E;
 struct EdgeCollider2D_tB7A39F2B1345894C40577A62FD62244702DE3710;
-struct Exception_t;
 struct GameObject_t76FEDD663AB33C991A9C9A23129337651094216F;
 struct IAsyncResult_t7B9B5A0ECB35DCEC31B8A8122C37D687369253B5;
-struct IDictionary_t6D03155AF1FA9083817AA5B6AD7DEEACC26AB220;
 struct MethodInfo_t;
 struct MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71;
 struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C;
 struct PolygonCollider2D_t7CEFFFEE6522175436B408712B052D236889C89E;
-struct SafeSerializationManager_tCBB85B95DFD1634237140CD892E82D06ECB3F5E6;
 struct ScriptableObject_tB3BFDB921A1B1795B38A5417D3B97A89A140436A;
 struct Spline_tD674213224F697425072FBF76AE3FD203AD2B818;
 struct SpriteShape_tD8E4AB9593376F28E8325314A03A49A19395858C;
@@ -48,27 +43,24 @@ struct Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4;
 struct Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1;
 struct Void_t4861ACF8F4594C3437BB48B6E56783494B843915;
 struct U3CU3Ec_tBCE2556A62FBB2630B0C191C01319B1FBE992F74;
-struct UTessellator_000001ABU24PostfixBurstDelegate_t163ACB1D6BA4C03BE10F45675AACC947C6A2C426;
+struct UTessellator_0000017AU24PostfixBurstDelegate_tD4EDBDD602D3B9028FBEBBA7B6FC65595FC878D4;
 
 IL2CPP_EXTERN_C RuntimeClass* Allocator_t996642592271AAD9EE688F142741D512C07B5824_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* BezierUtility_t450F38689B5013A23432043C5922D64496EF5E60_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* BurstCompiler_t2715484E1FF256726FC4D4D8E17C35A4C8DFA2B8_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* EarlyInitHelpers_tA67F29CEEF85CD33340F1A46E13686C44F97695A_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* Exception_t_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Math_tEB65DE7CA8B083C412C969C92981C030865486CE_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* ModuleHandle_t2F8BE4233858E78501EF0B4D650CECD9A6D5D9F4_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* SpriteShapeObjectPlacement_t353FCF6189C80FC27BF8A579CF73D5E32C7776FB_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* SpriteShapeSegment_tB32CE039E823A27997165CD087F6DE1906C4C8D5_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* U3CU3Ec_tBCE2556A62FBB2630B0C191C01319B1FBE992F74_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* UTessellator_000001ABU24BurstDirectCall_tCF265E27391657DC2013973F6167C461A00BB084_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* UTessellator_000001ABU24PostfixBurstDelegate_t163ACB1D6BA4C03BE10F45675AACC947C6A2C426_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* UTessellator_0000017AU24BurstDirectCall_t7A5CABEFA3FA4D5989AB85120E032BA538733A57_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* UTessellator_0000017AU24PostfixBurstDelegate_tD4EDBDD602D3B9028FBEBBA7B6FC65595FC878D4_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C String_t* _stringLiteralB97EA8E93DF3A597AEFDD8BACBE2AD61BB9CAE61;
-IL2CPP_EXTERN_C const RuntimeMethod* BurstCompiler_CompileFunctionPointer_TisUTessellator_000001ABU24PostfixBurstDelegate_t163ACB1D6BA4C03BE10F45675AACC947C6A2C426_m3C610B80059BEF97CD37A0EC448D57A3FF6647CA_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* FunctionPointer_1_get_Value_m0800E2F68479A5A55D71B7EB406C0EB98AF9F318_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* IJobExtensions_EarlyJobInit_TisSpriteShapeGenerator_tE3C79C2D9685232AD17AB7FA803F44FA92DB854E_m6333030633CE35B4D63519CE28DBBBC10EB45643_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* BurstCompiler_CompileFunctionPointer_TisUTessellator_0000017AU24PostfixBurstDelegate_tD4EDBDD602D3B9028FBEBBA7B6FC65595FC878D4_m6D7651235E0F2B3D78F5268AFE7E078FF23A9380_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* FunctionPointer_1_get_Value_m1CB2E6E16D8E8775B5AF8D226EF628952BD90B56_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* NativeArray_1_Dispose_m05C674E687B921C37722A6A1FF938FD56574642E_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* NativeArray_1_Dispose_m3135DCFBA5DDC3D2CAA20FB2666F3A996856F2F2_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* NativeArray_1_Dispose_mAD3B69E4B23316C46AF8C35D7E1E81206323F16F_RuntimeMethod_var;
@@ -78,8 +70,6 @@ IL2CPP_EXTERN_C const RuntimeMethod* NativeArray_1__ctor_mB7BB23924A114599D399A5
 IL2CPP_EXTERN_C const RuntimeMethod* SpriteShapeGenerator_UTessellator_mA975B9F66E80F2334124BFADD19F331AB2F6E90D_RuntimeMethod_var;
 struct Delegate_t_marshaled_com;
 struct Delegate_t_marshaled_pinvoke;
-struct Exception_t_marshaled_com;
-struct Exception_t_marshaled_pinvoke;
 
 struct DelegateU5BU5D_tC5AB7E8F745616680F337909D3A8E6C722CDF771;
 
@@ -126,13 +116,10 @@ struct ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F_marshaled_pinvoke
 struct ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F_marshaled_com
 {
 };
-struct __JobReflectionRegistrationOutput__7081003197938994914_t98BA1E399CE9F27B44AC63BA6522DE4B91B0315D  : public RuntimeObject
-{
-};
 struct U3CU3Ec_tBCE2556A62FBB2630B0C191C01319B1FBE992F74  : public RuntimeObject
 {
 };
-struct UTessellator_000001ABU24BurstDirectCall_tCF265E27391657DC2013973F6167C461A00BB084  : public RuntimeObject
+struct UTessellator_0000017AU24BurstDirectCall_t7A5CABEFA3FA4D5989AB85120E032BA538733A57  : public RuntimeObject
 {
 };
 struct NativeSlice_1_tBDD0B6C963222DE23BD34911416213E058F9FBAF 
@@ -323,7 +310,7 @@ struct FunctionPointer_1_tE1DC1EC606FB2242FB50357BBA39BB4AEDECFCB2
 {
 	intptr_t ____ptr;
 };
-struct FunctionPointer_1_tDD1E81A475CDCA011E6109CBC08FF384FA2E8CE0 
+struct FunctionPointer_1_t62FC69EE39DDEBD5E90D457946D027938F3D91AA 
 {
 	intptr_t ____ptr;
 };
@@ -393,63 +380,6 @@ struct Delegate_t_marshaled_com
 	MethodInfo_t* ___original_method_info;
 	DelegateData_t9B286B493293CD2D23A5B2B5EF0E5B1324C2B77E* ___data;
 	int32_t ___method_is_virtual;
-};
-struct Exception_t  : public RuntimeObject
-{
-	String_t* ____className;
-	String_t* ____message;
-	RuntimeObject* ____data;
-	Exception_t* ____innerException;
-	String_t* ____helpURL;
-	RuntimeObject* ____stackTrace;
-	String_t* ____stackTraceString;
-	String_t* ____remoteStackTraceString;
-	int32_t ____remoteStackIndex;
-	RuntimeObject* ____dynamicMethods;
-	int32_t ____HResult;
-	String_t* ____source;
-	SafeSerializationManager_tCBB85B95DFD1634237140CD892E82D06ECB3F5E6* ____safeSerializationManager;
-	StackTraceU5BU5D_t32FBCB20930EAF5BAE3F450FF75228E5450DA0DF* ___captured_traces;
-	IntPtrU5BU5D_tFD177F8C806A6921AD7150264CCC62FA00CAD832* ___native_trace_ips;
-	int32_t ___caught_in_unmanaged;
-};
-struct Exception_t_marshaled_pinvoke
-{
-	char* ____className;
-	char* ____message;
-	RuntimeObject* ____data;
-	Exception_t_marshaled_pinvoke* ____innerException;
-	char* ____helpURL;
-	Il2CppIUnknown* ____stackTrace;
-	char* ____stackTraceString;
-	char* ____remoteStackTraceString;
-	int32_t ____remoteStackIndex;
-	Il2CppIUnknown* ____dynamicMethods;
-	int32_t ____HResult;
-	char* ____source;
-	SafeSerializationManager_tCBB85B95DFD1634237140CD892E82D06ECB3F5E6* ____safeSerializationManager;
-	StackTraceU5BU5D_t32FBCB20930EAF5BAE3F450FF75228E5450DA0DF* ___captured_traces;
-	Il2CppSafeArray* ___native_trace_ips;
-	int32_t ___caught_in_unmanaged;
-};
-struct Exception_t_marshaled_com
-{
-	Il2CppChar* ____className;
-	Il2CppChar* ____message;
-	RuntimeObject* ____data;
-	Exception_t_marshaled_com* ____innerException;
-	Il2CppChar* ____helpURL;
-	Il2CppIUnknown* ____stackTrace;
-	Il2CppChar* ____stackTraceString;
-	Il2CppChar* ____remoteStackTraceString;
-	int32_t ____remoteStackIndex;
-	Il2CppIUnknown* ____dynamicMethods;
-	int32_t ____HResult;
-	Il2CppChar* ____source;
-	SafeSerializationManager_tCBB85B95DFD1634237140CD892E82D06ECB3F5E6* ____safeSerializationManager;
-	StackTraceU5BU5D_t32FBCB20930EAF5BAE3F450FF75228E5450DA0DF* ___captured_traces;
-	Il2CppSafeArray* ___native_trace_ips;
-	int32_t ___caught_in_unmanaged;
 };
 struct NativeArrayOptions_t3E979EEF4B4840228A7692A97DA07553C6465F1D 
 {
@@ -806,7 +736,7 @@ struct SpriteShapeGeometryModifier_tBCAFA8CB38E611DA5EB0D1F2E6DD67762302369F  : 
 struct Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1  : public Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3
 {
 };
-struct UTessellator_000001ABU24PostfixBurstDelegate_t163ACB1D6BA4C03BE10F45675AACC947C6A2C426  : public MulticastDelegate_t
+struct UTessellator_0000017AU24PostfixBurstDelegate_tD4EDBDD602D3B9028FBEBBA7B6FC65595FC878D4  : public MulticastDelegate_t
 {
 };
 struct MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71  : public Behaviour_t01970CFBBA658497AE30F311C447DB0440BAB7FA
@@ -902,7 +832,7 @@ struct U3CU3Ec_tBCE2556A62FBB2630B0C191C01319B1FBE992F74_StaticFields
 	Func_2_t0D05225CFA7E020459CF8B28462C673A5811BE16* ___U3CU3E9__155_0;
 	Func_2_t971797D45092E7DB796042DDE8CB0C9E07DE40D1* ___U3CU3E9__155_1;
 };
-struct UTessellator_000001ABU24BurstDirectCall_tCF265E27391657DC2013973F6167C461A00BB084_StaticFields
+struct UTessellator_0000017AU24BurstDirectCall_t7A5CABEFA3FA4D5989AB85120E032BA538733A57_StaticFields
 {
 	intptr_t ___Pointer;
 };
@@ -968,10 +898,6 @@ struct int2_tF4AC25F87943DC0B2BB3456B0B919B3B42A9432A_StaticFields
 {
 	int2_tF4AC25F87943DC0B2BB3456B0B919B3B42A9432A ___zero;
 };
-struct Exception_t_StaticFields
-{
-	RuntimeObject* ___s_EDILock;
-};
 struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_StaticFields
 {
 	int32_t ___OffsetOfInstanceIDInCPlusPlusObject;
@@ -1027,7 +953,6 @@ struct DelegateU5BU5D_tC5AB7E8F745616680F337909D3A8E6C722CDF771  : public Runtim
 
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR FunctionPointer_1_tE1DC1EC606FB2242FB50357BBA39BB4AEDECFCB2 BurstCompiler_CompileFunctionPointer_TisRuntimeObject_m9AB9AE50036FBC10C6765A0FAC83200CAEC21384_gshared (RuntimeObject* ___0_delegateMethod, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR intptr_t FunctionPointer_1_get_Value_m71D7FF781C694A7C4EE28362DFC78D8DDFE9A105_gshared_inline (FunctionPointer_1_tE1DC1EC606FB2242FB50357BBA39BB4AEDECFCB2* __this, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IJobExtensions_EarlyJobInit_TisSpriteShapeGenerator_tE3C79C2D9685232AD17AB7FA803F44FA92DB854E_m6333030633CE35B4D63519CE28DBBBC10EB45643_gshared (const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NativeArray_1__ctor_m3CB679B1B77F99FC5CF890F75C914E22555A1F13_gshared (NativeArray_1_tE86585F07CF10FCD01AA2652A104B149336F7EC2* __this, int32_t ___0_length, int32_t ___1_allocator, int32_t ___2_options, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NativeArray_1__ctor_mAF9D0A865FBFFE6364C3073A253711B4C109C67A_gshared (NativeArray_1_t46D43179C2B71BAB34958401E08B5C5DA4488E9E* __this, int32_t ___0_length, int32_t ___1_allocator, int32_t ___2_options, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NativeArray_1__ctor_mB7BB23924A114599D399A5EC6C00B2B6407CF66D_gshared (NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C* __this, int32_t ___0_length, int32_t ___1_allocator, int32_t ___2_options, const RuntimeMethod* method) ;
@@ -1038,18 +963,18 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NativeArray_1_Dispose_m3135DCFBA5DDC3D2C
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__ctor_mA91FE5EA2C14E43491278E311B2F74B7478EF999 (U3CU3Ec_tBCE2556A62FBB2630B0C191C01319B1FBE992F74* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2 (RuntimeObject* __this, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* __this, float ___0_x, float ___1_y, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UTessellator_000001ABU24PostfixBurstDelegate__ctor_m180709CF3B6D82BF58EA059475E8FBD5B6FAB2FE (UTessellator_000001ABU24PostfixBurstDelegate_t163ACB1D6BA4C03BE10F45675AACC947C6A2C426* __this, RuntimeObject* ___0_p, intptr_t ___1_p, const RuntimeMethod* method) ;
-inline FunctionPointer_1_tDD1E81A475CDCA011E6109CBC08FF384FA2E8CE0 BurstCompiler_CompileFunctionPointer_TisUTessellator_000001ABU24PostfixBurstDelegate_t163ACB1D6BA4C03BE10F45675AACC947C6A2C426_m3C610B80059BEF97CD37A0EC448D57A3FF6647CA (UTessellator_000001ABU24PostfixBurstDelegate_t163ACB1D6BA4C03BE10F45675AACC947C6A2C426* ___0_delegateMethod, const RuntimeMethod* method)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UTessellator_0000017AU24PostfixBurstDelegate__ctor_m9EE5F9721F22055A462175A4C1699937C75D9B46 (UTessellator_0000017AU24PostfixBurstDelegate_tD4EDBDD602D3B9028FBEBBA7B6FC65595FC878D4* __this, RuntimeObject* ___0_p, intptr_t ___1_p, const RuntimeMethod* method) ;
+inline FunctionPointer_1_t62FC69EE39DDEBD5E90D457946D027938F3D91AA BurstCompiler_CompileFunctionPointer_TisUTessellator_0000017AU24PostfixBurstDelegate_tD4EDBDD602D3B9028FBEBBA7B6FC65595FC878D4_m6D7651235E0F2B3D78F5268AFE7E078FF23A9380 (UTessellator_0000017AU24PostfixBurstDelegate_tD4EDBDD602D3B9028FBEBBA7B6FC65595FC878D4* ___0_delegateMethod, const RuntimeMethod* method)
 {
-	return ((  FunctionPointer_1_tDD1E81A475CDCA011E6109CBC08FF384FA2E8CE0 (*) (UTessellator_000001ABU24PostfixBurstDelegate_t163ACB1D6BA4C03BE10F45675AACC947C6A2C426*, const RuntimeMethod*))BurstCompiler_CompileFunctionPointer_TisRuntimeObject_m9AB9AE50036FBC10C6765A0FAC83200CAEC21384_gshared)(___0_delegateMethod, method);
+	return ((  FunctionPointer_1_t62FC69EE39DDEBD5E90D457946D027938F3D91AA (*) (UTessellator_0000017AU24PostfixBurstDelegate_tD4EDBDD602D3B9028FBEBBA7B6FC65595FC878D4*, const RuntimeMethod*))BurstCompiler_CompileFunctionPointer_TisRuntimeObject_m9AB9AE50036FBC10C6765A0FAC83200CAEC21384_gshared)(___0_delegateMethod, method);
 }
-inline intptr_t FunctionPointer_1_get_Value_m0800E2F68479A5A55D71B7EB406C0EB98AF9F318_inline (FunctionPointer_1_tDD1E81A475CDCA011E6109CBC08FF384FA2E8CE0* __this, const RuntimeMethod* method)
+inline intptr_t FunctionPointer_1_get_Value_m1CB2E6E16D8E8775B5AF8D226EF628952BD90B56_inline (FunctionPointer_1_t62FC69EE39DDEBD5E90D457946D027938F3D91AA* __this, const RuntimeMethod* method)
 {
-	return ((  intptr_t (*) (FunctionPointer_1_tDD1E81A475CDCA011E6109CBC08FF384FA2E8CE0*, const RuntimeMethod*))FunctionPointer_1_get_Value_m71D7FF781C694A7C4EE28362DFC78D8DDFE9A105_gshared_inline)(__this, method);
+	return ((  intptr_t (*) (FunctionPointer_1_t62FC69EE39DDEBD5E90D457946D027938F3D91AA*, const RuntimeMethod*))FunctionPointer_1_get_Value_m71D7FF781C694A7C4EE28362DFC78D8DDFE9A105_gshared_inline)(__this, method);
 }
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UTessellator_000001ABU24BurstDirectCall_GetFunctionPointerDiscard_m489D4211E5E304D0231593B9FCDFDC45FDA2A1E7 (intptr_t* ___0_p, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UTessellator_0000017AU24BurstDirectCall_GetFunctionPointerDiscard_m32E3BF5BD462055A0E0EA2D708D5C80A8325D1FB (intptr_t* ___0_p, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool BurstCompiler_get_IsEnabled_m55FDBCB2279A83AC8926260034F870E3A11116C7 (const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t UTessellator_000001ABU24BurstDirectCall_GetFunctionPointer_m8920134CE708A0AB962DCDC5FEB1BC90D051102E (const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t UTessellator_0000017AU24BurstDirectCall_GetFunctionPointer_m9160106AD916F94782FBCCF9A24132A0664ED147 (const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void SpriteShapeGenerator_UTessellatorU24BurstManaged_m6F4F57B7363784CE1724AE26829C356319E88118_inline (SpriteShapeSegment_tB32CE039E823A27997165CD087F6DE1906C4C8D5* ___0_geom, int32_t ___1_maxCount, float2_t24AA5C0F612B0672315EDAFEC9D9E7F1C4A5B0BA* ___2_tessPoints, int32_t ___3_tessPointCount, uint16_t* ___4_indices, int32_t* ___5_iCount, uint8_t* ___6_vertices, int32_t ___7_stride, int32_t* ___8_vCount, int32_t ___9_label, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Object_GetInstanceID_m554FF4073C9465F3835574CC084E68AAEEC6CC6A (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScriptableObject__ctor_mD037FDB0B487295EA47F79A4DB1BF1846C9087FF (ScriptableObject_tB3BFDB921A1B1795B38A5417D3B97A89A140436A* __this, const RuntimeMethod* method) ;
@@ -1110,12 +1035,6 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void SpriteShapeObjectPlacement_s
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void SpriteShapeObjectPlacement_set_ratio_mED658B93A3A246178CCB30DEC877EA54DA1842EC_inline (SpriteShapeObjectPlacement_t353FCF6189C80FC27BF8A579CF73D5E32C7776FB* __this, float ___0_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool SpriteShapeObjectPlacement_PlaceObjectOnHashChange_m71263E4A1E32BA74D19300AC80B4D9A544441692 (SpriteShapeObjectPlacement_t353FCF6189C80FC27BF8A579CF73D5E32C7776FB* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E (MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* __this, const RuntimeMethod* method) ;
-inline void IJobExtensions_EarlyJobInit_TisSpriteShapeGenerator_tE3C79C2D9685232AD17AB7FA803F44FA92DB854E_m6333030633CE35B4D63519CE28DBBBC10EB45643 (const RuntimeMethod* method)
-{
-	((  void (*) (const RuntimeMethod*))IJobExtensions_EarlyJobInit_TisSpriteShapeGenerator_tE3C79C2D9685232AD17AB7FA803F44FA92DB854E_m6333030633CE35B4D63519CE28DBBBC10EB45643_gshared)(method);
-}
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EarlyInitHelpers_JobReflectionDataCreationFailed_mD6AB08D5BB411CCE38A87793C3C7062EC91FD1EC (Exception_t* ___0_ex, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void __JobReflectionRegistrationOutput__7081003197938994914_CreateJobReflectionData_mFC07B67FB4EC13B090F1A78ED019E1DFFA6C578A (const RuntimeMethod* method) ;
 inline void NativeArray_1__ctor_m3CB679B1B77F99FC5CF890F75C914E22555A1F13 (NativeArray_1_tE86585F07CF10FCD01AA2652A104B149336F7EC2* __this, int32_t ___0_length, int32_t ___1_allocator, int32_t ___2_options, const RuntimeMethod* method)
 {
 	((  void (*) (NativeArray_1_tE86585F07CF10FCD01AA2652A104B149336F7EC2*, int32_t, int32_t, int32_t, const RuntimeMethod*))NativeArray_1__ctor_m3CB679B1B77F99FC5CF890F75C914E22555A1F13_gshared)(__this, ___0_length, ___1_allocator, ___2_options, method);
@@ -1291,35 +1210,35 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-void UTessellator_000001ABU24PostfixBurstDelegate_Invoke_mC8BF664C660ED6F37149A2D065BA5EA24DE13696_Multicast(UTessellator_000001ABU24PostfixBurstDelegate_t163ACB1D6BA4C03BE10F45675AACC947C6A2C426* __this, SpriteShapeSegment_tB32CE039E823A27997165CD087F6DE1906C4C8D5* ___0_geom, int32_t ___1_maxCount, float2_t24AA5C0F612B0672315EDAFEC9D9E7F1C4A5B0BA* ___2_tessPoints, int32_t ___3_tessPointCount, uint16_t* ___4_indices, int32_t* ___5_iCount, uint8_t* ___6_vertices, int32_t ___7_stride, int32_t* ___8_vCount, int32_t ___9_label, const RuntimeMethod* method)
+void UTessellator_0000017AU24PostfixBurstDelegate_Invoke_m54E0DA3F0444F2B8EFAEEC320118BF5A385DB7A0_Multicast(UTessellator_0000017AU24PostfixBurstDelegate_tD4EDBDD602D3B9028FBEBBA7B6FC65595FC878D4* __this, SpriteShapeSegment_tB32CE039E823A27997165CD087F6DE1906C4C8D5* ___0_geom, int32_t ___1_maxCount, float2_t24AA5C0F612B0672315EDAFEC9D9E7F1C4A5B0BA* ___2_tessPoints, int32_t ___3_tessPointCount, uint16_t* ___4_indices, int32_t* ___5_iCount, uint8_t* ___6_vertices, int32_t ___7_stride, int32_t* ___8_vCount, int32_t ___9_label, const RuntimeMethod* method)
 {
 	il2cpp_array_size_t length = __this->___delegates->max_length;
 	Delegate_t** delegatesToInvoke = reinterpret_cast<Delegate_t**>(__this->___delegates->GetAddressAtUnchecked(0));
 	for (il2cpp_array_size_t i = 0; i < length; i++)
 	{
-		UTessellator_000001ABU24PostfixBurstDelegate_t163ACB1D6BA4C03BE10F45675AACC947C6A2C426* currentDelegate = reinterpret_cast<UTessellator_000001ABU24PostfixBurstDelegate_t163ACB1D6BA4C03BE10F45675AACC947C6A2C426*>(delegatesToInvoke[i]);
+		UTessellator_0000017AU24PostfixBurstDelegate_tD4EDBDD602D3B9028FBEBBA7B6FC65595FC878D4* currentDelegate = reinterpret_cast<UTessellator_0000017AU24PostfixBurstDelegate_tD4EDBDD602D3B9028FBEBBA7B6FC65595FC878D4*>(delegatesToInvoke[i]);
 		typedef void (*FunctionPointerType) (RuntimeObject*, SpriteShapeSegment_tB32CE039E823A27997165CD087F6DE1906C4C8D5*, int32_t, float2_t24AA5C0F612B0672315EDAFEC9D9E7F1C4A5B0BA*, int32_t, uint16_t*, int32_t*, uint8_t*, int32_t, int32_t*, int32_t, const RuntimeMethod*);
 		((FunctionPointerType)currentDelegate->___invoke_impl)((Il2CppObject*)currentDelegate->___method_code, ___0_geom, ___1_maxCount, ___2_tessPoints, ___3_tessPointCount, ___4_indices, ___5_iCount, ___6_vertices, ___7_stride, ___8_vCount, ___9_label, reinterpret_cast<RuntimeMethod*>(currentDelegate->___method));
 	}
 }
-void UTessellator_000001ABU24PostfixBurstDelegate_Invoke_mC8BF664C660ED6F37149A2D065BA5EA24DE13696_OpenInst(UTessellator_000001ABU24PostfixBurstDelegate_t163ACB1D6BA4C03BE10F45675AACC947C6A2C426* __this, SpriteShapeSegment_tB32CE039E823A27997165CD087F6DE1906C4C8D5* ___0_geom, int32_t ___1_maxCount, float2_t24AA5C0F612B0672315EDAFEC9D9E7F1C4A5B0BA* ___2_tessPoints, int32_t ___3_tessPointCount, uint16_t* ___4_indices, int32_t* ___5_iCount, uint8_t* ___6_vertices, int32_t ___7_stride, int32_t* ___8_vCount, int32_t ___9_label, const RuntimeMethod* method)
+void UTessellator_0000017AU24PostfixBurstDelegate_Invoke_m54E0DA3F0444F2B8EFAEEC320118BF5A385DB7A0_OpenInst(UTessellator_0000017AU24PostfixBurstDelegate_tD4EDBDD602D3B9028FBEBBA7B6FC65595FC878D4* __this, SpriteShapeSegment_tB32CE039E823A27997165CD087F6DE1906C4C8D5* ___0_geom, int32_t ___1_maxCount, float2_t24AA5C0F612B0672315EDAFEC9D9E7F1C4A5B0BA* ___2_tessPoints, int32_t ___3_tessPointCount, uint16_t* ___4_indices, int32_t* ___5_iCount, uint8_t* ___6_vertices, int32_t ___7_stride, int32_t* ___8_vCount, int32_t ___9_label, const RuntimeMethod* method)
 {
 	typedef void (*FunctionPointerType) (SpriteShapeSegment_tB32CE039E823A27997165CD087F6DE1906C4C8D5*, int32_t, float2_t24AA5C0F612B0672315EDAFEC9D9E7F1C4A5B0BA*, int32_t, uint16_t*, int32_t*, uint8_t*, int32_t, int32_t*, int32_t, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr)(___0_geom, ___1_maxCount, ___2_tessPoints, ___3_tessPointCount, ___4_indices, ___5_iCount, ___6_vertices, ___7_stride, ___8_vCount, ___9_label, method);
 }
-void UTessellator_000001ABU24PostfixBurstDelegate_Invoke_mC8BF664C660ED6F37149A2D065BA5EA24DE13696_OpenStatic(UTessellator_000001ABU24PostfixBurstDelegate_t163ACB1D6BA4C03BE10F45675AACC947C6A2C426* __this, SpriteShapeSegment_tB32CE039E823A27997165CD087F6DE1906C4C8D5* ___0_geom, int32_t ___1_maxCount, float2_t24AA5C0F612B0672315EDAFEC9D9E7F1C4A5B0BA* ___2_tessPoints, int32_t ___3_tessPointCount, uint16_t* ___4_indices, int32_t* ___5_iCount, uint8_t* ___6_vertices, int32_t ___7_stride, int32_t* ___8_vCount, int32_t ___9_label, const RuntimeMethod* method)
+void UTessellator_0000017AU24PostfixBurstDelegate_Invoke_m54E0DA3F0444F2B8EFAEEC320118BF5A385DB7A0_OpenStatic(UTessellator_0000017AU24PostfixBurstDelegate_tD4EDBDD602D3B9028FBEBBA7B6FC65595FC878D4* __this, SpriteShapeSegment_tB32CE039E823A27997165CD087F6DE1906C4C8D5* ___0_geom, int32_t ___1_maxCount, float2_t24AA5C0F612B0672315EDAFEC9D9E7F1C4A5B0BA* ___2_tessPoints, int32_t ___3_tessPointCount, uint16_t* ___4_indices, int32_t* ___5_iCount, uint8_t* ___6_vertices, int32_t ___7_stride, int32_t* ___8_vCount, int32_t ___9_label, const RuntimeMethod* method)
 {
 	typedef void (*FunctionPointerType) (SpriteShapeSegment_tB32CE039E823A27997165CD087F6DE1906C4C8D5*, int32_t, float2_t24AA5C0F612B0672315EDAFEC9D9E7F1C4A5B0BA*, int32_t, uint16_t*, int32_t*, uint8_t*, int32_t, int32_t*, int32_t, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr)(___0_geom, ___1_maxCount, ___2_tessPoints, ___3_tessPointCount, ___4_indices, ___5_iCount, ___6_vertices, ___7_stride, ___8_vCount, ___9_label, method);
 }
-IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_UTessellator_000001ABU24PostfixBurstDelegate_t163ACB1D6BA4C03BE10F45675AACC947C6A2C426 (UTessellator_000001ABU24PostfixBurstDelegate_t163ACB1D6BA4C03BE10F45675AACC947C6A2C426* __this, SpriteShapeSegment_tB32CE039E823A27997165CD087F6DE1906C4C8D5* ___0_geom, int32_t ___1_maxCount, float2_t24AA5C0F612B0672315EDAFEC9D9E7F1C4A5B0BA* ___2_tessPoints, int32_t ___3_tessPointCount, uint16_t* ___4_indices, int32_t* ___5_iCount, uint8_t* ___6_vertices, int32_t ___7_stride, int32_t* ___8_vCount, int32_t ___9_label, const RuntimeMethod* method)
+IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_UTessellator_0000017AU24PostfixBurstDelegate_tD4EDBDD602D3B9028FBEBBA7B6FC65595FC878D4 (UTessellator_0000017AU24PostfixBurstDelegate_tD4EDBDD602D3B9028FBEBBA7B6FC65595FC878D4* __this, SpriteShapeSegment_tB32CE039E823A27997165CD087F6DE1906C4C8D5* ___0_geom, int32_t ___1_maxCount, float2_t24AA5C0F612B0672315EDAFEC9D9E7F1C4A5B0BA* ___2_tessPoints, int32_t ___3_tessPointCount, uint16_t* ___4_indices, int32_t* ___5_iCount, uint8_t* ___6_vertices, int32_t ___7_stride, int32_t* ___8_vCount, int32_t ___9_label, const RuntimeMethod* method)
 {
 	typedef void (CDECL *PInvokeFunc)(SpriteShapeSegment_tB32CE039E823A27997165CD087F6DE1906C4C8D5*, int32_t, float2_t24AA5C0F612B0672315EDAFEC9D9E7F1C4A5B0BA*, int32_t, uint16_t*, int32_t*, uint8_t*, int32_t, int32_t*, int32_t);
 	PInvokeFunc il2cppPInvokeFunc = reinterpret_cast<PInvokeFunc>(il2cpp_codegen_get_reverse_pinvoke_function_ptr(__this));
 	il2cppPInvokeFunc(___0_geom, ___1_maxCount, ___2_tessPoints, ___3_tessPointCount, ___4_indices, ___5_iCount, ___6_vertices, ___7_stride, ___8_vCount, ___9_label);
 
 }
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UTessellator_000001ABU24PostfixBurstDelegate__ctor_m180709CF3B6D82BF58EA059475E8FBD5B6FAB2FE (UTessellator_000001ABU24PostfixBurstDelegate_t163ACB1D6BA4C03BE10F45675AACC947C6A2C426* __this, RuntimeObject* ___0_p, intptr_t ___1_p, const RuntimeMethod* method) 
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UTessellator_0000017AU24PostfixBurstDelegate__ctor_m9EE5F9721F22055A462175A4C1699937C75D9B46 (UTessellator_0000017AU24PostfixBurstDelegate_tD4EDBDD602D3B9028FBEBBA7B6FC65595FC878D4* __this, RuntimeObject* ___0_p, intptr_t ___1_p, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_p);
 	__this->___method = ___1_p;
@@ -1331,7 +1250,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UTessellator_000001ABU24PostfixBurstDele
 	{
 		bool isOpen = parameterCount == 10;
 		if (isOpen)
-			__this->___invoke_impl = (intptr_t)&UTessellator_000001ABU24PostfixBurstDelegate_Invoke_mC8BF664C660ED6F37149A2D065BA5EA24DE13696_OpenStatic;
+			__this->___invoke_impl = (intptr_t)&UTessellator_0000017AU24PostfixBurstDelegate_Invoke_m54E0DA3F0444F2B8EFAEEC320118BF5A385DB7A0_OpenStatic;
 		else
 			{
 				__this->___invoke_impl = __this->___method_ptr;
@@ -1343,7 +1262,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UTessellator_000001ABU24PostfixBurstDele
 		bool isOpen = parameterCount == 9;
 		if (isOpen)
 		{
-			__this->___invoke_impl = (intptr_t)&UTessellator_000001ABU24PostfixBurstDelegate_Invoke_mC8BF664C660ED6F37149A2D065BA5EA24DE13696_OpenInst;
+			__this->___invoke_impl = (intptr_t)&UTessellator_0000017AU24PostfixBurstDelegate_Invoke_m54E0DA3F0444F2B8EFAEEC320118BF5A385DB7A0_OpenInst;
 		}
 		else
 		{
@@ -1353,14 +1272,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UTessellator_000001ABU24PostfixBurstDele
 			__this->___method_code = (intptr_t)__this->___m_target;
 		}
 	}
-	__this->___extra_arg = (intptr_t)&UTessellator_000001ABU24PostfixBurstDelegate_Invoke_mC8BF664C660ED6F37149A2D065BA5EA24DE13696_Multicast;
+	__this->___extra_arg = (intptr_t)&UTessellator_0000017AU24PostfixBurstDelegate_Invoke_m54E0DA3F0444F2B8EFAEEC320118BF5A385DB7A0_Multicast;
 }
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UTessellator_000001ABU24PostfixBurstDelegate_Invoke_mC8BF664C660ED6F37149A2D065BA5EA24DE13696 (UTessellator_000001ABU24PostfixBurstDelegate_t163ACB1D6BA4C03BE10F45675AACC947C6A2C426* __this, SpriteShapeSegment_tB32CE039E823A27997165CD087F6DE1906C4C8D5* ___0_geom, int32_t ___1_maxCount, float2_t24AA5C0F612B0672315EDAFEC9D9E7F1C4A5B0BA* ___2_tessPoints, int32_t ___3_tessPointCount, uint16_t* ___4_indices, int32_t* ___5_iCount, uint8_t* ___6_vertices, int32_t ___7_stride, int32_t* ___8_vCount, int32_t ___9_label, const RuntimeMethod* method) 
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UTessellator_0000017AU24PostfixBurstDelegate_Invoke_m54E0DA3F0444F2B8EFAEEC320118BF5A385DB7A0 (UTessellator_0000017AU24PostfixBurstDelegate_tD4EDBDD602D3B9028FBEBBA7B6FC65595FC878D4* __this, SpriteShapeSegment_tB32CE039E823A27997165CD087F6DE1906C4C8D5* ___0_geom, int32_t ___1_maxCount, float2_t24AA5C0F612B0672315EDAFEC9D9E7F1C4A5B0BA* ___2_tessPoints, int32_t ___3_tessPointCount, uint16_t* ___4_indices, int32_t* ___5_iCount, uint8_t* ___6_vertices, int32_t ___7_stride, int32_t* ___8_vCount, int32_t ___9_label, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, SpriteShapeSegment_tB32CE039E823A27997165CD087F6DE1906C4C8D5*, int32_t, float2_t24AA5C0F612B0672315EDAFEC9D9E7F1C4A5B0BA*, int32_t, uint16_t*, int32_t*, uint8_t*, int32_t, int32_t*, int32_t, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_geom, ___1_maxCount, ___2_tessPoints, ___3_tessPointCount, ___4_indices, ___5_iCount, ___6_vertices, ___7_stride, ___8_vCount, ___9_label, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* UTessellator_000001ABU24PostfixBurstDelegate_BeginInvoke_m0AF8EA05AB3E6CD3044E7224E12799A969FC1369 (UTessellator_000001ABU24PostfixBurstDelegate_t163ACB1D6BA4C03BE10F45675AACC947C6A2C426* __this, SpriteShapeSegment_tB32CE039E823A27997165CD087F6DE1906C4C8D5* ___0_geom, int32_t ___1_maxCount, float2_t24AA5C0F612B0672315EDAFEC9D9E7F1C4A5B0BA* ___2_tessPoints, int32_t ___3_tessPointCount, uint16_t* ___4_indices, int32_t* ___5_iCount, uint8_t* ___6_vertices, int32_t ___7_stride, int32_t* ___8_vCount, int32_t ___9_label, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___10_p, RuntimeObject* ___11_p, const RuntimeMethod* method) 
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* UTessellator_0000017AU24PostfixBurstDelegate_BeginInvoke_m0940A7695EDD1FD88493B263DEBBEA4A26A11E00 (UTessellator_0000017AU24PostfixBurstDelegate_tD4EDBDD602D3B9028FBEBBA7B6FC65595FC878D4* __this, SpriteShapeSegment_tB32CE039E823A27997165CD087F6DE1906C4C8D5* ___0_geom, int32_t ___1_maxCount, float2_t24AA5C0F612B0672315EDAFEC9D9E7F1C4A5B0BA* ___2_tessPoints, int32_t ___3_tessPointCount, uint16_t* ___4_indices, int32_t* ___5_iCount, uint8_t* ___6_vertices, int32_t ___7_stride, int32_t* ___8_vCount, int32_t ___9_label, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___10_p, RuntimeObject* ___11_p, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -1382,7 +1301,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* UTessellator_000001ABU24Postfi
 	__d_args[9] = Box(Allocator_t996642592271AAD9EE688F142741D512C07B5824_il2cpp_TypeInfo_var, &___9_label);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___10_p, (RuntimeObject*)___11_p);
 }
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UTessellator_000001ABU24PostfixBurstDelegate_EndInvoke_m041016390559D639614062F8F0ADFAA87165B33A (UTessellator_000001ABU24PostfixBurstDelegate_t163ACB1D6BA4C03BE10F45675AACC947C6A2C426* __this, RuntimeObject* ___0_p, const RuntimeMethod* method) 
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UTessellator_0000017AU24PostfixBurstDelegate_EndInvoke_mD3BD0EB760746BB52FE22B6DBBEC5EE2E6560F9D (UTessellator_0000017AU24PostfixBurstDelegate_tD4EDBDD602D3B9028FBEBBA7B6FC65595FC878D4* __this, RuntimeObject* ___0_p, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_p, 0);
 }
@@ -1394,60 +1313,60 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UTessellator_000001ABU24PostfixBurstDele
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UTessellator_000001ABU24BurstDirectCall_GetFunctionPointerDiscard_m489D4211E5E304D0231593B9FCDFDC45FDA2A1E7 (intptr_t* ___0_p, const RuntimeMethod* method) 
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UTessellator_0000017AU24BurstDirectCall_GetFunctionPointerDiscard_m32E3BF5BD462055A0E0EA2D708D5C80A8325D1FB (intptr_t* ___0_p, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&BurstCompiler_CompileFunctionPointer_TisUTessellator_000001ABU24PostfixBurstDelegate_t163ACB1D6BA4C03BE10F45675AACC947C6A2C426_m3C610B80059BEF97CD37A0EC448D57A3FF6647CA_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&BurstCompiler_CompileFunctionPointer_TisUTessellator_0000017AU24PostfixBurstDelegate_tD4EDBDD602D3B9028FBEBBA7B6FC65595FC878D4_m6D7651235E0F2B3D78F5268AFE7E078FF23A9380_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&BurstCompiler_t2715484E1FF256726FC4D4D8E17C35A4C8DFA2B8_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&FunctionPointer_1_get_Value_m0800E2F68479A5A55D71B7EB406C0EB98AF9F318_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&FunctionPointer_1_get_Value_m1CB2E6E16D8E8775B5AF8D226EF628952BD90B56_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&SpriteShapeGenerator_UTessellator_mA975B9F66E80F2334124BFADD19F331AB2F6E90D_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&UTessellator_000001ABU24BurstDirectCall_tCF265E27391657DC2013973F6167C461A00BB084_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&UTessellator_000001ABU24PostfixBurstDelegate_t163ACB1D6BA4C03BE10F45675AACC947C6A2C426_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&UTessellator_0000017AU24BurstDirectCall_t7A5CABEFA3FA4D5989AB85120E032BA538733A57_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&UTessellator_0000017AU24PostfixBurstDelegate_tD4EDBDD602D3B9028FBEBBA7B6FC65595FC878D4_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
-	FunctionPointer_1_tDD1E81A475CDCA011E6109CBC08FF384FA2E8CE0 V_0;
+	FunctionPointer_1_t62FC69EE39DDEBD5E90D457946D027938F3D91AA V_0;
 	memset((&V_0), 0, sizeof(V_0));
 	{
-		intptr_t L_0 = ((UTessellator_000001ABU24BurstDirectCall_tCF265E27391657DC2013973F6167C461A00BB084_StaticFields*)il2cpp_codegen_static_fields_for(UTessellator_000001ABU24BurstDirectCall_tCF265E27391657DC2013973F6167C461A00BB084_il2cpp_TypeInfo_var))->___Pointer;
+		intptr_t L_0 = ((UTessellator_0000017AU24BurstDirectCall_t7A5CABEFA3FA4D5989AB85120E032BA538733A57_StaticFields*)il2cpp_codegen_static_fields_for(UTessellator_0000017AU24BurstDirectCall_t7A5CABEFA3FA4D5989AB85120E032BA538733A57_il2cpp_TypeInfo_var))->___Pointer;
 		if (L_0)
 		{
 			goto IL_002a;
 		}
 	}
 	{
-		UTessellator_000001ABU24PostfixBurstDelegate_t163ACB1D6BA4C03BE10F45675AACC947C6A2C426* L_1 = (UTessellator_000001ABU24PostfixBurstDelegate_t163ACB1D6BA4C03BE10F45675AACC947C6A2C426*)il2cpp_codegen_object_new(UTessellator_000001ABU24PostfixBurstDelegate_t163ACB1D6BA4C03BE10F45675AACC947C6A2C426_il2cpp_TypeInfo_var);
-		UTessellator_000001ABU24PostfixBurstDelegate__ctor_m180709CF3B6D82BF58EA059475E8FBD5B6FAB2FE(L_1, NULL, (intptr_t)((void*)SpriteShapeGenerator_UTessellator_mA975B9F66E80F2334124BFADD19F331AB2F6E90D_RuntimeMethod_var), NULL);
+		UTessellator_0000017AU24PostfixBurstDelegate_tD4EDBDD602D3B9028FBEBBA7B6FC65595FC878D4* L_1 = (UTessellator_0000017AU24PostfixBurstDelegate_tD4EDBDD602D3B9028FBEBBA7B6FC65595FC878D4*)il2cpp_codegen_object_new(UTessellator_0000017AU24PostfixBurstDelegate_tD4EDBDD602D3B9028FBEBBA7B6FC65595FC878D4_il2cpp_TypeInfo_var);
+		UTessellator_0000017AU24PostfixBurstDelegate__ctor_m9EE5F9721F22055A462175A4C1699937C75D9B46(L_1, NULL, (intptr_t)((void*)SpriteShapeGenerator_UTessellator_mA975B9F66E80F2334124BFADD19F331AB2F6E90D_RuntimeMethod_var), NULL);
 		il2cpp_codegen_runtime_class_init_inline(BurstCompiler_t2715484E1FF256726FC4D4D8E17C35A4C8DFA2B8_il2cpp_TypeInfo_var);
-		FunctionPointer_1_tDD1E81A475CDCA011E6109CBC08FF384FA2E8CE0 L_2;
-		L_2 = BurstCompiler_CompileFunctionPointer_TisUTessellator_000001ABU24PostfixBurstDelegate_t163ACB1D6BA4C03BE10F45675AACC947C6A2C426_m3C610B80059BEF97CD37A0EC448D57A3FF6647CA(L_1, BurstCompiler_CompileFunctionPointer_TisUTessellator_000001ABU24PostfixBurstDelegate_t163ACB1D6BA4C03BE10F45675AACC947C6A2C426_m3C610B80059BEF97CD37A0EC448D57A3FF6647CA_RuntimeMethod_var);
+		FunctionPointer_1_t62FC69EE39DDEBD5E90D457946D027938F3D91AA L_2;
+		L_2 = BurstCompiler_CompileFunctionPointer_TisUTessellator_0000017AU24PostfixBurstDelegate_tD4EDBDD602D3B9028FBEBBA7B6FC65595FC878D4_m6D7651235E0F2B3D78F5268AFE7E078FF23A9380(L_1, BurstCompiler_CompileFunctionPointer_TisUTessellator_0000017AU24PostfixBurstDelegate_tD4EDBDD602D3B9028FBEBBA7B6FC65595FC878D4_m6D7651235E0F2B3D78F5268AFE7E078FF23A9380_RuntimeMethod_var);
 		V_0 = L_2;
 		intptr_t L_3;
-		L_3 = FunctionPointer_1_get_Value_m0800E2F68479A5A55D71B7EB406C0EB98AF9F318_inline((&V_0), FunctionPointer_1_get_Value_m0800E2F68479A5A55D71B7EB406C0EB98AF9F318_RuntimeMethod_var);
-		((UTessellator_000001ABU24BurstDirectCall_tCF265E27391657DC2013973F6167C461A00BB084_StaticFields*)il2cpp_codegen_static_fields_for(UTessellator_000001ABU24BurstDirectCall_tCF265E27391657DC2013973F6167C461A00BB084_il2cpp_TypeInfo_var))->___Pointer = L_3;
+		L_3 = FunctionPointer_1_get_Value_m1CB2E6E16D8E8775B5AF8D226EF628952BD90B56_inline((&V_0), FunctionPointer_1_get_Value_m1CB2E6E16D8E8775B5AF8D226EF628952BD90B56_RuntimeMethod_var);
+		((UTessellator_0000017AU24BurstDirectCall_t7A5CABEFA3FA4D5989AB85120E032BA538733A57_StaticFields*)il2cpp_codegen_static_fields_for(UTessellator_0000017AU24BurstDirectCall_t7A5CABEFA3FA4D5989AB85120E032BA538733A57_il2cpp_TypeInfo_var))->___Pointer = L_3;
 	}
 
 IL_002a:
 	{
 		intptr_t* L_4 = ___0_p;
-		intptr_t L_5 = ((UTessellator_000001ABU24BurstDirectCall_tCF265E27391657DC2013973F6167C461A00BB084_StaticFields*)il2cpp_codegen_static_fields_for(UTessellator_000001ABU24BurstDirectCall_tCF265E27391657DC2013973F6167C461A00BB084_il2cpp_TypeInfo_var))->___Pointer;
+		intptr_t L_5 = ((UTessellator_0000017AU24BurstDirectCall_t7A5CABEFA3FA4D5989AB85120E032BA538733A57_StaticFields*)il2cpp_codegen_static_fields_for(UTessellator_0000017AU24BurstDirectCall_t7A5CABEFA3FA4D5989AB85120E032BA538733A57_il2cpp_TypeInfo_var))->___Pointer;
 		*((intptr_t*)L_4) = (intptr_t)L_5;
 		return;
 	}
 }
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t UTessellator_000001ABU24BurstDirectCall_GetFunctionPointer_m8920134CE708A0AB962DCDC5FEB1BC90D051102E (const RuntimeMethod* method) 
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t UTessellator_0000017AU24BurstDirectCall_GetFunctionPointer_m9160106AD916F94782FBCCF9A24132A0664ED147 (const RuntimeMethod* method) 
 {
 	intptr_t V_0;
 	memset((&V_0), 0, sizeof(V_0));
 	{
 		V_0 = ((intptr_t)0);
-		UTessellator_000001ABU24BurstDirectCall_GetFunctionPointerDiscard_m489D4211E5E304D0231593B9FCDFDC45FDA2A1E7((&V_0), NULL);
+		UTessellator_0000017AU24BurstDirectCall_GetFunctionPointerDiscard_m32E3BF5BD462055A0E0EA2D708D5C80A8325D1FB((&V_0), NULL);
 		intptr_t L_0 = V_0;
 		return L_0;
 	}
 }
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UTessellator_000001ABU24BurstDirectCall_Invoke_m3F01224BF361F50A22C86B87ACA07EFE530C6373 (SpriteShapeSegment_tB32CE039E823A27997165CD087F6DE1906C4C8D5* ___0_geom, int32_t ___1_maxCount, float2_t24AA5C0F612B0672315EDAFEC9D9E7F1C4A5B0BA* ___2_tessPoints, int32_t ___3_tessPointCount, uint16_t* ___4_indices, int32_t* ___5_iCount, uint8_t* ___6_vertices, int32_t ___7_stride, int32_t* ___8_vCount, int32_t ___9_label, const RuntimeMethod* method) 
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UTessellator_0000017AU24BurstDirectCall_Invoke_mE47471C6BBFD1538C6CD7750A7393864E3F97044 (SpriteShapeSegment_tB32CE039E823A27997165CD087F6DE1906C4C8D5* ___0_geom, int32_t ___1_maxCount, float2_t24AA5C0F612B0672315EDAFEC9D9E7F1C4A5B0BA* ___2_tessPoints, int32_t ___3_tessPointCount, uint16_t* ___4_indices, int32_t* ___5_iCount, uint8_t* ___6_vertices, int32_t ___7_stride, int32_t* ___8_vCount, int32_t ___9_label, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -1468,7 +1387,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UTessellator_000001ABU24BurstDirectCall_
 	}
 	{
 		intptr_t L_1;
-		L_1 = UTessellator_000001ABU24BurstDirectCall_GetFunctionPointer_m8920134CE708A0AB962DCDC5FEB1BC90D051102E(NULL);
+		L_1 = UTessellator_0000017AU24BurstDirectCall_GetFunctionPointer_m9160106AD916F94782FBCCF9A24132A0664ED147(NULL);
 		V_0 = L_1;
 		intptr_t L_2 = V_0;
 		if (!L_2)
@@ -2955,59 +2874,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpriteShapeObjectPlacement__cctor_m78FED
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void __JobReflectionRegistrationOutput__7081003197938994914_CreateJobReflectionData_mFC07B67FB4EC13B090F1A78ED019E1DFFA6C578A (const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IJobExtensions_EarlyJobInit_TisSpriteShapeGenerator_tE3C79C2D9685232AD17AB7FA803F44FA92DB854E_m6333030633CE35B4D63519CE28DBBBC10EB45643_RuntimeMethod_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	il2cpp::utils::ExceptionSupportStack<RuntimeObject*, 1> __active_exceptions;
-	try
-	{
-		IJobExtensions_EarlyJobInit_TisSpriteShapeGenerator_tE3C79C2D9685232AD17AB7FA803F44FA92DB854E_m6333030633CE35B4D63519CE28DBBBC10EB45643(IJobExtensions_EarlyJobInit_TisSpriteShapeGenerator_tE3C79C2D9685232AD17AB7FA803F44FA92DB854E_m6333030633CE35B4D63519CE28DBBBC10EB45643_RuntimeMethod_var);
-		goto IL_0016;
-	}
-	catch(Il2CppExceptionWrapper& e)
-	{
-		if(il2cpp_codegen_class_is_assignable_from (((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&Exception_t_il2cpp_TypeInfo_var)), il2cpp_codegen_object_class(e.ex)))
-		{
-			IL2CPP_PUSH_ACTIVE_EXCEPTION(e.ex);
-			goto CATCH_000b;
-		}
-		throw e;
-	}
-
-CATCH_000b:
-	{
-		Exception_t* L_0 = ((Exception_t*)IL2CPP_GET_ACTIVE_EXCEPTION(Exception_t*));;
-		il2cpp_codegen_runtime_class_init_inline(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&EarlyInitHelpers_tA67F29CEEF85CD33340F1A46E13686C44F97695A_il2cpp_TypeInfo_var)));
-		EarlyInitHelpers_JobReflectionDataCreationFailed_mD6AB08D5BB411CCE38A87793C3C7062EC91FD1EC(L_0, NULL);
-		IL2CPP_POP_ACTIVE_EXCEPTION(Exception_t*);
-		goto IL_0016;
-	}
-
-IL_0016:
-	{
-		return;
-	}
-}
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void __JobReflectionRegistrationOutput__7081003197938994914_EarlyInit_m525EEF27376ECF6CB5B6CF2BC37B7D75E68EEBE5 (const RuntimeMethod* method) 
-{
-	{
-		__JobReflectionRegistrationOutput__7081003197938994914_CreateJobReflectionData_mFC07B67FB4EC13B090F1A78ED019E1DFFA6C578A(NULL);
-		return;
-	}
-}
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif

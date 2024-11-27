@@ -22252,7 +22252,43 @@ IL_002c:
 		return L_6;
 	}
 }
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidApplication_ApplyConfiguration_m8EA3643B330E33B770CC2FAA1D8A9FFACDE5B930 (AndroidConfiguration_t7D5E737292DAE79648D18ED1EC44801762FD2821* ___0_config, bool ___1_notifySubscribers, const RuntimeMethod* method) 
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidApplication_SetCurrentConfiguration_m1BC4863097BAAE24D1F48FBE8A46FD373F3F8435 (AndroidConfiguration_t7D5E737292DAE79648D18ED1EC44801762FD2821* ___0_config, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AndroidApplication_t565D1853B1B9F221B2DF9BD3E2CF396A81EA4809_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		AndroidConfiguration_t7D5E737292DAE79648D18ED1EC44801762FD2821* L_0 = ___0_config;
+		((AndroidApplication_t565D1853B1B9F221B2DF9BD3E2CF396A81EA4809_StaticFields*)il2cpp_codegen_static_fields_for(AndroidApplication_t565D1853B1B9F221B2DF9BD3E2CF396A81EA4809_il2cpp_TypeInfo_var))->___m_CurrentConfiguration = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&((AndroidApplication_t565D1853B1B9F221B2DF9BD3E2CF396A81EA4809_StaticFields*)il2cpp_codegen_static_fields_for(AndroidApplication_t565D1853B1B9F221B2DF9BD3E2CF396A81EA4809_il2cpp_TypeInfo_var))->___m_CurrentConfiguration), (void*)L_0);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AndroidConfiguration_t7D5E737292DAE79648D18ED1EC44801762FD2821* AndroidApplication_GetCurrentConfiguration_m74AF41ECE40DD1AE7534F1A9B6990C316C115F99 (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AndroidApplication_t565D1853B1B9F221B2DF9BD3E2CF396A81EA4809_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	AndroidConfiguration_t7D5E737292DAE79648D18ED1EC44801762FD2821* V_0 = NULL;
+	{
+		AndroidConfiguration_t7D5E737292DAE79648D18ED1EC44801762FD2821* L_0 = ((AndroidApplication_t565D1853B1B9F221B2DF9BD3E2CF396A81EA4809_StaticFields*)il2cpp_codegen_static_fields_for(AndroidApplication_t565D1853B1B9F221B2DF9BD3E2CF396A81EA4809_il2cpp_TypeInfo_var))->___m_CurrentConfiguration;
+		V_0 = L_0;
+		goto IL_0009;
+	}
+
+IL_0009:
+	{
+		AndroidConfiguration_t7D5E737292DAE79648D18ED1EC44801762FD2821* L_1 = V_0;
+		return L_1;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidApplication_DispatchConfigurationChanged_m02C77E3BF4C539FDC955495406FC6B80990D554E (bool ___0_notifySubscribers, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -22264,39 +22300,36 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidApplication_ApplyConfiguration_m8
 	Action_1_tB44F32ACA513C61A3FB120ABF3B543A334ABB0A0* G_B3_0 = NULL;
 	Action_1_tB44F32ACA513C61A3FB120ABF3B543A334ABB0A0* G_B2_0 = NULL;
 	{
-		AndroidConfiguration_t7D5E737292DAE79648D18ED1EC44801762FD2821* L_0 = ___0_config;
-		((AndroidApplication_t565D1853B1B9F221B2DF9BD3E2CF396A81EA4809_StaticFields*)il2cpp_codegen_static_fields_for(AndroidApplication_t565D1853B1B9F221B2DF9BD3E2CF396A81EA4809_il2cpp_TypeInfo_var))->___m_CurrentConfiguration = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&((AndroidApplication_t565D1853B1B9F221B2DF9BD3E2CF396A81EA4809_StaticFields*)il2cpp_codegen_static_fields_for(AndroidApplication_t565D1853B1B9F221B2DF9BD3E2CF396A81EA4809_il2cpp_TypeInfo_var))->___m_CurrentConfiguration), (void*)L_0);
-		bool L_1 = ___1_notifySubscribers;
-		V_0 = L_1;
-		bool L_2 = V_0;
-		if (!L_2)
+		bool L_0 = ___0_notifySubscribers;
+		V_0 = L_0;
+		bool L_1 = V_0;
+		if (!L_1)
 		{
-			goto IL_0022;
+			goto IL_001c;
 		}
 	}
 	{
-		Action_1_tB44F32ACA513C61A3FB120ABF3B543A334ABB0A0* L_3 = ((AndroidApplication_t565D1853B1B9F221B2DF9BD3E2CF396A81EA4809_StaticFields*)il2cpp_codegen_static_fields_for(AndroidApplication_t565D1853B1B9F221B2DF9BD3E2CF396A81EA4809_il2cpp_TypeInfo_var))->___onConfigurationChanged;
-		Action_1_tB44F32ACA513C61A3FB120ABF3B543A334ABB0A0* L_4 = L_3;
-		if (L_4)
+		Action_1_tB44F32ACA513C61A3FB120ABF3B543A334ABB0A0* L_2 = ((AndroidApplication_t565D1853B1B9F221B2DF9BD3E2CF396A81EA4809_StaticFields*)il2cpp_codegen_static_fields_for(AndroidApplication_t565D1853B1B9F221B2DF9BD3E2CF396A81EA4809_il2cpp_TypeInfo_var))->___onConfigurationChanged;
+		Action_1_tB44F32ACA513C61A3FB120ABF3B543A334ABB0A0* L_3 = L_2;
+		if (L_3)
 		{
-			G_B3_0 = L_4;
-			goto IL_0017;
+			G_B3_0 = L_3;
+			goto IL_0011;
 		}
-		G_B2_0 = L_4;
+		G_B2_0 = L_3;
 	}
 	{
-		goto IL_0022;
+		goto IL_001c;
 	}
 
-IL_0017:
+IL_0011:
 	{
-		AndroidConfiguration_t7D5E737292DAE79648D18ED1EC44801762FD2821* L_5 = ((AndroidApplication_t565D1853B1B9F221B2DF9BD3E2CF396A81EA4809_StaticFields*)il2cpp_codegen_static_fields_for(AndroidApplication_t565D1853B1B9F221B2DF9BD3E2CF396A81EA4809_il2cpp_TypeInfo_var))->___m_CurrentConfiguration;
+		AndroidConfiguration_t7D5E737292DAE79648D18ED1EC44801762FD2821* L_4 = ((AndroidApplication_t565D1853B1B9F221B2DF9BD3E2CF396A81EA4809_StaticFields*)il2cpp_codegen_static_fields_for(AndroidApplication_t565D1853B1B9F221B2DF9BD3E2CF396A81EA4809_il2cpp_TypeInfo_var))->___m_CurrentConfiguration;
 		NullCheck(G_B3_0);
-		Action_1_Invoke_m1CAD0F76018CC32968B3EC78613F6F1104B649D4_inline(G_B3_0, L_5, NULL);
+		Action_1_Invoke_m1CAD0F76018CC32968B3EC78613F6F1104B649D4_inline(G_B3_0, L_4, NULL);
 	}
 
-IL_0022:
+IL_001c:
 	{
 		return;
 	}
@@ -23623,19 +23656,65 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AndroidLocaleU5BU5D_t0E48A0AED90A441E8095AB2C
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AndroidLocale_tD3DD517AF81D48109C281C82B6ABEBB2A91E5075_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
+	bool V_0 = false;
+	AndroidLocaleU5BU5D_t0E48A0AED90A441E8095AB2C52153ED85AD634C1* V_1 = NULL;
+	int32_t G_B3_0 = 0;
 	{
-		AndroidLocaleU5BU5D_t0E48A0AED90A441E8095AB2C52153ED85AD634C1* L_0 = (AndroidLocaleU5BU5D_t0E48A0AED90A441E8095AB2C52153ED85AD634C1*)(AndroidLocaleU5BU5D_t0E48A0AED90A441E8095AB2C52153ED85AD634C1*)SZArrayNew(AndroidLocaleU5BU5D_t0E48A0AED90A441E8095AB2C52153ED85AD634C1_il2cpp_TypeInfo_var, (uint32_t)1);
-		AndroidLocaleU5BU5D_t0E48A0AED90A441E8095AB2C52153ED85AD634C1* L_1 = L_0;
-		String_t* L_2;
-		L_2 = AndroidConfiguration_get_primaryLocaleCountry_m3BF98232E5121A9957EE0771B2FE96D59A07FED9_inline(__this, NULL);
-		String_t* L_3;
-		L_3 = AndroidConfiguration_get_primaryLocaleLanguage_m6036D7716067E3C52579AEF10AB67FA5E2AF034F_inline(__this, NULL);
-		AndroidLocale_tD3DD517AF81D48109C281C82B6ABEBB2A91E5075* L_4 = (AndroidLocale_tD3DD517AF81D48109C281C82B6ABEBB2A91E5075*)il2cpp_codegen_object_new(AndroidLocale_tD3DD517AF81D48109C281C82B6ABEBB2A91E5075_il2cpp_TypeInfo_var);
-		AndroidLocale__ctor_m9E07C7046CD091CDB042C5D34B156C71DCAB38B2(L_4, L_2, L_3, NULL);
-		NullCheck(L_1);
-		ArrayElementTypeCheck (L_1, L_4);
-		(L_1)->SetAt(static_cast<il2cpp_array_size_t>(0), (AndroidLocale_tD3DD517AF81D48109C281C82B6ABEBB2A91E5075*)L_4);
-		return L_1;
+		String_t* L_0;
+		L_0 = AndroidConfiguration_get_primaryLocaleCountry_m3BF98232E5121A9957EE0771B2FE96D59A07FED9_inline(__this, NULL);
+		if (L_0)
+		{
+			goto IL_0014;
+		}
+	}
+	{
+		String_t* L_1;
+		L_1 = AndroidConfiguration_get_primaryLocaleLanguage_m6036D7716067E3C52579AEF10AB67FA5E2AF034F_inline(__this, NULL);
+		G_B3_0 = ((((RuntimeObject*)(String_t*)L_1) == ((RuntimeObject*)(RuntimeObject*)NULL))? 1 : 0);
+		goto IL_0015;
+	}
+
+IL_0014:
+	{
+		G_B3_0 = 0;
+	}
+
+IL_0015:
+	{
+		V_0 = (bool)G_B3_0;
+		bool L_2 = V_0;
+		if (!L_2)
+		{
+			goto IL_0022;
+		}
+	}
+	{
+		AndroidLocaleU5BU5D_t0E48A0AED90A441E8095AB2C52153ED85AD634C1* L_3 = (AndroidLocaleU5BU5D_t0E48A0AED90A441E8095AB2C52153ED85AD634C1*)(AndroidLocaleU5BU5D_t0E48A0AED90A441E8095AB2C52153ED85AD634C1*)SZArrayNew(AndroidLocaleU5BU5D_t0E48A0AED90A441E8095AB2C52153ED85AD634C1_il2cpp_TypeInfo_var, (uint32_t)0);
+		V_1 = L_3;
+		goto IL_003f;
+	}
+
+IL_0022:
+	{
+		AndroidLocaleU5BU5D_t0E48A0AED90A441E8095AB2C52153ED85AD634C1* L_4 = (AndroidLocaleU5BU5D_t0E48A0AED90A441E8095AB2C52153ED85AD634C1*)(AndroidLocaleU5BU5D_t0E48A0AED90A441E8095AB2C52153ED85AD634C1*)SZArrayNew(AndroidLocaleU5BU5D_t0E48A0AED90A441E8095AB2C52153ED85AD634C1_il2cpp_TypeInfo_var, (uint32_t)1);
+		AndroidLocaleU5BU5D_t0E48A0AED90A441E8095AB2C52153ED85AD634C1* L_5 = L_4;
+		String_t* L_6;
+		L_6 = AndroidConfiguration_get_primaryLocaleCountry_m3BF98232E5121A9957EE0771B2FE96D59A07FED9_inline(__this, NULL);
+		String_t* L_7;
+		L_7 = AndroidConfiguration_get_primaryLocaleLanguage_m6036D7716067E3C52579AEF10AB67FA5E2AF034F_inline(__this, NULL);
+		AndroidLocale_tD3DD517AF81D48109C281C82B6ABEBB2A91E5075* L_8 = (AndroidLocale_tD3DD517AF81D48109C281C82B6ABEBB2A91E5075*)il2cpp_codegen_object_new(AndroidLocale_tD3DD517AF81D48109C281C82B6ABEBB2A91E5075_il2cpp_TypeInfo_var);
+		AndroidLocale__ctor_m9E07C7046CD091CDB042C5D34B156C71DCAB38B2(L_8, L_6, L_7, NULL);
+		NullCheck(L_5);
+		ArrayElementTypeCheck (L_5, L_8);
+		(L_5)->SetAt(static_cast<il2cpp_array_size_t>(0), (AndroidLocale_tD3DD517AF81D48109C281C82B6ABEBB2A91E5075*)L_8);
+		V_1 = L_5;
+		goto IL_003f;
+	}
+
+IL_003f:
+	{
+		AndroidLocaleU5BU5D_t0E48A0AED90A441E8095AB2C52153ED85AD634C1* L_9 = V_1;
+		return L_9;
 	}
 }
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t AndroidConfiguration_get_colorModeHdr_mDA12A1054FBF6C71ED9FF1884E4E86FAA485714E (AndroidConfiguration_t7D5E737292DAE79648D18ED1EC44801762FD2821* __this, const RuntimeMethod* method) 

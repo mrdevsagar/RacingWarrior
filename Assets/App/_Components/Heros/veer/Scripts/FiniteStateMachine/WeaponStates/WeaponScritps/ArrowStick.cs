@@ -5,6 +5,7 @@ public class ArrowStick : MonoBehaviour
 {
     private Rigidbody2D rb;
     private bool hasCollided = false;
+
     private Vector3 scale;
     Collider2D col;
     private SpriteRenderer spriteRenderer;
@@ -23,13 +24,13 @@ public class ArrowStick : MonoBehaviour
     {
         if (IsFiredRight && !hasCollided)
         {
-            float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg;
+            float angle = Mathf.Atan2(rb.linearVelocity.y, rb.linearVelocity.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
 
         if (IsFiredLeft && !hasCollided)
         {
-            float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg;
+            float angle = Mathf.Atan2(rb.linearVelocity.y, rb.linearVelocity.x) * Mathf.Rad2Deg;
 
             // Negate the angle for left firing
             angle = angle + 180; // Rotate 180 degrees to face the left direction
@@ -42,7 +43,7 @@ public class ArrowStick : MonoBehaviour
     {
         if (!hasCollided)
         {
-            rb.velocity = Vector3.zero;
+            rb.linearVelocity = Vector3.zero;
             /*rb.freezeRotation = true;*/
             rb.isKinematic = true;
             Destroy(rb);
@@ -74,7 +75,7 @@ public class ArrowStick : MonoBehaviour
         if (!hasCollided)
         {
             rb.freezeRotation = true;
-            rb.velocity = Vector3.zero;
+            rb.linearVelocity = Vector3.zero;
             rb.isKinematic = true;
             /*Destroy(col);*/
            /* Destroy(rb);*/

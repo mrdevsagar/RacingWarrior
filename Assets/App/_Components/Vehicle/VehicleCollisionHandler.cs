@@ -151,7 +151,7 @@ public class VehicleCollisionHandler : MonoBehaviour
             }
         }
 
-        if (currentHitTopLeft != null && RB.velocityX < 0)
+        if (currentHitTopLeft != null && RB.linearVelocityX < 0)
         {
             Slope slopeTopLeft = currentHitTopLeft.gameObject.GetComponent<Slope>();
             EnableSlopeTop(slopeTopLeft, false);
